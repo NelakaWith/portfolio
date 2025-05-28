@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -m \"Deploy: publish latest portfolio build to GitHub Pages [skip ci]\""
   },
   "dependencies": {
     "vue": "^3.5.13"
