@@ -7,7 +7,7 @@
       <Experience />
       <Education />
       <Projects />
-      <Contact />
+      <!-- <Contact /> -->
     </main>
   </div>
 </template>
@@ -19,7 +19,7 @@ import Skills from "./components/AppSkills.vue";
 import Experience from "./components/AppExperience.vue";
 import Education from "./components/AppEducation.vue";
 import Projects from "./components/AppProjects.vue";
-import Contact from "./components/AppContact.vue";
+// import Contact from "./components/AppContact.vue";
 </script>
 
 <style lang="scss"></style>

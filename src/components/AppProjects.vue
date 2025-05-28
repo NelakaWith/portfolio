@@ -1,6 +1,6 @@
 <template>
   <section id="projects" class="py-12 bg-white rounded-lg shadow-sm p-6">
-    <h2 class="text-3xl font-bold text-dark mb-8">Sample Work</h2>
+    <h2 class="text-3xl font-bold text-dark mb-8">Contributions</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div

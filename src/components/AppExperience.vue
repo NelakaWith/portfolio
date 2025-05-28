@@ -28,7 +28,9 @@
         </ul>
         <div v-if="job.technologies" class="mt-4">
           <span class="text-sm font-medium text-gray-500">Technologies: </span>
-          <span class="text-sm text-gray-700">{{ job.technologies }}</span>
+          <span class="text-sm text-gray-700">{{
+            job.technologies.join(", ")
+          }}</span>
         </div>
       </div>
     </div>
@@ -47,6 +49,7 @@ const experience = [
       'Contributed by developing the "Calendar and Events" module of the product "Deal Flow".',
       "Used Azure DevOps for task and code management.",
     ],
+    technologies: ["VueJS", "JavaScript ES6", "CSS", "Azure DevOps"],
   },
   {
     position: "Senior UI/UX Engineer (Senior Frontend Engineer)",
@@ -59,8 +62,79 @@ const experience = [
       "Worked on an internal project for Uptime. Contributed to a web app that is use for managing service partners internally (and externally by other parties).",
       "The app was built using VueJS (TypeScript, SCSS, Pini and Quasar UI). I was responsible for developing some of the features for the new version of the front end and adding API integration.",
     ],
-    technologies: "VueJS, TypeScript, SCSS, Pini, Quasar UI, Jira, BitBucket",
+    technologies: [
+      "VueJS",
+      "TypeScript",
+      "SCSS",
+      "Pini",
+      "Quasar UI",
+      "Vue Query",
+      "Prime Vue",
+      "Jira",
+      "BitBucket",
+    ],
   },
-  // Add other experiences similarly
+  {
+    position: "Senior UI Engineer (Frontend Engineer)",
+    company: "IdeaHub",
+    location: "Colombo, Sri Lanka",
+    duration: "07/2019-10/2022",
+    responsibilities: [
+      "IdeaHub is a company that develops digital finance solutions using their own Symphony Platform.",
+      "I was responsible for developing UI components for the FinTech products (web and Android mobile) and integrating them with the API using React JS (JavaScript ES6, SCSS and Material UI).",
+      "Contributed to developing the digital layer of a leading bank in Sri Lanka. Worked on their mobile banking app, digital Wallet, digital banking web portal, bank management web solution and POS app projects.",
+      "Contributed to another company product, Spide Craft; it is a digital automation platform that could be used as an enabler for various digital transformation initiatives in an enterprise.",
+      'Worked on a client project for an Australian company, "Tiks". A compliance management system.',
+      "With Tiks, I was responsible for developing a UI component collection to use in their web platform and hybrid mobile app using VueJS and Ionic Capacitor and integrating them with the API using VueJS (TypeScript, SCSS, Vuex and Ionic UI).",
+    ],
+    technologies: [
+      "ReactJS",
+      "VueJS",
+      "TypeScript",
+      "SCSS",
+      "Material UI",
+      "Ionic UI",
+      "Ionic Capacitor",
+      "Vuex",
+      "Jira",
+      "BitBucket/GitHub",
+    ],
+  },
+  {
+    position: "Junior Software Engineer",
+    company: "Eyepax IT Consulting (Pvt) Ltd.",
+    location: "Colombo, Sri Lanka",
+    duration: "02/2017-04/2018",
+    responsibilities: [
+      "In Eyepax, I was responsible for developing UIs for Expedia Group as an outsourced developer.",
+      "I created front-ends using HTML, JS, and LESS for Expedia's seasonal promotions and booking platforms.",
+      "Expedia has their own component libraries and templating systems powered by Java and Node.js with LESS.",
+    ],
+    technologies: [
+      "HTML",
+      "JavaScript",
+      "LESS",
+      "Java",
+      "Node.js",
+      "Jira",
+      "Mercurial SCM/GitHub",
+    ],
+  },
+  {
+    position: "UI Developer",
+    company: "Lily Digital (Pvt) Ltd. oZoneDesk",
+    location: "Colombo, Sri Lanka",
+    duration: "04/2015-01/2017",
+    responsibilities: [
+      "I was a contributor to their ERP system, OzoneDesk, as a UI developer and participated in several side projects.",
+      "It was a monolithic system powered by PHP and pure HTML (jQuery) and CSS with Bootstrap at the time.",
+      "I also worked on a PHP-based website. It was a job platform.",
+    ],
+    technologies: ["PHP", "HTML", "jQuery", "CSS", "Bootstrap"],
+  },
 ];
 </script>
+
+<style scoped>
+/* Additional styling if needed */
+</style>

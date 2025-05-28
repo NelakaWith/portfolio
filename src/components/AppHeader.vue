@@ -18,9 +18,9 @@
         <a href="#projects" class="text-dark hover:text-primary transition"
           >Projects</a
         >
-        <a href="#contact" class="text-dark hover:text-primary transition"
+        <!-- <a href="#contact" class="text-dark hover:text-primary transition"
           >Contact</a
-        >
+        > -->
       </nav>
     </div>
   </header>

@@ -3,7 +3,11 @@
     <div class="flex flex-col md:flex-row gap-8 items-center">
       <div class="md:w-1/3">
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <img src="" alt="Nelaka Withanage" class="w-full h-auto rounded" />
+          <img
+            src="../assets/bust.png"
+            alt="Nelaka Withanage"
+            class="w-1/3 h-auto rounded-full"
+          />
           <div class="mt-4">
             <h3 class="text-xl font-semibold text-dark">Contact Info</h3>
             <ul class="mt-2 space-y-2">
@@ -29,7 +33,7 @@
         </div>
       </div>
       <div class="md:w-2/3">
-        <h2 class="text-3xl font-bold text-dark mb-6">Profile</h2>
+        <h2 class="text-3xl font-bold text-dark mb-6">Hello,</h2>
         <p class="text-lg text-gray-700 leading-relaxed">
           I am a developer with 9+ years of experience in front-end and UI
           development. Proficient in HTML5, CSS3, JavaScript, TypeScript, and
