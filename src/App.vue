@@ -7,7 +7,7 @@
       <div class="loader"></div>
     </div>
     <div v-else class="min-h-screen bg-gray-50">
-      <Header />
+      <Header @menu-click="handleMenuClick" />
       <main class="container mx-auto px-4 py-8">
         <About />
         <Skills />
@@ -62,6 +62,13 @@ onMounted(async () => {
     loading.value = false;
   }, 4000);
 });
+
+function handleMenuClick(target) {
+  const el = document.getElementById(target);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+}
 </script>
 
 <style lang="scss">

@@ -8,19 +8,34 @@
         <h2 class="text-xl text-primary">Frontend Engineer</h2>
       </div>
       <nav class="hidden md:flex space-x-6">
-        <a href="#about" class="text-dark hover:text-primary transition"
+        <a
+          href="#about"
+          class="text-dark hover:text-primary transition"
+          @click.prevent="$emit('menu-click', 'about')"
           >About</a
         >
-        <a href="#skills" class="text-dark hover:text-primary transition"
+        <a
+          href="#skills"
+          class="text-dark hover:text-primary transition"
+          @click.prevent="$emit('menu-click', 'skills')"
           >Skills</a
         >
-        <a href="#experience" class="text-dark hover:text-primary transition"
+        <a
+          href="#experience"
+          class="text-dark hover:text-primary transition"
+          @click.prevent="$emit('menu-click', 'experience')"
           >Experience</a
         >
-        <a href="#projects" class="text-dark hover:text-primary transition"
+        <a
+          href="#projects"
+          class="text-dark hover:text-primary transition"
+          @click.prevent="$emit('menu-click', 'projects')"
           >Projects</a
         >
-        <!-- <a href="#contact" class="text-dark hover:text-primary transition"
+        <!-- <a
+          href="#contact"
+          class="text-dark hover:text-primary transition"
+          @click.prevent="$emit('menu-click', 'contact')"
           >Contact</a
         > -->
       </nav>
