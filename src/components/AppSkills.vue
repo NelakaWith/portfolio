@@ -1,7 +1,9 @@
 <template>
-  <section id="skills" class="py-12 bg-white rounded-lg shadow-sm p-6">
+  <section id="skills" class="py-12">
     <h2 class="text-3xl font-bold text-dark mb-8">Key Skills</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 bg-white rounded-lg shadow-sm p-6"
+    >
       <div
         v-for="(skill, index) in skills"
         :key="index"
