@@ -1,11 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 // Custom SCSS styles
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Hind", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   line-height: 1.6;
+  font-size: 16px;
 }
 
 section {

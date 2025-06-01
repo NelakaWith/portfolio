@@ -13,11 +13,11 @@
             <ul class="mt-2 space-y-2">
               <li class="flex items-center">
                 <span class="text-primary mr-2">✉️</span>
-                <span>nelakasnji@gmail.com</span>
+                <a href="mailto:nelakasnji@gmail.com">nelakasnji@gmail.com</a>
               </li>
               <li class="flex items-center">
                 <span class="text-primary mr-2">📱</span>
-                <span>+94 714 694 244</span>
+                <a href="tel:+94714694244">+94 714 694 244</a>
               </li>
               <li class="flex items-center">
                 <span class="text-primary mr-2">🔗</span>
@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="md:w-2/3">
-        <h2 class="text-3xl font-bold text-dark mb-6">Hello,</h2>
+        <h2 class="text-4xl text-dark mb-2">Hello,</h2>
         <p class="text-lg text-gray-700 leading-relaxed">
           I am a developer with 9+ years of experience in front-end and UI
           development. Proficient in HTML5, CSS3, JavaScript, TypeScript, and
