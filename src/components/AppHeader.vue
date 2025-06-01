@@ -2,7 +2,7 @@
   <header class="bg-white shadow-sm">
     <div class="container mx-auto px-4 py-6 flex justify-between items-center">
       <div>
-        <h1 class="text-3xl font-bold text-dark">Nelaka Withanage</h1>
+        <h1 class="text-5xl font-semibold text-dark">Nelaka Withanage</h1>
         <h2 class="text-xl text-primary">Frontend Engineer</h2>
       </div>
       <nav class="hidden md:flex space-x-6">

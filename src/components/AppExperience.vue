@@ -10,7 +10,7 @@
       >
         <div class="flex justify-between items-start">
           <div>
-            <h3 class="text-xl font-bold text-dark">{{ job.position }}</h3>
+            <h3 class="text-xl font-semibold text-dark">{{ job.position }}</h3>
             <h4 class="text-lg text-primary">
               {{ job.company }}, {{ job.location }}
             </h4>

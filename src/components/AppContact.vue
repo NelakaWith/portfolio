@@ -10,11 +10,11 @@
         <ul class="space-y-3">
           <li class="flex items-center">
             <span class="text-primary mr-3">✉️</span>
-            <span>nelakasnji@gmail.com</span>
+            <a href="mailto:nelakasnji@gmail.com">nelakasnji@gmail.com</a>
           </li>
           <li class="flex items-center">
             <span class="text-primary mr-3">📱</span>
-            <span>+94 714 694 244</span>
+            <a href="tel:+94714694244">+94 714 694 244</a>
           </li>
           <li class="flex items-center">
             <span class="text-primary mr-3">🔗</span>
