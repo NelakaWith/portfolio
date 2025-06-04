@@ -10,7 +10,9 @@
         class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition flex items-center cursor-pointer"
       >
         <Icon :icon="skill.icon" class="w-6 h-6 mr-3 text-primary" />
-        <h3 class="font-medium text-dark">{{ skill.name }}</h3>
+        <h3 class="text-xl text-dark self-center">
+          {{ skill.name }}
+        </h3>
       </div>
     </div>
   </section>
