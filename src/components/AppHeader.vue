@@ -1,44 +1,42 @@
 <template>
-  <header class="bg-white shadow-sm sticky top-0 z-40">
+  <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-40">
     <div class="container mx-auto px-4 py-6 flex justify-between items-center">
       <div>
-        <h1 class="text-3xl md:text-5xl font-semibold text-dark">
+        <h1
+          class="text-3xl md:text-5xl font-semibold text-dark dark:text-white"
+        >
           Nelaka Withanage
         </h1>
-        <h2 class="text-xl text-primary">Frontend Engineer</h2>
+        <h2 class="text-xl text-primary dark:text-yellow-400">
+          Frontend Engineer
+        </h2>
       </div>
       <!-- Desktop Nav -->
       <nav class="hidden md:flex space-x-6">
         <a
           href="#about"
-          class="text-dark hover:text-primary transition"
+          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
           @click.prevent="$emit('menu-click', 'about')"
           >About</a
         >
         <a
           href="#skills"
-          class="text-dark hover:text-primary transition"
+          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
           @click.prevent="$emit('menu-click', 'skills')"
           >Skills</a
         >
         <a
           href="#experience"
-          class="text-dark hover:text-primary transition"
+          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
           @click.prevent="$emit('menu-click', 'experience')"
           >Experience</a
         >
         <a
           href="#projects"
-          class="text-dark hover:text-primary transition"
+          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
           @click.prevent="$emit('menu-click', 'projects')"
           >Projects</a
         >
-        <!-- <a
-          href="#contact"
-          class="text-dark hover:text-primary transition"
-          @click.prevent="$emit('menu-click', 'contact')"
-          >Contact</a
-        > -->
       </nav>
       <!-- Mobile Nav Toggle -->
       <button
@@ -53,11 +51,12 @@
     <transition name="fade">
       <nav
         v-if="showMobileMenu"
-        class="md:hidden fixed top-0 left-0 w-full h-full bg-white bg-opacity-95 z-50 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold"
+        class="md:hidden fixed top-0 left-0 w-full h-full bg-white dark:bg-gray-900 bg-opacity-95 z-50 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold"
         @click.self="showMobileMenu = false"
       >
         <a
           href="#about"
+          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
           @click.prevent="
             $emit('menu-click', 'about');
             showMobileMenu = false;
@@ -66,6 +65,7 @@
         >
         <a
           href="#skills"
+          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
           @click.prevent="
             $emit('menu-click', 'skills');
             showMobileMenu = false;
@@ -74,6 +74,7 @@
         >
         <a
           href="#experience"
+          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
           @click.prevent="
             $emit('menu-click', 'experience');
             showMobileMenu = false;
@@ -82,6 +83,7 @@
         >
         <a
           href="#projects"
+          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
           @click.prevent="
             $emit('menu-click', 'projects');
             showMobileMenu = false;
@@ -90,7 +92,7 @@
         >
         <!-- <a href="#contact" @click.prevent="$emit('menu-click', 'contact'); showMobileMenu = false">Contact</a> -->
         <button
-          class="mt-8 text-base text-gray-500"
+          class="mt-8 text-base text-gray-500 dark:text-gray-300"
           @click="showMobileMenu = false"
         >
           Close

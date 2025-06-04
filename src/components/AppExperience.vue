@@ -1,34 +1,42 @@
 <template>
   <section id="experience" class="py-12">
-    <h2 class="text-3xl font-bold text-dark mb-8">Professional Experience</h2>
+    <h2 class="text-3xl font-bold text-dark dark:text-white mb-8">
+      Professional Experience
+    </h2>
 
     <div class="space-y-8">
       <div
         v-for="(job, index) in experience"
         :key="index"
-        class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition"
+        class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm hover:shadow-md transition"
       >
         <div class="flex justify-between items-start">
           <div>
-            <h3 class="text-xl font-semibold text-dark">{{ job.position }}</h3>
-            <h4 class="text-lg text-primary">
+            <h3 class="text-xl font-semibold text-dark dark:text-white">
+              {{ job.position }}
+            </h3>
+            <h4 class="text-lg text-primary dark:text-yellow-400">
               {{ job.company }}, {{ job.location }}
             </h4>
           </div>
-          <span class="text-gray-500">{{ job.duration }}</span>
+          <span class="text-gray-500 dark:text-gray-300">{{
+            job.duration
+          }}</span>
         </div>
         <ul class="mt-4 space-y-2 pl-5 list-disc">
           <li
             v-for="(responsibility, i) in job.responsibilities"
             :key="i"
-            class="text-gray-700"
+            class="text-gray-700 dark:text-gray-200"
           >
             {{ responsibility }}
           </li>
         </ul>
         <div v-if="job.technologies" class="mt-4">
-          <span class="text-sm font-medium text-gray-500">Technologies: </span>
-          <span class="text-sm text-gray-700">{{
+          <span class="text-sm font-medium text-gray-500 dark:text-gray-300"
+            >Technologies:
+          </span>
+          <span class="text-sm text-gray-700 dark:text-gray-200">{{
             job.technologies.join(", ")
           }}</span>
         </div>
