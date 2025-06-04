@@ -2,29 +2,39 @@
   <section id="about" class="py-12">
     <div class="flex flex-col md:flex-row gap-8 items-center">
       <div class="md:w-1/3">
-        <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
           <img
             src="../assets/bust.png"
             alt="Nelaka Withanage"
             class="w-1/3 h-auto rounded-full"
           />
           <div class="mt-4">
-            <h3 class="text-xl font-semibold text-dark">Contact Info</h3>
+            <h3 class="text-xl font-semibold text-dark dark:text-white">
+              Contact Info
+            </h3>
             <ul class="mt-2 space-y-2">
               <li class="flex items-center">
                 <span class="text-primary mr-2">✉️</span>
-                <a href="mailto:nelakasnji@gmail.com">nelakasnji@gmail.com</a>
+                <a
+                  href="mailto:nelakasnji@gmail.com"
+                  class="text-dark dark:text-white hover:underline"
+                  >nelakasnji@gmail.com</a
+                >
               </li>
               <li class="flex items-center">
                 <span class="text-primary mr-2">📱</span>
-                <a href="tel:+94714694244">+94 714 694 244</a>
+                <a
+                  href="tel:+94714694244"
+                  class="text-dark dark:text-white hover:underline"
+                  >+94 714 694 244</a
+                >
               </li>
               <li class="flex items-center">
                 <span class="text-primary mr-2">🔗</span>
                 <a
                   href="https://linkedin.com/in/nelaka-withanage"
                   target="_blank"
-                  class="hover:underline"
+                  class="text-dark dark:text-white hover:underline"
                   >in/nelaka-withanage</a
                 >
               </li>
@@ -33,8 +43,8 @@
         </div>
       </div>
       <div class="md:w-2/3">
-        <h2 class="text-4xl text-dark mb-2">Hello,</h2>
-        <p class="text-lg text-gray-700 leading-relaxed">
+        <h2 class="text-4xl text-dark dark:text-white mb-2">Hello,</h2>
+        <p class="text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
           I am a developer with 9+ years of experience in front-end and UI
           development. Proficient in HTML5, CSS3, JavaScript, TypeScript, and
           frameworks such as React.js and Vue.js. Demonstrated expertise in

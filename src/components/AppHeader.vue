@@ -1,44 +1,51 @@
 <template>
-  <header class="bg-white shadow-sm sticky top-0 z-40">
+  <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-40">
     <div class="container mx-auto px-4 py-6 flex justify-between items-center">
       <div>
-        <h1 class="text-3xl md:text-5xl font-semibold text-dark">
+        <h1
+          class="text-3xl md:text-5xl font-semibold text-dark dark:text-white"
+        >
           Nelaka Withanage
         </h1>
-        <h2 class="text-xl text-primary">Frontend Engineer</h2>
+        <h2 class="text-xl text-primary dark:text-yellow-400">
+          Frontend Engineer
+        </h2>
       </div>
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex space-x-6">
+      <nav class="hidden md:flex space-x-6 items-center">
         <a
           href="#about"
-          class="text-dark hover:text-primary transition"
+          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
           @click.prevent="$emit('menu-click', 'about')"
           >About</a
         >
         <a
           href="#skills"
-          class="text-dark hover:text-primary transition"
+          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
           @click.prevent="$emit('menu-click', 'skills')"
           >Skills</a
         >
         <a
           href="#experience"
-          class="text-dark hover:text-primary transition"
+          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
           @click.prevent="$emit('menu-click', 'experience')"
           >Experience</a
         >
         <a
           href="#projects"
-          class="text-dark hover:text-primary transition"
+          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
           @click.prevent="$emit('menu-click', 'projects')"
           >Projects</a
         >
-        <!-- <a
-          href="#contact"
-          class="text-dark hover:text-primary transition"
-          @click.prevent="$emit('menu-click', 'contact')"
-          >Contact</a
-        > -->
+        <!-- Dark/Light Toggle Button -->
+        <button
+          class="ml-4 flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-dark dark:text-white px-2 py-1 rounded shadow hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+          @click="$emit('toggle-dark')"
+          aria-label="Toggle dark mode"
+        >
+          <Icon v-if="isDark" icon="line-md:moon-filled" class="w-6 h-6" />
+          <Icon v-else icon="line-md:sunny-filled" class="w-6 h-6" />
+        </button>
       </nav>
       <!-- Mobile Nav Toggle -->
       <button
@@ -53,11 +60,12 @@
     <transition name="fade">
       <nav
         v-if="showMobileMenu"
-        class="md:hidden fixed top-0 left-0 w-full h-full bg-white bg-opacity-95 z-50 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold"
+        class="md:hidden fixed top-0 left-0 w-full h-full bg-white dark:bg-gray-900 bg-opacity-95 z-50 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold"
         @click.self="showMobileMenu = false"
       >
         <a
           href="#about"
+          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
           @click.prevent="
             $emit('menu-click', 'about');
             showMobileMenu = false;
@@ -66,6 +74,7 @@
         >
         <a
           href="#skills"
+          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
           @click.prevent="
             $emit('menu-click', 'skills');
             showMobileMenu = false;
@@ -74,6 +83,7 @@
         >
         <a
           href="#experience"
+          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
           @click.prevent="
             $emit('menu-click', 'experience');
             showMobileMenu = false;
@@ -82,15 +92,27 @@
         >
         <a
           href="#projects"
+          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
           @click.prevent="
             $emit('menu-click', 'projects');
             showMobileMenu = false;
           "
           >Projects</a
         >
-        <!-- <a href="#contact" @click.prevent="$emit('menu-click', 'contact'); showMobileMenu = false">Contact</a> -->
+        <!-- Dark/Light Toggle Button for Mobile -->
         <button
-          class="mt-8 text-base text-gray-500"
+          class="flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-dark dark:text-white px-3 py-2 rounded shadow hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+          @click="
+            $emit('toggle-dark');
+            showMobileMenu = false;
+          "
+          aria-label="Toggle dark mode"
+        >
+          <Icon v-if="isDark" icon="line-md:moon-filled" class="w-8 h-8" />
+          <Icon v-else icon="line-md:sunny-filled" class="w-8 h-8" />
+        </button>
+        <button
+          class="mt-8 text-base text-gray-500 dark:text-gray-300"
           @click="showMobileMenu = false"
         >
           Close
@@ -103,6 +125,8 @@
 <script setup>
 import { ref } from "vue";
 import { Icon } from "@iconify/vue";
+defineProps({ isDark: Boolean });
+defineEmits(["menu-click", "toggle-dark"]);
 const showMobileMenu = ref(false);
 </script>
 

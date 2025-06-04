@@ -1,16 +1,23 @@
 <template>
   <section id="skills" class="py-12">
-    <h2 class="text-3xl font-bold text-dark mb-8">Key Skills</h2>
+    <h2 class="text-3xl font-bold text-dark dark:text-white mb-8">
+      Key Skills
+    </h2>
     <div
-      class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 bg-white rounded-lg shadow-sm p-6"
+      class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6"
     >
       <div
         v-for="(skill, index) in skills"
         :key="index"
-        class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition flex items-center cursor-pointer"
+        class="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg shadow-sm hover:shadow-md transition flex items-center cursor-pointer"
       >
-        <Icon :icon="skill.icon" class="w-6 h-6 mr-3 text-primary" />
-        <h3 class="font-medium text-dark">{{ skill.name }}</h3>
+        <Icon
+          :icon="skill.icon"
+          class="w-6 h-6 mr-3 text-primary dark:text-yellow-400"
+        />
+        <h3 class="text-xl text-dark dark:text-white self-center">
+          {{ skill.name }}
+        </h3>
       </div>
     </div>
   </section>
