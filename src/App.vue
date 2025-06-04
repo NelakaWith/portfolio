@@ -14,53 +14,25 @@
         <Experience />
         <Education />
         <Projects />
-        <!-- <Contact /> -->
       </main>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick } from "vue";
+import { onMounted } from "vue";
 import Header from "./components/AppHeader.vue";
 import About from "./components/AppAbout.vue";
 import Skills from "./components/AppSkills.vue";
 import Experience from "./components/AppExperience.vue";
 import Education from "./components/AppEducation.vue";
 import Projects from "./components/AppProjects.vue";
-// import Contact from "./components/AppContact.vue";
+import { useLoader } from "./composables/useLoader";
 
-const loading = ref(true);
+const { loading, startLoader } = useLoader("Hind", 4000);
 
-function areAllImagesLoaded() {
-  const images = Array.from(document.images);
-  return images.every((img) => img.complete && img.naturalHeight !== 0);
-}
-
-function areAllFontsLoaded() {
-  if (!document.fonts) return true; // Fallback for unsupported browsers
-  return document.fonts.status === "loaded";
-}
-
-function checkResourcesLoaded() {
-  if (areAllImagesLoaded() && areAllFontsLoaded()) {
-    loading.value = false;
-  } else {
-    setTimeout(checkResourcesLoaded, 100);
-  }
-}
-
-onMounted(async () => {
-  await nextTick();
-  if (document.readyState === "complete") {
-    checkResourcesLoaded();
-  } else {
-    window.addEventListener("load", checkResourcesLoaded);
-  }
-  // Fallback in case something is missed
-  setTimeout(() => {
-    loading.value = false;
-  }, 4000);
+onMounted(() => {
+  startLoader();
 });
 
 function handleMenuClick(target) {
