@@ -12,7 +12,7 @@
         </h2>
       </div>
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex space-x-6">
+      <nav class="hidden md:flex space-x-6 items-center">
         <a
           href="#about"
           class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
@@ -37,6 +37,15 @@
           @click.prevent="$emit('menu-click', 'projects')"
           >Projects</a
         >
+        <!-- Dark/Light Toggle Button -->
+        <button
+          class="ml-4 flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-dark dark:text-white px-2 py-1 rounded shadow hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+          @click="$emit('toggle-dark')"
+          aria-label="Toggle dark mode"
+        >
+          <Icon v-if="isDark" icon="line-md:moon-filled" class="w-6 h-6" />
+          <Icon v-else icon="line-md:sunny-filled" class="w-6 h-6" />
+        </button>
       </nav>
       <!-- Mobile Nav Toggle -->
       <button
@@ -90,7 +99,18 @@
           "
           >Projects</a
         >
-        <!-- <a href="#contact" @click.prevent="$emit('menu-click', 'contact'); showMobileMenu = false">Contact</a> -->
+        <!-- Dark/Light Toggle Button for Mobile -->
+        <button
+          class="flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-dark dark:text-white px-3 py-2 rounded shadow hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+          @click="
+            $emit('toggle-dark');
+            showMobileMenu = false;
+          "
+          aria-label="Toggle dark mode"
+        >
+          <Icon v-if="isDark" icon="line-md:moon-filled" class="w-8 h-8" />
+          <Icon v-else icon="line-md:sunny-filled" class="w-8 h-8" />
+        </button>
         <button
           class="mt-8 text-base text-gray-500 dark:text-gray-300"
           @click="showMobileMenu = false"
@@ -105,6 +125,8 @@
 <script setup>
 import { ref } from "vue";
 import { Icon } from "@iconify/vue";
+defineProps({ isDark: Boolean });
+defineEmits(["menu-click", "toggle-dark"]);
 const showMobileMenu = ref(false);
 </script>
 
