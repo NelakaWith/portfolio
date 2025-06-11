@@ -1,7 +1,7 @@
 <template>
   <section id="projects" class="py-12">
     <h2 class="text-3xl font-bold text-dark dark:text-white mb-8">
-      Contributions
+      Commercial Project Contributions
     </h2>
 
     <div
@@ -12,9 +12,6 @@
         :key="index"
         class="bg-gray-50 dark:bg-gray-900 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition"
       >
-        <!-- <div class="h-48 bg-gray-200 flex items-center justify-center">
-          <span class="text-gray-500">Project Image</span>
-        </div> -->
         <div class="p-4">
           <h3 class="text-xl font-semibold text-dark dark:text-white mb-2">
             {{ project.name }}

@@ -8,35 +8,19 @@
           Nelaka Withanage
         </h1>
         <h2 class="text-xl text-primary dark:text-yellow-400">
-          Frontend Engineer
+          Developer | UI Enthusiast
         </h2>
       </div>
       <!-- Desktop Nav -->
       <nav class="hidden md:flex space-x-6 items-center">
-        <a
-          href="#about"
-          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
-          @click.prevent="$emit('menu-click', 'about')"
-          >About</a
-        >
-        <a
-          href="#skills"
-          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
-          @click.prevent="$emit('menu-click', 'skills')"
-          >Skills</a
-        >
-        <a
-          href="#experience"
-          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
-          @click.prevent="$emit('menu-click', 'experience')"
-          >Experience</a
-        >
-        <a
-          href="#projects"
-          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
-          @click.prevent="$emit('menu-click', 'projects')"
-          >Projects</a
-        >
+        <template v-for="item in navItems" :key="item.id">
+          <a
+            :href="item.href"
+            class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
+            @click.prevent="$emit('menu-click', item.id)"
+            >{{ item.label }}</a
+          >
+        </template>
         <!-- Dark/Light Toggle Button -->
         <button
           class="ml-4 flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-dark dark:text-white px-2 py-1 rounded shadow hover:bg-gray-300 dark:hover:bg-gray-600 transition"
@@ -63,42 +47,17 @@
         class="md:hidden fixed top-0 left-0 w-full h-full bg-white dark:bg-gray-900 bg-opacity-95 z-50 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold"
         @click.self="showMobileMenu = false"
       >
-        <a
-          href="#about"
-          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
-          @click.prevent="
-            $emit('menu-click', 'about');
-            showMobileMenu = false;
-          "
-          >About</a
-        >
-        <a
-          href="#skills"
-          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
-          @click.prevent="
-            $emit('menu-click', 'skills');
-            showMobileMenu = false;
-          "
-          >Skills</a
-        >
-        <a
-          href="#experience"
-          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
-          @click.prevent="
-            $emit('menu-click', 'experience');
-            showMobileMenu = false;
-          "
-          >Experience</a
-        >
-        <a
-          href="#projects"
-          class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
-          @click.prevent="
-            $emit('menu-click', 'projects');
-            showMobileMenu = false;
-          "
-          >Projects</a
-        >
+        <template v-for="item in navItems" :key="item.id">
+          <a
+            :href="item.href"
+            class="text-dark dark:text-white hover:text-primary dark:hover:text-yellow-400 transition"
+            @click.prevent="
+              $emit('menu-click', item.id);
+              showMobileMenu = false;
+            "
+            >{{ item.label }}</a
+          >
+        </template>
         <!-- Dark/Light Toggle Button for Mobile -->
         <button
           class="flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-dark dark:text-white px-3 py-2 rounded shadow hover:bg-gray-300 dark:hover:bg-gray-600 transition"
@@ -128,6 +87,13 @@ import { Icon } from "@iconify/vue";
 defineProps({ isDark: Boolean });
 defineEmits(["menu-click", "toggle-dark"]);
 const showMobileMenu = ref(false);
+const navItems = [
+  { id: "about", label: "About", href: "#about" },
+  { id: "skills", label: "Skills", href: "#skills" },
+  { id: "experience", label: "Experience", href: "#experience" },
+  { id: "projects", label: "Projects", href: "#projects" },
+  { id: "education", label: "Education", href: "#education" },
+];
 </script>
 
 <style scoped lang="scss">

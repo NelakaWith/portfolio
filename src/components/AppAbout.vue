@@ -45,9 +45,9 @@
       <div class="md:w-2/3">
         <h2 class="text-4xl text-dark dark:text-white mb-2">Hello,</h2>
         <p class="text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
-          I am a developer with 9+ years of experience in front-end and UI
-          development. Proficient in HTML5, CSS3, JavaScript, TypeScript, and
-          frameworks such as React.js and Vue.js. Demonstrated expertise in
+          I am a software developer with 9+ years of experience in web front-end
+          and UI development. Proficient in HTML5, CSS3, JavaScript, TypeScript,
+          and frameworks such as React.js and Vue.js. Demonstrated expertise in
           creating and maintaining dynamic web applications, integrating APIs,
           and employing modern design tools like Figma and Tailwind CSS. Skilled
           in delivering user-centric solutions and working in Agile

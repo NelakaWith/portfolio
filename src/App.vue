@@ -16,9 +16,8 @@
         <About />
         <Skills />
         <Experience />
-        <Education />
         <Projects />
-        <!-- <Contact /> -->
+        <Education />
       </main>
     </div>
   </div>
