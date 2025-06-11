@@ -26,8 +26,8 @@ import { computed } from "vue";
 const skills = [
   { name: "HTML5", icon: "vscode-icons:file-type-html" },
   { name: "CSS3", icon: "vscode-icons:file-type-css" },
-  { name: "JavaScript", icon: "logos:javascript" },
-  { name: "TypeScript", icon: "logos:typescript-icon" },
+  { name: "Javascript", icon: "logos:javascript" },
+  { name: "Typescript", icon: "logos:typescript-icon" },
   { name: "React.js", icon: "logos:react" },
   { name: "Vue.js", icon: "logos:vue" },
   { name: "Bootstrap", icon: "logos:bootstrap" },
@@ -63,8 +63,8 @@ const sortedSkills = computed(() => {
   const order = [
     "HTML5",
     "CSS3",
-    "JavaScript",
-    "TypeScript",
+    "Javascript",
+    "Typescript",
     "React.js",
     "Vue.js",
     "Bootstrap",
