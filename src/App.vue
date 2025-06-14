@@ -15,6 +15,7 @@
       <main class="container mx-auto px-4 py-8">
         <About />
         <Skills />
+        <Showcase />
         <Experience />
         <Projects />
         <Education />
@@ -31,6 +32,7 @@ import Skills from "./components/AppSkills.vue";
 import Experience from "./components/AppExperience.vue";
 import Education from "./components/AppEducation.vue";
 import Projects from "./components/AppProjects.vue";
+import Showcase from "./components/AppShowcase.vue";
 import { useLoader } from "./composables/useLoader";
 
 const { loading, startLoader } = useLoader("Hind", 4000);
