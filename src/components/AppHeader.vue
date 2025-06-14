@@ -90,6 +90,7 @@ const showMobileMenu = ref(false);
 const navItems = [
   { id: "about", label: "About", href: "#about" },
   { id: "skills", label: "Skills", href: "#skills" },
+  { id: "showcase", label: "Showcase", href: "#showcase" },
   { id: "experience", label: "Experience", href: "#experience" },
   { id: "projects", label: "Projects", href: "#projects" },
   { id: "education", label: "Education", href: "#education" },
