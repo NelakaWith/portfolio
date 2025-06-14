@@ -30,14 +30,26 @@
             {{ tech }}
           </span>
         </div>
-        <a
-          :href="project.github"
-          target="_blank"
-          class="inline-flex items-center gap-2 text-primary dark:text-yellow-400 font-medium hover:underline mt-auto"
-        >
-          <Icon icon="mdi:github" class="w-5 h-5" />
-          View on GitHub
-        </a>
+        <div class="flex gap-4 mt-auto">
+          <a
+            v-if="project.github"
+            :href="project.github"
+            target="_blank"
+            class="inline-flex items-center gap-2 text-primary dark:text-yellow-400 font-medium hover:underline"
+          >
+            <Icon icon="mdi:github" class="w-5 h-5" />
+            GitHub
+          </a>
+          <a
+            v-if="project.web"
+            :href="project.web"
+            target="_blank"
+            class="inline-flex items-center gap-2 text-primary dark:text-yellow-400 font-medium hover:underline"
+          >
+            <Icon icon="mdi:web" class="w-5 h-5" />
+            Live App
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -52,6 +64,7 @@ const projects = [
       "A modern, responsive portfolio site built with Vue 3, Tailwind CSS, and Vite. Features dark mode, project showcase, and smooth navigation.",
     technologies: ["Vue 3", "Tailwind CSS", "Vite"],
     github: "https://github.com/NelakaWith/portfolio",
+    web: "https://nelakawith.netlify.app/",
     image: "/sample_app_portfolio.png",
   },
   {
@@ -69,7 +82,8 @@ const projects = [
       "MySQL",
     ],
     github: "https://github.com/NelakaWith/event-calendar-app",
-    image: "/showcase-taskmanager.png",
+    web: "https://nw-event-calendar-app-client.netlify.app/",
+    image: "/sample_app_calendar.png",
   },
 ];
 </script>
