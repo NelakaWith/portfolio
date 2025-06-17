@@ -35,6 +35,7 @@
             v-if="project.github"
             :href="project.github"
             target="_blank"
+            rel="noopener noreferrer"
             class="group inline-flex items-center text-primary dark:text-yellow-400 font-medium hover:underline"
           >
             <Icon
