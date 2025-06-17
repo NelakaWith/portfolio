@@ -4,7 +4,7 @@
       <div class="md:w-1/3">
         <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
           <img
-            src="../assets/bust.png"
+            src="/bust.png"
             alt="Nelaka Withanage"
             class="w-1/3 h-auto rounded-full"
           />
