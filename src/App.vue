@@ -4,7 +4,7 @@
       v-if="loading"
       class="fixed inset-0 flex items-center justify-center bg-white z-50 dark:bg-gray-900"
     >
-      <div class="loader"></div>
+      <AppLoader :dark="isDark" />
     </div>
     <div v-else class="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Header
@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import Header from "./components/AppHeader.vue";
 import About from "./components/AppAbout.vue";
 import Skills from "./components/AppSkills.vue";
@@ -34,10 +34,24 @@ import Education from "./components/AppEducation.vue";
 import Projects from "./components/AppProjects.vue";
 import Showcase from "./components/AppShowcase.vue";
 import { useLoader } from "./composables/useLoader";
+import AppLoader from "./components/AppLoader.vue";
 
 const { loading, startLoader } = useLoader("Hind", 4000);
 
 const isDark = ref(false);
+
+// Persist dark mode in localStorage
+onMounted(() => {
+  const saved = localStorage.getItem("darkMode");
+  if (saved !== null) {
+    isDark.value = saved === "true";
+  }
+});
+
+watch(isDark, (val) => {
+  localStorage.setItem("darkMode", val);
+});
+
 function toggleDark() {
   isDark.value = !isDark.value;
 }
