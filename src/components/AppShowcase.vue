@@ -35,19 +35,25 @@
             v-if="project.github"
             :href="project.github"
             target="_blank"
-            class="inline-flex items-center gap-2 text-primary dark:text-yellow-400 font-medium hover:underline"
+            class="group inline-flex items-center text-primary dark:text-yellow-400 font-medium hover:underline"
           >
-            <Icon icon="mdi:github" class="w-5 h-5" />
-            GitHub
+            <Icon
+              icon="mdi:github"
+              class="w-5 h-5 mr-1 -mt-0.5 group-hover:scale-110 transition-transform"
+            />
+            <span class="leading-tight">GitHub</span>
           </a>
           <a
             v-if="project.web"
             :href="project.web"
             target="_blank"
-            class="inline-flex items-center gap-2 text-primary dark:text-yellow-400 font-medium hover:underline"
+            class="group inline-flex items-center text-primary dark:text-yellow-400 font-medium hover:underline"
           >
-            <Icon icon="mdi:web" class="w-5 h-5" />
-            Live App
+            <Icon
+              icon="mdi:web"
+              class="w-5 h-5 mr-1 -mt-0.5 group-hover:scale-110 transition-transform"
+            />
+            <span class="leading-tight">Live App</span>
           </a>
         </div>
       </div>
