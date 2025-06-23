@@ -4,9 +4,19 @@ import FontFaceObserver from "fontfaceobserver";
 export function useLoader(fontFamily = "Hind", fontTimeout = 4000) {
   const loading = ref(true);
 
-  function areAllImagesLoaded() {
+  async function waitForAllImages() {
     const images = Array.from(document.images);
-    return images.every((img) => img.complete && img.naturalHeight !== 0);
+    await Promise.all(
+      images.map((img) => {
+        if (img.complete && img.naturalHeight !== 0) {
+          return Promise.resolve();
+        }
+        return new Promise((resolve) => {
+          img.addEventListener("load", resolve, { once: true });
+          img.addEventListener("error", resolve, { once: true });
+        });
+      })
+    );
   }
 
   function waitForFonts() {
@@ -14,29 +24,13 @@ export function useLoader(fontFamily = "Hind", fontTimeout = 4000) {
     return font.load(null, fontTimeout);
   }
 
-  async function checkResourcesLoaded() {
-    try {
-      await waitForFonts();
-    } catch (error) {
-      console.error("Font loading failed:", error);
-    }
-    if (areAllImagesLoaded()) {
-      loading.value = false;
-    } else {
-      setTimeout(checkResourcesLoaded, 100);
-    }
-  }
-
   async function startLoader() {
     await nextTick();
-    if (document.readyState === "complete") {
-      checkResourcesLoaded();
-    } else {
-      window.addEventListener("load", checkResourcesLoaded);
-    }
-    setTimeout(() => {
-      loading.value = false;
-    }, fontTimeout + 1000);
+    await Promise.all([
+      waitForFonts().catch((e) => console.error("Font loading failed:", e)),
+      waitForAllImages(),
+    ]);
+    loading.value = false;
   }
 
   return { loading, startLoader };
