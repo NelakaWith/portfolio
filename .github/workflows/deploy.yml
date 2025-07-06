@@ -1,0 +1,28 @@
+name: 🚀 Deploy to Droplet
+
+on:
+  push:
+    branches:
+      - main # or whatever branch you use
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📦 Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: 🚀 Deploy to Droplet via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.DROPLET_HOST }}
+          username: ${{ secrets.DROPLET_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/portfolio || exit 1
+            git pull origin main
+            npm install
+            npm run build
+            sudo cp -r dist/* /var/www/portfolio   # for Vue/React
+            sudo systemctl reload nginx          # reload server
