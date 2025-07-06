@@ -20,9 +20,22 @@ jobs:
           username: ${{ secrets.DROPLET_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /var/www/portfolio || exit 1
+            # Go to app directory
+            cd /var/www/portfolio
+
+            # Pull latest code
             git pull origin main
+
+            # Install dependencies and build
             npm install
             npm run build
-            sudo cp -r dist/* /var/www/portfolio   # for Vue/React
-            sudo systemctl reload nginx          # reload server
+
+            # Copy build to NGINX live folder
+            sudo rm -rf /var/www/portfolio-live/*
+            sudo cp -r dist/* /var/www/portfolio-live/
+
+            # Set correct permissions (optional)
+            sudo chown -R www-data:www-data /var/www/portfolio-live
+
+            # Reload nginx
+            sudo systemctl reload nginx
