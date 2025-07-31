@@ -46,6 +46,7 @@ const skills = [
   { name: "Redux", icon: "logos:redux" },
   { name: "Node.js", icon: "logos:nodejs-icon" },
   { name: "Express", icon: "simple-icons:express" },
+  { name: "Nest.js", icon: "simple-icons:nestjs" },
   { name: "REST API", icon: "carbon:api" },
   { name: "MySQL", icon: "devicon:mysql" },
   { name: "Git", icon: "logos:git-icon" },
