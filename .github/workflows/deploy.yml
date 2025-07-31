@@ -20,8 +20,10 @@ jobs:
           username: ${{ secrets.DROPLET_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            set -e
+
             # Go to app directory
-            cd /var/www/portfolio
+            cd /var/www/portfolio || exit 1
 
             # Pull latest code
             git pull origin main
@@ -30,8 +32,14 @@ jobs:
             npm install
             npm run build
 
-            # Copy build to NGINX live folder
-            sudo rm -rf /var/www/portfolio-live/*
+            # Backup current live folder
+            timestamp=$(date +%Y%m%d%H%M%S)
+            if [ -d /var/www/portfolio-live ]; then
+              sudo mv /var/www/portfolio-live "/var/www/portfolio-live-backup-$timestamp"
+            fi
+
+            # Copy build to new live folder
+            sudo mkdir -p /var/www/portfolio-live
             sudo cp -r dist/* /var/www/portfolio-live/
 
             # Set correct permissions (optional)
