@@ -49,7 +49,7 @@ const skills = [
   { name: "REST API", icon: "carbon:api" },
   { name: "MySQL", icon: "devicon:mysql" },
   { name: "Git", icon: "logos:git-icon" },
-  { name: "Github Actions", icon: "devicon-plain:githubactions" },
+  { name: "GitHub Actions", icon: "devicon-plain:githubactions" },
   { name: "Docker", icon: "logos:docker-icon" },
   { name: "Vite", icon: "devicon:vitejs" },
   { name: "Jest", icon: "vscode-icons:file-type-jest" },
