@@ -34,8 +34,19 @@
                 <a
                   href="https://linkedin.com/in/nelaka-withanage"
                   target="_blank"
+                  rel="noopener"
                   class="text-dark dark:text-white hover:underline"
                   >in/nelaka-withanage</a
+                >
+              </li>
+              <li class="flex items-center">
+                <span class="text-primary mr-2">🐙</span>
+                <a
+                  href="https://github.com/NelakaWith"
+                  target="_blank"
+                  rel="noopener"
+                  class="text-dark dark:text-white hover:underline"
+                  >github.com/NelakaWith</a
                 >
               </li>
             </ul>
