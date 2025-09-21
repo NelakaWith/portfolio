@@ -92,5 +92,14 @@ const projects = [
     web: "https://nw-event-calendar-app-client.netlify.app/",
     image: "/sample_app_calendar.png",
   },
+  {
+    name: "FAQ Chatbot",
+    description:
+      "A sophisticated Node.js chatbot with fuzzy search capabilities, PDF document processing, and multi-source knowledge base integration",
+    technologies: ["Fuzzy Search", "Express", "Javascript", "Github Actions"],
+    github: "https://github.com/NelakaWith/faq-chatbot",
+    web: "https://faq-chatbot.nelakawithanage.com/",
+    image: "/sample_app_chatbot.png",
+  },
 ];
 </script>
