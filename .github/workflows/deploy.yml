@@ -1,6 +1,7 @@
 name: 🚀 Deploy to Droplet
 permissions:
   contents: read
+  deployments: write
 
 on:
   push:
@@ -10,10 +11,27 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      deployments: write
 
     steps:
       - name: 📦 Checkout Repo
         uses: actions/checkout@v3
+
+      - name: 🔖 Create GitHub Deployment
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const deployment = await github.repos.createDeployment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: context.sha,
+              required_contexts: [],
+              environment: 'production',
+              description: 'Deploy to Droplet',
+              auto_merge: false,
+            });
+            core.setOutput('deployment_id', deployment.data.id);
 
       - name: 🚀 Deploy to Droplet via SSH
         uses: appleboy/ssh-action@v1.0.0
