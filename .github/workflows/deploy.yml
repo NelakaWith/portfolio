@@ -1,4 +1,6 @@
 name: 🚀 Deploy to Droplet
+permissions:
+  contents: read
 
 on:
   push:
