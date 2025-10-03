@@ -50,43 +50,15 @@ trigger:
     - pull_request
 
 steps:
-  - name: build-test
+  - name: build-validation
     image: node:18-alpine
     commands:
       - npm install
       - npm run build
-
-  - name: deployment-dry-run
-    image: alpine:latest
-    depends_on:
-      - build-test
-    environment:
-      DROPLET_HOST:
-        from_secret: droplet_host
-      DROPLET_USER:
-        from_secret: droplet_user
-      SSH_PRIVATE_KEY:
-        from_secret: ssh_private_key
-    commands:
-      - apk add --no-cache openssh-client rsync
-      - mkdir -p ~/.ssh
-      - echo "$${SSH_PRIVATE_KEY}" > ~/.ssh/id_rsa
-      - chmod 600 ~/.ssh/id_rsa
-      - "echo Debug - DROPLET_HOST is set: $${DROPLET_HOST}"
-      - "echo Debug - DROPLET_USER is set: $${DROPLET_USER}"
-      - echo "🧪 Attempting ssh-keyscan..."
-      - timeout 30 ssh-keyscan -H "$${DROPLET_HOST}" >> ~/.ssh/known_hosts || echo "⚠️ ssh-keyscan failed, continuing anyway"
-      - echo "StrictHostKeyChecking no" >> ~/.ssh/config
-      # Dry run tests - validate without actual deployment
-      - echo "🧪 Testing SSH connection..."
-      - ssh -o ConnectTimeout=10 $${DROPLET_USER}@$${DROPLET_HOST} "echo 'SSH connection successful'"
-      - echo "🧪 Testing temp directory creation..."
-      - ssh $${DROPLET_USER}@$${DROPLET_HOST} "rm -rf ~/portfolio-dry-run && mkdir -p ~/portfolio-dry-run"
-      - echo "🧪 Testing file transfer (dry run)..."
-      - rsync -avz --dry-run dist/ $${DROPLET_USER}@$${DROPLET_HOST}:~/portfolio-dry-run/
-      - echo "🧪 Testing sudo permissions..."
-      - 'ssh $${DROPLET_USER}@$${DROPLET_HOST} "sudo -n chown -R www-data:www-data ~/portfolio-dry-run || echo ''Warning: sudo permissions may need setup''"'
-      - 'ssh $${DROPLET_USER}@$${DROPLET_HOST} "sudo -n systemctl status nginx || echo ''Warning: nginx status check failed''"'
-      - echo "🧪 Cleaning up dry run..."
-      - ssh $${DROPLET_USER}@$${DROPLET_HOST} "rm -rf ~/portfolio-dry-run"
-      - echo "✅ Deployment dry run completed successfully!"
+      - npm run lint
+      # Validate build artifacts
+      - echo "🔍 Validating build output..."
+      - ls -la dist/
+      - test -f dist/index.html || (echo "❌ Missing index.html" && exit 1)
+      - test -d dist/assets || (echo "❌ Missing assets directory" && exit 1)
+      - echo "✅ Build validation completed successfully!"
