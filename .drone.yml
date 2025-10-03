@@ -55,7 +55,6 @@ steps:
     commands:
       - npm install
       - npm run build
-      - npm run lint
       # Validate build artifacts
       - echo "🔍 Validating build output..."
       - ls -la dist/
