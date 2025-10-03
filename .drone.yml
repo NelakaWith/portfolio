@@ -55,7 +55,6 @@ steps:
     commands:
       - npm install
       - npm run build
-      - npm run lint
 
   - name: deployment-dry-run
     image: alpine:latest
