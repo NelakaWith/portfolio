@@ -34,8 +34,8 @@ steps:
       - ssh-keyscan -H "$${DROPLET_HOST}" >> ~/.ssh/known_hosts
       - ssh $${DROPLET_USER}@$${DROPLET_HOST} "sudo mkdir -p /var/www/portfolio-live"
       - rsync -avz --delete --rsync-path="sudo rsync" dist/ $${DROPLET_USER}@$${DROPLET_HOST}:/var/www/portfolio-live/
-      - ssh $${DROPLET_USER}@$${DROPLET_HOST} "sudo chown -R www-data:www-data /var/www/portfolio-live"
-      - ssh $${DROPLET_USER}@$${DROPLET_HOST} "sudo systemctl reload nginx"
+      - ssh $${DROPLET_USER}@$${DROPLET_HOST} 'sudo chown -R www-data:www-data /var/www/portfolio-live'
+      - ssh $${DROPLET_USER}@$${DROPLET_HOST} 'sudo systemctl reload nginx'
 
 ---
 kind: pipeline
