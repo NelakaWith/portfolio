@@ -32,21 +32,6 @@ steps:
       - echo "$${SSH_PRIVATE_KEY}" > ~/.ssh/id_rsa
       - chmod 600 ~/.ssh/id_rsa
       - ssh-keyscan -H "$${DROPLET_HOST}" >> ~/.ssh/known_hosts
-      - |
-        # Prepare temp directory for deployment
-        ssh $${DROPLET_USER}@$${DROPLET_HOST} "
-          rm -rf ~/portfolio-temp
-          mkdir -p ~/portfolio-temp
-        "
-      - |
-        # Copy build files to temp directory (user has full access)
-        rsync -avz --delete dist/ $${DROPLET_USER}@$${DROPLET_HOST}:~/portfolio-temp/
-      - |
-        # Deploy files atomically with proper permissions
-        ssh $${DROPLET_USER}@$${DROPLET_HOST} "
-          sudo rm -rf /var/www/portfolio-live/*
-          sudo cp -r ~/portfolio-temp/* /var/www/portfolio-live/
-          sudo chown -R www-data:www-data /var/www/portfolio-live
-          sudo systemctl reload nginx
-          rm -rf ~/portfolio-temp
-        "
+      - ssh $${DROPLET_USER}@$${DROPLET_HOST} "rm -rf ~/portfolio-temp && mkdir -p ~/portfolio-temp"
+      - rsync -avz --delete dist/ $${DROPLET_USER}@$${DROPLET_HOST}:~/portfolio-temp/
+      - ssh $${DROPLET_USER}@$${DROPLET_HOST} "sudo rm -rf /var/www/portfolio-live/* && sudo cp -r ~/portfolio-temp/* /var/www/portfolio-live/ && sudo chown -R www-data:www-data /var/www/portfolio-live && sudo systemctl reload nginx && rm -rf ~/portfolio-temp"
