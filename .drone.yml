@@ -19,11 +19,11 @@ steps:
     commands:
       - apk add --no-cache openssh-client git
       - mkdir -p ~/.ssh
-      - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+      - echo "$${SSH_PRIVATE_KEY}" > ~/.ssh/id_rsa
       - chmod 600 ~/.ssh/id_rsa
-      - ssh-keyscan -H $DROPLET_HOST >> ~/.ssh/known_hosts
+      - ssh-keyscan -H $${DROPLET_HOST} >> ~/.ssh/known_hosts
       - |
-        ssh $DROPLET_USER@$DROPLET_HOST << 'EOF'
+        ssh $${DROPLET_USER}@$${DROPLET_HOST} << 'EOF'
         set -e
 
         # If target directory doesn't exist, create it and try to clone the repo (HTTPS)
