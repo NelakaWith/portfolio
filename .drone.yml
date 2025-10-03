@@ -34,4 +34,30 @@ steps:
       - ssh-keyscan -H "$${DROPLET_HOST}" >> ~/.ssh/known_hosts
       - ssh $${DROPLET_USER}@$${DROPLET_HOST} "rm -rf ~/portfolio-temp && mkdir -p ~/portfolio-temp"
       - rsync -avz --delete dist/ $${DROPLET_USER}@$${DROPLET_HOST}:~/portfolio-temp/
-      - ssh $${DROPLET_USER}@$${DROPLET_HOST} "sudo rm -rf /var/www/portfolio-live/* && sudo cp -r ~/portfolio-temp/* /var/www/portfolio-live/ && sudo chown -R www-data:www-data /var/www/portfolio-live && sudo systemctl reload nginx && rm -rf ~/portfolio-temp"
+      - ssh $${DROPLET_USER}@$${DROPLET_HOST} "sudo rm -rf /var/www/portfolio-live/*"
+      - ssh $${DROPLET_USER}@$${DROPLET_HOST} "sudo cp -r ~/portfolio-temp/* /var/www/portfolio-live/"
+      - ssh $${DROPLET_USER}@$${DROPLET_HOST} "sudo chown -R www-data:www-data /var/www/portfolio-live"
+      - ssh $${DROPLET_USER}@$${DROPLET_HOST} "sudo systemctl reload nginx"
+      - ssh $${DROPLET_USER}@$${DROPLET_HOST} "rm -rf ~/portfolio-temp"
+
+---
+kind: pipeline
+type: docker
+name: pr-check
+
+trigger:
+  event:
+    - pull_request
+
+steps:
+  - name: build-validation
+    image: node:18-alpine
+    commands:
+      - npm install
+      - npm run build
+      # Validate build artifacts
+      - echo "🔍 Validating build output..."
+      - ls -la dist/
+      - test -f dist/index.html || (echo "❌ Missing index.html" && exit 1)
+      - test -d dist/assets || (echo "❌ Missing assets directory" && exit 1)
+      - echo "✅ Build validation completed successfully!"
