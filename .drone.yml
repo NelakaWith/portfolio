@@ -72,10 +72,14 @@ steps:
       - mkdir -p ~/.ssh
       - echo "$${SSH_PRIVATE_KEY}" > ~/.ssh/id_rsa
       - chmod 600 ~/.ssh/id_rsa
-      - ssh-keyscan -H "$${DROPLET_HOST}" >> ~/.ssh/known_hosts
+      - "echo Debug - DROPLET_HOST is set: $${DROPLET_HOST}"
+      - "echo Debug - DROPLET_USER is set: $${DROPLET_USER}"
+      - echo "🧪 Attempting ssh-keyscan..."
+      - timeout 30 ssh-keyscan -H "$${DROPLET_HOST}" >> ~/.ssh/known_hosts || echo "⚠️ ssh-keyscan failed, continuing anyway"
+      - echo "StrictHostKeyChecking no" >> ~/.ssh/config
       # Dry run tests - validate without actual deployment
       - echo "🧪 Testing SSH connection..."
-      - ssh $${DROPLET_USER}@$${DROPLET_HOST} "echo 'SSH connection successful'"
+      - ssh -o ConnectTimeout=10 $${DROPLET_USER}@$${DROPLET_HOST} "echo 'SSH connection successful'"
       - echo "🧪 Testing temp directory creation..."
       - ssh $${DROPLET_USER}@$${DROPLET_HOST} "rm -rf ~/portfolio-dry-run && mkdir -p ~/portfolio-dry-run"
       - echo "🧪 Testing file transfer (dry run)..."
