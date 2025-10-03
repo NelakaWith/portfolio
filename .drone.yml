@@ -35,7 +35,7 @@ steps:
       - ssh $${DROPLET_USER}@$${DROPLET_HOST} "rm -rf ~/portfolio-temp && mkdir -p ~/portfolio-temp"
       - rsync -avz --delete dist/ $${DROPLET_USER}@$${DROPLET_HOST}:~/portfolio-temp/
       - ssh $${DROPLET_USER}@$${DROPLET_HOST} "sudo rm -rf /var/www/portfolio-live/*"
-      - ssh $${DROPLET_USER}@$${DROPLET_HOST} "sudo cp -r ~/portfolio-temp/* /var/www/portfolio-live/"
+      - ssh $${DROPLET_USER}@$${DROPLET_HOST} "sudo cp -r ~/portfolio-temp/. /var/www/portfolio-live/"
       - ssh $${DROPLET_USER}@$${DROPLET_HOST} "sudo chown -R www-data:www-data /var/www/portfolio-live"
       - ssh $${DROPLET_USER}@$${DROPLET_HOST} "sudo systemctl reload nginx"
       - ssh $${DROPLET_USER}@$${DROPLET_HOST} "rm -rf ~/portfolio-temp"
