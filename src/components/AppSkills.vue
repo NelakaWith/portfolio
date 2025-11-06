@@ -47,6 +47,7 @@ const skills = [
   { name: "Express", icon: "simple-icons:express" },
   { name: "Nest.js", icon: "material-icon-theme:nest" },
   { name: "REST API", icon: "carbon:api" },
+  { name: "GraphQL", icon: "logos:graphql" },
   { name: "MySQL", icon: "devicon:mysql" },
   { name: "Git", icon: "logos:git-icon" },
   { name: "GitHub Actions", icon: "devicon-plain:githubactions" },

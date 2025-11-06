@@ -75,7 +75,39 @@ const projects = [
     image: "/sample_app_portfolio.png",
   },
   {
-    name: "Calendar App",
+    name: "FAQ Chatbot",
+    description:
+      "OpenRouter AI-powered chatbot with intelligent knowledge base search and LLM integration, built with Vue 3 and Node.js.",
+    technologies: [
+      "Fuzzy Search",
+      "Express",
+      "Javascript",
+      "Github Actions",
+      "OpenRouter AI",
+    ],
+    github: "https://github.com/NelakaWith/faq-chatbot",
+    web: "https://faq-chatbot.nelakawithanage.com/",
+    image: "/sample_app_chatbot.png",
+  },
+  {
+    name: "Pulse Ops",
+    description:
+      "Next.js (App Router) dashboard visualizing GitHub repository metrics such as deployments, commits, and workflow runs. Built with TypeScript, Tailwind CSS, shadcn/ui, lucide-react, and Recharts to demonstrate real-world frontend architecture.",
+    technologies: [
+      "Next.js",
+      "Shadcn/ui",
+      "TypeScript",
+      "Github API",
+      "REST API",
+      "GraphQL",
+      "OpenRouter AI",
+    ],
+    github: "https://github.com/NelakaWith/pulse-ops",
+    web: "",
+    image: "/sample_app_pulse_ops.png",
+  },
+  {
+    name: "Event Horizon",
     description:
       "A full-stack web app to schedule, view, and manage events via an interactive calendar interface.",
     technologies: [
@@ -91,15 +123,6 @@ const projects = [
     github: "https://github.com/NelakaWith/event-calendar-app",
     web: "https://nw-event-calendar-app-client.netlify.app/",
     image: "/sample_app_calendar.png",
-  },
-  {
-    name: "FAQ Chatbot",
-    description:
-      "A sophisticated Node.js chatbot with fuzzy search capabilities, PDF document processing, and multi-source knowledge base integration",
-    technologies: ["Fuzzy Search", "Express", "Javascript", "Github Actions"],
-    github: "https://github.com/NelakaWith/faq-chatbot",
-    web: "https://faq-chatbot.nelakawithanage.com/",
-    image: "/sample_app_chatbot.png",
   },
 ];
 </script>
