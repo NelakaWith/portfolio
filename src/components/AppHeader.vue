@@ -8,7 +8,7 @@
           Nelaka Withanage
         </h1>
         <h2 class="text-xl text-primary dark:text-yellow-400">
-          Developer | UI Enthusiast
+          Web App Developer | UX Enthusiast
         </h2>
       </div>
       <!-- Desktop Nav -->

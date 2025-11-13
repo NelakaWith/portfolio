@@ -92,7 +92,7 @@ const projects = [
   {
     name: "Pulse Ops",
     description:
-      "Next.js (App Router) dashboard visualizing GitHub repository metrics such as deployments, commits, and workflow runs. Built with TypeScript, Tailwind CSS, shadcn/ui, lucide-react, and Recharts to demonstrate real-world frontend architecture.",
+      "A modern GitHub analytics dashboard built with Next.js 16 and TypeScript, featuring real-time user metrics, contribution visualization, language usage insights, and AI-powered repository analysis. Demonstrates advanced data visualization, GraphQL & REST API integration, AI-driven insights, and modern React patterns.",
     technologies: [
       "Next.js",
       "Shadcn/ui",
@@ -106,23 +106,24 @@ const projects = [
     web: "",
     image: "/sample_app_pulse_ops.png",
   },
-  {
-    name: "Event Horizon",
-    description:
-      "A full-stack web app to schedule, view, and manage events via an interactive calendar interface.",
-    technologies: [
-      "Vue 3",
-      "Vite",
-      "Tailwind CSS",
-      "Vue Router",
-      "Sass/SCSS",
-      "Express.js (ES modules)",
-      "Sequelize ORM",
-      "MySQL",
-    ],
-    github: "https://github.com/NelakaWith/event-calendar-app",
-    web: "https://nw-event-calendar-app-client.netlify.app/",
-    image: "/sample_app_calendar.png",
-  },
 ];
+
+// {
+//   name: "Event Horizon",
+//   description:
+//     "A full-stack web app to schedule, view, and manage events via an interactive calendar interface.",
+//   technologies: [
+//     "Vue 3",
+//     "Vite",
+//     "Tailwind CSS",
+//     "Vue Router",
+//     "Sass/SCSS",
+//     "Express.js (ES modules)",
+//     "Sequelize ORM",
+//     "MySQL",
+//   ],
+//   github: "https://github.com/NelakaWith/event-calendar-app",
+//   web: "https://nw-event-calendar-app-client.netlify.app/",
+//   image: "/sample_app_calendar.png",
+// },
 </script>
