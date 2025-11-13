@@ -1,7 +1,7 @@
 <template>
   <section id="showcase" class="py-12">
     <h2 class="skills-title text-3xl font-bold text-dark dark:text-white mb-8">
-      Showcase
+      Showcase | Passion Projects
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div
@@ -71,7 +71,7 @@ const projects = [
       "A modern, responsive portfolio site built with Vue 3, Tailwind CSS, and Vite. Features dark mode, project showcase, and smooth navigation.",
     technologies: ["Vue 3", "Tailwind CSS", "Vite"],
     github: "https://github.com/NelakaWith/portfolio",
-    web: "https://nelakawith.netlify.app/",
+    web: "",
     image: "/sample_app_portfolio.png",
   },
   {
@@ -97,6 +97,8 @@ const projects = [
       "Next.js",
       "Shadcn/ui",
       "TypeScript",
+      "Express.js",
+      "JavaScript",
       "Github API",
       "REST API",
       "GraphQL",
