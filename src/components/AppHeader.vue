@@ -1,5 +1,7 @@
 <template>
-  <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-40">
+  <header
+    class="bg-white dark:bg-gray-800 shadow-sm dark:shadow-lg sticky top-0 z-40"
+  >
     <div class="container mx-auto px-4 py-6 flex justify-between items-center">
       <div>
         <h1
@@ -8,7 +10,7 @@
           Nelaka Withanage
         </h1>
         <h2 class="text-xl text-primary dark:text-yellow-400">
-          Developer | UI Enthusiast
+          Web App Developer | UX Enthusiast
         </h2>
       </div>
       <!-- Desktop Nav -->
@@ -27,8 +29,12 @@
           @click="$emit('toggle-dark')"
           aria-label="Toggle dark mode"
         >
-          <Icon v-if="isDark" icon="line-md:moon-filled" class="w-6 h-6" />
-          <Icon v-else icon="line-md:sunny-filled" class="w-6 h-6" />
+          <Icon
+            v-if="isDark"
+            icon="line-md:sunny"
+            class="w-6 h-6 text-yellow-500"
+          />
+          <Icon v-else icon="line-md:moon" class="w-6 h-6 text-slate-500" />
         </button>
       </nav>
       <!-- Mobile Nav Toggle -->
@@ -67,8 +73,12 @@
           "
           aria-label="Toggle dark mode"
         >
-          <Icon v-if="isDark" icon="line-md:moon-filled" class="w-8 h-8" />
-          <Icon v-else icon="line-md:sunny-filled" class="w-8 h-8" />
+          <Icon
+            v-if="isDark"
+            icon="line-md:sunny"
+            class="w-8 h-8 text-yellow-500"
+          />
+          <Icon v-else icon="line-md:moon" class="w-8 h-8 text-slate-500" />
         </button>
         <button
           class="mt-8 text-base text-gray-500 dark:text-gray-300"

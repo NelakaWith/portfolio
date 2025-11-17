@@ -1,7 +1,7 @@
 <template>
   <section id="showcase" class="py-12">
     <h2 class="skills-title text-3xl font-bold text-dark dark:text-white mb-8">
-      Showcase
+      Showcase | Passion Projects
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div
@@ -71,7 +71,7 @@ const projects = [
       "A modern, responsive portfolio site built with Vue 3, Tailwind CSS, and Vite. Features dark mode, project showcase, and smooth navigation.",
     technologies: ["Vue 3", "Tailwind CSS", "Vite"],
     github: "https://github.com/NelakaWith/portfolio",
-    web: "https://nelakawith.netlify.app/",
+    web: "",
     image: "/sample_app_portfolio.png",
   },
   {
@@ -92,11 +92,13 @@ const projects = [
   {
     name: "Pulse Ops",
     description:
-      "Next.js (App Router) dashboard visualizing GitHub repository metrics such as deployments, commits, and workflow runs. Built with TypeScript, Tailwind CSS, shadcn/ui, lucide-react, and Recharts to demonstrate real-world frontend architecture.",
+      "A modern GitHub analytics dashboard built with Next.js 16 and TypeScript, featuring real-time user metrics, contribution visualization, language usage insights, and AI-powered repository analysis. Demonstrates advanced data visualization, GraphQL & REST API integration, AI-driven insights, and modern React patterns.",
     technologies: [
       "Next.js",
       "Shadcn/ui",
       "TypeScript",
+      "Express.js",
+      "JavaScript",
       "Github API",
       "REST API",
       "GraphQL",
@@ -107,22 +109,40 @@ const projects = [
     image: "/sample_app_pulse_ops.png",
   },
   {
-    name: "Event Horizon",
+    name: "Gloire RoadMap",
     description:
-      "A full-stack web app to schedule, view, and manage events via an interactive calendar interface.",
+      "Gloire Road Map is a modern full-stack application designed for educational institutions and training programs to track student goals, manage attendance, and analyze performance metrics. The platform provides separate interfaces for administrators and students, featuring real-time analytics, session-based attendance marking, and comprehensive goal management.",
     technologies: [
       "Vue 3",
-      "Vite",
-      "Tailwind CSS",
-      "Vue Router",
-      "Sass/SCSS",
-      "Express.js (ES modules)",
-      "Sequelize ORM",
+      "Express.js",
       "MySQL",
+      "PrimeVue",
+      "Tailwind CSS",
+      "REST API",
+      "Vite",
     ],
-    github: "https://github.com/NelakaWith/event-calendar-app",
-    web: "https://nw-event-calendar-app-client.netlify.app/",
-    image: "/sample_app_calendar.png",
+    github: "https://roadmap-demo.nelakawithanage.com/login",
+    web: "https://roadmap-demo.nelakawithanage.com/login",
+    image: "/sample_app_roadmap.png",
   },
 ];
+
+// {
+//   name: "Event Horizon",
+//   description:
+//     "A full-stack web app to schedule, view, and manage events via an interactive calendar interface.",
+//   technologies: [
+//     "Vue 3",
+//     "Vite",
+//     "Tailwind CSS",
+//     "Vue Router",
+//     "Sass/SCSS",
+//     "Express.js (ES modules)",
+//     "Sequelize ORM",
+//     "MySQL",
+//   ],
+//   github: "https://github.com/NelakaWith/event-calendar-app",
+//   web: "https://nw-event-calendar-app-client.netlify.app/",
+//   image: "/sample_app_calendar.png",
+// },
 </script>
