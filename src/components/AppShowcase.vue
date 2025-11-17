@@ -108,6 +108,23 @@ const projects = [
     web: "",
     image: "/sample_app_pulse_ops.png",
   },
+  {
+    name: "Gloire RoadMap",
+    description:
+      "Gloire Road Map is a modern full-stack application designed for educational institutions and training programs to track student goals, manage attendance, and analyze performance metrics. The platform provides separate interfaces for administrators and students, featuring real-time analytics, session-based attendance marking, and comprehensive goal management.",
+    technologies: [
+      "Vue 3",
+      "Express.js",
+      "MySQL",
+      "PrimeVue",
+      "Tailwind CSS",
+      "REST API",
+      "Vite",
+    ],
+    github: "https://roadmap-demo.nelakawithanage.com/login",
+    web: "https://roadmap-demo.nelakawithanage.com/login",
+    image: "/sample_app_roadmap.png",
+  },
 ];
 
 // {
