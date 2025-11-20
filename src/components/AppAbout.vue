@@ -18,7 +18,7 @@
                 <a
                   href="mailto:nelakasnji@gmail.com"
                   class="text-dark dark:text-white hover:underline"
-                  >nelakasnji@gmail.com</a
+                  >nelakasnj@gmail.com</a
                 >
               </li>
               <li class="flex items-center">
