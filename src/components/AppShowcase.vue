@@ -86,7 +86,7 @@ const projects = [
       "OpenRouter AI",
     ],
     github: "https://github.com/NelakaWith/faq-chatbot",
-    web: "https://faq-chatbot.nelakawithanage.com/",
+    web: "https://faq-chatbot.nelaka.xyz/",
     image: "/sample_app_chatbot.png",
   },
   {
@@ -121,8 +121,8 @@ const projects = [
       "REST API",
       "Vite",
     ],
-    github: "https://roadmap-demo.nelakawithanage.com/login",
-    web: "https://roadmap-demo.nelakawithanage.com/login",
+    github: "https://roadmap-demo.nelaka.xyz/login",
+    web: "https://roadmap-demo.nelaka.xyz/login",
     image: "/sample_app_roadmap.png",
   },
 ];
