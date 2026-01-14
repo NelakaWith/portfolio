@@ -24,7 +24,11 @@
       </defs>
 
       <!-- First wave layer -->
-      <path d="M0,50 Q300,80 600,50 T1200,50 L1200,120 L0,120 Z" fill="url(#waveGradient)" filter="url(#dropShadow)">
+      <path
+        d="M0,50 Q300,80 600,50 T1200,50 L1200,120 L0,120 Z"
+        fill="url(#waveGradient)"
+        filter="url(#dropShadow)"
+      >
         <animate
           attributeName="d"
           dur="4s"
@@ -38,7 +42,10 @@
       </path>
 
       <!-- Second wave layer (transparent, different colors) -->
-      <path d="M0,50 Q250,90 600,50 T1200,50 L1200,120 L0,120 Z" fill="url(#waveGradient2)">
+      <path
+        d="M0,50 Q250,90 600,50 T1200,50 L1200,120 L0,120 Z"
+        fill="url(#waveGradient2)"
+      >
         <animate
           attributeName="d"
           dur="5s"
@@ -73,6 +80,6 @@
   position: relative;
   display: block;
   width: 100%;
-  height: 120px;
+  height: 200px;
 }
 </style>

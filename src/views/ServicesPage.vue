@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-50 dark:bg-gray-900">
-    <main class="container mx-auto px-4 py-8">
+    <main class="mx-auto py-8">
       <CompanyHero />
     </main>
   </div>
