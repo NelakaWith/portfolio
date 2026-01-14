@@ -149,7 +149,6 @@ const services = [
 
 <style scoped>
 .service-container {
-  padding: 2rem;
   border-radius: 0.75rem;
   transition: transform 0.3s ease;
 }

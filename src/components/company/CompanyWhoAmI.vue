@@ -1,29 +1,33 @@
 <template>
   <section class="py-16 px-4 mt-16 bg-gray-50 dark:bg-gray-800">
-    <div class="container mx-auto max-w-4xl">
+    <div class="mx-auto container">
       <!-- How I Work -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-8">
-          How I Work
+        <h2 class="text-5xl font-semibold text-slate-600 dark:text-white mb-8">
+          Work flow
         </h2>
-        <ul class="space-y-4 text-lg text-gray-700 dark:text-gray-300">
-          <li class="flex items-start gap-3">
-            <span class="text-primary dark:text-yellow-400 mt-1">•</span>
-            <span>Start with clear requirements and scope</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-primary dark:text-yellow-400 mt-1">•</span>
-            <span>Make business-first technical decisions</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-primary dark:text-yellow-400 mt-1">•</span>
-            <span>Build clean, maintainable solutions</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-primary dark:text-yellow-400 mt-1">•</span>
-            <span>Communicate clearly and honestly throughout</span>
-          </li>
-        </ul>
+        <div class="workflow-flow">
+          <div
+            v-for="(step, index) in workflowSteps"
+            :key="step.title"
+            class="flow-item"
+          >
+            <div class="step-index">0{{ index + 1 }}</div>
+            <div class="step-card">
+              <h3 class="text-xl font-semibold text-slate-800 dark:text-white">
+                {{ step.title }}
+              </h3>
+              <p class="text-gray-700 dark:text-gray-300">
+                {{ step.description }}
+              </p>
+            </div>
+            <div
+              v-if="index !== workflowSteps.length - 1"
+              class="flow-connector"
+              aria-hidden="true"
+            ></div>
+          </div>
+        </div>
         <p class="mt-6 text-gray-600 dark:text-gray-400 italic">
           No over-engineering. No unnecessary tools. Just steady progress.
         </p>
@@ -74,9 +78,119 @@
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const workflowSteps = [
+  {
+    title: "Clarify the scope",
+    description:
+      "Start by aligning on goals, constraints, and success metrics so everyone knows what we are building.",
+  },
+  {
+    title: "Decide with context",
+    description:
+      "Make technical choices that serve the business today while keeping future growth in mind.",
+  },
+  {
+    title: "Build with care",
+    description:
+      "Ship clean, maintainable implementations that are easy to extend and hand over.",
+  },
+  {
+    title: "Stay transparent",
+    description:
+      "Communicate progress, risks, and trade-offs openly so there are no surprises.",
+  },
+];
+</script>
 
 <style scoped>
+.workflow-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.flow-item {
+  position: relative;
+  padding-left: 3.5rem;
+}
+
+.step-index {
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  z-index: 10;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #cf886c 0%, #cf291a 100%);
+  box-shadow: 0 10px 25px rgba(207, 41, 26, 0.25);
+}
+
+.step-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+}
+
+.dark .step-card {
+  background: rgba(15, 23, 42, 0.65);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.flow-connector {
+  position: absolute;
+  left: 1.25rem;
+  top: 3rem;
+  width: 2px;
+  height: 100%;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #cf886c 0%, #cf291a 100%);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+@media (min-width: 900px) {
+  .workflow-flow {
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  .flow-item {
+    flex: 1;
+    padding-left: 0;
+    padding-top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .step-index {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .step-card {
+    text-align: center;
+    flex: 1;
+    width: 100%;
+  }
+
+  .flow-connector {
+    left: 50%;
+    top: 1.75rem;
+    width: calc(100% + 3rem);
+    height: 2px;
+    transform: none;
+    background: linear-gradient(90deg, #cf886c 0%, #cf291a 100%);
+  }
+}
+
 .cta-button {
   padding: 1rem 2.5rem;
   font-size: 1.125rem;
