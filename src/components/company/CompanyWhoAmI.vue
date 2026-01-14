@@ -84,15 +84,16 @@
           Whether you're starting from an idea or improving an existing product,
           I can help you move forward with confidence.
         </p>
-        <button class="hero-button bg-slate-800 dark:bg-slate-700">
-          <span class="hero-primary-gradient">Get in Touch</span>
-        </button>
+        <!-- form here -->
+        <CompanyContact />
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+import CompanyContact from "./CompanyContact.vue";
+
 const workflowSteps = [
   {
     title: "Clarify the scope",
