@@ -1,5 +1,5 @@
 <template>
-  <section class="min-h-[80vh] flex flex-col md:flex-row">
+  <section class="relative min-h-[80vh] flex flex-col md:flex-row">
     <div class="flex-1 flex flex-col justify-center gap-8 pr-8">
       <div class="flex flex-col">
         <h1
@@ -26,10 +26,14 @@
     <div class="flex-1 flex justify-center items-center">
       <img class="w-1/2" src="/company/person.png" alt="" srcset="" />
     </div>
+
+    <WaveBorder />
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import WaveBorder from "./WaveBorder.vue";
+</script>
 
 <style scoped>
 .hero-primary-gradient {
