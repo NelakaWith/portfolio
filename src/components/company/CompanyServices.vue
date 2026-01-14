@@ -29,7 +29,7 @@
               </p>
               <p
                 v-if="service.note"
-                class="text-sm italic text-gray-500 dark:text-gray-500 mt-3"
+                class="text-sm italic text-gray-500 dark:text-gray-500 my-3"
               >
                 {{ service.note }}
               </p>

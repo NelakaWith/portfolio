@@ -30,7 +30,9 @@
             ></div>
           </div>
         </div>
-        <p class="mt-6 text-gray-600 dark:text-gray-400 italic text-center">
+        <p
+          class="mt-8 text-gray-600 dark:text-gray-400 italic text-xl font-light text-center"
+        >
           No over-engineering. No unnecessary tools. Just steady progress.
         </p>
       </div>
@@ -143,7 +145,7 @@ const workflowSteps = [
   justify-content: center;
   font-weight: 600;
   color: #ffffff;
-  background: linear-gradient(135deg, #cf886c 0%, #cf291a 100%);
+  background: linear-gradient(135deg, #b65942 0%, #b88258 100%);
   box-shadow: 0 10px 25px rgba(207, 41, 26, 0.25);
 }
 
@@ -180,7 +182,7 @@ const workflowSteps = [
   .flow-item {
     flex: 1;
     padding-left: 0;
-    padding-top: 3.5rem;
+    padding-top: 3.75rem;
     display: flex;
     flex-direction: column;
   }
