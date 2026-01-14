@@ -58,7 +58,7 @@ import WaveBorder from "./WaveBorder.vue";
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
+  /* text-fill-color: transparent; */
 }
 
 .hero-button {
