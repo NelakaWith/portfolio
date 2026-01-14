@@ -1,9 +1,11 @@
 <template>
-  <section class="py-16 px-4 mt-16 bg-gray-50 dark:bg-gray-800">
+  <section class="py-10 px-4 mt-16 bg-gray-50 dark:bg-gray-800">
     <div class="mx-auto container">
       <!-- How I Work -->
       <div class="mb-16">
-        <h2 class="text-5xl font-semibold text-slate-600 dark:text-white mb-8">
+        <h2
+          class="text-4xl font-semibold text-slate-600 dark:text-white text-center mb-8"
+        >
           Work flow
         </h2>
         <div class="workflow-flow">
@@ -28,7 +30,7 @@
             ></div>
           </div>
         </div>
-        <p class="mt-6 text-gray-600 dark:text-gray-400 italic">
+        <p class="mt-6 text-gray-600 dark:text-gray-400 italic text-center">
           No over-engineering. No unnecessary tools. Just steady progress.
         </p>
       </div>
@@ -37,13 +39,19 @@
 
       <!-- Experience -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-6">
-          Experience
+        <h2
+          class="text-3xl font-semibold text-slate-600 dark:text-white text-center mb-8"
+        >
+          Who am I...
         </h2>
-        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-          I've worked on production web applications, including dashboards,
-          internal tools, and customer-facing systems, with a focus on
-          stability, maintainability, and long-term use.
+        <p
+          class="text-xl font-light text-gray-700 dark:text-gray-300 leading-relaxed text-center"
+        >
+          I’ve worked on production web applications, including internal
+          dashboards, workflow tools, and customer-facing systems used by real
+          users. My focus has been on stability, maintainability, and ensuring
+          the codebase remains understandable and reliable as requirements
+          change.
         </p>
       </div>
 
@@ -51,10 +59,12 @@
 
       <!-- Tech Stack -->
       <div class="mb-16">
-        <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-6">
+        <h2
+          class="text-3xl font-semibold text-slate-600 dark:text-white text-center mb-8"
+        >
           Tech Stack
         </h2>
-        <p class="text-lg text-gray-700 dark:text-gray-300">
+        <p class="text-lg text-gray-700 dark:text-gray-300 text-center">
           Vue 3 · TypeScript · Node/NestJS · PostgreSQL · REST APIs
         </p>
       </div>
@@ -63,7 +73,9 @@
 
       <!-- Let's Work Together -->
       <div class="text-center">
-        <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-6">
+        <h2
+          class="text-3xl font-semibold text-slate-600 dark:text-white text-center mb-8"
+        >
           Let's Work Together
         </h2>
         <p
@@ -72,7 +84,9 @@
           Whether you're starting from an idea or improving an existing product,
           I can help you move forward with confidence.
         </p>
-        <button class="cta-button">→ Get in touch</button>
+        <button class="hero-button bg-slate-800 dark:bg-slate-700">
+          <span class="hero-primary-gradient">Get in Touch</span>
+        </button>
       </div>
     </div>
   </section>
