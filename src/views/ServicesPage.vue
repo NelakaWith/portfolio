@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-50 dark:bg-gray-900">
+  <div class="bg-white dark:bg-gray-900">
     <main class="mx-auto py-8">
       <CompanyHero />
       <CompanyServices />

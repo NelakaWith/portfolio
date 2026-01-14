@@ -1,7 +1,7 @@
 <template>
-  <section class="py-16 px-4 bg-white dark:bg-gray-900">
+  <section class="py-16 px-4 mt-16">
     <div class="container mx-auto">
-      <div class="space-y-16">
+      <div class="space-y-4">
         <div
           v-for="(service, index) in services"
           :key="service.id"
@@ -188,7 +188,7 @@ const services = [
   width: 100%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .service-wrapper {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -196,10 +196,6 @@ const services = [
 
   .service-reverse {
     direction: ltr;
-  }
-
-  .service-spacer {
-    display: none;
   }
 
   .service-container {

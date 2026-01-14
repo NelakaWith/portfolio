@@ -16,10 +16,10 @@
           <p
             class="text-xl font-light text-gray-700 dark:text-gray-200 leading-relaxed mt-4"
           >
-            I help founders and teams build, improve, and maintain web products
-            that are practical, scalable, and ready for real-world use. Clear
-            communication, solid engineering, and long-term thinking without
-            unnecessary complexity.
+            I help businesses, founders, and dev teams build, improve, and
+            maintain web products that are practical, scalable, and ready for
+            real-world use. Clear communication, solid engineering, and
+            long-term thinking without unnecessary complexity.
           </p>
         </div>
         <div>
