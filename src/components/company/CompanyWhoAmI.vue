@@ -6,7 +6,7 @@
         <h2
           class="text-4xl font-semibold text-slate-600 dark:text-white text-center mb-8"
         >
-          Work flow
+          The difference is in my process...
         </h2>
         <div class="workflow-flow">
           <div
@@ -121,6 +121,11 @@ const workflowSteps = [
     title: "No Jargon",
     description:
       "I explain technical decisions in plain English so you can make informed business choices.",
+  },
+  {
+    title: "Fast and AI-Driven",
+    description:
+      "Custom CMS designed for small businesses, not mainstream CMS. AI-assisted development speeds up delivery without cutting quality.",
   },
 ];
 </script>

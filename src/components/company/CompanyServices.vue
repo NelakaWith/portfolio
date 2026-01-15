@@ -24,9 +24,10 @@
               >
                 {{ service.subtitle }}
               </p>
-              <p class="text-gray-600 dark:text-gray-400 mb-4">
-                {{ service.description }}
-              </p>
+              <p
+                class="text-gray-600 dark:text-gray-400 mb-4"
+                v-html="service.description"
+              ></p>
               <p
                 v-if="service.note"
                 class="text-sm italic text-gray-500 dark:text-gray-500 my-3"
@@ -76,7 +77,7 @@ const services = [
     title: "From Idea to Launch",
     subtitle: "From idea to launch fast, focused, and production-ready.",
     description:
-      'Turn your vision into a production-ready product without the bloat.I help you identify the "must-have" features to get you to market quickly, ensuring your first version is a solid foundation—not a prototype you’ll have to throw away later.',
+      'Turn your vision into a production-ready product without the bloat.I help you identify the "must-have" features to get you to market quickly, ensuring your first version is a solid foundation, not a prototype you\'ll have to throw away later. Leveraging a <strong>lightweight CMS and AI-powered workflows</strong>, I help you launch websites and apps faster, with fewer headaches.',
     features: [
       "Feature roadmap, a polished user interface, and a fully functional app ready for your first customers",
     ],
@@ -87,7 +88,7 @@ const services = [
     title: " Custom Business Tools & Dashboards",
     subtitle: "Web applications tailored to real business workflows.",
     description:
-      "Software tailored to how you actually work.Ideal for internal tools, customer portals, and management dashboards that need to be secure, fast, and easy for your team to use.",
+      "Software tailored to how you actually work.Ideal for internal tools, customer portals, and management dashboards that need to be secure, fast, and easy for your team to use. Whether it’s a dashboard, portal, or CMS-driven website, I deliver solutions that are easy to manage and scale as your business grows.",
     features: [
       "Secure user logins, automated workflows, and a clean interface that makes complex data easy to understand",
     ],

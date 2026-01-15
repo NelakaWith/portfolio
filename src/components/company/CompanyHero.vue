@@ -17,10 +17,12 @@
             class="text-xl font-light text-gray-700 dark:text-gray-200 leading-relaxed mt-4"
           >
             I help founders and small teams build, improve, and maintain web
-            products that are practical, scalable, and ready for real-world use.
-            9+ years of experience in turning complex ideas into clean,
-            functional software. Clear communication. Solid engineering.
-            Business-first thinking.
+            products and fast, easy-to-manage websites. Using
+            <span class="font-semibold">lightweight CMS solutions</span> and
+            <span class="font-semibold">AI-assisted workflows</span>. I deliver
+            practical, scalable software ready for real-world use. 9+ years of
+            experience turning complex ideas into clean, functional products.
+            Clear communication. Solid engineering. Business-first thinking.
           </p>
         </div>
         <div>
