@@ -73,76 +73,49 @@
 const services = [
   {
     id: 1,
-    title: "MVP Development for Startups",
+    title: "From Idea to Launch",
     subtitle: "From idea to launch fast, focused, and production-ready.",
     description:
-      "I help founders turn ideas into usable products, prioritising what matters most for validation and early growth.",
+      'Turn your vision into a production-ready product without the bloat.I help you identify the "must-have" features to get you to market quickly, ensuring your first version is a solid foundation—not a prototype you’ll have to throw away later.',
     features: [
-      "Feature prioritization and technical guidance",
-      "Clean, scalable front-end architecture",
-      "API integration and core business logic",
-      "A solid MVP you can confidently iterate on",
+      "Feature roadmap, a polished user interface, and a fully functional app ready for your first customers",
     ],
     image: "/company/service-mvp.svg",
   },
   {
     id: 2,
-    title: "Custom Web Applications",
+    title: " Custom Business Tools & Dashboards",
     subtitle: "Web applications tailored to real business workflows.",
     description:
-      "Ideal for internal tools, dashboards, and customer-facing platforms that need to be reliable, secure, and easy to maintain.",
+      "Software tailored to how you actually work.Ideal for internal tools, customer portals, and management dashboards that need to be secure, fast, and easy for your team to use.",
     features: [
-      "Custom admin panels and dashboards",
-      "Role-based access and secure flows",
-      "Scalable, maintainable architecture",
-      "Clear structure and clean, readable code",
+      "Secure user logins, automated workflows, and a clean interface that makes complex data easy to understand",
     ],
     image: "/company/service-custom.svg",
   },
   {
     id: 3,
-    title: "UI Implementation & Product Consistency",
+    title: "Product Rescue & Modernization",
     subtitle:
-      "Clean, consistent user interfaces built as part of reliable web applications.",
+      "Make your existing application faster, cleaner, and easier to work with.",
     description:
-      "I focus on usability and structure, ensuring interfaces remain consistent and easy to maintain as the product evolves.",
+      "Make your existing application faster and easier to manage.If your current app feels 'heavy', buggy, or slow to update, I help clean up the engine. I fix technical issues and improve performance without breaking what already works.",
     features: [
-      "Component-based UI implementation",
-      "Consistent layouts, spacing, and interaction patterns",
-      "Responsive behavior across devices",
-      "UI decisions aligned with product and technical needs",
+      "Faster load times, fewer bugs, and a codebase that is much cheaper and easier to update in the future.",
     ],
     note: "Design files are welcome but not required.",
     image: "/company/service-ui.svg",
   },
   {
     id: 4,
-    title: "Product Improvement & Stabilization",
-    subtitle:
-      "Make your existing application faster, cleaner, and easier to work with.",
-    description:
-      "I help teams improve products that already exist without risky rewrites or breaking core functionality.",
-    features: [
-      "Refactoring with minimal disruption",
-      "Performance and usability improvements",
-      "Bug fixing and technical debt reduction",
-      "A safer foundation for future features",
-    ],
-    image: "/company/service-improve.svg",
-  },
-  {
-    id: 5,
-    title: "Ongoing Development & Support",
+    title: "Your On-Call Technical Partner",
     subtitle: "A reliable technical partner, not just a one-off developer.",
     description:
-      "For teams that need consistent development support without hiring full-time.",
+      "Consistent development support without the full-time overhead.For teams that need a reliable developer to handle ongoing updates, new features, and monthly maintenance.",
     features: [
-      "Monthly development or support plans",
-      "Feature updates and incremental improvements",
-      "Faster turnaround and continuity",
-      "Clear communication and predictable workflow",
+      "Predictable monthly progress, fast responses, and a partner who knows your system inside and out.",
     ],
-    image: "/company/service-support.svg",
+    image: "/company/service-improve.svg",
   },
 ];
 </script>

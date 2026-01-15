@@ -4,22 +4,23 @@
       class="min-h-[90vh] container mx-auto px-4 py-8 flex flex-col md:flex-row"
     >
       <div
-        class="flex-1 flex flex-col justify-center gap-8 pr-8 text-center md:text-start"
+        class="flex-1 flex flex-col justify-start gap-8 pr-8 text-center md:text-start"
       >
         <div class="flex flex-col">
           <h1
             class="text-5xl md:text-6xl font-semibold text-slate-800 dark:text-white"
           >
-            <span class="hero-primary-gradient">Reliable</span> web
-            applications, built with care
+            Building <span class="hero-primary-gradient">reliable</span> web
+            applications for businesses that plan to grow.
           </h1>
           <p
             class="text-xl font-light text-gray-700 dark:text-gray-200 leading-relaxed mt-4"
           >
-            I help businesses, founders, and dev teams build, improve, and
-            maintain web products that are practical, scalable, and ready for
-            real-world use. Clear communication, solid engineering, and
-            long-term thinking without unnecessary complexity.
+            I help founders and small teams build, improve, and maintain web
+            products that are practical, scalable, and ready for real-world use.
+            9+ years of experience in turning complex ideas into clean,
+            functional software. Clear communication. Solid engineering.
+            Business-first thinking.
           </p>
         </div>
         <div>
