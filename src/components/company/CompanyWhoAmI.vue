@@ -56,7 +56,8 @@
           dashboards, workflow tools, and customer-facing systems used by real
           users. My focus has been on stability, maintainability, and ensuring
           the codebase remains understandable and reliable as requirements
-          change.
+          change.With nearly a decade in the industry, I’ve built everything
+          from high-traffic dashboards to complex internal systems.
         </p>
       </div>
 
@@ -67,10 +68,11 @@
         <h2
           class="text-3xl font-semibold text-slate-600 dark:text-white text-center mb-8"
         >
-          Tech Stack
+          I'm specialised in...
         </h2>
         <p class="text-lg text-gray-700 dark:text-gray-300 text-center">
-          Vue 3 · TypeScript · Node/NestJS · PostgreSQL · REST APIs
+          React.js/Next.js · Vue 3 · Javascript · TypeScript ·
+          Node/Express.js/Nest.js · PostgreSQL · REST APIs
         </p>
       </div>
 
@@ -101,24 +103,24 @@ import CompanyContact from "./CompanyContact.vue";
 
 const workflowSteps = [
   {
-    title: "Clarify the scope",
+    title: "Business First",
     description:
-      "Start by aligning on goals, constraints, and success metrics so everyone knows what we are building.",
+      "We start with your goals. I won't recommend expensive tech if a simpler solution solves the problem.",
   },
   {
-    title: "Decide with context",
+    title: "Zero Guesswork",
     description:
-      "Make technical choices that serve the business today while keeping future growth in mind.",
+      "You'll receive clear requirements and regular updates so you always know the status of your project.",
   },
   {
-    title: "Build with care",
+    title: "Future-Proof Code",
     description:
-      "Ship clean, maintainable implementations that are easy to extend and hand over.",
+      "I write organised, documented code. This means if your team grows, any developer can easily pick up where I left off.",
   },
   {
-    title: "Stay transparent",
+    title: "No Jargon",
     description:
-      "Communicate progress, risks, and trade-offs openly so there are no surprises.",
+      "I explain technical decisions in plain English so you can make informed business choices.",
   },
 ];
 </script>

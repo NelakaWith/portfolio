@@ -134,7 +134,7 @@ const services = [
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  align-items: start;
+  align-items: center;
   margin-bottom: 2rem;
 }
 
