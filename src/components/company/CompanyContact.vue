@@ -33,6 +33,64 @@
       </div>
     </div>
 
+    <div class="flex flex-col mb-6">
+      <label
+        for="helpType"
+        class="mb-2 text-sm font-medium text-slate-700 dark:text-gray-300"
+        >I need help with...</label
+      >
+      <select
+        id="helpType"
+        v-model="form.helpType"
+        required
+        class="px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all"
+      >
+        <option value="" disabled selected>Select an option</option>
+        <option value="new-product">Building a new product</option>
+        <option value="improve-app">Improving an existing app</option>
+        <option value="ongoing-support">Ongoing technical support</option>
+      </select>
+    </div>
+
+    <div class="flex flex-col mb-6">
+      <label
+        for="projectStage"
+        class="mb-2 text-sm font-medium text-slate-700 dark:text-gray-300"
+        >Project Stage</label
+      >
+      <select
+        id="projectStage"
+        v-model="form.projectStage"
+        required
+        class="px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all"
+      >
+        <option value="" disabled selected>Select an option</option>
+        <option value="idea">Idea/Napkin sketch</option>
+        <option value="prototype">Prototype exists</option>
+        <option value="live">Live product in production</option>
+      </select>
+    </div>
+
+    <div class="flex flex-col mb-6">
+      <label
+        for="budget"
+        class="mb-2 text-sm font-medium text-slate-700 dark:text-gray-300"
+        >Estimated Budget</label
+      >
+      <select
+        id="budget"
+        v-model="form.budget"
+        required
+        class="px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all"
+      >
+        <option value="" disabled selected>Select an option</option>
+        <option value="5k-10k">$5k - $10k</option>
+        <option value="10k-25k">$10k - $25k</option>
+        <option value="25k-plus">$25k+</option>
+        <option value="not-sure">Not sure yet</option>
+      </select>
+    </div>
+
     <div class="flex flex-col mb-8">
       <label
         for="message"
@@ -71,6 +129,9 @@ const isSubmitting = ref(false);
 const form = reactive({
   name: "",
   email: "",
+  helpType: "",
+  projectStage: "",
+  budget: "",
   message: "",
 });
 
@@ -83,10 +144,9 @@ const handleSubmit = async () => {
   alert("Thanks for reaching out! I will get back to you soon.");
   form.name = "";
   form.email = "";
+  form.helpType = "";
+  form.projectStage = "";
+  form.budget = "";
   form.message = "";
 };
 </script>
-
-<style scoped>
-/* Button styles handled by global hero-button class */
-</style>

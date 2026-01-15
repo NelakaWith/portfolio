@@ -31,9 +31,12 @@
           </div>
         </div>
         <p
-          class="mt-8 text-gray-600 dark:text-gray-400 italic text-xl font-light text-center"
+          class="mt-8 mx-auto max-w-xl text-gray-600 dark:text-gray-400 italic text-xl font-light text-center"
         >
-          No over-engineering. No unnecessary tools. Just steady progress.
+          "I write code that is documented and organized, so if you ever hire an
+          in-house team, they can take over the project with ease. No 'black
+          box' development. No over engineering. No unnecessary tools. Just
+          steady progress."
         </p>
       </div>
 
