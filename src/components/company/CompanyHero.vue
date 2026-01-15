@@ -23,7 +23,10 @@
           </p>
         </div>
         <div>
-          <button class="hero-button bg-slate-800 dark:bg-slate-700">
+          <button
+            class="hero-button bg-slate-800 dark:bg-slate-700"
+            @click="scrollToContact"
+          >
             <span class="hero-primary-gradient">Get in Touch</span>
           </button>
         </div>
@@ -43,4 +46,11 @@
 
 <script setup lang="ts">
 import WaveBorder from "./WaveBorder.vue";
+
+const scrollToContact = () => {
+  const el = document.getElementById("contact");
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+};
 </script>

@@ -13,6 +13,7 @@
         @toggle-dark="toggleDark"
       />
       <router-view />
+      <Footer />
     </div>
   </div>
 </template>
@@ -20,11 +21,11 @@
 <script setup>
 import { ref, onMounted, watch } from "vue";
 import Header from "./components/AppHeader.vue";
+import Footer from "./components/AppFooter.vue";
 import { useLoader } from "./composables/useLoader";
 import AppLoader from "./components/AppLoader.vue";
 
 const { loading, startLoader } = useLoader("Hind", 4000);
-
 
 const isDark = ref(false);
 

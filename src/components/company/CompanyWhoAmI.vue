@@ -74,7 +74,7 @@
       <hr class="border-gray-300 dark:border-gray-600 my-12" />
 
       <!-- Let's Work Together -->
-      <div class="text-center">
+      <div id="contact" class="text-center scroll-mt-24">
         <h2
           class="text-3xl font-semibold text-slate-600 dark:text-white text-center mb-8"
         >
