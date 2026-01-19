@@ -1,254 +1,79 @@
 <template>
-  <section class="py-10 px-4 mt-16 bg-gray-50 dark:bg-gray-800">
-    <div class="mx-auto container">
-      <!-- How I Work -->
-      <div class="mb-16">
-        <h2
-          class="text-4xl font-semibold text-slate-600 dark:text-white text-center mb-8"
-        >
-          The difference is in my process...
+  <section class="py-24 px-4 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+    <div class="mx-auto container max-w-4xl">
+
+      <!-- Bio Section -->
+      <div class="mb-20 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-8">
+          Who am I?
         </h2>
-        <div class="workflow-flow">
-          <div
-            v-for="(step, index) in workflowSteps"
-            :key="step.title"
-            class="flow-item"
-          >
-            <div class="step-index">0{{ index + 1 }}</div>
-            <div class="step-card">
-              <h3 class="text-xl font-semibold text-slate-800 dark:text-white">
-                {{ step.title }}
-              </h3>
-              <p class="text-gray-700 dark:text-gray-300">
-                {{ step.description }}
-              </p>
-            </div>
-            <div
-              v-if="index !== workflowSteps.length - 1"
-              class="flow-connector"
-              aria-hidden="true"
-            ></div>
-          </div>
+        <div class="prose prose-lg dark:prose-invert mx-auto">
+          <p class="text-xl font-light text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+            I’ve worked on production web applications, including internal dashboards, workflow tools, and customer-facing systems used by real users.
+          </p>
+          <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
+            My focus has been on stability, maintainability, and ensuring the codebase remains understandable and reliable as requirements change. With nearly a decade in the industry, I’ve built everything from high-traffic dashboards to complex internal systems.
+          </p>
         </div>
-        <p
-          class="mt-8 mx-auto max-w-xl text-gray-600 dark:text-gray-400 italic text-xl font-light text-center"
-        >
-          "I write code that is documented and organized, so if you ever hire an
-          in-house team, they can take over the project with ease. No 'black
-          box' development. No over engineering. No unnecessary tools. Just
-          steady progress."
-        </p>
       </div>
 
-      <hr class="border-gray-300 dark:border-gray-600 my-12" />
-
-      <!-- Experience -->
-      <div class="mb-16">
-        <h2
-          class="text-3xl font-semibold text-slate-600 dark:text-white text-center mb-8"
-        >
-          Who am I...
-        </h2>
-        <p
-          class="text-xl font-light text-gray-700 dark:text-gray-300 leading-relaxed text-center"
-        >
-          I’ve worked on production web applications, including internal
-          dashboards, workflow tools, and customer-facing systems used by real
-          users. My focus has been on stability, maintainability, and ensuring
-          the codebase remains understandable and reliable as requirements
-          change.With nearly a decade in the industry, I’ve built everything
-          from high-traffic dashboards to complex internal systems.
-        </p>
+      <!-- Tech Stack Badges -->
+      <div class="mb-24 text-center">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-8">
+          Core Technologies
+        </h3>
+        <ul class="flex flex-wrap justify-center gap-4">
+          <li
+            v-for="tech in technologies"
+            :key="tech.name"
+            class="flex items-center gap-3 py-2 px-5 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-default"
+          >
+            <Icon
+              :icon="tech.icon"
+              class="w-6 h-6"
+            />
+            <span class="text-base font-medium text-slate-700 dark:text-slate-200">
+              {{ tech.name }}
+            </span>
+          </li>
+        </ul>
       </div>
 
-      <hr class="border-gray-300 dark:border-gray-600 my-12" />
-
-      <!-- Tech Stack -->
-      <div class="mb-16">
-        <h2
-          class="text-3xl font-semibold text-slate-600 dark:text-white text-center mb-8"
-        >
-          I'm specialised in...
-        </h2>
-        <p class="text-lg text-gray-700 dark:text-gray-300 text-center">
-          React.js/Next.js · Vue 3 · Javascript · TypeScript ·
-          Node/Express.js/Nest.js · PostgreSQL · REST APIs
-        </p>
-      </div>
-
-      <hr class="border-gray-300 dark:border-gray-600 my-12" />
-
-      <!-- Let's Work Together -->
-      <div id="contact" class="text-center scroll-mt-24">
-        <h2
-          class="text-3xl font-semibold text-slate-600 dark:text-white text-center mb-8"
-        >
+      <!-- Contact Section -->
+      <div id="contact" class="text-center scroll-mt-32">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-4">
           Let's Work Together
         </h2>
-        <p
-          class="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto"
-        >
+        <p class="text-lg text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto">
           Whether you're starting from an idea or improving an existing product,
           I can help you move forward with confidence.
         </p>
-        <!-- form here -->
+
         <CompanyContact />
       </div>
+
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+import { Icon } from "@iconify/vue";
 import CompanyContact from "./CompanyContact.vue";
 
-const workflowSteps = [
-  {
-    title: "Business First",
-    description:
-      "We start with your goals. I won't recommend expensive tech if a simpler solution solves the problem.",
-  },
-  {
-    title: "Zero Guesswork",
-    description:
-      "You'll receive clear requirements and regular updates so you always know the status of your project.",
-  },
-  {
-    title: "Future-Proof Code",
-    description:
-      "I write organised, documented code. This means if your team grows, any developer can easily pick up where I left off.",
-  },
-  {
-    title: "No Jargon",
-    description:
-      "I explain technical decisions in plain English so you can make informed business choices.",
-  },
-  {
-    title: "Fast and AI-Driven",
-    description:
-      "Custom CMS designed for small businesses, not mainstream CMS. AI-assisted development speeds up delivery without cutting quality.",
-  },
+const technologies = [
+  { name: "React.js", icon: "logos:react" },
+  { name: "Next.js", icon: "logos:nextjs-icon" },
+  { name: "Vue 3", icon: "logos:vue" },
+  { name: "JavaScript", icon: "logos:javascript" },
+  { name: "TypeScript", icon: "logos:typescript-icon" },
+  { name: "Node.js", icon: "logos:nodejs-icon" },
+  { name: "Express.js", icon: "simple-icons:express" },
+  { name: "Nest.js", icon: "logos:nestjs" },
+  { name: "PostgreSQL", icon: "logos:postgresql" },
+  { name: "REST APIs", icon: "carbon:api" }
 ];
 </script>
 
 <style scoped>
-.workflow-flow {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-}
-
-.flow-item {
-  position: relative;
-  padding-left: 3.5rem;
-}
-
-.step-index {
-  position: absolute;
-  left: 0;
-  top: 0.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  z-index: 10;
-  border-radius: 9999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  color: #ffffff;
-  background: linear-gradient(135deg, #b65942 0%, #b88258 100%);
-  box-shadow: 0 10px 25px rgba(207, 41, 26, 0.25);
-}
-
-.step-card {
-  background: #ffffff;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
-}
-
-.dark .step-card {
-  background: rgba(15, 23, 42, 0.65);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-}
-
-.flow-connector {
-  position: absolute;
-  left: 1.25rem;
-  top: 3rem;
-  width: 2px;
-  height: 100%;
-  transform: translateX(-50%);
-  background: linear-gradient(180deg, #cf886c 0%, #cf291a 100%);
-  opacity: 0.4;
-  z-index: 0;
-}
-
-@media (min-width: 900px) {
-  .workflow-flow {
-    flex-direction: row;
-    gap: 3rem;
-  }
-
-  .flow-item {
-    flex: 1;
-    padding-left: 0;
-    padding-top: 3.75rem;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .step-index {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .step-card {
-    text-align: center;
-    flex: 1;
-    width: 100%;
-  }
-
-  .flow-connector {
-    left: 50%;
-    top: 1.75rem;
-    width: calc(100% + 3rem);
-    height: 2px;
-    transform: none;
-    background: linear-gradient(90deg, #cf886c 0%, #cf291a 100%);
-  }
-}
-
-.cta-button {
-  padding: 1rem 2.5rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  border-radius: 0.75rem;
-  background: #cf886c;
-  background: -webkit-linear-gradient(
-    to bottom right,
-    #cf886c 0%,
-    #cf291a 100%
-  );
-  background: -moz-linear-gradient(to bottom right, #cf886c 0%, #cf291a 100%);
-  background: linear-gradient(to bottom right, #cf886c 0%, #cf291a 100%);
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  backface-visibility: hidden;
-  transform: translateZ(0);
-}
-
-.cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.cta-button:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+/* No custom CSS needed - utilizing Tailwind utilities */
 </style>

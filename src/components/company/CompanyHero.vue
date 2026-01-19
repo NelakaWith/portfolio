@@ -8,21 +8,31 @@
       >
         <div class="flex flex-col">
           <h1
-            class="text-5xl md:text-6xl font-semibold text-slate-800 dark:text-white"
+            class="text-5xl md:text-6xl font-semibold text-slate-800 dark:text-white mb-4"
           >
-            Building <span class="hero-primary-gradient">reliable</span> web
-            applications for businesses that plan to grow.
+            <span class="hero-primary-gradient">High-Velocity</span>
+            Engineering. Absolute
+            <span class="hero-primary-gradient">Reliability</span>.
           </h1>
+          <h3 class="mb-4 text-xl font-semibold text-slate-800 dark:text-white">
+            Senior Software Delivery Partner for High-Stakes Businesses and
+            Agencies.
+          </h3>
           <p
-            class="text-xl font-light text-gray-700 dark:text-gray-200 leading-relaxed mt-4"
+            class="max-w-[36rem] text-xl font-light text-gray-700 dark:text-gray-200 leading-relaxed mb-4"
           >
-            I help founders and small teams build, improve, and maintain web
-            products and fast, easy-to-manage websites. Using
-            <span class="font-semibold">lightweight CMS solutions</span> and
-            <span class="font-semibold">AI-assisted workflows</span>. I deliver
-            practical, scalable software ready for real-world use. 9+ years of
-            experience turning complex ideas into clean, functional products.
-            Clear communication. Solid engineering. Business-first thinking.
+            I help businesses launch custom applications in weeks using a
+            <span class="hero-primary-gradient"
+              >proprietary headless engine</span
+            >, and I provide agencies with an invisible,
+            <span class="hero-primary-gradient">AI-augmented development</span>
+            to scale their delivery capacity.
+          </p>
+          <p
+            class="text-xl font-light text-gray-700 dark:text-gray-200 leading-relaxed mb-4"
+          >
+            9+ Years Experience | High-Velocity Headless Core | AI-Augmented
+            Workflows
           </p>
         </div>
         <div>
@@ -30,13 +40,13 @@
             class="hero-button bg-slate-800 dark:bg-slate-700"
             @click="scrollToContact"
           >
-            <span class="hero-primary-gradient">Get in Touch</span>
+            <span class="hero-primary-gradient">Book a Brief Intro Call</span>
           </button>
         </div>
       </div>
       <div class="flex-1 flex justify-center items-center">
         <img
-          class="w-auto md:w-1/2"
+          class="w-auto lg:w-1/2"
           src="/company/person.png"
           alt=""
           srcset=""
