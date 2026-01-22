@@ -1,29 +1,34 @@
 <template>
-  <section id="projects" class="py-12">
-    <h2 class="text-3xl font-bold text-dark dark:text-white mb-8">
-      Commercial Project Contributions
-    </h2>
+  <section id="projects" class="py-20 bg-slate-50/50 dark:bg-dark-lighter/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-12">
+        <h2 class="text-sm font-bold text-secondary tracking-widest uppercase mb-2">Portfolio</h2>
+         <h3 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 dark:text-white">
+          Commercial Projects
+        </h3>
+      </div>
 
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6"
-    >
-      <div
-        v-for="(project, index) in projects"
-        :key="index"
-        class="bg-gray-50 dark:bg-gray-900 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition"
-      >
-        <div class="p-4">
-          <h3 class="text-xl font-semibold text-dark dark:text-white mb-2">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          v-for="(project, index) in projects"
+          :key="index"
+          class="group bg-white border border-slate-200 dark:bg-dark dark:border-white/5 rounded-2xl p-8 hover:border-secondary/50 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden shadow-sm dark:shadow-none"
+        >
+          <!-- Decoration -->
+          <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 blur-[50px] rounded-full -mr-16 -mt-16 transition-all group-hover:bg-secondary/20"></div>
+
+          <h3 class="text-xl font-heading font-bold text-slate-900 dark:text-white mb-3 group-hover:text-secondary transition-colors">
             {{ project.name }}
           </h3>
-          <p class="text-gray-700 dark:text-gray-200 mb-4">
+          <p class="text-slate-600 dark:text-gray-400 mb-6 leading-relaxed text-sm h-20">
             {{ project.description }}
           </p>
-          <div class="flex flex-wrap gap-2">
+
+          <div class="flex flex-wrap gap-2 mt-auto">
             <span
               v-for="(tech, i) in project.technologies"
               :key="i"
-              class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded-full dark:bg-yellow-400 dark:bg-opacity-10 dark:text-yellow-400"
+              class="px-3 py-1 bg-slate-100 border border-slate-200 text-slate-600 dark:bg-white/5 dark:border-white/5 dark:text-gray-300 text-xs rounded-full group-hover:bg-secondary/10 group-hover:text-secondary transition-colors"
             >
               {{ tech }}
             </span>

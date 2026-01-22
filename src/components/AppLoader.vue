@@ -20,7 +20,7 @@ const props = defineProps({
 
 const loaderColor = computed(() => {
   if (props.color) return props.color;
-  return props.dark ? "#facc15" : "#3B82F6"; // yellow-400 for dark, blue-500 for light
+  return props.dark ? "#facc15" : "#3b82f6"; // yellow-400 for dark, blue-500 for light
 });
 </script>
 

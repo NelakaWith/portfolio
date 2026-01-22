@@ -1,72 +1,61 @@
 <template>
-  <section id="about" class="py-12">
-    <div class="flex flex-col md:flex-row gap-8 items-center">
-      <div class="md:w-1/3">
-        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-          <img
-            src="/bust.webp"
-            alt="Nelaka Withanage"
-            class="w-1/3 h-auto rounded-full"
-          />
-          <div class="mt-4">
-            <h3 class="text-xl font-semibold text-dark dark:text-white">
-              Contact Info
-            </h3>
-            <ul class="mt-2 space-y-2">
-              <li class="flex items-center">
-                <span class="text-primary mr-2">✉️</span>
-                <a
-                  href="mailto:nelakasnji@gmail.com"
-                  class="text-dark dark:text-white hover:underline"
-                  >nelakasnj@gmail.com</a
-                >
-              </li>
-              <li class="flex items-center">
-                <span class="text-primary mr-2">📱</span>
-                <a
-                  href="tel:+94714694244"
-                  class="text-dark dark:text-white hover:underline"
-                  >+94 714 694 244</a
-                >
-              </li>
-              <li class="flex items-center">
-                <span class="text-primary mr-2">🔗</span>
-                <a
-                  href="https://linkedin.com/in/nelaka-withanage"
-                  target="_blank"
-                  rel="noopener"
-                  class="text-dark dark:text-white hover:underline"
-                  >in/nelaka-withanage</a
-                >
-              </li>
-              <li class="flex items-center">
-                <span class="text-primary mr-2">🐙</span>
-                <a
-                  href="https://github.com/NelakaWith"
-                  target="_blank"
-                  rel="noopener"
-                  class="text-dark dark:text-white hover:underline"
-                  >github.com/NelakaWith</a
-                >
-              </li>
-            </ul>
-          </div>
+  <section id="about" class="min-h-screen flex items-center justify-center py-20 relative overflow-hidden">
+    <!-- Background Glow -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-hero-glow opacity-20 blur-[100px] -z-10 animate-blob"></div>
+
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <!-- Text Content -->
+      <div class="order-2 md:order-1 text-center md:text-left">
+        <h2 class="text-xl md:text-2xl font-medium text-primary mb-4 tracking-wide uppercase">
+          Nelaka Withanage
+        </h2>
+        <h1 class="text-5xl md:text-7xl font-heading font-extrabold text-slate-900 dark:text-white leading-tight mb-6">
+          Building <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Digital Excellence</span>
+        </h1>
+        <p class="text-lg text-slate-600 dark:text-gray-400 mb-8 max-w-2xl leading-relaxed mx-auto md:mx-0">
+          Senior software developer with 9+ years of experience crafting high-performance web applications.
+          Specializing in React.js, Vue.js, and modern UI engineering.
+        </p>
+
+        <!-- Social Links (Glass) -->
+        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+          <a
+            v-for="link in socialLinks"
+            :key="link.icon"
+            :href="link.href"
+            target="_blank"
+            class="flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 shadow-sm dark:bg-white/5 dark:border-white/10 dark:shadow-none rounded-xl hover:bg-slate-50 dark:hover:bg-white/10 hover:scale-105 transition-all duration-300 group"
+          >
+            <Icon :icon="link.icon" class="w-5 h-5 text-slate-500 dark:text-gray-300 group-hover:text-primary transition-colors" />
+            <span class="text-sm font-medium text-slate-600 dark:text-gray-300 group-hover:text-slate-900 dark:group-hover:text-white">{{ link.text }}</span>
+          </a>
         </div>
       </div>
-      <div class="md:w-2/3">
-        <h2 class="text-4xl text-dark dark:text-white mb-2">Hello,</h2>
-        <p class="text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
-          I am a software developer with 9+ years of experience in web front-end
-          and UI development. Proficient in HTML5, CSS3, JavaScript, TypeScript,
-          and frameworks such as React.js and Vue.js. Demonstrated expertise in
-          creating and maintaining dynamic web applications, integrating APIs,
-          and employing modern design tools like Figma and Tailwind CSS. Skilled
-          in delivering user-centric solutions and working in Agile
-          environments. Holds a BSc in Computer Science.
-        </p>
+
+      <!-- Hero Image / Visual -->
+      <div class="order-1 md:order-2 flex justify-center relative mt-12 md:mt-0">
+        <div class="relative w-72 h-72 md:w-96 md:h-96">
+            <!-- Decorative Rings -->
+           <div class="absolute inset-0 rounded-full border border-primary/20 animate-[spin_10s_linear_infinite]"></div>
+           <div class="absolute inset-4 rounded-full border border-secondary/20 animate-[spin_15s_linear_infinite_reverse]"></div>
+
+           <!-- Image -->
+           <img
+            src="/bust.webp"
+            alt="Nelaka Withanage"
+            class="absolute inset-2 w-[calc(100%-16px)] h-[calc(100%-16px)] object-cover rounded-full border-4 border-dark/50 shadow-2xl"
+          />
+        </div>
       </div>
     </div>
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+const socialLinks = [
+  { icon: 'ph:envelope-simple-bold', text: 'Email', href: 'mailto:nelakasnj@gmail.com' },
+  { icon: 'ph:linkedin-logo-bold', text: 'LinkedIn', href: 'https://linkedin.com/in/nelaka-withanage' },
+  { icon: 'ph:github-logo-bold', text: 'GitHub', href: 'https://github.com/NelakaWith' },
+  { icon: 'ph:phone-bold', text: '+94 714 694 244', href: 'tel:+94714694244' },
+];
+</script>
