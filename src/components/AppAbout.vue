@@ -1,9 +1,9 @@
 <template>
   <section id="about" class="min-h-screen flex items-center justify-center py-20 relative overflow-hidden">
-    <!-- Background Glow -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-hero-glow opacity-20 blur-[100px] -z-10 animate-blob"></div>
+    <!-- Background Animation -->
+    <BackgroundSwirl />
 
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
       <!-- Text Content -->
       <div class="order-2 md:order-1 text-center md:text-left">
         <h2 class="text-xl md:text-2xl font-medium text-primary mb-4 tracking-wide uppercase">
@@ -52,6 +52,8 @@
 </template>
 
 <script setup>
+import BackgroundSwirl from './BackgroundSwirl.vue';
+
 const socialLinks = [
   { icon: 'ph:envelope-simple-bold', text: 'Email', href: 'mailto:nelakasnj@gmail.com' },
   { icon: 'ph:linkedin-logo-bold', text: 'LinkedIn', href: 'https://linkedin.com/in/nelaka-withanage' },
