@@ -1,23 +1,32 @@
 <template>
-  <section id="skills" class="skills-section py-12">
-    <h2 class="skills-title text-3xl font-bold text-dark dark:text-white mb-8">
-      Key Skills
-    </h2>
-    <ul class="skills-list flex flex-wrap gap-4 justify-center">
-      <li
-        v-for="skill in skills"
-        :key="skill.name"
-        class="skill-item flex items-center gap-3 py-2 px-4 rounded-lg bg-white dark:bg-gray-800 hover:shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 transition cursor-pointer shadow-sm"
-      >
-        <Icon
-          :icon="skill.icon"
-          class="skill-icon w-6 h-6 text-primary dark:text-gray-300"
-        />
-        <span class="skill-name text-lg text-dark dark:text-white">{{
-          skill.name
-        }}</span>
-      </li>
-    </ul>
+  <section id="skills" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-sm font-bold text-primary tracking-widest uppercase mb-2">Expertise</h2>
+        <h3 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 dark:text-white">
+          Technologies & Tools
+        </h3>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <div
+          v-for="skill in skills"
+          :key="skill.name"
+          class="group relative flex flex-col items-center justify-center p-6 bg-white border border-slate-200 shadow-sm dark:bg-white/5 dark:border-white/5 dark:shadow-none rounded-2xl hover:border-primary/30 transition-all duration-300"
+        >
+          <!-- Hover Glow -->
+          <div class="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+
+          <Icon
+            :icon="skill.icon"
+            class="w-10 h-10 mb-3 text-slate-400 dark:text-gray-400 group-hover:scale-110 transition-transform duration-300 filter grayscale group-hover:grayscale-0"
+          />
+          <span class="text-sm font-medium text-slate-600 dark:text-gray-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors z-10">{{
+            skill.name
+          }}</span>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -59,7 +68,7 @@ const skills = [
   { name: "Jest", icon: "vscode-icons:file-type-jest" },
   { name: "Figma", icon: "logos:figma" },
   { name: "Adobe Photoshop", icon: "logos:adobe-photoshop" },
-  { name: "Agile with Azure DevOps", icon: "devicon:azuredevops" },
-  { name: "Agile with Jira", icon: "devicon:jiraalign" },
+  { name: "Agile (Azure)", icon: "devicon:azuredevops" },
+  { name: "Agile (Jira)", icon: "devicon:jiraalign" },
 ];
 </script>
