@@ -1,19 +1,44 @@
 <template>
   <div :class="{ dark: isDark }">
     <div
-      v-if="loading"
-      class="fixed inset-0 flex items-center justify-center bg-white z-50 dark:bg-gray-900"
+      class="font-sans bg-gray-50 dark:bg-dark min-h-screen text-slate-900 dark:text-white selection:bg-primary selection:text-white transition-colors duration-300"
     >
-      <AppLoader :dark="isDark" />
-    </div>
-    <div v-else class="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <Header
-        @menu-click="handleMenuClick"
-        :is-dark="isDark"
-        @toggle-dark="toggleDark"
-      />
-      <router-view />
-      <Footer />
+      <!-- Loader -->
+      <div
+        v-if="loading"
+        class="fixed inset-0 flex items-center justify-center z-[100] bg-gray-50 dark:bg-dark"
+      >
+        <AppLoader :dark="isDark" />
+      </div>
+
+      <!-- Main Content -->
+      <div v-else>
+        <Header
+          @menu-click="handleMenuClick"
+          :is-dark="isDark"
+          @toggle-dark="toggleDark"
+        />
+
+        <main class="overflow-x-hidden">
+          <About />
+          <Skills />
+          <Showcase />
+          <Experience />
+          <Projects />
+          <Education />
+        </main>
+
+        <!-- Footer -->
+        <footer
+          class="py-8 text-center text-gray-500 text-sm border-t border-gray-200 dark:border-white/5 bg-gray-100 dark:bg-dark-lighter/20"
+        >
+          <p>
+            &copy; {{ new Date().getFullYear() }} Nelaka Withanage. All rights
+            reserved.
+          </p>
+          <p class="mt-2">Built with Vue 3, Tailwind CSS & Glassmorphism</p>
+        </footer>
+      </div>
     </div>
   </div>
 </template>
@@ -25,29 +50,40 @@ import Footer from "./components/AppFooter.vue";
 import { useLoader } from "./composables/useLoader";
 import AppLoader from "./components/AppLoader.vue";
 
-const { loading, startLoader } = useLoader("Hind", 4000);
+const { loading, startLoader } = useLoader("Inter", 3000);
 
-const isDark = ref(false);
+const isDark = ref(true);
 
 // Persist dark mode in localStorage
 onMounted(() => {
   const saved = localStorage.getItem("darkMode");
   if (saved !== null) {
     isDark.value = saved === "true";
+  } else {
+    isDark.value = true;
   }
+  updateTheme();
+  startLoader();
 });
 
 watch(isDark, (val) => {
   localStorage.setItem("darkMode", val);
+  updateTheme();
 });
 
 function toggleDark() {
   isDark.value = !isDark.value;
 }
 
-onMounted(() => {
-  startLoader();
-});
+function updateTheme() {
+  if (isDark.value) {
+    document.documentElement.classList.add("dark");
+    document.body.style.backgroundColor = "#0f172a";
+  } else {
+    document.documentElement.classList.remove("dark");
+    document.body.style.backgroundColor = "#f9fafb";
+  }
+}
 
 function handleMenuClick(target) {
   const el = document.getElementById(target);
@@ -58,20 +94,12 @@ function handleMenuClick(target) {
 </script>
 
 <style lang="scss">
-.loader {
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #3498db;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  animation: spin 1s linear infinite;
+/* Global transitions */
+html {
+  scroll-behavior: smooth;
 }
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+
+body {
+  background-color: #0f172a; /* Ensure bg matches loading state */
 }
 </style>

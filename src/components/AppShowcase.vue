@@ -1,61 +1,73 @@
 <template>
-  <section id="showcase" class="py-12">
-    <h2 class="skills-title text-3xl font-bold text-dark dark:text-white mb-8">
-      Showcase | Passion Projects
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div
-        v-for="project in projects"
-        :key="project.name"
-        class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition p-6 flex flex-col"
-      >
-        <img
-          v-if="project.image"
-          :src="project.image"
-          :alt="project.name + ' screenshot'"
-          class="w-full h-60 object-cover rounded mb-4 border border-gray-200 dark:border-gray-700"
-        />
-        <h3 class="text-xl font-semibold text-dark dark:text-white mb-2">
-          {{ project.name }}
+  <section id="showcase" class="py-20 relative overflow-hidden">
+     <!-- Background decoration -->
+    <div class="absolute right-0 bottom-0 w-[500px] h-[500px] bg-primary/10 blur-[100px] rounded-full -z-10 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-16">
+        <h2 class="text-sm font-bold text-secondary tracking-widest uppercase mb-2">Highlights</h2>
+        <h3 class="text-3xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white">
+          Passion Projects
         </h3>
-        <p class="text-gray-700 dark:text-gray-200 mb-4 flex-1">
-          {{ project.description }}
-        </p>
-        <div class="flex flex-wrap gap-2 mb-4">
-          <span
-            v-for="tech in project.technologies"
-            :key="tech"
-            class="px-2 py-1 bg-primary bg-opacity-10 text-primary text-xs rounded-full dark:bg-yellow-400 dark:bg-opacity-10 dark:text-yellow-400"
-          >
-            {{ tech }}
-          </span>
-        </div>
-        <div class="flex gap-4 mt-auto">
-          <a
-            v-if="project.github"
-            :href="project.github"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group inline-flex items-center text-primary dark:text-yellow-400 font-medium hover:underline"
-          >
-            <Icon
-              icon="mdi:github"
-              class="w-5 h-5 mr-1 -mt-0.5 group-hover:scale-110 transition-transform"
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          v-for="project in projects"
+          :key="project.name"
+          class="group flex flex-col bg-white border border-slate-200 shadow-sm dark:bg-white/5 dark:border-white/5 dark:shadow-none rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300"
+        >
+          <!-- Image Container -->
+          <div class="relative h-48 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent dark:from-dark/80 dark:to-transparent opacity-60 z-10"></div>
+            <img
+              v-if="project.image"
+              :src="project.image"
+              :alt="project.name"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />
-            <span class="leading-tight">GitHub</span>
-          </a>
-          <a
-            v-if="project.web"
-            :href="project.web"
-            target="_blank"
-            class="group inline-flex items-center text-primary dark:text-yellow-400 font-medium hover:underline"
-          >
-            <Icon
-              icon="mdi:web"
-              class="w-5 h-5 mr-1 -mt-0.5 group-hover:scale-110 transition-transform"
-            />
-            <span class="leading-tight">Live App</span>
-          </a>
+          </div>
+
+          <!-- Content -->
+          <div class="p-6 flex flex-col flex-1 relative z-20">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+              {{ project.name }}
+            </h3>
+            <p class="text-slate-600 dark:text-gray-400 mb-6 text-sm leading-relaxed flex-1">
+              {{ project.description }}
+            </p>
+
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span
+                v-for="tech in project.technologies"
+                :key="tech"
+                class="px-2 py-1 text-xs font-mono bg-slate-100 border border-slate-200 text-slate-600 dark:bg-dark dark:border-white/10 dark:text-gray-400 rounded"
+              >
+                {{ tech }}
+              </span>
+            </div>
+
+            <div class="flex gap-4 pt-4 border-t border-slate-100 dark:border-white/5">
+              <a
+                v-if="project.github"
+                :href="project.github"
+                target="_blank"
+                class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-white hover:text-primary transition-colors"
+              >
+                <Icon icon="ph:github-logo-bold" class="w-5 h-5" />
+                Code
+              </a>
+              <a
+                v-if="project.web"
+                :href="project.web"
+                target="_blank"
+                class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-white hover:text-secondary transition-colors"
+              >
+                <Icon icon="ph:globe-bold" class="w-5 h-5" />
+                Demo
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -80,9 +92,7 @@ const projects = [
       "OpenRouter AI-powered chatbot with intelligent knowledge base search and LLM integration, built with Vue 3 and Node.js.",
     technologies: [
       "Fuzzy Search",
-      "Express",
-      "Javascript",
-      "Github Actions",
+      "Express/Node",
       "OpenRouter AI",
     ],
     github: "https://github.com/NelakaWith/faq-chatbot",
@@ -92,17 +102,13 @@ const projects = [
   {
     name: "Pulse Ops",
     description:
-      "A modern GitHub analytics dashboard built with Next.js 16 and TypeScript, featuring real-time user metrics, contribution visualization, language usage insights, and AI-powered repository analysis. Demonstrates advanced data visualization, GraphQL & REST API integration, AI-driven insights, and modern React patterns.",
+      "A modern GitHub analytics dashboard built with Next.js 16 and TypeScript, featuring real-time user metrics, contribution visualization, language usage insights, and AI-powered repository analysis.",
     technologies: [
       "Next.js",
       "Shadcn/ui",
       "TypeScript",
-      "Express.js",
-      "JavaScript",
-      "Github API",
-      "REST API",
+      "GitHub API",
       "GraphQL",
-      "OpenRouter AI",
     ],
     github: "https://github.com/NelakaWith/pulse-ops",
     web: "",
@@ -111,38 +117,17 @@ const projects = [
   {
     name: "Gloire RoadMap",
     description:
-      "Gloire Road Map is a modern full-stack application designed for educational institutions and training programs to track student goals, manage attendance, and analyze performance metrics. The platform provides separate interfaces for administrators and students, featuring real-time analytics, session-based attendance marking, and comprehensive goal management.",
+      "Gloire Road Map is a modern full-stack application designed for educational institutions and training programs to track student goals, manage attendance, and analyze performance metrics.",
     technologies: [
       "Vue 3",
       "Express.js",
       "MySQL",
       "PrimeVue",
       "Tailwind CSS",
-      "REST API",
-      "Vite",
     ],
     github: "https://roadmap-demo.nelaka.xyz/login",
     web: "https://roadmap-demo.nelaka.xyz/login",
     image: "/sample_app_roadmap.png",
   },
 ];
-
-// {
-//   name: "Event Horizon",
-//   description:
-//     "A full-stack web app to schedule, view, and manage events via an interactive calendar interface.",
-//   technologies: [
-//     "Vue 3",
-//     "Vite",
-//     "Tailwind CSS",
-//     "Vue Router",
-//     "Sass/SCSS",
-//     "Express.js (ES modules)",
-//     "Sequelize ORM",
-//     "MySQL",
-//   ],
-//   github: "https://github.com/NelakaWith/event-calendar-app",
-//   web: "https://nw-event-calendar-app-client.netlify.app/",
-//   image: "/sample_app_calendar.png",
-// },
 </script>
