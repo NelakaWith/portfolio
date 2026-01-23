@@ -11,6 +11,7 @@
     "deploy": "gh-pages -d dist -m \"Deploy: publish latest portfolio build to GitHub Pages [skip ci]\""
   },
   "dependencies": {
+    "axios": "^1.13.2",
     "fontfaceobserver": "^2.3.0",
     "vue": "^3.5.13",
     "vue-router": "^4.6.4"
