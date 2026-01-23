@@ -1,15 +1,11 @@
 <template>
-  <div class="bg-white dark:bg-gray-900">
-    <main class="mx-auto py-8">
-      <CompanyHero />
-      <CompanyWhoIHelp />
-      <CompanyServices />
-      <CompanyExpertise />
-      <CompanyAdvantages />
-      <CompanyProcess />
-      <CompanyWhoAmI />
-    </main>
-  </div>
+  <CompanyHero />
+  <CompanyWhoIHelp />
+  <CompanyServices />
+  <CompanyExpertise />
+  <CompanyAdvantages />
+  <CompanyProcess />
+  <CompanyWhoAmI />
 </template>
 
 <script setup>

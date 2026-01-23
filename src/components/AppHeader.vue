@@ -4,7 +4,10 @@
       class="bg-white/80 dark:bg-dark/70 backdrop-blur-xl border border-slate-200 dark:border-glass-border rounded-full px-6 py-3 flex justify-between items-center shadow-lg dark:shadow-glass transition-all duration-300"
     >
       <!-- Logo / Name -->
-      <div class="cursor-pointer group" @click="$emit('menu-click', 'about')">
+      <div
+        class="cursor-pointer group"
+        @click="handleNavClick(navItems.find((item) => item.id === 'about'))"
+      >
         <h1
           class="font-heading font-bold text-xl text-slate-900 dark:text-white tracking-tight group-hover:text-primary transition-colors"
         >
@@ -18,7 +21,7 @@
           <a
             :href="item.href"
             class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-all duration-200"
-            @click.prevent="$emit('menu-click', item.id)"
+            @click.prevent="handleNavClick(item)"
           >
             {{ item.label }}
           </a>
@@ -72,7 +75,7 @@
               :href="item.href"
               class="text-3xl font-heading font-bold text-slate-900 dark:text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-primary hover:to-secondary transition-all"
               @click.prevent="
-                $emit('menu-click', item.id);
+                handleNavClick(item);
                 showMobileMenu = false;
               "
             >
@@ -103,6 +106,10 @@
 
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
 defineProps({ isDark: Boolean });
 defineEmits(["menu-click", "toggle-dark"]);
 

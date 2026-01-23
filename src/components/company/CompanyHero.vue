@@ -1,25 +1,27 @@
 <template>
   <section class="relative">
     <div
-      class="min-h-[90vh] container mx-auto px-4 py-8 flex flex-col md:flex-row"
+      class="min-h-[100vh] md:min-h-[105vh] lg:min-h-[102vh] max-w-7xl mx-auto px-4 py-8 flex flex-col lg:flex-row mt-16 lg:mt-0"
     >
       <div
-        class="flex-1 flex flex-col justify-start gap-8 pr-8 text-center md:text-start"
+        class="flex-1 flex flex-col justify-center gap-8 pr-8 text-center lg:text-start"
       >
         <div class="flex flex-col">
           <h1
-            class="text-5xl md:text-6xl font-semibold text-slate-800 dark:text-white mb-4"
+            class="text-3xl md:text-4xl lg:text-5xl font-semibold text-slate-800 dark:text-white mb-4"
           >
             <span class="hero-primary-gradient">High-Velocity</span>
             Engineering. Absolute
             <span class="hero-primary-gradient">Reliability</span>.
           </h1>
-          <h3 class="mb-4 text-xl font-semibold text-slate-800 dark:text-white">
+          <h3
+            class="mb-4 text-lg lg:text-xl font-semibold text-slate-800 dark:text-white"
+          >
             Senior Software Delivery Partner for High-Stakes Businesses and
             Agencies.
           </h3>
           <p
-            class="max-w-[36rem] text-xl font-light text-gray-700 dark:text-gray-200 leading-relaxed mb-4"
+            class="text-lg lg:text-xl font-light text-gray-700 dark:text-gray-200 leading-relaxed mb-4"
           >
             I help businesses launch custom applications in weeks using a
             <span class="hero-primary-gradient"
@@ -29,7 +31,7 @@
             to scale their delivery capacity.
           </p>
           <p
-            class="text-xl font-light text-gray-700 dark:text-gray-200 leading-relaxed mb-4"
+            class="font-semibold ont-light text-gray-700 dark:text-gray-200 leading-relaxed mb-4"
           >
             9+ Years Experience | High-Velocity Headless Core | AI-Augmented
             Workflows
@@ -46,7 +48,7 @@
       </div>
       <div class="flex-1 flex justify-center items-center">
         <img
-          class="w-auto lg:w-1/2"
+          class="w-auto md:w-1/2 lg:w-2/3"
           src="/company/person.png"
           alt=""
           srcset=""

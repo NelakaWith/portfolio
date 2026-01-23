@@ -20,12 +20,7 @@
         />
 
         <main class="overflow-x-hidden">
-          <About />
-          <Skills />
-          <Showcase />
-          <Experience />
-          <Projects />
-          <Education />
+          <router-view />
         </main>
 
         <!-- Footer -->
@@ -46,7 +41,6 @@
 <script setup>
 import { ref, onMounted, watch } from "vue";
 import Header from "./components/AppHeader.vue";
-import Footer from "./components/AppFooter.vue";
 import { useLoader } from "./composables/useLoader";
 import AppLoader from "./components/AppLoader.vue";
 
