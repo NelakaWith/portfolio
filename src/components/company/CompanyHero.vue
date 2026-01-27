@@ -3,7 +3,9 @@
     <div
       class="min-h-[100vh] md:min-h-[105vh] lg:min-h-[102vh] max-w-7xl mx-auto px-4 py-8 flex flex-col lg:flex-row mt-16 lg:mt-0"
     >
-      <div class="flex-1 flex flex-col justify-center gap-8 pr-8 text-center">
+      <div
+        class="flex-1 flex flex-col lg:justify-center gap-8 pr-8 text-center"
+      >
         <div class="flex flex-col">
           <h1
             class="text-3xl md:text-4xl lg:text-7xl font-bold text-slate-800 dark:text-white mb-4"

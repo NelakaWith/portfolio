@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 px-4 mt-16">
+  <section class="py-4 lg:py-16 px-4 lg:mt-16">
     <div class="container mx-auto">
       <div class="space-y-4">
         <div
@@ -14,7 +14,7 @@
             <div class="service-content">
               <div class="mb-4">
                 <h2
-                  class="text-5xl font-semibold text-slate-600 dark:text-white"
+                  class="text-3xl lg:text-5xl font-semibold text-slate-600 dark:text-white"
                 >
                   {{ service.title }}
                 </h2>
@@ -42,9 +42,7 @@
                       :key="idx"
                       class="flex items-start gap-2"
                     >
-                      <span class="text-primary dark:text-yellow-400 mt-1"
-                        >•</span
-                      >
+                      <span class="text-primary dark:text-yellow-400">•</span>
                       <span>{{ item }}</span>
                     </li>
                   </ul>
