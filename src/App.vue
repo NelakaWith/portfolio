@@ -33,6 +33,9 @@
           </p>
           <p class="mt-2">Built with Vue 3, Tailwind CSS & Glassmorphism</p>
         </footer>
+
+        <!-- Back to Top Button -->
+        <BackToTop />
       </div>
     </div>
   </div>
@@ -43,6 +46,7 @@ import { ref, onMounted, watch } from "vue";
 import Header from "./components/AppHeader.vue";
 import { useLoader } from "./composables/useLoader";
 import AppLoader from "./components/AppLoader.vue";
+import BackToTop from "./components/BackToTop.vue";
 
 const { loading, startLoader } = useLoader("Inter", 3000);
 
