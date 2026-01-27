@@ -4,17 +4,17 @@
     class="min-h-screen flex items-center justify-center py-20 relative overflow-hidden"
   >
     <div
-      class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-20"
+      class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-20"
     >
       <!-- Text Content -->
-      <div class="order-2 md:order-1 text-center md:text-left">
+      <div class="order-2 lg:order-1 text-center lg:text-left">
         <h2
-          class="text-xl md:text-2xl font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4 tracking-wide"
+          class="text-xl lg:text-2xl font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4 tracking-wide"
         >
           Nelaka Withanage
         </h2>
         <h1
-          class="text-5xl md:text-7xl font-heading font-extrabold text-slate-900 dark:text-white leading-tight mb-6"
+          class="text-5xl lg:text-7xl font-heading font-extrabold text-slate-900 dark:text-white leading-tight mb-6"
         >
           Building
           <span
@@ -53,7 +53,7 @@
 
       <!-- Hero Image / Visual -->
       <div
-        class="order-1 md:order-2 flex justify-center relative mt-12 md:mt-0"
+        class="order-1 lg:order-2 flex justify-center relative mt-12 lg:mt-0"
       >
         <!-- Aura Animation -->
         <div
