@@ -1,6 +1,6 @@
 # Portfolio App
 
-A modern, responsive portfolio web application built with Vue 3, Vite, and Tailwind CSS. Showcases your skills, experience, projects, and more, with support for dark mode and mobile-friendly design.
+A modern, responsive portfolio web application built with Vue 3, Vite, and Tailwind CSS. Showcases your skills, experience, projects, and services, with support for dark mode and mobile-friendly design.
 
 ## Features
 
@@ -9,6 +9,8 @@ A modern, responsive portfolio web application built with Vue 3, Vite, and Tailw
 - **Skills Section:** Clean, visually appealing skills display.
 - **Experience & Education:** Timeline of your professional and academic background.
 - **Project Showcase:** Card-based UI with images, tech stack, GitHub, and live links.
+- **Services Section:** Details on offered services including MVPs, custom tools, product rescue, and ongoing support.
+- **Workflow Section:** Overview of the development process with business-first approach, transparency, and future-proof code.
 - **Smooth Navigation:** Sticky header, smooth scrolling, and section highlighting.
 - **Easy Customization:** All content is component-driven and easy to update.
 
@@ -41,6 +43,7 @@ A modern, responsive portfolio web application built with Vue 3, Vite, and Tailw
 ## Project Structure
 
 - `src/components/` — Vue components for each section (Header, About, Skills, Experience, Education, Projects, Showcase, etc.)
+- `src/components/company/` — Company-specific components (Services, WhoAmI, Contact, Hero, etc.)
 - `src/assets/` — Local images and assets (for development; public images go in `public/`)
 - `public/` — Static assets (project images, favicon, etc.)
 - `src/composables/` — Reusable logic (e.g., loader composable)
@@ -50,6 +53,8 @@ A modern, responsive portfolio web application built with Vue 3, Vite, and Tailw
 
 - **Skills, Experience, Projects:**
   - Edit the arrays in their respective components to update content.
+- **Services and Workflow:**
+  - Update the services array and workflow steps in `CompanyServices.vue` and `CompanyWhoAmI.vue` respectively.
 - **Images:**
   - Place project images in the `public/` folder and reference them with `/your-image.png`.
 - **Theme:**

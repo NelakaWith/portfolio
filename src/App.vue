@@ -1,6 +1,8 @@
 <template>
   <div :class="{ dark: isDark }">
-    <div class="font-sans bg-gray-50 dark:bg-dark min-h-screen text-slate-900 dark:text-white selection:bg-primary selection:text-white transition-colors duration-300">
+    <div
+      class="font-sans bg-gray-50 dark:bg-dark min-h-screen text-slate-900 dark:text-white selection:bg-primary selection:text-white transition-colors duration-300"
+    >
       <!-- Loader -->
       <div
         v-if="loading"
@@ -18,19 +20,22 @@
         />
 
         <main class="overflow-x-hidden">
-          <About />
-          <Skills />
-          <Showcase />
-          <Experience />
-          <Projects />
-          <Education />
+          <router-view />
         </main>
 
         <!-- Footer -->
-        <footer class="py-8 text-center text-gray-500 text-sm border-t border-gray-200 dark:border-white/5 bg-gray-100 dark:bg-dark-lighter/20">
-          <p>&copy; {{ new Date().getFullYear() }} Nelaka Withanage. All rights reserved.</p>
+        <footer
+          class="py-8 text-center text-gray-500 text-sm border-t border-gray-200 dark:border-white/5 bg-gray-100 dark:bg-dark-lighter/20"
+        >
+          <p>
+            &copy; {{ new Date().getFullYear() }} Nelaka Withanage. All rights
+            reserved.
+          </p>
           <p class="mt-2">Built with Vue 3, Tailwind CSS & Glassmorphism</p>
         </footer>
+
+        <!-- Back to Top Button -->
+        <BackToTop />
       </div>
     </div>
   </div>
@@ -39,14 +44,9 @@
 <script setup>
 import { ref, onMounted, watch } from "vue";
 import Header from "./components/AppHeader.vue";
-import About from "./components/AppAbout.vue";
-import Skills from "./components/AppSkills.vue";
-import Experience from "./components/AppExperience.vue";
-import Education from "./components/AppEducation.vue";
-import Projects from "./components/AppProjects.vue";
-import Showcase from "./components/AppShowcase.vue";
 import { useLoader } from "./composables/useLoader";
 import AppLoader from "./components/AppLoader.vue";
+import BackToTop from "./components/BackToTop.vue";
 
 const { loading, startLoader } = useLoader("Inter", 3000);
 
@@ -75,11 +75,11 @@ function toggleDark() {
 
 function updateTheme() {
   if (isDark.value) {
-    document.documentElement.classList.add('dark');
-    document.body.style.backgroundColor = '#0f172a';
+    document.documentElement.classList.add("dark");
+    document.body.style.backgroundColor = "#0f172a";
   } else {
-    document.documentElement.classList.remove('dark');
-    document.body.style.backgroundColor = '#f9fafb';
+    document.documentElement.classList.remove("dark");
+    document.body.style.backgroundColor = "#f9fafb";
   }
 }
 
@@ -98,6 +98,6 @@ html {
 }
 
 body {
-    background-color: #0f172a; /* Ensure bg matches loading state */
+  background-color: #0f172a; /* Ensure bg matches loading state */
 }
 </style>
