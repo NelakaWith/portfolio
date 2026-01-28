@@ -3,7 +3,7 @@
     <button
       v-if="isVisible"
       @click="scrollToTop"
-      class="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-primary hover:bg-primary-dark shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 group"
+      class="fixed bottom-20 right-5 z-50 p-3 rounded-full bg-primary hover:bg-primary-dark shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 group"
       aria-label="Back to top"
     >
       <svg
