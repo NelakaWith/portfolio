@@ -1,16 +1,17 @@
 <template>
-  <section class="relative">
+  <section class="relative overflow-hidden">
+    <DigitalDust />
     <div
-      class="min-h-[100vh] md:min-h-[105vh] lg:min-h-[102vh] max-w-7xl mx-auto px-4 py-8 flex flex-col lg:flex-row mt-20 lg:mt-0"
+      class="relative z-10 min-h-[100vh] md:min-h-[105vh] lg:min-h-[102vh] max-w-7xl mx-auto px-4 py-8 flex flex-col lg:flex-row mt-20 lg:mt-0"
     >
       <div class="flex-1 flex flex-col lg:justify-center gap-8 text-center">
         <div class="flex flex-col">
           <h1
-            class="text-3xl md:text-4xl lg:text-7xl font-bold text-slate-800 dark:text-white mb-4"
+            class="text-3xl md:text-4xl lg:text-8xl font-bold text-slate-800 dark:text-white mb-8"
           >
             <span class="hero-primary-gradient">High-Velocity</span>
             Engineering.<br />
-            Absolute <span class="hero-primary-gradient">Reliability</span>.
+            Absolute <span class="hero-primary-gradient">Reliability.</span>
           </h1>
           <!-- <h3
             class="mb-4 text-lg lg:text-xl font-semibold text-slate-800 dark:text-white"
@@ -19,7 +20,7 @@
             Agencies.
           </h3> -->
           <p
-            class="text-md lg:text-xl font-light text-gray-700 dark:text-gray-200 leading-relaxed mb-4"
+            class="text-md lg:text-xl font-light text-gray-700 dark:text-gray-200 leading-relaxed mb-8"
           >
             I help businesses launch custom applications in weeks, not months,
             by leveraging a
@@ -60,6 +61,7 @@
 
 <script setup lang="ts">
 import WaveBorder from "./WaveBorder.vue";
+import DigitalDust from "./DigitalDust.vue";
 
 const scrollToContact = () => {
   const el = document.getElementById("contact");
