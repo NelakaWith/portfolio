@@ -11,7 +11,7 @@
           >
             <span class="hero-primary-gradient">High-Velocity</span>
             Engineering.<br />
-            Absolute <span class="hero-primary-gradient">Reliability</span>.
+            Absolute <span class="hero-primary-gradient">Reliability.</span>
           </h1>
           <!-- <h3
             class="mb-4 text-lg lg:text-xl font-semibold text-slate-800 dark:text-white"
