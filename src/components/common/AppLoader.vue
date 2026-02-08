@@ -1,185 +1,79 @@
 <template>
-  <div class="orbit-loader-container">
-    <div class="orbit-loader">
-      <div class="slice"></div>
-      <div class="slice"></div>
-      <div class="slice"></div>
-      <div class="slice"></div>
-      <div class="slice"></div>
-      <div class="slice"></div>
+  <div class="dot-matrix-loader">
+    <div class="dot-grid">
+      <div
+        v-for="i in 25"
+        :key="i"
+        class="dot"
+        :style="{ animationDelay: `${getDelay(i)}ms` }"
+      ></div>
     </div>
   </div>
 </template>
 
 <script setup>
 import { computed } from "vue";
+
 const props = defineProps({
-  color: { type: String, default: null },
   dark: { type: Boolean, default: false },
 });
 
-const loaderColor = computed(() => {
-  if (props.color) return props.color;
-  return props.dark ? "#facc15" : "#3b82f6"; // yellow-400 for dark, blue-500 for light
+const primaryColor = computed(() => {
+  return props.dark ? "147, 197, 253" : "37, 99, 235"; // Blue-300 / Blue-600
 });
+
+const secondaryColor = computed(() => {
+  return props.dark ? "167, 139, 250" : "59, 130, 246"; // Violet-300 / Blue-500
+});
+
+// Calculate delay based on distance from center (creates radial wave)
+const getDelay = (index) => {
+  const row = Math.floor((index - 1) / 5);
+  const col = (index - 1) % 5;
+  const centerX = 2;
+  const centerY = 2;
+  const distance = Math.sqrt((row - centerY) ** 2 + (col - centerX) ** 2);
+  return distance * 120;
+};
 </script>
 
 <style scoped>
-.orbit-loader-container {
+.dot-matrix-loader {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100px;
 }
-.orbit-loader {
-  --uib-size: 45px;
-  --uib-color: v-bind(loaderColor);
-  --uib-speed: 2.5s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: var(--uib-size);
-  width: var(--uib-size);
+
+.dot-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  width: 80px;
+  height: 80px;
 }
-.slice {
-  position: relative;
-  height: calc(var(--uib-size) / 6);
-  width: 100%;
-}
-.slice::before,
-.slice::after {
-  --uib-a: calc(var(--uib-speed) / -2);
-  --uib-b: calc(var(--uib-speed) / -6);
-  content: "";
-  position: absolute;
-  top: 0;
-  left: calc(50% - var(--uib-size) / 12);
-  height: 100%;
-  width: calc(100% / 6);
+
+.dot {
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  background-color: var(--uib-color);
-  flex-shrink: 0;
-  animation: orbit var(--uib-speed) linear infinite;
-  transition: background-color 0.3s ease;
+  background: linear-gradient(
+    135deg,
+    rgba(v-bind(primaryColor), 0.8),
+    rgba(v-bind(secondaryColor), 0.8)
+  );
+  animation: pulse 1.5s ease-in-out infinite;
 }
-.slice:nth-child(1)::after {
-  animation-delay: var(--uib-a);
-}
-.slice:nth-child(2)::before {
-  animation-delay: var(--uib-b);
-}
-.slice:nth-child(2)::after {
-  animation-delay: calc(var(--uib-a) + var(--uib-b));
-}
-.slice:nth-child(3)::before {
-  animation-delay: calc(var(--uib-b) * 2);
-}
-.slice:nth-child(3)::after {
-  animation-delay: calc(var(--uib-a) + var(--uib-b) * 2);
-}
-.slice:nth-child(4)::before {
-  animation-delay: calc(var(--uib-b) * 3);
-}
-.slice:nth-child(4)::after {
-  animation-delay: calc(var(--uib-a) + var(--uib-b) * 3);
-}
-.slice:nth-child(5)::before {
-  animation-delay: calc(var(--uib-b) * 4);
-}
-.slice:nth-child(5)::after {
-  animation-delay: calc(var(--uib-a) + var(--uib-b) * 4);
-}
-.slice:nth-child(6)::before {
-  animation-delay: calc(var(--uib-b) * 5);
-}
-.slice:nth-child(6)::after {
-  animation-delay: calc(var(--uib-a) + var(--uib-b) * 5);
-}
-@keyframes orbit {
-  0% {
-    transform: translateX(calc(var(--uib-size) * 0.25)) scale(0.73684);
-    opacity: 0.65;
-  }
-  5% {
-    transform: translateX(calc(var(--uib-size) * 0.235)) scale(0.684208);
-    opacity: 0.58;
-  }
-  10% {
-    transform: translateX(calc(var(--uib-size) * 0.182)) scale(0.631576);
-    opacity: 0.51;
-  }
-  15% {
-    transform: translateX(calc(var(--uib-size) * 0.129)) scale(0.578944);
-    opacity: 0.44;
-  }
-  20% {
-    transform: translateX(calc(var(--uib-size) * 0.076)) scale(0.526312);
-    opacity: 0.37;
-  }
-  25% {
-    transform: translateX(0%) scale(0.47368);
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(0.4);
     opacity: 0.3;
   }
-  30% {
-    transform: translateX(calc(var(--uib-size) * -0.076)) scale(0.526312);
-    opacity: 0.37;
-  }
-  35% {
-    transform: translateX(calc(var(--uib-size) * -0.129)) scale(0.578944);
-    opacity: 0.44;
-  }
-  40% {
-    transform: translateX(calc(var(--uib-size) * -0.182)) scale(0.631576);
-    opacity: 0.51;
-  }
-  45% {
-    transform: translateX(calc(var(--uib-size) * -0.235)) scale(0.684208);
-    opacity: 0.58;
-  }
   50% {
-    transform: translateX(calc(var(--uib-size) * -0.25)) scale(0.73684);
-    opacity: 0.65;
-  }
-  55% {
-    transform: translateX(calc(var(--uib-size) * -0.235)) scale(0.789472);
-    opacity: 0.72;
-  }
-  60% {
-    transform: translateX(calc(var(--uib-size) * -0.182)) scale(0.842104);
-    opacity: 0.79;
-  }
-  65% {
-    transform: translateX(calc(var(--uib-size) * -0.129)) scale(0.894736);
-    opacity: 0.86;
-  }
-  70% {
-    transform: translateX(calc(var(--uib-size) * -0.076)) scale(0.947368);
-    opacity: 0.93;
-  }
-  75% {
-    transform: translateX(0%) scale(1);
+    transform: scale(1);
     opacity: 1;
-  }
-  80% {
-    transform: translateX(calc(var(--uib-size) * 0.076)) scale(0.947368);
-    opacity: 0.93;
-  }
-  85% {
-    transform: translateX(calc(var(--uib-size) * 0.129)) scale(0.894736);
-    opacity: 0.86;
-  }
-  90% {
-    transform: translateX(calc(var(--uib-size) * 0.182)) scale(0.842104);
-    opacity: 0.79;
-  }
-  95% {
-    transform: translateX(calc(var(--uib-size) * 0.235)) scale(0.789472);
-    opacity: 0.72;
-  }
-  100% {
-    transform: translateX(calc(var(--uib-size) * 0.25)) scale(0.73684);
-    opacity: 0.65;
   }
 }
 </style>
