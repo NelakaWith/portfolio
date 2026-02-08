@@ -59,7 +59,7 @@
         <div
           class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180%] h-[180%] -z-10 opacity-70 [mask-image:radial-gradient(closest-side,white,transparent)]"
         >
-          <BackgroundSwirl />
+          <DotMatrixAura />
         </div>
 
         <div class="relative w-72 h-72 md:w-96 md:h-96">
@@ -84,7 +84,7 @@
 </template>
 
 <script setup>
-import BackgroundSwirl from "../effects/BackgroundSwirl.vue";
+import DotMatrixAura from "../effects/DotMatrixAura.vue";
 
 const socialLinks = [
   {
