@@ -84,7 +84,7 @@
 </template>
 
 <script setup>
-import BackgroundSwirl from "./BackgroundSwirl.vue";
+import BackgroundSwirl from "../effects/BackgroundSwirl.vue";
 
 const socialLinks = [
   {

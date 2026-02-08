@@ -60,8 +60,8 @@
 </template>
 
 <script setup lang="ts">
-import WaveBorder from "./WaveBorder.vue";
-import DigitalDust from "./DigitalDust.vue";
+import WaveBorder from "../effects/WaveBorder.vue";
+import DigitalDust from "../effects/DigitalDust.vue";
 
 const scrollToContact = () => {
   const el = document.getElementById("contact");

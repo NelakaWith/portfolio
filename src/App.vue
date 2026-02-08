@@ -43,10 +43,10 @@
 
 <script setup>
 import { ref, onMounted, watch } from "vue";
-import Header from "./components/AppHeader.vue";
+import Header from "./components/layout/AppHeader.vue";
 import { useLoader } from "./composables/useLoader";
-import AppLoader from "./components/AppLoader.vue";
-import BackToTop from "./components/BackToTop.vue";
+import AppLoader from "./components/common/AppLoader.vue";
+import BackToTop from "./components/common/BackToTop.vue";
 
 const { loading, startLoader } = useLoader("Inter", 3000);
 
