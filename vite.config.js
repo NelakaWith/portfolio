@@ -1,14 +1,24 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import path from "path";
+import { fileURLToPath, URL } from "node:url";
+import sitemap from "vite-plugin-sitemap";
 
 // https://vite.dev/config/
 export default defineConfig({
   base: "/",
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    sitemap({
+      hostname: "https://nelaka.xyz",
+      routes: ["/", "/services"],
+      changefreq: "weekly",
+      priority: 0.8,
+      lastmod: new Date(),
+    }),
+  ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
   server: {
