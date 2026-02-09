@@ -78,6 +78,7 @@ const categories = [
       { name: "Prime Vue", icon: "simple-icons:primevue" },
       { name: "SCSS", icon: "vscode-icons:file-type-scss" },
       { name: "LESS", icon: "vscode-icons:file-type-less" },
+      { name: "jQuery", icon: "simple-icons:jquery" },
     ],
   },
   {
@@ -87,7 +88,6 @@ const categories = [
       { name: "Pinia", icon: "logos:pinia" },
       { name: "Vuex", icon: "material-icon-theme:vuex-store" },
       { name: "Redux", icon: "logos:redux" },
-      { name: "jQuery", icon: "simple-icons:jquery" },
     ],
   },
   {
