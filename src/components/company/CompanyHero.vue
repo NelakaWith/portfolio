@@ -1,5 +1,5 @@
 <template>
-  <section class="relative overflow-hidden">
+  <section class="relative">
     <DigitalDust />
     <div
       class="relative z-10 min-h-[100vh] md:min-h-[105vh] lg:min-h-[102vh] max-w-7xl mx-auto px-4 py-8 flex flex-col lg:flex-row mt-20 lg:mt-0"
