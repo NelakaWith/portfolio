@@ -42,13 +42,25 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from "vue";
+import { ref, onMounted, watch, computed } from "vue";
+import { useHead } from "@unhead/vue";
+import { useRoute } from "vue-router";
 import Header from "./components/layout/AppHeader.vue";
 import { useLoader } from "./composables/useLoader";
 import AppLoader from "./components/common/AppLoader.vue";
 import BackToTop from "./components/common/BackToTop.vue";
 
 const { loading, startLoader } = useLoader("Inter", 3000);
+const route = useRoute();
+
+useHead({
+  link: [
+    {
+      rel: "canonical",
+      href: computed(() => `https://nelaka.xyz${route.path}`),
+    },
+  ],
+});
 
 const isDark = ref(true);
 

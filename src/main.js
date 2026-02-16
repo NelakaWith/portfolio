@@ -4,5 +4,9 @@ import App from "./App.vue";
 import { Icon } from "@iconify/vue";
 import router from "./router";
 
-createApp(App).component("Icon", Icon).use(router).mount("#app");
+import { createHead } from "@unhead/vue/client";
+
+const head = createHead();
+
+createApp(App).component("Icon", Icon).use(router).use(head).mount("#app");
 
