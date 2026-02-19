@@ -20,6 +20,8 @@
         <template v-for="item in navItems" :key="item.id">
           <a
             :href="item.href"
+            :target="item.external ? '_blank' : undefined"
+            :rel="item.external ? 'noopener noreferrer' : undefined"
             class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-all duration-200"
             @click.prevent="handleNavClick(item)"
           >
@@ -73,6 +75,8 @@
           <template v-for="item in navItems" :key="item.id">
             <a
               :href="item.href"
+              :target="item.external ? '_blank' : undefined"
+              :rel="item.external ? 'noopener noreferrer' : undefined"
               class="text-3xl font-heading font-bold text-slate-900 dark:text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-primary hover:to-secondary transition-all"
               @click.prevent="
                 handleNavClick(item);
@@ -122,10 +126,22 @@ const navItems = [
   { id: "experience", label: "Experience", href: "#experience", type: "hash" },
   { id: "projects", label: "Projects", href: "#projects", type: "hash" },
   { id: "education", label: "Education", href: "#education", type: "hash" },
+  {
+    id: "blog",
+    label: "Blog",
+    href: "https://blog.nelaka.xyz",
+    type: "route",
+    external: true,
+  },
   { id: "services", label: "Services", href: "/services", type: "route" },
 ];
 
 function handleNavClick(item) {
+  if (item.external) {
+    window.open(item.href, "_blank", "noopener,noreferrer");
+    return;
+  }
+
   if (item.type === "route") {
     router.push(item.href);
   } else {
