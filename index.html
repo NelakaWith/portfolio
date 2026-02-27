@@ -64,24 +64,39 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Nelaka",
-        "url": "https://nelaka.xyz",
-        "jobTitle": "Full Stack Developer",
-        "description": "Full Stack Developer specializing in Vue.js, React, Node.js, and modern web technologies",
-        "sameAs": [
-          "https://github.com/NelakaWith",
-          "https://linkedin.com/in/nelaka"
-        ],
-        "knowsAbout": [
-          "Vue.js",
-          "React",
-          "Node.js",
-          "TypeScript",
-          "JavaScript",
-          "Tailwind CSS",
-          "Full Stack Development",
-          "Web Development"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://nelaka.xyz/#website",
+            "url": "https://nelaka.xyz/",
+            "name": "Nelaka Portfolio",
+            "description": "Full Stack Developer Portfolio",
+            "publisher": {
+              "@id": "https://nelaka.xyz/#person"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://nelaka.xyz/#person",
+            "name": "Nelaka Withanage",
+            "url": "https://nelaka.xyz",
+            "jobTitle": "Full Stack Developer",
+            "description": "Full Stack Developer specializing in Vue.js, React, Node.js, and modern web technologies",
+            "sameAs": [
+              "https://github.com/NelakaWith",
+              "https://linkedin.com/in/nelaka"
+            ],
+            "knowsAbout": [
+              "Vue.js",
+              "React",
+              "Node.js",
+              "TypeScript",
+              "JavaScript",
+              "Tailwind CSS",
+              "Full Stack Development",
+              "Web Development"
+            ]
+          }
         ]
       }
     </script>
