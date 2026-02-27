@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "node scripts/append-sitemap.js",
     "preview": "vite preview",
     "lint": "eslint .",
     "deploy": "gh-pages -d dist -m \"Deploy: publish latest portfolio build to GitHub Pages [skip ci]\""
