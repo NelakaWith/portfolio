@@ -10,14 +10,24 @@ async function main() {
 
     // Check if the blog URL is already appended
     if (!content.includes("https://blog.nelaka.xyz/")) {
-      content = content.replace("</urlset>", sitemapUrl + "</urlset>");
-      await fs.writeFile(sitemapPath, content);
+      if (!content.includes("</urlset>")) {
+        throw new Error("Invalid sitemap format: missing </urlset> tag");
+      }
+
+      const newContent = content.replace("</urlset>", sitemapUrl + "\n</urlset>");
+
+      if (newContent === content) {
+        throw new Error("Failed to append blog URL: replacement did not modify the content");
+      }
+
+      await fs.writeFile(sitemapPath, newContent);
       console.log("Successfully appended blog URL to sitemap.xml");
     } else {
       console.log("Blog URL already exists in sitemap.xml");
     }
   } catch (error) {
     console.error("Failed to append to sitemap.xml:", error.message);
+    process.exit(1);
   }
 }
 
