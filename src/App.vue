@@ -4,15 +4,17 @@
       class="font-sans bg-gray-50 dark:bg-dark min-h-screen text-slate-900 dark:text-white selection:bg-primary selection:text-white transition-colors duration-300"
     >
       <!-- Loader -->
-      <div
-        v-if="loading"
+      <Transition name="fade">
+        <div
+          v-if="loading"
         class="fixed inset-0 flex items-center justify-center z-[100] bg-gray-50 dark:bg-dark"
       >
         <AppLoader :dark="isDark" />
-      </div>
+        </div>
+      </Transition>
 
       <!-- Main Content -->
-      <div v-else>
+      <div>
         <Header
           @menu-click="handleMenuClick"
           :is-dark="isDark"
@@ -20,7 +22,7 @@
         />
 
         <main class="overflow-x-hidden">
-          <router-view />
+          <NuxtPage />
         </main>
 
         <!-- Footer -->
@@ -43,7 +45,6 @@
 
 <script setup>
 import { ref, onMounted, watch, computed } from "vue";
-import { useHead } from "@unhead/vue";
 import { useRoute } from "vue-router";
 import Header from "./components/layout/AppHeader.vue";
 import { useLoader } from "./composables/useLoader";
@@ -53,14 +54,32 @@ import BackToTop from "./components/common/BackToTop.vue";
 const { loading, startLoader } = useLoader("Inter", 3000);
 const route = useRoute();
 
-useHead({
-  link: [
-    {
-      rel: "canonical",
-      href: computed(() => `https://nelaka.xyz${route.path}`),
-    },
-  ],
+useSeoMeta({
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} | Nelaka Withanage` : 'Nelaka Withanage - Software Engineer';
+  },
+  ogType: 'website',
+  ogSiteName: 'Nelaka Withanage',
+  twitterCard: 'summary_large_image',
+  ogImage: 'https://nelaka.xyz/og_banner_02.png',
 });
+
+useSchemaOrg([
+  definePerson({
+    name: "Nelaka Withanage",
+    url: "https://nelaka.xyz",
+    image: "https://nelaka.xyz/og_banner_02.png",
+    jobTitle: "Software Engineer & Full-Stack Developer",
+    sameAs: [
+      "https://github.com/nelakaw",
+      "https://linkedin.com/in/nelakaw",
+    ]
+  }),
+  defineWebSite({
+    name: "Nelaka Withanage",
+    url: "https://nelaka.xyz",
+  })
+]);
 
 const isDark = ref(true);
 
@@ -88,10 +107,8 @@ function toggleDark() {
 function updateTheme() {
   if (isDark.value) {
     document.documentElement.classList.add("dark");
-    document.body.style.backgroundColor = "#0f172a";
   } else {
     document.documentElement.classList.remove("dark");
-    document.body.style.backgroundColor = "#f9fafb";
   }
 }
 
@@ -110,6 +127,17 @@ html {
 }
 
 body {
-  background-color: #0f172a; /* Ensure bg matches loading state */
+  @apply bg-gray-50 dark:bg-dark transition-colors duration-300;
+}
+
+/* Fade transition for loader */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
