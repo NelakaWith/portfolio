@@ -19,7 +19,7 @@
         High-Velocity primitives. Senior Software Engineer & Systems Architect.
       </p>
 
-      <div class="flex justify-center mb-12">
+      <div class="flex justify-center items-center flex-wrap gap-4 mb-12">
         <NuxtLink
           to="/contact"
           class="hero-button bg-slate-800 dark:bg-slate-700 group flex items-center justify-center gap-2"
@@ -30,6 +30,24 @@
             class="w-5 h-5 group-hover:translate-x-1 transition-transform text-primary"
           />
         </NuxtLink>
+        <a
+          href="https://github.com/NelakaWith"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-3 md:p-3.5 rounded-full bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 transition-all text-slate-600 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white flex items-center"
+          aria-label="GitHub Profile"
+        >
+          <Icon icon="mdi:github" class="w-6 h-6" />
+        </a>
+        <a
+          href="https://linkedin.com/in/nelakawith"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-3 md:p-3.5 rounded-full bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 transition-all text-slate-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 flex items-center"
+          aria-label="LinkedIn Profile"
+        >
+          <Icon icon="mdi:linkedin" class="w-6 h-6" />
+        </a>
       </div>
 
       <div class="grid md:grid-cols-2 gap-12 text-left mt-16">
