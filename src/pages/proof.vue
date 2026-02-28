@@ -10,8 +10,8 @@
       <p
         class="text-xl text-slate-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto"
       >
-        Senior Fullstack Engineer with 5+ years of experience specializing in
-        the Vue.js ecosystem. Proven track record of leading architectural
+        Senior Software Engineer with 9+ years of experience specializing in the
+        Vue.js ecosystem. Proven track record of leading architectural
         migrations and optimizing delivery pipelines for speed and
         maintainability.
       </p>

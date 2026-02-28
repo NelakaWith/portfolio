@@ -16,7 +16,7 @@
         class="text-xl text-slate-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto font-medium"
       >
         I help teams eliminate architectural noise and restore momentum through
-        High-Velocity primitives. Senior Fullstack Engineer & Systems Architect.
+        High-Velocity primitives. Senior Software Engineer & Systems Architect.
       </p>
 
       <div class="flex justify-center mb-12">
@@ -54,12 +54,12 @@
             The Specialist
           </h2>
           <p class="text-slate-600 dark:text-gray-300 leading-relaxed">
-            I’m Nelaka. My journey started in traditional engineering, but it
-            evolved through the crucible of independent product development.
-            After seeing how 'standard' architectures stall under their own
-            weight, I moved toward a philosophy of abstraction. I don't just
-            write code; I build engines that allow businesses to pivot as fast
-            as they think.
+            <strong>I’m Nelaka.</strong> My journey started in traditional
+            engineering, but it evolved through the crucible of independent
+            product development. After seeing how 'standard' architectures stall
+            under their own weight, I moved toward a philosophy of abstraction.
+            I don't just write code; I build engines that allow businesses to
+            pivot as fast as they think.
           </p>
         </div>
       </div>
