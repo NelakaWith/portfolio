@@ -7,9 +7,10 @@
       <Transition name="fade">
         <div
           v-if="loading"
-        class="fixed inset-0 flex items-center justify-center z-[100] bg-gray-50 dark:bg-dark"
-      >
-        <AppLoader :dark="isDark" />
+          class="fixed inset-0 flex items-center justify-center z-[100] transition-colors duration-300"
+          :class="isDark ? 'bg-dark' : 'bg-gray-50'"
+        >
+          <AppLoader :dark="isDark" />
         </div>
       </Transition>
 
@@ -36,8 +37,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, computed } from "vue";
-import { useRoute } from "vue-router";
+import { ref, onMounted } from "vue";
 import Header from "./components/layout/AppHeader.vue";
 import Footer from "./components/layout/AppFooter.vue";
 import { useLoader } from "./composables/useLoader";
@@ -45,16 +45,17 @@ import AppLoader from "./components/common/AppLoader.vue";
 import BackToTop from "./components/common/BackToTop.vue";
 
 const { loading, startLoader } = useLoader("Poppins", 3000);
-const route = useRoute();
 
 useSeoMeta({
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} | Nelaka Withanage` : 'Nelaka Withanage - Software Engineer';
+    return titleChunk
+      ? `${titleChunk} | Nelaka Withanage`
+      : "Nelaka Withanage - Software Engineer";
   },
-  ogType: 'website',
-  ogSiteName: 'Nelaka Withanage',
-  twitterCard: 'summary_large_image',
-  ogImage: 'https://nelaka.xyz/og_banner_02.png',
+  ogType: "website",
+  ogSiteName: "Nelaka Withanage",
+  twitterCard: "summary_large_image",
+  ogImage: "https://nelaka.xyz/og_banner_02.png",
 });
 
 useSchemaOrg([
@@ -63,15 +64,12 @@ useSchemaOrg([
     url: "https://nelaka.xyz",
     image: "https://nelaka.xyz/og_banner_02.png",
     jobTitle: "Software Engineer & Full-Stack Developer",
-    sameAs: [
-      "https://github.com/nelakaw",
-      "https://linkedin.com/in/nelakaw",
-    ]
+    sameAs: ["https://github.com/nelakaw", "https://linkedin.com/in/nelakaw"],
   }),
   defineWebSite({
     name: "Nelaka Withanage",
     url: "https://nelaka.xyz",
-  })
+  }),
 ]);
 
 const isDark = ref(true);
