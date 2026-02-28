@@ -95,13 +95,19 @@ onMounted(() => {
   startLoader();
 });
 
-watch(isDark, (val) => {
-  localStorage.setItem("darkMode", val);
-  updateTheme();
-});
+// Removed redundant watcher
 
 function toggleDark() {
-  isDark.value = !isDark.value;
+  const willBeDark = !isDark.value;
+
+  if (willBeDark) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+
+  localStorage.setItem("darkMode", willBeDark);
+  isDark.value = willBeDark;
 }
 
 function updateTheme() {
