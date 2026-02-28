@@ -1,14 +1,13 @@
 <template>
   <section id="projects" class="py-20 bg-slate-50/50 dark:bg-dark-lighter/50">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="mb-12">
-        <h2 class="text-sm font-bold text-secondary tracking-widest uppercase mb-2">Portfolio</h2>
-         <h3 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 dark:text-white">
+      <div class="mb-12 text-center">
+         <h3 class="text-3xl md:text-4xl font-heading font-bold text-slate-700 dark:text-white">
           Commercial Projects
         </h3>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div
           v-for="(project, index) in projects"
           :key="index"
@@ -17,7 +16,7 @@
           <!-- Decoration -->
           <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 blur-[50px] rounded-full -mr-16 -mt-16 transition-all group-hover:bg-secondary/20"></div>
 
-          <h3 class="text-xl font-heading font-bold text-slate-900 dark:text-white mb-3 group-hover:text-secondary transition-colors">
+          <h3 class="text-xl font-heading font-bold text-slate-700 dark:text-white mb-3 group-hover:text-secondary transition-colors">
             {{ project.name }}
           </h3>
           <p class="text-slate-600 dark:text-gray-400 mb-6 leading-relaxed text-sm h-20">

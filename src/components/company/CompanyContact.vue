@@ -177,7 +177,7 @@
           :disabled="isSubmitting"
         >
           <span v-if="!isSubmitting" class="hero-primary-gradient"
-            >Send Message</span
+            >Reach Out</span
           >
           <span v-else class="hero-primary-gradient">Sending...</span>
         </button>

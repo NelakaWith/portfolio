@@ -14,7 +14,7 @@
           Nelaka Withanage
         </h2>
         <h1
-          class="text-5xl lg:text-7xl font-heading font-extrabold text-slate-900 dark:text-white leading-tight mb-6"
+          class="text-5xl lg:text-7xl font-heading font-extrabold text-slate-700 dark:text-white leading-tight mb-6"
         >
           Building
           <span
@@ -44,7 +44,7 @@
               class="w-5 h-5 text-slate-500 dark:text-gray-300 group-hover:text-primary transition-colors"
             />
             <span
-              class="text-sm font-medium text-slate-600 dark:text-gray-300 group-hover:text-slate-900 dark:group-hover:text-white"
+              class="text-sm font-medium text-slate-600 dark:text-gray-300 group-hover:text-slate-700 dark:group-hover:text-white"
               >{{ link.text }}</span
             >
           </a>

@@ -13,7 +13,7 @@
           Highlights
         </h2>
         <h3
-          class="text-3xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white"
+          class="text-3xl md:text-5xl font-heading font-bold text-slate-700 dark:text-white"
         >
           Passion Projects
         </h3>
@@ -39,7 +39,7 @@
           <!-- Content -->
           <div class="p-6 flex flex-col flex-1 relative z-20">
             <h3
-              class="text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors"
+              class="text-2xl font-bold text-slate-700 dark:text-white mb-2 group-hover:text-primary transition-colors"
             >
               {{ project.name }}
             </h3>

@@ -1,7 +1,7 @@
 <template>
   <div :class="{ dark: isDark }">
     <div
-      class="font-sans bg-gray-50 dark:bg-dark min-h-screen text-slate-900 dark:text-white selection:bg-primary selection:text-white transition-colors duration-300"
+      class="font-sans bg-gray-50 dark:bg-dark min-h-screen text-slate-700 dark:text-white selection:bg-primary selection:text-white transition-colors duration-300"
     >
       <!-- Loader -->
       <Transition name="fade">
@@ -26,15 +26,7 @@
         </main>
 
         <!-- Footer -->
-        <footer
-          class="py-8 text-center text-gray-500 text-sm border-t border-gray-200 dark:border-white/5 bg-gray-100 dark:bg-dark-lighter/20"
-        >
-          <p>
-            &copy; {{ new Date().getFullYear() }} Nelaka Withanage. All rights
-            reserved.
-          </p>
-          <p class="mt-2">Built with Vue 3, Tailwind CSS & Glassmorphism</p>
-        </footer>
+        <Footer />
 
         <!-- Back to Top Button -->
         <BackToTop />
@@ -47,11 +39,12 @@
 import { ref, onMounted, watch, computed } from "vue";
 import { useRoute } from "vue-router";
 import Header from "./components/layout/AppHeader.vue";
+import Footer from "./components/layout/AppFooter.vue";
 import { useLoader } from "./composables/useLoader";
 import AppLoader from "./components/common/AppLoader.vue";
 import BackToTop from "./components/common/BackToTop.vue";
 
-const { loading, startLoader } = useLoader("Inter", 3000);
+const { loading, startLoader } = useLoader("Poppins", 3000);
 const route = useRoute();
 
 useSeoMeta({
