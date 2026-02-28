@@ -1,6 +1,9 @@
 ```
 <template>
-  <section id="experience" class="py-20 bg-slate-50/30 dark:bg-dark-lighter/30">
+  <section
+    id="experience"
+    class="py-20 bg-slate-50/30 dark:bg-dark-lighter/30 rounded-xl"
+  >
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
         <h2

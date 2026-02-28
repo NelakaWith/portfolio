@@ -72,16 +72,15 @@ useSchemaOrg([
   }),
 ]);
 
-const isDark = ref(true);
+// Initialize isDark from localStorage immediately (client-side only)
+const isDark = ref(
+  typeof window !== "undefined"
+    ? localStorage.getItem("darkMode") !== "false"
+    : true
+);
 
 // Persist dark mode in localStorage
 onMounted(() => {
-  const saved = localStorage.getItem("darkMode");
-  if (saved !== null) {
-    isDark.value = saved === "true";
-  } else {
-    isDark.value = true;
-  }
   updateTheme();
   startLoader();
 });
