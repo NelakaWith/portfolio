@@ -1,12 +1,20 @@
 <template>
   <section id="showcase" class="py-20 relative overflow-hidden">
-     <!-- Background decoration -->
-    <div class="absolute right-0 bottom-0 w-[500px] h-[500px] bg-primary/10 blur-[100px] rounded-full -z-10 pointer-events-none"></div>
+    <!-- Background decoration -->
+    <div
+      class="absolute right-0 bottom-0 w-[500px] h-[500px] bg-primary/10 blur-[100px] rounded-full -z-10 pointer-events-none"
+    ></div>
 
     <div class="max-w-7xl mx-auto px-6">
       <div class="mb-16">
-        <h2 class="text-sm font-bold text-secondary tracking-widest uppercase mb-2">Highlights</h2>
-        <h3 class="text-3xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white">
+        <h2
+          class="text-sm font-bold text-secondary tracking-widest uppercase mb-2"
+        >
+          Highlights
+        </h2>
+        <h3
+          class="text-3xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white"
+        >
           Passion Projects
         </h3>
       </div>
@@ -18,7 +26,7 @@
           class="group flex flex-col bg-white border border-slate-200 shadow-sm dark:bg-white/5 dark:border-white/5 dark:shadow-none rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300"
         >
           <!-- Image Container -->
-          <div class="relative h-48 overflow-hidden">
+          <!-- <div class="relative h-48 overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent dark:from-dark/80 dark:to-transparent opacity-60 z-10"></div>
             <img
               v-if="project.image"
@@ -26,14 +34,18 @@
               :alt="project.name"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />
-          </div>
+          </div> -->
 
           <!-- Content -->
           <div class="p-6 flex flex-col flex-1 relative z-20">
-            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+            <h3
+              class="text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors"
+            >
               {{ project.name }}
             </h3>
-            <p class="text-slate-600 dark:text-gray-400 mb-6 text-sm leading-relaxed flex-1">
+            <p
+              class="text-slate-600 dark:text-gray-400 mb-6 text-sm leading-relaxed flex-1"
+            >
               {{ project.description }}
             </p>
 
@@ -47,7 +59,9 @@
               </span>
             </div>
 
-            <div class="flex gap-4 pt-4 border-t border-slate-100 dark:border-white/5">
+            <div
+              class="flex gap-4 pt-4 border-t border-slate-100 dark:border-white/5"
+            >
               <a
                 v-if="project.github"
                 :href="project.github"
@@ -77,15 +91,15 @@
 <script setup>
 import { Icon } from "@iconify/vue";
 const projects = [
-  {
-    name: "Personal Portfolio",
-    description:
-      "A modern, responsive portfolio site built with Vue 3, Tailwind CSS, and Vite. Features dark mode, project showcase, and smooth navigation.",
-    technologies: ["Vue 3", "Tailwind CSS", "Vite"],
-    github: "https://github.com/NelakaWith/portfolio",
-    web: "",
-    image: "/sample_app_portfolio.png",
-  },
+  // {
+  //   name: "Personal Portfolio",
+  //   description:
+  //     "A modern, responsive portfolio site built with Vue 3, Tailwind CSS, and Vite. Features dark mode, project showcase, and smooth navigation.",
+  //   technologies: ["Vue 3", "Tailwind CSS", "Vite"],
+  //   github: "https://github.com/NelakaWith/portfolio",
+  //   web: "",
+  //   image: "/sample_app_portfolio.png",
+  // },
   {
     name: "FAQ Chatbot",
     description:
@@ -93,7 +107,8 @@ const projects = [
     technologies: [
       "Fuzzy Search",
       "Express/Node",
-      "OpenRouter AI",
+      "Groq SDK",
+      "OpenRouter API",
     ],
     github: "https://github.com/NelakaWith/faq-chatbot",
     web: "https://faq-chatbot.nelaka.xyz/",
@@ -118,16 +133,25 @@ const projects = [
     name: "Gloire RoadMap",
     description:
       "Gloire Road Map is a modern full-stack application designed for educational institutions and training programs to track student goals, manage attendance, and analyze performance metrics.",
-    technologies: [
-      "Vue 3",
-      "Express.js",
-      "MySQL",
-      "PrimeVue",
-      "Tailwind CSS",
-    ],
+    technologies: ["Vue 3", "Express.js", "MySQL", "PrimeVue", "Tailwind CSS"],
     github: "https://roadmap-demo.nelaka.xyz/login",
     web: "https://roadmap-demo.nelaka.xyz/login",
     image: "/sample_app_roadmap.png",
+  },
+  {
+    name: "The Black Box Beacon",
+    description:
+      'This is a JJournaling app for mental recovery. Most mental health apps are built for "improvement." This tool is built for survivability. It treats the user not as a "patient" to be fixed, but as a "survivor" whose data matters.',
+    technologies: [
+      "Vue 3",
+      "Nest.js",
+      "PostgreSQL",
+      "Groq SDK",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/NelakaWith/black-box-beacon",
+    web: "",
+    image: "",
   },
 ];
 </script>
