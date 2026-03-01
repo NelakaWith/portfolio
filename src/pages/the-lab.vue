@@ -1,7 +1,6 @@
 <template>
   <div class="pt-32 pb-20 min-h-screen">
     <div class="max-w-4xl mx-auto px-6">
-
       <section class="mb-16 text-center">
         <h1 class="text-4xl md:text-6xl font-heading font-bold text-slate-700 dark:text-white mb-6">
           The Lab
@@ -52,18 +51,25 @@
           </div>
         </article>
       </div>
+    </div>
 
+    <div class="max-w-7xl mx-auto px-6">
       <!-- Commercial Projects -->
       <section class="mt-20">
         <Projects />
       </section>
 
+      <!-- Passion Projects -->
+      <section class="mt-20">
+        <Showcase />
+      </section>
     </div>
   </div>
 </template>
 
 <script setup>
 import Projects from "../components/sections/AppProjects.vue";
+import Showcase from "../components/sections/AppShowcase.vue";
 
 const title = "The Lab | Nelaka Withanage";
 const description = "Case studies and deep dives into complex problem solving.";
