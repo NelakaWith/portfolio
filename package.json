@@ -4,26 +4,23 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "postbuild": "node scripts/append-sitemap.js",
-    "preview": "vite preview",
-    "lint": "eslint .",
-    "deploy": "gh-pages -d dist -m \"Deploy: publish latest portfolio build to GitHub Pages [skip ci]\""
+    "dev": "nuxt dev",
+    "build": "nuxt generate",
+    "preview": "nuxt preview",
+    "lint": "eslint ."
   },
   "dependencies": {
-    "@unhead/vue": "^2.1.4",
+    "@nuxtjs/seo": "^3.4.0",
+    "@nuxtjs/tailwindcss": "^6.14.0",
     "axios": "^1.13.2",
     "fontfaceobserver": "^2.3.0",
     "gsap": "^3.14.2",
-    "vue": "^3.5.13",
-    "vue-router": "^4.6.4"
+    "nuxt": "^4.3.1",
+    "vue": "^3.5.13"
   },
   "devDependencies": {
     "@eslint/js": "^9.27.0",
     "@iconify/vue": "^5.0.0",
-    "@vitejs/plugin-vue": "^5.2.3",
-    "@vue/eslint-config-standard": "^9.0.1",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.27.0",
     "eslint-plugin-vue": "^10.1.0",
@@ -31,8 +28,6 @@
     "globals": "^16.2.0",
     "postcss": "^8.5.3",
     "sass": "^1.89.0",
-    "tailwindcss": "^3.4.17",
-    "vite": "^6.3.5",
-    "vite-plugin-sitemap": "^0.8.2"
+    "tailwindcss": "^3.4.17"
   }
 }

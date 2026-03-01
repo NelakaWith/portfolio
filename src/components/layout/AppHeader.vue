@@ -9,7 +9,7 @@
         @click="handleNavClick(navItems.find((item) => item.id === 'about'))"
       >
         <h1
-          class="font-heading font-bold text-xl text-slate-900 dark:text-white tracking-tight group-hover:text-primary transition-colors"
+          class="font-heading font-bold text-xl text-slate-700 dark:text-white tracking-tight group-hover:text-primary transition-colors"
         >
           Nelaka<span class="text-primary">.</span>
         </h1>
@@ -48,7 +48,7 @@
 
       <!-- Mobile Nav Toggle -->
       <button
-        class="md:hidden text-slate-900 dark:text-white p-2"
+        class="md:hidden text-slate-700 dark:text-white p-2"
         @click="showMobileMenu = true"
         aria-label="Open menu"
       >
@@ -77,7 +77,7 @@
               :href="item.href"
               :target="item.external ? '_blank' : undefined"
               :rel="item.external ? 'noopener noreferrer' : undefined"
-              class="text-3xl font-heading font-bold text-slate-900 dark:text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-primary hover:to-secondary transition-all"
+              class="text-3xl font-heading font-bold text-slate-700 dark:text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-primary hover:to-secondary transition-all"
               @click.prevent="
                 handleNavClick(item);
                 showMobileMenu = false;
@@ -91,7 +91,7 @@
 
           <!-- Mobile Theme Toggle -->
           <button
-            class="flex items-center gap-3 px-6 py-3 rounded-full bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white font-medium hover:bg-slate-200 dark:hover:bg-white/10 transition-colors"
+            class="flex items-center gap-3 px-6 py-3 rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-white font-medium hover:bg-slate-200 dark:hover:bg-white/10 transition-colors"
             @click="$emit('toggle-dark')"
           >
             <Icon
@@ -120,12 +120,11 @@ defineEmits(["menu-click", "toggle-dark"]);
 const showMobileMenu = ref(false);
 
 const navItems = [
-  { id: "about", label: "About", href: "#about", type: "hash" },
-  { id: "skills", label: "Skills", href: "#skills", type: "hash" },
-  { id: "showcase", label: "Showcase", href: "#showcase", type: "hash" },
-  { id: "experience", label: "Experience", href: "#experience", type: "hash" },
-  { id: "projects", label: "Projects", href: "#projects", type: "hash" },
-  { id: "education", label: "Education", href: "#education", type: "hash" },
+  { id: "home", label: "Home", href: "/", type: "route" },
+  { id: "velocity", label: "Velocity", href: "/velocity", type: "route" },
+  { id: "the-lab", label: "The Lab", href: "/the-lab", type: "route" },
+  { id: "proof", label: "Proof", href: "/proof", type: "route" },
+  { id: "contact", label: "Contact", href: "/contact", type: "route" },
   {
     id: "blog",
     label: "Blog",
@@ -133,7 +132,6 @@ const navItems = [
     type: "route",
     external: true,
   },
-  { id: "services", label: "Services", href: "/services", type: "route" },
 ];
 
 function handleNavClick(item) {
@@ -144,16 +142,6 @@ function handleNavClick(item) {
 
   if (item.type === "route") {
     router.push(item.href);
-  } else {
-    // For hash links, navigate to home first if not already there
-    if (router.currentRoute.value.path !== "/") {
-      router.push("/" + item.href);
-    } else {
-      const el = document.getElementById(item.id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }
   }
 }
 </script>

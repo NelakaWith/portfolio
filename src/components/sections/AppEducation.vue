@@ -2,7 +2,7 @@
   <section id="education" class="py-20">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h2
-        class="text-3xl font-heading font-bold text-slate-900 dark:text-white mb-12"
+        class="text-3xl font-heading font-bold text-slate-700 dark:text-white mb-12"
       >
         Academic Background
       </h2>

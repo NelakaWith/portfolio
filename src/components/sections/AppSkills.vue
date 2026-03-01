@@ -8,7 +8,7 @@
           Expertise
         </h2>
         <h3
-          class="text-3xl md:text-4xl font-heading font-bold text-slate-900 dark:text-white"
+          class="text-3xl md:text-4xl font-heading font-bold text-slate-700 dark:text-white"
         >
           Technologies & Tools
         </h3>
@@ -38,7 +38,7 @@
                 class="w-4 h-4 text-slate-500 dark:text-gray-400 group-hover:text-primary transition-colors"
               />
               <span
-                class="text-sm font-medium text-slate-600 dark:text-gray-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors"
+                class="text-sm font-medium text-slate-600 dark:text-gray-300 group-hover:text-slate-700 dark:group-hover:text-white transition-colors"
                 >{{ skill.name }}</span
               >
             </div>

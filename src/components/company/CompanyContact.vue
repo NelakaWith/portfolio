@@ -75,7 +75,7 @@
             id="name"
             v-model="form.name"
             required
-            class="px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all"
+            class="px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
             placeholder="Your name"
           />
         </div>
@@ -90,7 +90,7 @@
             id="email"
             v-model="form.email"
             required
-            class="px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all"
+            class="px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
             placeholder="email@example.com"
           />
         </div>
@@ -106,7 +106,7 @@
           id="helpType"
           v-model="form.helpType"
           required
-          class="px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all"
+          class="px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
         >
           <option value="" disabled selected>Select an option</option>
           <option value="new-product">Building a new product</option>
@@ -125,7 +125,7 @@
           id="projectStage"
           v-model="form.projectStage"
           required
-          class="px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all"
+          class="px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
         >
           <option value="" disabled selected>Select an option</option>
           <option value="idea">Idea/Napkin sketch</option>
@@ -144,7 +144,7 @@
           id="budget"
           v-model="form.budget"
           required
-          class="px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all"
+          class="px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
         >
           <option value="" disabled selected>Select an option</option>
           <option value="5k-10k">$5k - $10k</option>
@@ -165,7 +165,7 @@
           v-model="form.message"
           required
           rows="4"
-          class="px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all resize-none"
+          class="px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-slate-800 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none"
           placeholder="How can I help you?"
         ></textarea>
       </div>
@@ -177,7 +177,7 @@
           :disabled="isSubmitting"
         >
           <span v-if="!isSubmitting" class="hero-primary-gradient"
-            >Send Message</span
+            >Reach Out</span
           >
           <span v-else class="hero-primary-gradient">Sending...</span>
         </button>

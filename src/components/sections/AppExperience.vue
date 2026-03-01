@@ -1,10 +1,13 @@
 ```
 <template>
-  <section id="experience" class="py-20 bg-slate-50/30 dark:bg-dark-lighter/30">
+  <section
+    id="experience"
+    class="py-20 bg-slate-50/30 dark:bg-dark-lighter/30 rounded-xl"
+  >
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
         <h2
-          class="text-3xl md:text-5xl font-heading font-bold text-slate-900 dark:text-white mb-4"
+          class="text-3xl md:text-5xl font-heading font-bold text-slate-700 dark:text-white mb-4"
         >
           Professional Journey
         </h2>
@@ -37,7 +40,7 @@
               {{ job.duration }}
             </span>
 
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">
+            <h3 class="text-xl font-bold text-slate-700 dark:text-white mb-1">
               {{ job.position }}
             </h3>
             <h4 class="text-lg text-primary mb-4 font-heading">

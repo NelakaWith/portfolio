@@ -17,11 +17,13 @@ jobs:
             - name: Setup Node.js
               uses: actions/setup-node@v4
               with:
-                  node-version: "18"
+                  node-version: "20"
                   cache: "npm"
 
             - name: Install dependencies
-              run: npm install
+              run: |
+                  rm -f package-lock.json
+                  npm install
 
             - name: Build project
               run: npm run build
@@ -32,7 +34,7 @@ jobs:
                   echo "🔍 Validating build output..."
                   ls -la dist/
                   test -f dist/index.html || (echo "❌ Missing index.html" && exit 1)
-                  test -d dist/assets || (echo "❌ Missing assets directory" && exit 1)
+                  test -d dist/_nuxt || (echo "❌ Missing _nuxt directory" && exit 1)
                   echo "✅ Build validation completed successfully!"
 
             - name: Upload build artifacts

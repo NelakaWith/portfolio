@@ -1,24 +1,24 @@
 # Portfolio App
 
-A modern, responsive portfolio web application built with Vue 3, Vite, and Tailwind CSS. Showcases your skills, experience, projects, and services, with support for dark mode and mobile-friendly design.
+A modern, responsive portfolio web application built with **Nuxt 3** and Tailwind CSS. Showcases skills, experience, projects, and services, featuring server-side rendering (SSR), optimized SEO, dark mode, and a mobile-friendly design.
 
 ## Features
 
+- **Nuxt 3 Architecture:** Leverages Nuxt for full-stack Vue development, file-based routing, and SSR capabilities.
+- **Advanced SEO:** Built-in `@nuxtjs/seo` integration for Schema.org rich results, dynamic Open Graph cards, sitemap generation, and robots.txt.
 - **Responsive Design:** Looks great on all devices.
-- **Dark Mode:** Toggle between light and dark themes.
+- **Buttery Dark Mode:** CSS-driven universal theme toggling between light and dark themes.
 - **Skills Section:** Clean, visually appealing skills display.
 - **Experience & Education:** Timeline of your professional and academic background.
 - **Project Showcase:** Card-based UI with images, tech stack, GitHub, and live links.
-- **Services Section:** Details on offered services including MVPs, custom tools, product rescue, and ongoing support.
-- **Workflow Section:** Overview of the development process with business-first approach, transparency, and future-proof code.
+- **Services Section:** Details on offered services including consulting, architecture, and custom tools.
 - **Smooth Navigation:** Sticky header, smooth scrolling, and section highlighting.
-- **Easy Customization:** All content is component-driven and easy to update.
 
 ## Tech Stack
 
-- [Vue 3](https://vuejs.org/)
-- [Vite](https://vitejs.dev/)
+- [Nuxt 3](https://nuxt.com/) & [Vue 3](https://vuejs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [@nuxtjs/seo](https://nuxtseo.com/) (Open Graph, Schema, Sitemap)
 - [Iconify](https://iconify.design/) (for icons)
 
 ## Getting Started
@@ -31,39 +31,37 @@ A modern, responsive portfolio web application built with Vue 3, Vite, and Tailw
    ```sh
    npm run dev
    ```
-3. **Build for production:**
+3. **Build statically for production:**
    ```sh
    npm run build
    ```
 4. **Preview the production build:**
    ```sh
-   npm run preview
+   npx serve dist
    ```
 
 ## Project Structure
 
-- `src/components/` — Vue components for each section (Header, About, Skills, Experience, Education, Projects, Showcase, etc.)
-- `src/components/company/` — Company-specific components (Services, WhoAmI, Contact, Hero, etc.)
-- `src/assets/` — Local images and assets (for development; public images go in `public/`)
-- `public/` — Static assets (project images, favicon, etc.)
-- `src/composables/` — Reusable logic (e.g., loader composable)
-- `src/scss/` — Custom SCSS (if needed)
+- `src/pages/` — Nuxt page routes (`index.vue` and `services.vue`).
+- `src/components/` — Vue view components separated by concern (sections, layout, company).
+- `src/assets/` — Local SCSS styles and base CSS layers.
+- `public/` — Static assets served at the root (Open Graph banners, favicons, etc.)
+- `nuxt.config.ts` — Main Nuxt configuration governing SEO, styling, and static generation.
 
 ## Customization
 
+- **SEO & Social Cards:**
+  - Update `useSeoMeta()` in the respective `pages/*.vue` files. The global configuration is handled in `app.vue` and `nuxt.config.ts`.
+  - Replace `public/og_banner_02.png` with your desired fallback social banner.
 - **Skills, Experience, Projects:**
   - Edit the arrays in their respective components to update content.
-- **Services and Workflow:**
-  - Update the services array and workflow steps in `CompanyServices.vue` and `CompanyWhoAmI.vue` respectively.
-- **Images:**
-  - Place project images in the `public/` folder and reference them with `/your-image.png`.
 - **Theme:**
-  - Tailwind config and classes make it easy to adjust colors and spacing.
+  - Standard Tailwind configuration in `tailwind.config.js`.
 
 ## Deployment
 
-- Easily deploy to [Netlify](https://www.netlify.com/), [Vercel](https://vercel.com/), or any static hosting provider.
-- For Netlify, no special configuration is needed—just connect your repo and deploy.
+- Nuxt is configured with `nitro: { output: { publicDir: 'dist' } }` to statically generate your site into the `dist/` directory.
+- This maintains compatibility with traditional static hosts like GitHub Pages, Netlify, or Vercel.
 
 ## License
 

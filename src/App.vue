@@ -1,18 +1,21 @@
 <template>
   <div :class="{ dark: isDark }">
     <div
-      class="font-sans bg-gray-50 dark:bg-dark min-h-screen text-slate-900 dark:text-white selection:bg-primary selection:text-white transition-colors duration-300"
+      class="font-sans bg-gray-50 dark:bg-dark min-h-screen text-slate-700 dark:text-white selection:bg-primary selection:text-white transition-colors duration-300"
     >
       <!-- Loader -->
-      <div
-        v-if="loading"
-        class="fixed inset-0 flex items-center justify-center z-[100] bg-gray-50 dark:bg-dark"
-      >
-        <AppLoader :dark="isDark" />
-      </div>
+      <Transition name="fade">
+        <div
+          v-if="loading"
+          class="fixed inset-0 flex items-center justify-center z-[100] transition-colors duration-300"
+          :class="isDark ? 'bg-dark' : 'bg-gray-50'"
+        >
+          <AppLoader :dark="isDark" />
+        </div>
+      </Transition>
 
       <!-- Main Content -->
-      <div v-else>
+      <div>
         <Header
           @menu-click="handleMenuClick"
           :is-dark="isDark"
@@ -20,19 +23,11 @@
         />
 
         <main class="overflow-x-hidden">
-          <router-view />
+          <NuxtPage />
         </main>
 
         <!-- Footer -->
-        <footer
-          class="py-8 text-center text-gray-500 text-sm border-t border-gray-200 dark:border-white/5 bg-gray-100 dark:bg-dark-lighter/20"
-        >
-          <p>
-            &copy; {{ new Date().getFullYear() }} Nelaka Withanage. All rights
-            reserved.
-          </p>
-          <p class="mt-2">Built with Vue 3, Tailwind CSS & Glassmorphism</p>
-        </footer>
+        <Footer />
 
         <!-- Back to Top Button -->
         <BackToTop />
@@ -42,56 +37,74 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, computed } from "vue";
-import { useHead } from "@unhead/vue";
-import { useRoute } from "vue-router";
+import { ref, onMounted } from "vue";
 import Header from "./components/layout/AppHeader.vue";
+import Footer from "./components/layout/AppFooter.vue";
 import { useLoader } from "./composables/useLoader";
 import AppLoader from "./components/common/AppLoader.vue";
 import BackToTop from "./components/common/BackToTop.vue";
 
-const { loading, startLoader } = useLoader("Inter", 3000);
-const route = useRoute();
+const { loading, startLoader } = useLoader("Poppins", 3000);
 
-useHead({
-  link: [
-    {
-      rel: "canonical",
-      href: computed(() => `https://nelaka.xyz${route.path}`),
-    },
-  ],
+useSeoMeta({
+  titleTemplate: (titleChunk) => {
+    return titleChunk
+      ? `${titleChunk} | Nelaka Withanage`
+      : "Nelaka Withanage - Software Engineer";
+  },
+  ogType: "website",
+  ogSiteName: "Nelaka Withanage",
+  twitterCard: "summary_large_image",
+  ogImage: "https://nelaka.xyz/og_banner_02.png",
 });
 
-const isDark = ref(true);
+useSchemaOrg([
+  definePerson({
+    name: "Nelaka Withanage",
+    url: "https://nelaka.xyz",
+    image: "https://nelaka.xyz/og_banner_02.png",
+    jobTitle: "Software Engineer & Full-Stack Developer",
+    sameAs: ["https://github.com/nelakaw", "https://linkedin.com/in/nelakaw"],
+  }),
+  defineWebSite({
+    name: "Nelaka Withanage",
+    url: "https://nelaka.xyz",
+  }),
+]);
+
+// Initialize isDark from localStorage immediately (client-side only)
+const isDark = ref(
+  typeof window !== "undefined"
+    ? localStorage.getItem("darkMode") !== "false"
+    : true
+);
 
 // Persist dark mode in localStorage
 onMounted(() => {
-  const saved = localStorage.getItem("darkMode");
-  if (saved !== null) {
-    isDark.value = saved === "true";
-  } else {
-    isDark.value = true;
-  }
   updateTheme();
   startLoader();
 });
 
-watch(isDark, (val) => {
-  localStorage.setItem("darkMode", val);
-  updateTheme();
-});
+// Removed redundant watcher
 
 function toggleDark() {
-  isDark.value = !isDark.value;
+  const willBeDark = !isDark.value;
+
+  if (willBeDark) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+
+  localStorage.setItem("darkMode", willBeDark);
+  isDark.value = willBeDark;
 }
 
 function updateTheme() {
   if (isDark.value) {
     document.documentElement.classList.add("dark");
-    document.body.style.backgroundColor = "#0f172a";
   } else {
     document.documentElement.classList.remove("dark");
-    document.body.style.backgroundColor = "#f9fafb";
   }
 }
 
@@ -110,6 +123,17 @@ html {
 }
 
 body {
-  background-color: #0f172a; /* Ensure bg matches loading state */
+  @apply bg-gray-50 dark:bg-dark transition-colors duration-300;
+}
+
+/* Fade transition for loader */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
