@@ -76,36 +76,33 @@ useSchemaOrg([
 const isDark = ref(
   typeof window !== "undefined"
     ? localStorage.getItem("darkMode") !== "false"
-    : true
+    : true,
 );
 
-// Persist dark mode in localStorage
-onMounted(() => {
-  updateTheme();
-  startLoader();
-});
-
-// Removed redundant watcher
-
-function toggleDark() {
-  const willBeDark = !isDark.value;
-
-  if (willBeDark) {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
-
-  localStorage.setItem("darkMode", willBeDark);
-  isDark.value = willBeDark;
-}
-
-function updateTheme() {
+// Apply theme immediately on client-side to prevent flash/timing issues
+if (typeof window !== "undefined") {
   if (isDark.value) {
     document.documentElement.classList.add("dark");
   } else {
     document.documentElement.classList.remove("dark");
   }
+}
+
+// Persist dark mode in localStorage
+onMounted(() => {
+  startLoader();
+});
+
+function toggleDark() {
+  isDark.value = !isDark.value;
+
+  if (isDark.value) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+
+  localStorage.setItem("darkMode", String(isDark.value));
 }
 
 function handleMenuClick(target) {
