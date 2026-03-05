@@ -19,7 +19,7 @@ import CompanyExpertise from "../components/company/CompanyExpertise.vue";
 import CompanyAdvantages from "../components/company/CompanyAdvantages.vue";
 import CompanyProcess from "../components/company/CompanyProcess.vue";
 
-const title = "Services | Nelaka Withanage - Software Engineer";
+const title = "Services";
 const description =
   "Explore my software development services including Web Development, Cloud Infrastructure, and Full-Stack Engineering to elevate your business.";
 

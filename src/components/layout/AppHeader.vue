@@ -18,15 +18,14 @@
       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center space-x-1">
         <template v-for="item in navItems" :key="item.id">
-          <a
-            :href="item.href"
+          <NuxtLink
+            :to="item.href"
             :target="item.external ? '_blank' : undefined"
             :rel="item.external ? 'noopener noreferrer' : undefined"
             class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-all duration-200"
-            @click.prevent="handleNavClick(item)"
           >
             {{ item.label }}
-          </a>
+          </NuxtLink>
         </template>
 
         <div class="w-px h-4 bg-gray-300 dark:bg-gray-700 mx-2"></div>
@@ -73,18 +72,15 @@
 
         <nav class="flex flex-col items-center space-y-6">
           <template v-for="item in navItems" :key="item.id">
-            <a
-              :href="item.href"
+            <NuxtLink
+              :to="item.href"
               :target="item.external ? '_blank' : undefined"
               :rel="item.external ? 'noopener noreferrer' : undefined"
               class="text-3xl font-heading font-bold text-slate-700 dark:text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-primary hover:to-secondary transition-all"
-              @click.prevent="
-                handleNavClick(item);
-                showMobileMenu = false;
-              "
+              @click="showMobileMenu = false"
             >
               {{ item.label }}
-            </a>
+            </NuxtLink>
           </template>
 
           <div class="w-12 h-px bg-slate-200 dark:bg-white/10 my-4"></div>
@@ -135,13 +131,11 @@ const navItems = [
 ];
 
 function handleNavClick(item) {
-  if (item.external) {
-    window.open(item.href, "_blank", "noopener,noreferrer");
-    return;
-  }
-
-  if (item.type === "route") {
-    router.push(item.href);
+  if (item.id === "about") {
+    const el = document.getElementById("about");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
   }
 }
 </script>

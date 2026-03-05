@@ -66,7 +66,7 @@
 <script setup>
 import CompanyContact from "../components/company/CompanyContact.vue";
 
-const title = "Contact | Nelaka Withanage";
+const title = "Contact";
 const description =
   "Let's talk about velocity. Get in touch for MVP builds, technical audits, or engineering roles.";
 

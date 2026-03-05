@@ -34,7 +34,7 @@ import Experience from "../components/sections/AppExperience.vue";
 
 import Skills from "../components/sections/AppSkills.vue";
 
-const title = "Proof | Nelaka Withanage";
+const title = "Proof";
 const description =
   "Professional Validation, Experience, and Technical Arsenal.";
 

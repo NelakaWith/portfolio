@@ -142,7 +142,7 @@
 </template>
 
 <script setup>
-const title = "Velocity | Nelaka Withanage";
+const title = "Velocity";
 const description =
   "Detailing the HVDC system, philosophy, and architectural services.";
 
