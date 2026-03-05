@@ -34,5 +34,9 @@ export default defineNuxtConfig({
     output: {
       publicDir: require("path").join(__dirname, "dist"),
     },
+    prerender: {
+      crawlLinks: true,
+      routes: ["/", "/contact", "/velocity", "/the-lab", "/proof", "/services"],
+    },
   },
 });

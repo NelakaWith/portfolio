@@ -71,7 +71,7 @@
 import Projects from "../components/sections/AppProjects.vue";
 import Showcase from "../components/sections/AppShowcase.vue";
 
-const title = "The Lab | Nelaka Withanage";
+const title = "The Lab";
 const description = "Case studies and deep dives into complex problem solving.";
 
 useSeoMeta({

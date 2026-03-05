@@ -90,7 +90,7 @@
 </template>
 
 <script setup>
-const title = "Nelaka Withanage - Software at the Speed of Thought";
+const title = "Software at the Speed of Thought";
 const description =
   "I help teams eliminate architectural noise and restore momentum through High-Velocity primitives. Senior Fullstack Engineer & Systems Architect.";
 
