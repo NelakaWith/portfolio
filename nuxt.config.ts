@@ -9,6 +9,13 @@ export default defineNuxtConfig({
 
   css: ["~/assets/scss/main.scss"],
 
+  // Runtime config for environment variables
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || "/api",
+    },
+  },
+
   // SEO default configuration
   site: {
     url: "https://nelaka.xyz",
@@ -19,7 +26,7 @@ export default defineNuxtConfig({
   },
 
   app: {
-    pageTransition: { name: "page", mode: "out-in" },
+    pageTransition: { name: "page" },
     head: {
       htmlAttrs: {
         lang: "en",

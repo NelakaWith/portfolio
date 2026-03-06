@@ -106,9 +106,8 @@
 
 <script setup>
 import { ref } from "vue";
-import { useRouter } from "vue-router";
-
-const router = useRouter();
+// import { useRouter } from "vue-router";
+// const router = useRouter();
 
 defineProps({ isDark: Boolean });
 defineEmits(["menu-click", "toggle-dark"]);
@@ -118,9 +117,9 @@ const showMobileMenu = ref(false);
 const navItems = [
   { id: "home", label: "Home", href: "/", type: "route" },
   { id: "velocity", label: "Velocity", href: "/velocity", type: "route" },
-  { id: "the-lab", label: "The Lab", href: "/the-lab", type: "route" },
-  { id: "proof", label: "Proof", href: "/proof", type: "route" },
-  { id: "contact", label: "Contact", href: "/contact", type: "route" },
+  { id: "the-lab", label: "My Work", href: "/the-lab", type: "route" },
+  { id: "proof", label: "Who am I", href: "/proof", type: "route" },
+  { id: "contact", label: "Reach Me", href: "/contact", type: "route" },
   {
     id: "blog",
     label: "Blog",
