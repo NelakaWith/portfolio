@@ -1,9 +1,10 @@
 import axios from "axios";
 
-// Get API base URL - uses hardcoded values since this is a plain JS file
-// For static generation, the URL is determined at build time
+// Get API base URL
+// Frontend: nelaka.xyz
+// Backend API: hq.nelaka.xyz
 const getBaseURL = () => {
-  // Check if we're in development
+  // Development: use localhost backend
   if (
     typeof window !== "undefined" &&
     window.location.hostname === "localhost"
@@ -11,7 +12,7 @@ const getBaseURL = () => {
     return "http://localhost:3001/api";
   }
 
-  // Production: use hq.nelaka.xyz for API (where nginx proxy is configured)
+  // Production: use hq.nelaka.xyz for API (separate domain)
   return "https://hq.nelaka.xyz/api";
 };
 
@@ -20,7 +21,7 @@ const apiClient = axios.create({
   headers: {
     "Content-Type": "application/json",
   },
-  withCredentials: true, // Enable CORS credentials
+  withCredentials: true, // Enable CORS credentials for cross-origin requests
 });
 
 export default apiClient;
