@@ -1,15 +1,9 @@
 import axios from "axios";
 
-// Get API base URL from environment variable
-// Dev: Uses NUXT_PUBLIC_API_BASE_URL from .env
-// Prod: Uses NUXT_PUBLIC_API_BASE_URL from GitHub workflow
+// Get API base URL - uses hardcoded values since this is a plain JS file
+// For static generation, the URL is determined at build time
 const getBaseURL = () => {
-  // Check if env var is set
-  if (import.meta.env.NUXT_PUBLIC_API_BASE_URL) {
-    return import.meta.env.NUXT_PUBLIC_API_BASE_URL;
-  }
-
-  // Fallback for localhost during development
+  // Check if we're in development
   if (
     typeof window !== "undefined" &&
     window.location.hostname === "localhost"
@@ -17,9 +11,8 @@ const getBaseURL = () => {
     return "http://localhost:3001/api";
   }
 
-  // This shouldn't happen if env is properly configured
-  console.error("API_BASE_URL not configured!");
-  return "/api";
+  // Production: use hq.nelaka.xyz for API (where nginx proxy is configured)
+  return "https://hq.nelaka.xyz/api";
 };
 
 const apiClient = axios.create({
