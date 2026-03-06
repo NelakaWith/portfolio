@@ -1,15 +1,15 @@
 import axios from "axios";
 
-// Get API base URL from runtime config or environment
-// For Nuxt 3, runtime config is accessed via useRuntimeConfig() in components
-// For plain JS files, we need to use the environment variable directly
+// Get API base URL from environment variable
+// Dev: Uses NUXT_PUBLIC_API_BASE_URL from .env
+// Prod: Uses NUXT_PUBLIC_API_BASE_URL from GitHub workflow
 const getBaseURL = () => {
-  // In production build, the env var is baked in at build time
+  // Check if env var is set
   if (import.meta.env.NUXT_PUBLIC_API_BASE_URL) {
     return import.meta.env.NUXT_PUBLIC_API_BASE_URL;
   }
 
-  // Fallback for development
+  // Fallback for localhost during development
   if (
     typeof window !== "undefined" &&
     window.location.hostname === "localhost"
@@ -17,7 +17,8 @@ const getBaseURL = () => {
     return "http://localhost:3001/api";
   }
 
-  // Default to relative path for same-origin requests
+  // This shouldn't happen if env is properly configured
+  console.error("API_BASE_URL not configured!");
   return "/api";
 };
 
@@ -26,6 +27,7 @@ const apiClient = axios.create({
   headers: {
     "Content-Type": "application/json",
   },
+  withCredentials: true, // Enable CORS credentials
 });
 
 export default apiClient;
