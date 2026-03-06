@@ -2,11 +2,6 @@
   <section id="skills" class="py-20 relative">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
-        <h2
-          class="text-sm font-bold text-primary tracking-widest uppercase mb-2"
-        >
-          Expertise
-        </h2>
         <h3
           class="text-3xl md:text-4xl font-heading font-bold text-slate-700 dark:text-white"
         >

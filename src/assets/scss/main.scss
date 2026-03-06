@@ -12,8 +12,7 @@
   footer,
   section,
   button,
-  a,
-  .transition-colors {
+  a {
     @apply transition-colors duration-300;
   }
 }
