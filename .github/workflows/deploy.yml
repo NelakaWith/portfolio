@@ -26,8 +26,6 @@ jobs:
           npm install
 
       - name: Build project
-        env:
-          NUXT_PUBLIC_API_BASE_URL: https://hq.nelaka.xyz/api
         run: npm run build
 
       - name: Validate build artifacts
