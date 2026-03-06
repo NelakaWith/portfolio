@@ -64,7 +64,10 @@ useSchemaOrg([
     url: "https://nelaka.xyz",
     image: "https://nelaka.xyz/og_banner_02.png",
     jobTitle: "Software Engineer & Full-Stack Developer",
-    sameAs: ["https://github.com/nelakaw", "https://linkedin.com/in/nelakaw"],
+    sameAs: [
+      "https://github.com/NelakaWith/",
+      "https://www.linkedin.com/in/nelaka-withanage/",
+    ],
   }),
   defineWebSite({
     name: "Nelaka Withanage",
@@ -73,14 +76,16 @@ useSchemaOrg([
 ]);
 
 // Initialize isDark from localStorage immediately (client-side only)
-const isDark = ref(
-  typeof window !== "undefined"
-    ? localStorage.getItem("darkMode") !== "false"
-    : true,
-);
+// Default to false (light mode) on server to prevent hydration mismatch
+const isDark = ref(false);
 
 // Apply theme immediately on client-side to prevent flash/timing issues
 if (typeof window !== "undefined") {
+  // Read from localStorage, default to light if not set
+  const stored = localStorage.getItem("darkMode");
+  isDark.value = stored === "true";
+
+  // Apply the class immediately to prevent flash
   if (isDark.value) {
     document.documentElement.classList.add("dark");
   } else {
