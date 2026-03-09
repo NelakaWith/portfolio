@@ -181,7 +181,11 @@
       <div class="text-center">
         <button
           type="submit"
-          class="hero-button bg-slate-800 dark:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed"
+          class="hero-button bg-slate-800 dark:bg-slate-700"
+          :class="{
+            'opacity-50 cursor-not-allowed':
+              isMounted && (isSubmitting || !form.turnstileToken),
+          }"
           :disabled="isSubmitting || !form.turnstileToken"
         >
           <span v-if="!isSubmitting" class="hero-primary-gradient"
@@ -199,6 +203,7 @@ import { reactive, ref, onMounted, onBeforeUnmount } from "vue";
 import apiClient from "@/api/axios";
 
 const isSubmitting = ref(false);
+const isMounted = ref(false);
 const banner = reactive({
   show: false,
   type: "success",
@@ -235,6 +240,8 @@ const renderTurnstile = () => {
     window.turnstile &&
     turnstileContainer.value
   ) {
+    // Reset token before rendering a new widget
+    form.turnstileToken = "";
     if (widgetId !== null) {
       try {
         window.turnstile.remove(widgetId);
@@ -243,29 +250,30 @@ const renderTurnstile = () => {
         // Silently fail if removal fails
       }
     }
-
     // Clear the container just in case
     turnstileContainer.value.innerHTML = "";
-
     try {
       widgetId = window.turnstile.render(turnstileContainer.value, {
         sitekey: config.public.turnstileSiteKey,
         callback: (token) => {
-          console.log("Turnstile Token received");
           form.turnstileToken = token;
         },
-        "error-callback": (error) => {
-          console.error("Turnstile Error:", error);
+        "expired-callback": () => {
+          form.turnstileToken = "";
+        },
+        "error-callback": () => {
+          form.turnstileToken = "";
         },
         theme: "auto",
       });
     } catch {
-      // Silently fail if render fails
+      //
     }
   }
 };
 
 onMounted(() => {
+  isMounted.value = true;
   // Wait for Turnstile script to load if it hasn't already
   const checkTurnstile = setInterval(() => {
     if (typeof window !== "undefined" && window.turnstile) {
