@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     name: "Nelaka Withanage",
     description: "Portfolio of Nelaka Withanage",
     defaultLocale: "en",
-    trailingSlash: false,
+    trailingSlash: true,
   },
 
   app: {
@@ -45,7 +45,15 @@ export default defineNuxtConfig({
     },
     prerender: {
       crawlLinks: true,
-      routes: ["/", "/contact", "/velocity", "/the-lab", "/proof", "/services"],
+      routes: [
+        "/",
+        "/contact",
+        "/velocity",
+        "/the-lab",
+        "/proof",
+        "/services",
+        "/blog",
+      ],
     },
   },
 });
