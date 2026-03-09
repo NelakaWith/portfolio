@@ -8,7 +8,7 @@
         <div
           v-if="loading"
           class="fixed inset-0 flex items-center justify-center z-[100] transition-colors duration-300"
-          :class="isDark ? 'bg-dark' : 'bg-gray-50'"
+          :class="isMounted && isDark ? 'bg-dark' : 'bg-gray-50'"
         >
           <AppLoader :dark="isDark" />
         </div>
@@ -78,6 +78,7 @@ useSchemaOrg([
 // Initialize isDark from localStorage immediately (client-side only)
 // Default to false (light mode) on server to prevent hydration mismatch
 const isDark = ref(false);
+const isMounted = ref(false);
 
 // Apply theme immediately on client-side to prevent flash/timing issues
 if (typeof window !== "undefined") {
@@ -95,6 +96,7 @@ if (typeof window !== "undefined") {
 
 // Persist dark mode in localStorage
 onMounted(() => {
+  isMounted.value = true;
   startLoader();
 });
 

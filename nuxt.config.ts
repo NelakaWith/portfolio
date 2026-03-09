@@ -13,6 +13,11 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || "/api",
+      ghostApiKey: process.env.NUXT_PUBLIC_GHOST_API_KEY,
+      ghostApiUrl: process.env.NUXT_PUBLIC_GHOST_API_URL,
+      turnstileSiteKey: String(
+        process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY || "",
+      ),
     },
   },
 
@@ -22,7 +27,7 @@ export default defineNuxtConfig({
     name: "Nelaka Withanage",
     description: "Portfolio of Nelaka Withanage",
     defaultLocale: "en",
-    trailingSlash: false,
+    trailingSlash: true,
   },
 
   app: {
@@ -43,7 +48,15 @@ export default defineNuxtConfig({
     },
     prerender: {
       crawlLinks: true,
-      routes: ["/", "/contact", "/velocity", "/the-lab", "/proof", "/services"],
+      routes: [
+        "/",
+        "/contact",
+        "/velocity",
+        "/the-lab",
+        "/proof",
+        "/services",
+        "/blog",
+      ],
     },
   },
 });

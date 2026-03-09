@@ -116,16 +116,16 @@ const showMobileMenu = ref(false);
 
 const navItems = [
   { id: "home", label: "Home", href: "/", type: "route" },
-  { id: "velocity", label: "Velocity", href: "/velocity", type: "route" },
-  { id: "the-lab", label: "My Work", href: "/the-lab", type: "route" },
   { id: "proof", label: "Who am I", href: "/proof", type: "route" },
+  { id: "the-lab", label: "My Work", href: "/the-lab", type: "route" },
+  { id: "velocity", label: "Velocity", href: "/velocity", type: "route" },
   { id: "contact", label: "Reach Me", href: "/contact", type: "route" },
   {
     id: "blog",
     label: "Blog",
-    href: "https://blog.nelaka.xyz",
+    href: "/blog",
     type: "route",
-    external: true,
+    external: false,
   },
 ];
 
