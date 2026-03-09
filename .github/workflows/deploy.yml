@@ -27,6 +27,11 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          NUXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.NUXT_PUBLIC_TURNSTILE_SITE_KEY }}
+          NUXT_PUBLIC_GHOST_API_KEY: ${{ secrets.NUXT_PUBLIC_GHOST_API_KEY }}
+          NUXT_PUBLIC_GHOST_API_URL: ${{ secrets.NUXT_PUBLIC_GHOST_API_URL }}
+          NUXT_PUBLIC_API_BASE_URL: ${{ secrets.NUXT_PUBLIC_API_BASE_URL }}
 
       - name: Validate build artifacts
         if: github.event_name == 'pull_request'
