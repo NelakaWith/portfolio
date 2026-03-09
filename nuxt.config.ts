@@ -15,6 +15,9 @@ export default defineNuxtConfig({
       apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || "/api",
       ghostApiKey: process.env.NUXT_PUBLIC_GHOST_API_KEY,
       ghostApiUrl: process.env.NUXT_PUBLIC_GHOST_API_URL,
+      turnstileSiteKey: String(
+        process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY || "",
+      ),
     },
   },
 

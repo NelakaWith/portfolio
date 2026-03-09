@@ -170,11 +170,19 @@
         ></textarea>
       </div>
 
+      <!-- Cloudflare Turnstile Widget -->
+      <div
+        v-if="config.public.turnstileSiteKey"
+        class="mb-6 flex justify-center"
+      >
+        <div ref="turnstileContainer"></div>
+      </div>
+
       <div class="text-center">
         <button
           type="submit"
-          class="hero-button bg-slate-800 dark:bg-slate-700"
-          :disabled="isSubmitting"
+          class="hero-button bg-slate-800 dark:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed"
+          :disabled="isSubmitting || !form.turnstileToken"
         >
           <span v-if="!isSubmitting" class="hero-primary-gradient"
             >Reach Out</span
@@ -187,7 +195,7 @@
 </template>
 
 <script setup>
-import { reactive, ref } from "vue";
+import { reactive, ref, onMounted, onBeforeUnmount } from "vue";
 import apiClient from "@/api/axios";
 
 const isSubmitting = ref(false);
@@ -204,9 +212,86 @@ const form = reactive({
   projectStage: "",
   budget: "",
   message: "",
+  turnstileToken: "",
+});
+
+const config = useRuntimeConfig();
+const turnstileContainer = ref(null);
+let widgetId = null;
+
+useHead({
+  script: [
+    {
+      src: "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit",
+      async: true,
+      defer: true,
+    },
+  ],
+});
+
+const renderTurnstile = () => {
+  if (
+    typeof window !== "undefined" &&
+    window.turnstile &&
+    turnstileContainer.value
+  ) {
+    if (widgetId !== null) {
+      try {
+        window.turnstile.remove(widgetId);
+        widgetId = null;
+      } catch {
+        // Silently fail if removal fails
+      }
+    }
+
+    // Clear the container just in case
+    turnstileContainer.value.innerHTML = "";
+
+    try {
+      widgetId = window.turnstile.render(turnstileContainer.value, {
+        sitekey: config.public.turnstileSiteKey,
+        callback: (token) => {
+          console.log("Turnstile Token received");
+          form.turnstileToken = token;
+        },
+        "error-callback": (error) => {
+          console.error("Turnstile Error:", error);
+        },
+        theme: "auto",
+      });
+    } catch {
+      // Silently fail if render fails
+    }
+  }
+};
+
+onMounted(() => {
+  // Wait for Turnstile script to load if it hasn't already
+  const checkTurnstile = setInterval(() => {
+    if (typeof window !== "undefined" && window.turnstile) {
+      clearInterval(checkTurnstile);
+      renderTurnstile();
+    }
+  }, 100);
+
+  // Clean up interval if it takes too long (e.g. 10 seconds)
+  setTimeout(() => clearInterval(checkTurnstile), 10000);
+});
+
+onBeforeUnmount(() => {
+  if (typeof window !== "undefined" && window.turnstile && widgetId !== null) {
+    window.turnstile.remove(widgetId);
+  }
 });
 
 const handleSubmit = async () => {
+  if (!form.turnstileToken) {
+    banner.type = "error";
+    banner.message = "Please complete the security check.";
+    banner.show = true;
+    return;
+  }
+
   isSubmitting.value = true;
   banner.show = false;
 
