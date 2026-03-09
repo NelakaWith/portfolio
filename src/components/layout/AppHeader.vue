@@ -123,9 +123,9 @@ const navItems = [
   {
     id: "blog",
     label: "Blog",
-    href: "https://blog.nelaka.xyz",
+    href: "/blog",
     type: "route",
-    external: true,
+    external: false,
   },
 ];
 
