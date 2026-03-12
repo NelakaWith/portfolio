@@ -27,7 +27,7 @@ export default defineNuxtConfig({
     name: "Nelaka Withanage",
     description: "Portfolio of Nelaka Withanage",
     defaultLocale: "en",
-    trailingSlash: true,
+    trailingSlash: false,
   },
 
   app: {
