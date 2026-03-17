@@ -72,7 +72,7 @@ import BlogCard from "~/components/common/BlogCard.vue";
 const config = useRuntimeConfig();
 const { ghostApiKey, ghostApiUrl } = config.public;
 
-const url = `${ghostApiUrl}/ghost/api/content/posts/?key=${ghostApiKey}&limit=15&include=tags,authors`;
+const url = `${ghostApiUrl}/ghost/api/content/posts/?key=${ghostApiKey}&limit=50&include=tags,authors`;
 
 const { data, pending, error, refresh } = await useFetch(url);
 

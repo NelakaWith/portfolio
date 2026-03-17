@@ -89,6 +89,28 @@
 <script setup>
 const experience = [
   {
+    position: "Software Consultant",
+    company: "Freelancer",
+    location: "Remote",
+    duration: "10/2024 - Present",
+    responsibilities: [
+      "Consulting with clients to understand their business needs and recommend appropriate software solutions.",
+      "Designing and developing custom software solutions tailored to client requirements.",
+      "Providing technical support and guidance to clients on software usage and best practices.",
+    ],
+    technologies: [
+      "Next.js",
+      "React.js",
+      "Vue.js",
+      "Nuxt.js",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "TypeScript",
+      "Tailwind CSS",
+    ],
+  },
+  {
     position: "Frontend Engineer (Contractor)",
     company: "Startup Steroid",
     location: "Los Angeles, California",
