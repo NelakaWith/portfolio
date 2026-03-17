@@ -21,7 +21,9 @@
           class="group flex flex-col bg-white border border-slate-200 shadow-sm dark:bg-white/5 dark:border-white/5 dark:shadow-none rounded-2xl overflow-hidden hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-2 transition-all duration-500 relative"
         >
           <!-- Hover Background Shimmer -->
-          <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+          ></div>
 
           <!-- Content -->
           <div class="p-6 flex flex-col flex-1 relative z-20">
@@ -55,7 +57,10 @@
                 target="_blank"
                 class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-white hover:text-primary transition-colors group/link"
               >
-                <Icon icon="ph:github-logo-bold" class="w-5 h-5 group-hover/link:-translate-y-0.5 transition-transform" />
+                <Icon
+                  icon="ph:github-logo-bold"
+                  class="w-5 h-5 group-hover/link:-translate-y-0.5 transition-transform"
+                />
                 Code
               </a>
               <a
@@ -64,7 +69,10 @@
                 target="_blank"
                 class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-white hover:text-secondary transition-colors group/link"
               >
-                <Icon icon="ph:globe-bold" class="w-5 h-5 group-hover/link:-translate-y-0.5 transition-transform" />
+                <Icon
+                  icon="ph:globe-bold"
+                  class="w-5 h-5 group-hover/link:-translate-y-0.5 transition-transform"
+                />
                 Demo
               </a>
             </div>
@@ -78,15 +86,15 @@
 <script setup>
 import { Icon } from "@iconify/vue";
 const projects = [
-  {
-    name: "Personal Portfolio",
-    description:
-      "A modern, responsive portfolio site built with Vue 3, Tailwind CSS, and Vite. Features dark mode, project showcase, and smooth navigation.",
-    technologies: ["Vue 3", "Tailwind CSS", "Vite"],
-    github: "https://github.com/NelakaWith/portfolio",
-    web: "",
-    image: "/sample_app_portfolio.png",
-  },
+  // {
+  //   name: "Personal Portfolio",
+  //   description:
+  //     "A modern, responsive portfolio site built with Vue 3, Tailwind CSS, and Vite. Features dark mode, project showcase, and smooth navigation.",
+  //   technologies: ["Vue 3", "Tailwind CSS", "Vite"],
+  //   github: "https://github.com/NelakaWith/portfolio",
+  //   web: "",
+  //   image: "/sample_app_portfolio.png",
+  // },
   {
     name: "FAQ Chatbot",
     description:
@@ -128,7 +136,7 @@ const projects = [
   {
     name: "The Black Box Beacon",
     description:
-      'This is a JJournaling app for mental recovery. Most mental health apps are built for "improvement." This tool is built for survivability. It treats the user not as a "patient" to be fixed, but as a "survivor" whose data matters.',
+      'This is a Journal app for mental recovery. Most mental health apps are built for "improvement." This tool is built for survivability. It treats the user not as a "patient" to be fixed, but as a "survivor" whose data matters.',
     technologies: [
       "Vue 3",
       "Nest.js",
@@ -137,6 +145,15 @@ const projects = [
       "Tailwind CSS",
     ],
     github: "https://github.com/NelakaWith/black-box-beacon",
+    web: "",
+    image: "",
+  },
+  {
+    name: "Ground-0",
+    description:
+      "Automated pipeline that monitors Sri Lankan news via RSS feeds and uses Gemini 1.5 Flash to analyze the political framing and bias of news snippets (Headlines + Summaries).",
+    technologies: ["Python", "Gemini API"],
+    github: "https://github.com/NelakaWith/ground-0",
     web: "",
     image: "",
   },
