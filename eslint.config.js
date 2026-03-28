@@ -21,6 +21,11 @@ const nuxtGlobals = {
   defineNuxtComponent: "readonly",
   defineNuxtConfig: "readonly",
   definePageMeta: "readonly",
+  $fetch: "readonly",
+  $unref: "readonly",
+  defineNuxtLink: "readonly",
+  useAppConfig: "readonly",
+  usePinia: "readonly", // if using Pinia
   // SEO module composables
   useSchemaOrg: "readonly",
   definePerson: "readonly",

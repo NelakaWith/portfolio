@@ -72,11 +72,33 @@ import BlogCard from "~/components/common/BlogCard.vue";
 const config = useRuntimeConfig();
 const { ghostApiKey, ghostApiUrl } = config.public;
 
-const url = `${ghostApiUrl}/ghost/api/content/posts/?key=${ghostApiKey}&limit=50&include=tags,authors`;
+// Improved data fetching for SSG stability
+const {
+  data: postsData,
+  pending,
+  error,
+  refresh,
+} = await useAsyncData(
+  "ghost-posts",
+  () => {
+    if (!ghostApiUrl || !ghostApiKey) {
+      console.warn("Ghost API configuration missing:", {
+        ghostApiUrl,
+        ghostApiKey: ghostApiKey ? "***" : "missing",
+      });
+      return Promise.resolve({ posts: [] });
+    }
 
-const { data, pending, error, refresh } = await useFetch(url);
+    const url = `${ghostApiUrl}/ghost/api/content/posts/?key=${ghostApiKey}&limit=50&include=tags,authors`;
+    return $fetch(url);
+  },
+  {
+    watch: false,
+    server: true,
+  },
+);
 
-const posts = computed(() => data.value?.posts || []);
+const posts = computed(() => postsData.value?.posts || []);
 
 useSeoMeta({
   title: "Blog | Nelaka Withanage",

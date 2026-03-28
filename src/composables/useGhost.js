@@ -6,14 +6,8 @@ export const useGhost = () => {
     const url = `${ghostApiUrl}/ghost/api/content/posts/?key=${ghostApiKey}&limit=${limit}&include=tags,authors`;
 
     try {
-      const { data, error } = await useFetch(url);
-
-      if (error.value) {
-        console.error("Ghost API Error:", error.value);
-        return [];
-      }
-
-      return data.value?.posts || [];
+      const data = await $fetch(url);
+      return data?.posts || [];
     } catch (e) {
       console.error("Ghost Fetch Exception:", e);
       return [];
