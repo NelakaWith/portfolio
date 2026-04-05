@@ -24,7 +24,15 @@
             :rel="item.external ? 'noopener noreferrer' : undefined"
             class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-all duration-200"
           >
-            {{ item.label }}
+            <template v-if="item.id == 'velocity'">
+              <span
+                class="font-extrabold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+                >HVDC</span
+              >
+            </template>
+            <template v-else>
+              {{ item.label }}
+            </template>
           </NuxtLink>
         </template>
 
@@ -79,7 +87,15 @@
               class="text-3xl font-heading font-bold text-slate-700 dark:text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-primary hover:to-secondary transition-all"
               @click="showMobileMenu = false"
             >
-              {{ item.label }}
+              <template v-if="item.id == 'velocity'">
+                <span
+                  class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+                  >HVDC</span
+                >
+              </template>
+              <template v-else>
+                {{ item.label }}
+              </template>
             </NuxtLink>
           </template>
 
@@ -118,7 +134,6 @@ const navItems = [
   { id: "home", label: "Home", href: "/", type: "route" },
   { id: "the-lab", label: "My Work", href: "/the-lab", type: "route" },
   { id: "proof", label: "Who am I", href: "/proof", type: "route" },
-  { id: "velocity", label: "Velocity", href: "/velocity", type: "route" },
   { id: "contact", label: "Reach Me", href: "/contact", type: "route" },
   {
     id: "blog",
@@ -127,6 +142,7 @@ const navItems = [
     type: "route",
     external: false,
   },
+  { id: "velocity", label: "HVDC", href: "/velocity", type: "route" },
 ];
 
 function handleNavClick(item) {
