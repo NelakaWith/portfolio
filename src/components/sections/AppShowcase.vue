@@ -86,44 +86,48 @@
 <script setup>
 import { Icon } from "@iconify/vue";
 const projects = [
-  // {
-  //   name: "Personal Portfolio",
-  //   description:
-  //     "A modern, responsive portfolio site built with Vue 3, Tailwind CSS, and Vite. Features dark mode, project showcase, and smooth navigation.",
-  //   technologies: ["Vue 3", "Tailwind CSS", "Vite"],
-  //   github: "https://github.com/NelakaWith/portfolio",
-  //   web: "",
-  //   image: "/sample_app_portfolio.png",
-  // },
+  {
+    name: "YouTube Competitor Analyzer",
+    description:
+      "Paste any YouTube channel URL and instantly see which videos are crushing it. Built for content teams who need fast, data-driven competitor intelligence without leaving the browser.",
+    technologies: ["Youtube Data API", "Next.js", "Shadcn/ui"],
+    github: "https://github.com/NelakaWith/vid-metrics-competitor-analysis",
+    web: "https://vid-metrics-competitor-analysis.netlify.app/",
+    image: "",
+  },
+  {
+    name: "Ground-0",
+    description:
+      "Automated pipeline that monitors Sri Lankan news via RSS feeds and uses Llama AI models to analyze the political framing and bias of news snippets (Headlines + Summaries).",
+    technologies: ["Python", "Nest.js", "Playwright", "Stagehand", "Groq SDK"],
+    github: "https://github.com/NelakaWith/ground-0",
+    web: "",
+    image: "",
+  },
   {
     name: "FAQ Chatbot",
     description:
-      "OpenRouter AI-powered chatbot with intelligent knowledge base search and LLM integration, built with Vue 3 and Node.js.",
-    technologies: [
-      "Fuzzy Search",
-      "Express/Node",
-      "Groq SDK",
-      "OpenRouter API",
-    ],
+      "AI-powered chatbot with intelligent knowledge base search and LLM integration, built with Vue 3 and Node.js.",
+    technologies: ["Fuzzy Search", "Express/Node", "Groq SDK"],
     github: "https://github.com/NelakaWith/faq-chatbot",
     web: "https://faq-chatbot.nelaka.xyz/",
     image: "/sample_app_chatbot.png",
   },
-  {
-    name: "Pulse Ops",
-    description:
-      "A modern GitHub analytics dashboard built with Next.js 16 and TypeScript, featuring real-time user metrics, contribution visualization, language usage insights, and AI-powered repository analysis.",
-    technologies: [
-      "Next.js",
-      "Shadcn/ui",
-      "TypeScript",
-      "GitHub API",
-      "GraphQL",
-    ],
-    github: "https://github.com/NelakaWith/pulse-ops",
-    web: "",
-    image: "/sample_app_pulse_ops.png",
-  },
+  // {
+  //   name: "Pulse Ops",
+  //   description:
+  //     "A modern GitHub analytics dashboard built with Next.js 16 and TypeScript, featuring real-time user metrics, contribution visualization, language usage insights, and AI-powered repository analysis.",
+  //   technologies: [
+  //     "Next.js",
+  //     "Shadcn/ui",
+  //     "TypeScript",
+  //     "GitHub API",
+  //     "GraphQL",
+  //   ],
+  //   github: "https://github.com/NelakaWith/pulse-ops",
+  //   web: "",
+  //   image: "/sample_app_pulse_ops.png",
+  // },
   {
     name: "Gloire RoadMap",
     description:
@@ -145,15 +149,6 @@ const projects = [
       "Tailwind CSS",
     ],
     github: "https://github.com/NelakaWith/black-box-beacon",
-    web: "",
-    image: "",
-  },
-  {
-    name: "Ground-0",
-    description:
-      "Automated pipeline that monitors Sri Lankan news via RSS feeds and uses Gemini 1.5 Flash to analyze the political framing and bias of news snippets (Headlines + Summaries).",
-    technologies: ["Python", "Gemini API"],
-    github: "https://github.com/NelakaWith/ground-0",
     web: "",
     image: "",
   },

@@ -89,12 +89,13 @@
 <script setup>
 const experience = [
   {
-    position: "Software Consultant",
+    position: "Software Consultant/ Freelance Software Engineer",
     company: "Freelancer",
     location: "Remote",
     duration: "10/2024 - Present",
     responsibilities: [
-      "Consulting with clients to understand their business needs and recommend appropriate software solutions.",
+      "Developing Saadhaka, an E-Learning platform, focusing on an intelligent, interactive, and personalized learning experience powered by a knowledge graph and a specialized chemistry engine.",
+      "Collaborating with clients to understand their business needs and recommend appropriate software solutions.",
       "Designing and developing custom software solutions tailored to client requirements.",
       "Providing technical support and guidance to clients on software usage and best practices.",
     ],
