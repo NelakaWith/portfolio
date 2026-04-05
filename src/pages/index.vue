@@ -4,7 +4,7 @@
   >
     <div class="max-w-4xl mx-auto px-6 relative z-20 text-center">
       <h1
-        class="text-5xl lg:text-7xl font-heading font-bold text-slate-700 dark:text-white leading-tight mb-6"
+        class="text-5xl lg:text-7xl font-heading font-bold text-slate-700 dark:text-white leading-tight mb-6 mt-10"
       >
         Software at the <br />
         <span
@@ -59,20 +59,6 @@
           class="p-8 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 shadow-xl dark:shadow-none"
         >
           <h2 class="text-2xl font-bold text-slate-700 dark:text-white mb-4">
-            The Delivery Tax
-          </h2>
-          <p class="text-slate-600 dark:text-gray-300 leading-relaxed">
-            In modern software development, we’ve traded agility for complexity.
-            Between boilerplate setup, fragmented state management, and
-            hard-coded business logic, most teams are paying a 'Delivery Tax'
-            losing nearly half their momentum before they even ship a feature. I
-            build the primitives that reclaim that time.
-          </p>
-        </div>
-        <div
-          class="p-8 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 shadow-xl dark:shadow-none"
-        >
-          <h2 class="text-2xl font-bold text-slate-700 dark:text-white mb-4">
             The Specialist
           </h2>
           <p class="text-slate-600 dark:text-gray-300 leading-relaxed">
@@ -82,6 +68,20 @@
             under their own weight, I moved toward a philosophy of abstraction.
             I don't just write code; I build engines that allow businesses to
             pivot as fast as they think.
+          </p>
+        </div>
+        <div
+          class="p-8 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 shadow-xl dark:shadow-none"
+        >
+          <h2 class="text-2xl font-bold text-slate-700 dark:text-white mb-4">
+            The Delivery Tax
+          </h2>
+          <p class="text-slate-600 dark:text-gray-300 leading-relaxed">
+            In modern software development, we’ve traded agility for complexity.
+            Between boilerplate setup, fragmented state management, and
+            hard-coded business logic, most teams are paying a 'Delivery Tax'
+            losing nearly half their momentum before they even ship a feature. I
+            build the primitives that reclaim that time.
           </p>
         </div>
       </div>

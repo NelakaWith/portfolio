@@ -49,13 +49,20 @@ import { Icon } from "@iconify/vue";
 
 const categories = [
   {
+    name: "Programming Languages",
+    icon: "ph:code-bold",
+    skills: [
+      { name: "JavaScript", icon: "logos:javascript" },
+      { name: "TypeScript", icon: "logos:typescript-icon" },
+      { name: "Python", icon: "logos:python" },
+    ],
+  },
+  {
     name: "Frontend",
     icon: "ph:browser-bold",
     skills: [
       { name: "HTML5", icon: "vscode-icons:file-type-html" },
       { name: "CSS3", icon: "devicon:css3" },
-      { name: "JavaScript", icon: "logos:javascript" },
-      { name: "TypeScript", icon: "logos:typescript-icon" },
       { name: "React.js", icon: "logos:react" },
       { name: "Next.js", icon: "logos:nextjs-icon" },
       { name: "Vue.js", icon: "logos:vue" },
@@ -99,7 +106,6 @@ const categories = [
       { name: "GraphQL", icon: "logos:graphql" },
       { name: "MySQL", icon: "devicon:mysql" },
       { name: "PostgreSQL", icon: "devicon:postgresql" },
-      { name: "Python", icon: "logos:python" },
     ],
   },
   {
@@ -116,6 +122,7 @@ const categories = [
       { name: "PM2", icon: "devicon:pm2" },
       { name: "Vite", icon: "devicon:vitejs" },
       { name: "Jest", icon: "vscode-icons:file-type-jest" },
+      { name: "Playwright", icon: "logos:playwright" },
     ],
   },
   {
