@@ -105,29 +105,20 @@ const projects = [
     image: "",
   },
   {
-    name: "FAQ Chatbot",
+    name: "DeClerk",
     description:
-      "AI-powered chatbot with intelligent knowledge base search and LLM integration, built with Vue 3 and Node.js.",
-    technologies: ["Fuzzy Search", "Express/Node", "Groq SDK"],
-    github: "https://github.com/NelakaWith/faq-chatbot",
-    web: "https://faq-chatbot.nelaka.xyz/",
+      "DeClerk is a sophisticated full-stack chatbot solution designed for enterprise-grade Retrieval-Augmented Generation (RAG). It features deep structural analysis of PDF documents, semantic vector search with pgvector, and a multi-provider AI engine supporting Gemini, Groq, and OpenRouter.",
+    technologies: [
+      "Fuzzy Search",
+      "Express/Node",
+      "Groq SDK",
+      "Gemini API",
+      "pgvector",
+    ],
+    github: "https://github.com/NelakaWith/de-clerk",
+    web: "https://declerk.nelaka.xyz/",
     image: "/sample_app_chatbot.png",
   },
-  // {
-  //   name: "Pulse Ops",
-  //   description:
-  //     "A modern GitHub analytics dashboard built with Next.js 16 and TypeScript, featuring real-time user metrics, contribution visualization, language usage insights, and AI-powered repository analysis.",
-  //   technologies: [
-  //     "Next.js",
-  //     "Shadcn/ui",
-  //     "TypeScript",
-  //     "GitHub API",
-  //     "GraphQL",
-  //   ],
-  //   github: "https://github.com/NelakaWith/pulse-ops",
-  //   web: "",
-  //   image: "/sample_app_pulse_ops.png",
-  // },
   {
     name: "Gloire RoadMap",
     description:
