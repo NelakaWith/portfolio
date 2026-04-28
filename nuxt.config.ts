@@ -48,15 +48,7 @@ export default defineNuxtConfig({
     },
     prerender: {
       crawlLinks: true,
-      routes: [
-        "/",
-        "/contact",
-        "/velocity",
-        "/the-lab",
-        "/proof",
-        "/services",
-        "/blog",
-      ],
+      routes: ["/", "/contact", "/the-lab", "/proof", "/blog"],
     },
   },
 });
