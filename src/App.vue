@@ -1,7 +1,7 @@
 <template>
   <div :class="{ dark: isDark }">
     <div
-      class="font-sans bg-gray-50 dark:bg-dark min-h-screen text-slate-700 dark:text-white selection:bg-primary selection:text-white transition-colors duration-300"
+      class="font-sans bg-gray-50 dark:bg-dark min-h-screen text-slate-700 dark:text-white selection:bg-primary selection:text-white transition-colors duration-300 flex flex-col"
     >
       <!-- Loader -->
       <Transition name="fade">
@@ -15,7 +15,7 @@
       </Transition>
 
       <!-- Main Content -->
-      <div class="flex flex-col min-h-screen">
+      <div class="flex flex-col flex-grow">
         <Header
           @menu-click="handleMenuClick"
           :is-dark="isDark"
