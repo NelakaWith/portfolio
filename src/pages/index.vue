@@ -54,7 +54,7 @@
         </div>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-12 text-left mt-16">
+      <div class="grid md:grid-cols-1 gap-12 text-left mt-16">
         <div
           class="p-8 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 shadow-xl dark:shadow-none"
         >
@@ -62,26 +62,15 @@
             The Specialist
           </h2>
           <p class="text-slate-600 dark:text-gray-300 leading-relaxed">
-            <strong>I’m Nelaka.</strong> My journey started in traditional
-            engineering, but it evolved through the crucible of independent
-            product development. After seeing how 'standard' architectures stall
-            under their own weight, I moved toward a philosophy of abstraction.
-            I don't just write code; I build engines that allow businesses to
-            pivot as fast as they think.
-          </p>
-        </div>
-        <div
-          class="p-8 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 shadow-xl dark:shadow-none"
-        >
-          <h2 class="text-2xl font-bold text-slate-700 dark:text-white mb-4">
-            The Delivery Tax
-          </h2>
-          <p class="text-slate-600 dark:text-gray-300 leading-relaxed">
-            In modern software development, we’ve traded agility for complexity.
-            Between boilerplate setup, fragmented state management, and
-            hard-coded business logic, most teams are paying a 'Delivery Tax'
-            losing nearly half their momentum before they even ship a feature. I
-            build the primitives that reclaim that time.
+            <strong
+              class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+              >I’m Nelaka.</strong
+            >
+            My journey started in traditional engineering, but it evolved
+            through the crucible of independent product development. After
+            seeing how 'standard' architectures stall under their own weight, I
+            moved toward a philosophy of abstraction. I don't just write code; I
+            build engines that allow businesses to pivot as fast as they think.
           </p>
         </div>
       </div>
@@ -103,3 +92,20 @@ useSeoMeta({
   twitterCard: "summary_large_image",
 });
 </script>
+
+<!--
+  <div
+          class="p-8 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 shadow-xl dark:shadow-none"
+        >
+          <h2 class="text-2xl font-bold text-slate-700 dark:text-white mb-4">
+            The Delivery Tax
+          </h2>
+          <p class="text-slate-600 dark:text-gray-300 leading-relaxed">
+            In modern software development, we’ve traded agility for complexity.
+            Between boilerplate setup, fragmented state management, and
+            hard-coded business logic, most teams are paying a 'Delivery Tax'
+            losing nearly half their momentum before they even ship a feature. I
+            build the primitives that reclaim that time.
+          </p>
+        </div>
+-->
