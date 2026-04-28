@@ -4,7 +4,7 @@
   >
     <div class="max-w-4xl mx-auto px-6 relative z-20 text-center">
       <h1
-        class="text-5xl lg:text-7xl font-heading font-bold text-slate-700 dark:text-white leading-tight mb-6 mt-10"
+        class="text-5xl lg:text-7xl font-heading font-bold text-slate-700 dark:text-white leading-tight my-6"
       >
         Software at the <br />
         <span
