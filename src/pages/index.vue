@@ -1,6 +1,6 @@
 <template>
   <div
-    class="pt-24 min-h-screen flex flex-col items-center justify-center py-20 relative overflow-hidden"
+    class="pt-24 flex flex-col items-center justify-center py-20 relative overflow-hidden"
   >
     <div class="max-w-4xl mx-auto px-6 relative z-20 text-center">
       <h1

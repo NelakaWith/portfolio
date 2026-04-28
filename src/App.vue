@@ -15,14 +15,14 @@
       </Transition>
 
       <!-- Main Content -->
-      <div>
+      <div class="flex flex-col min-h-screen">
         <Header
           @menu-click="handleMenuClick"
           :is-dark="isDark"
           @toggle-dark="toggleDark"
         />
 
-        <main class="overflow-x-hidden">
+        <main class="flex-grow overflow-x-hidden">
           <NuxtPage />
         </main>
 
