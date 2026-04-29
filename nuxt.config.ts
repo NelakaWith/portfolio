@@ -5,7 +5,22 @@ export default defineNuxtConfig({
   // Set the source directory to src since we have existing src/-based structure
   srcDir: "src/",
 
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/seo"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/seo", "@nuxt/fonts"],
+
+  fonts: {
+    families: [
+      {
+        name: "IBM Plex Serif",
+        provider: "google",
+        weights: [100, 200, 300, 400, 500, 600, 700],
+      },
+      {
+        name: "Playfair Display",
+        provider: "google",
+        weights: [100, 200, 300, 400, 500, 600, 700],
+      },
+    ],
+  },
 
   css: ["~/assets/scss/main.scss"],
 
@@ -48,15 +63,7 @@ export default defineNuxtConfig({
     },
     prerender: {
       crawlLinks: true,
-      routes: [
-        "/",
-        "/contact",
-        "/velocity",
-        "/the-lab",
-        "/proof",
-        "/services",
-        "/blog",
-      ],
+      routes: ["/", "/contact", "/the-lab", "/proof", "/blog"],
     },
   },
 });

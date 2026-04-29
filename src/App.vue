@@ -1,7 +1,7 @@
 <template>
   <div :class="{ dark: isDark }">
     <div
-      class="font-sans bg-gray-50 dark:bg-dark min-h-screen text-slate-700 dark:text-white selection:bg-primary selection:text-white transition-colors duration-300"
+      class="font-sans bg-gray-50 dark:bg-dark min-h-screen text-slate-700 dark:text-white selection:bg-primary selection:text-white transition-colors duration-300 flex flex-col"
     >
       <!-- Loader -->
       <Transition name="fade">
@@ -15,14 +15,14 @@
       </Transition>
 
       <!-- Main Content -->
-      <div>
+      <div class="flex flex-col flex-grow">
         <Header
           @menu-click="handleMenuClick"
           :is-dark="isDark"
           @toggle-dark="toggleDark"
         />
 
-        <main class="overflow-x-hidden">
+        <main class="flex-grow overflow-x-hidden">
           <NuxtPage />
         </main>
 
@@ -44,7 +44,7 @@ import { useLoader } from "./composables/useLoader";
 import AppLoader from "./components/common/AppLoader.vue";
 import BackToTop from "./components/common/BackToTop.vue";
 
-const { loading, startLoader } = useLoader("Poppins", 3000);
+const { loading, startLoader } = useLoader("IBM Plex Serif", 3000);
 
 useSeoMeta({
   titleTemplate: (titleChunk) => {

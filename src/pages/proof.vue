@@ -5,14 +5,14 @@
       <h1
         class="text-4xl md:text-6xl font-heading font-bold text-slate-700 dark:text-white mb-6"
       >
-        Professional Validation
+        Professional <span class="title-highlight">Validation</span>
       </h1>
       <p
         class="text-xl text-slate-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto"
       >
-        Senior Software Engineer with 9+ years of commercial and solo experience specializing in the
-        Javascript ecosystem. Proven track record of leading architectural
-        migrations and optimizing delivery pipelines for speed and
+        Senior Software Engineer with 9+ years of commercial and solo experience
+        specializing in the Javascript ecosystem. Proven track record of leading
+        architectural migrations and optimizing delivery pipelines for speed and
         maintainability.
       </p>
     </section>
@@ -31,7 +31,6 @@
 
 <script setup>
 import Experience from "../components/sections/AppExperience.vue";
-
 import Skills from "../components/sections/AppSkills.vue";
 
 const title = "Proof";

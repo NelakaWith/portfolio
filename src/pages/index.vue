@@ -1,16 +1,13 @@
 <template>
   <div
-    class="pt-24 min-h-screen flex flex-col items-center justify-center py-20 relative overflow-hidden"
+    class="pt-24 flex flex-col items-center justify-center py-20 relative overflow-hidden"
   >
     <div class="max-w-4xl mx-auto px-6 relative z-20 text-center">
       <h1
-        class="text-5xl lg:text-7xl font-heading font-bold text-slate-700 dark:text-white leading-tight mb-6 mt-10"
+        class="text-5xl lg:text-7xl font-heading font-bold text-slate-700 dark:text-white leading-tight my-6"
       >
         Software at the <br />
-        <span
-          class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
-          >Speed of Thought.</span
-        >
+        <span class="title-highlight">Speed of Thought.</span>
       </h1>
       <p
         class="text-xl text-slate-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto font-medium"
@@ -54,34 +51,23 @@
         </div>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-12 text-left mt-16">
+      <div class="grid md:grid-cols-1 gap-12 text-left mt-16">
         <div
           class="p-8 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 shadow-xl dark:shadow-none"
         >
           <h2 class="text-2xl font-bold text-slate-700 dark:text-white mb-4">
             The Specialist
           </h2>
-          <p class="text-slate-600 dark:text-gray-300 leading-relaxed">
-            <strong>I’m Nelaka.</strong> My journey started in traditional
-            engineering, but it evolved through the crucible of independent
-            product development. After seeing how 'standard' architectures stall
-            under their own weight, I moved toward a philosophy of abstraction.
-            I don't just write code; I build engines that allow businesses to
-            pivot as fast as they think.
-          </p>
-        </div>
-        <div
-          class="p-8 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 shadow-xl dark:shadow-none"
-        >
-          <h2 class="text-2xl font-bold text-slate-700 dark:text-white mb-4">
-            The Delivery Tax
-          </h2>
-          <p class="text-slate-600 dark:text-gray-300 leading-relaxed">
-            In modern software development, we’ve traded agility for complexity.
-            Between boilerplate setup, fragmented state management, and
-            hard-coded business logic, most teams are paying a 'Delivery Tax'
-            losing nearly half their momentum before they even ship a feature. I
-            build the primitives that reclaim that time.
+          <p class="text-slate-600 dark:text-gray-300 leading-relaxed text-lg">
+            <strong
+              class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+              >I’m Nelaka.</strong
+            >
+            My journey started in traditional engineering, but it evolved
+            through the crucible of independent product development. After
+            seeing how 'standard' architectures stall under their own weight, I
+            moved toward a philosophy of abstraction. I don't just write code; I
+            build engines that allow businesses to pivot as fast as they think.
           </p>
         </div>
       </div>
@@ -103,3 +89,20 @@ useSeoMeta({
   twitterCard: "summary_large_image",
 });
 </script>
+
+<!--
+  <div
+          class="p-8 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 shadow-xl dark:shadow-none"
+        >
+          <h2 class="text-2xl font-bold text-slate-700 dark:text-white mb-4">
+            The Delivery Tax
+          </h2>
+          <p class="text-slate-600 dark:text-gray-300 leading-relaxed">
+            In modern software development, we’ve traded agility for complexity.
+            Between boilerplate setup, fragmented state management, and
+            hard-coded business logic, most teams are paying a 'Delivery Tax'
+            losing nearly half their momentum before they even ship a feature. I
+            build the primitives that reclaim that time.
+          </p>
+        </div>
+-->
