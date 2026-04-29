@@ -44,7 +44,7 @@ import { useLoader } from "./composables/useLoader";
 import AppLoader from "./components/common/AppLoader.vue";
 import BackToTop from "./components/common/BackToTop.vue";
 
-const { loading, startLoader } = useLoader("Poppins", 3000);
+const { loading, startLoader } = useLoader("IBM Plex Serif", 3000);
 
 useSeoMeta({
   titleTemplate: (titleChunk) => {

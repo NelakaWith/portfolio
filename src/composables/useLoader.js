@@ -1,7 +1,7 @@
 import { ref, nextTick } from "vue";
 import FontFaceObserver from "fontfaceobserver";
 
-export function useLoader(fontFamily = "Hind", fontTimeout = 4000) {
+export function useLoader(fontFamily = "IBM Plex Serif", fontTimeout = 4000) {
   const loading = ref(true);
 
   async function waitForAllImages() {
@@ -15,13 +15,18 @@ export function useLoader(fontFamily = "Hind", fontTimeout = 4000) {
           img.addEventListener("load", resolve, { once: true });
           img.addEventListener("error", resolve, { once: true });
         });
-      })
+      }),
     );
   }
 
   function waitForFonts() {
-    const font = new FontFaceObserver(fontFamily);
-    return font.load(null, fontTimeout);
+    try {
+      const font = new FontFaceObserver(fontFamily);
+      return font.load(null, fontTimeout);
+    } catch (e) {
+      console.warn("Font loading not supported or failed:", e);
+      return Promise.resolve();
+    }
   }
 
   async function startLoader() {
