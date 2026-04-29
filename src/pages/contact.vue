@@ -6,7 +6,7 @@
         <h1
           class="text-4xl md:text-6xl font-heading font-bold text-slate-700 dark:text-white mb-6"
         >
-          Ready to eliminate the noise?
+          Ready to <span class="title-highlight">eliminate the noise?</span>
         </h1>
         <p
           class="text-xl text-slate-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto mb-8"

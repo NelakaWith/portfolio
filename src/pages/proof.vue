@@ -5,7 +5,7 @@
       <h1
         class="text-4xl md:text-6xl font-heading font-bold text-slate-700 dark:text-white mb-6"
       >
-        Professional Validation
+        Professional <span class="title-highlight">Validation</span>
       </h1>
       <p
         class="text-xl text-slate-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto"

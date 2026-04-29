@@ -7,10 +7,7 @@
         class="text-5xl lg:text-7xl font-heading font-bold text-slate-700 dark:text-white leading-tight my-6"
       >
         Software at the <br />
-        <span
-          class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
-          >Speed of Thought.</span
-        >
+        <span class="title-highlight">Speed of Thought.</span>
       </h1>
       <p
         class="text-xl text-slate-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto font-medium"
@@ -61,7 +58,7 @@
           <h2 class="text-2xl font-bold text-slate-700 dark:text-white mb-4">
             The Specialist
           </h2>
-          <p class="text-slate-600 dark:text-gray-300 leading-relaxed">
+          <p class="text-slate-600 dark:text-gray-300 leading-relaxed text-lg">
             <strong
               class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
               >I’m Nelaka.</strong

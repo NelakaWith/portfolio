@@ -22,17 +22,9 @@
             :to="item.href"
             :target="item.external ? '_blank' : undefined"
             :rel="item.external ? 'noopener noreferrer' : undefined"
-            class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-all duration-200"
+            class="px-4 py-2 text-sm font-semibold text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-all duration-200"
           >
-            <template v-if="item.id == 'velocity'">
-              <span
-                class="font-extrabold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
-                >HVDC</span
-              >
-            </template>
-            <template v-else>
-              {{ item.label }}
-            </template>
+            {{ item.label }}
           </NuxtLink>
         </template>
 
