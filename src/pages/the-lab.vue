@@ -104,38 +104,38 @@ useSeoMeta({
 
 const caseStudies = [
   {
+    id: "craw-lore-core",
+    badgeClass: "bg-secondary/10 text-secondary",
+    title: "Craw-Lore Core",
+    description:
+      'Raw, unstructured web data is too chaotic for Large Language Models (LLMs) to process efficiently. Most scrapers simply dump raw HTML into a database, resulting in high "token-heavy" costs and poor analysis accuracy due to the non-essential noise like ads and scripts.',
+    solutionIcon: "fluent:people-queue-28-regular",
+    solutionIconClass: "text-amber-600",
+    solutionTitle: "Intelligent orchestration",
+    solutionDescription:
+      'Craw-Lore provides a production-ready orchestration engine that extracts, cleans, and structures raw web data into high-signal JSON before it ever hits an LLM. By handling the "messy middle" of data ingestion and queue management, it ensures architectural predictability while drastically reducing token costs and analysis errors.',
+    impactIcon: "mdi:clock-fast",
+    impactIconClass: "text-secondary",
+    impactTitle: "Reduced Time to Insight",
+    impactDescription:
+      "Allows teams to bypass weeks of ingestion plumbing and focus immediately on the higher-value LLM analysis and visualization. By enforcing architectural predictability, it slashes token consumption and operational costs, transforming a fragile scraping script into a scalable, enterprise-ready data asset.",
+  },
+  {
     id: "saadhaka-ils",
     badgeClass: "bg-secondary/10 text-secondary",
     title: "Saadhaka ILS",
     description:
-      "A hybrid chemistry engine designed to bridge the gap between static textbook knowledge and dynamic synthesis simulations. It maps the organic chemistry syllabus into a navigable Knowledge Graph.",
-    solutionIcon: "ph:flask-duotone",
+      "We need to bridge the gap between static textbook knowledge and dynamic synthesis simulations. It maps the locale chemistry (in MVP, organics) syllabus into a navigable Knowledge Graph.",
+    solutionIcon: "ix:ai",
     solutionIconClass: "text-primary",
     solutionTitle: "Hybrid AI Engine",
     solutionDescription:
       "Built a dual-layer system combining a hard-coded Knowledge Graph for syllabus accuracy with an AI/RAG layer for real-time reactivity predictions and molecular insights.",
     impactIcon: "ph:brain-duotone",
-    impactIconClass: "text-secondary",
+    impactIconClass: "text-pink-600",
     impactTitle: "Interactive Discovery",
     impactDescription:
       "Enabled automated generation of complex conversion challenges and a 'Lab Playground' where students discover synthesis routes through guided experimentation.",
-  },
-  {
-    id: "hvdc-engine",
-    badgeClass: "bg-primary/10 text-primary",
-    title: "The HVDC Engine",
-    description:
-      "The challenge was simple: How do we build a system that can handle 100+ different document types without creating 100+ different Vue components?",
-    solutionIcon: "ph:wrench-duotone",
-    solutionIconClass: "text-primary",
-    solutionTitle: "The Solution",
-    solutionDescription:
-      "I built a recursive rendering engine using Vue 3 and TypeScript that translates complex metadata into reactive forms.",
-    impactIcon: "ph:lightning-duotone",
-    impactIconClass: "text-secondary",
-    impactTitle: "The Impact",
-    impactDescription:
-      "We reduced the time to add a new document type from a 3-day development cycle to a 5-minute metadata update.",
   },
 ];
 </script>
