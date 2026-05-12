@@ -89,15 +89,16 @@
 <script setup>
 const experience = [
   {
-    position: "Software Consultant/ Freelance Software Engineer",
+    position: "Lead Software Engineer / Architect",
     company: "Freelancer",
     location: "Remote",
     duration: "10/2024 - Present",
     responsibilities: [
-      "Developing Saadhaka, an E-Learning platform, focusing on an intelligent, interactive, and personalized learning experience powered by a knowledge graph and a specialized chemistry engine.",
-      "Collaborating with clients to understand their business needs and recommend appropriate software solutions.",
-      "Designing and developing custom software solutions tailored to client requirements.",
-      "Providing technical support and guidance to clients on software usage and best practices.",
+      "Architected Saadhaka, an Interactive Logic Sandbox (ILS) built for chemistry education, featuring an engine-driven curriculum, challenge-based progress tracking, and interactive sandboxes. It comprises a NestJS API for back-end intelligence, a React-based client for core user functionality, and a Nuxt-powered web application for public-facing information. The system leverages a knowledge graph to structure learning paths, providing a personalized and gamified experience for mastering complex chemical concepts.",
+      "Architected Ground-0, a platform for news discovery and analysis that utilizes a NestJS API for backend orchestration, a Python-based crawler for automated web ingestion, and a Nuxt frontend for visualizing sentiment and bias data.",
+      "Architected Gloire Roadmap, an application that provides a centralized platform for managing student data, attendance, and progress tracking. It features a Vue.js frontend for interactive analytics and a Node.js backend that handles goal-orientated performance metrics. The system is designed to streamline classroom management and provide data-driven insights through various specialised modules.",
+      "Providing full-stack software engineering services focusing on the JavaScript ecosystem with MySQL and PostgreSQL.",
+      "Implementing TDD and CI/CD best practices for high-performance internal technical prototypes",
     ],
     technologies: [
       "Next.js",
@@ -124,14 +125,13 @@ const experience = [
     technologies: ["VueJS", "JavaScript ES6", "CSS", "Azure DevOps"],
   },
   {
-    position: "Senior UI/UX Engineer",
+    position: "Senior Frontend Engineer",
     company: "Uptime",
     location: "Colombo, Sri Lanka",
     duration: "10/2022 - 04/2024",
     responsibilities: [
-      "Frontend lead for Jiva.ai platform enabling zero-code AI environments.",
-      "Developed and integrated APIs for internal portal applications using VueQuery and PrimeVue.",
-      "Contributed to service partner management web apps using Quasar UI.",
+      "Led the frontend development for a zero-code AI platform frontend with Vue 3, TypeScript, and Tailwind. It uses a playground-style interface to build AI workflows. Jiva AI uses a model-fusion-first approach to machine learning to provide a sophisticated platform that enables multimodal AI. Allowing non-technical users to iteratively grow, evolve and deploy models based on their data for real-world use.",
+      "Part of the team that did the re-engineering of the partner management system with Quasar UI, improving the efficiency of vendor workflows. It is a one-stop shop for all things partner management for NOC operations. including a sophisticated ticket management system.",
     ],
     technologies: [
       "VueJS",
@@ -143,15 +143,13 @@ const experience = [
     ],
   },
   {
-    position: "Senior UI Engineer",
+    position: "Senior Frontend Engineer",
     company: "IdeaHub",
     location: "Colombo, Sri Lanka",
     duration: "07/2019 - 10/2022",
     responsibilities: [
-      "Developed digital finance solutions on the Symphony Platform.",
-      "Created UI components for FinTech products (web/mobile) using ReactJS and Material UI.",
-      "Contributed to mobile banking apps and digital wallets for leading banks.",
-      "Built component libraries for compliance systems (Tiks) using Ionic and Vue.",
+      "Contributed to the development of digital banking platforms (mobile banking, wallet, and POS apps) using React. All the apps are based on the flagship platform 'Symphony', which is built from the ground up for financial services organizations and telcos who are looking for their own branded digital payment platform and fully immersive 'life' tech.",
+      "Responsible for delivering the UI library for the Australian compliance system (Tiks) with Vue + Ionic Capacitor. It’s Workforce Safety’s Enterprise Protection Platform, originally built by TIKS and currently owned by Damstra Technology.",
     ],
     technologies: [
       "ReactJS",
@@ -168,13 +166,12 @@ const experience = [
     location: "Colombo, Sri Lanka",
     duration: "02/2017 - 04/2018",
     responsibilities: [
-      "Developed UIs for Expedia Group seasonal promotions.",
-      "Built front-ends using internal templating systems with HTML, JS, and LESS.",
+      "Built frontend for Expedia’s seasonal promotions and booking platforms internal templating systems with HTML, JS, and LESS. Supported high-traffic travel platforms with a global user base.",
     ],
     technologies: ["HTML", "JavaScript", "LESS", "Java", "Node.js"],
   },
   {
-    position: "UI Developer",
+    position: "Junior Software Engineer",
     company: "Lily Digital (Pvt) Ltd.",
     location: "Colombo, Sri Lanka",
     duration: "04/2015 - 01/2017",
