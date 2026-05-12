@@ -95,15 +95,15 @@ const projects = [
     web: "https://vid-metrics-competitor-analysis.netlify.app/",
     image: "",
   },
-  {
-    name: "Ground-0",
-    description:
-      "Automated pipeline that monitors Sri Lankan news via RSS feeds and uses Llama AI models to analyze the political framing and bias of news snippets (Headlines + Summaries).",
-    technologies: ["Python", "Nest.js", "Playwright", "Stagehand", "Groq SDK"],
-    github: "https://github.com/NelakaWith/ground-0",
-    web: "",
-    image: "",
-  },
+  // {
+  //   name: "Ground-0",
+  //   description:
+  //     "Automated pipeline that monitors Sri Lankan news via RSS feeds and uses Llama AI models to analyze the political framing and bias of news snippets (Headlines + Summaries).",
+  //   technologies: ["Python", "Nest.js", "Playwright", "Stagehand", "Groq SDK"],
+  //   github: "https://github.com/NelakaWith/ground-0",
+  //   web: "",
+  //   image: "",
+  // },
   {
     name: "DeClerk",
     description:
