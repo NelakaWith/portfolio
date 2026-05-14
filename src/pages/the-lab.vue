@@ -104,9 +104,9 @@ useSeoMeta({
 
 const caseStudies = [
   {
-    id: "craw-lore-core",
+    id: "dredger-badger",
     badgeClass: "bg-secondary/10 text-secondary",
-    title: "Craw-Lore Core",
+    title: "Dredger Badger",
     description:
       'Raw, unstructured web data is too chaotic for Large Language Models (LLMs) to process efficiently. Most scrapers simply dump raw HTML into a database, resulting in high "token-heavy" costs and poor analysis accuracy due to the non-essential noise like ads and scripts.',
     solutionIcon: "fluent:people-queue-28-regular",

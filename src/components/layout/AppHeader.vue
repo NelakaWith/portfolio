@@ -116,7 +116,6 @@ const showMobileMenu = ref(false);
 
 const navItems = [
   { id: "home", label: "Home", href: "/", type: "route" },
-  { id: "products", label: "Products", href: "/products", type: "route" },
   { id: "the-lab", label: "My Work", href: "/the-lab", type: "route" },
   { id: "proof", label: "Who am I", href: "/proof", type: "route" },
   { id: "contact", label: "Reach Me", href: "/contact", type: "route" },
@@ -127,6 +126,7 @@ const navItems = [
     type: "route",
     external: false,
   },
+  { id: "products", label: "Products", href: "/products", type: "route" },
 ];
 
 function handleNavClick(item) {
