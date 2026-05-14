@@ -1,92 +1,99 @@
-This document contains the expanded text for each route. Use these blocks to fill out your Vue components.
+# Product Landing Page Content: Dredger Badger
 
-## 1. Homepage (Route: `/`)
+## 1. Hero Section
 
-**Goal:** Hook and redirect.
+**Headline:** Dredger Badger: The Ultimate AI-First Scraping & Intelligence Boilerplate.
 
-### Hero
+**Sub-headline:** Stop building scrapers from scratch. Deploy a production-ready, distributed infrastructure powered by NestJS, BullMQ, and LLMs in minutes.
 
-- **Headline:** Software at the Speed of Thought.
-- **Sub-headline:** "I help teams eliminate architectural noise and restore momentum through High-Velocity primitives. Senior Fullstack Engineer & Systems Architect."
+**CTA:** [Get Lifetime Access – $149](#)
 
-### The Delivery Tax (Body)
+---
 
-"In modern software development, we’ve traded agility for complexity. Between boilerplate setup, fragmented state management, and hard-coded business logic, most teams are paying a 'Delivery Tax'—losing nearly half their momentum before they even ship a feature. I build the primitives that reclaim that time."
+## 2. The Value Proposition (The "Messy Middle")
 
-### The Specialist (Body)
+### The Problem
+Traditional scraping is fragile. It requires manual selector maintenance, complex retry logic, and hours of post-processing. Most scrapers simply dump raw HTML, resulting in "token-heavy" costs and poor analysis accuracy.
 
-"I’m Nelaka. My journey started in traditional engineering, but it evolved through the crucible of independent product development. After seeing how 'standard' architectures stall under their own weight, I moved toward a philosophy of abstraction. I don't just write code; I build engines that allow businesses to pivot as fast as they think."
+### The Solution
+Dredger Badger provides a **"Double-Pass LLM Pipeline"** that transforms raw HTML into structured JSON based on your specific schema. We provide the "entire factory," handling the messy middle of ingestion and queue management so you can focus on the insights.
 
-## 2. Velocity Page (Route: `/velocity`)
+---
 
-**Goal:** Detail the HVDC system and services.
+## 3. The "Proof" (Visualizing the Invisible)
 
-### Introduction: The HVDC Philosophy
+> [!NOTE]
+> **UX Note:** Use a side-by-side code block component here.
 
-"High-Velocity Delivery Core (HVDC) isn't just a library; it's a methodology. Most document-driven systems fail because they treat every form, report, and workflow as a unique snowflake. HVDC treats them as data."
+### Before (Raw HTML)
+```html
+<div class="ad-wrapper">...</div>
+<script src="tracking.js"></script>
+<nav>...</nav>
+<article>
+  <h1>The Real Content</h1>
+  <p>Nested inside thousands of lines of noise...</p>
+</article>
+```
 
-### How it Works: Metadata-Driven Architecture
+### After (Structured JSON)
+```json
+{
+  "title": "The Real Content",
+  "content": "Cleaned, high-signal text extracted via Groq inference.",
+  "metadata": {
+    "author": "Nelaka",
+    "token_reduction": "85%",
+    "vector_status": "Indexed"
+  }
+}
+```
 
-"By decoupling business logic from the UI, we move the 'source of truth' into metadata. This means:
+---
 
-- **Zero-Deploy Updates:** Change a validation rule or a field layout in JSON, and the app updates instantly.
-- **Primitive Focus:** We stop building 'pages' and start building 'engines' that can render infinite variations of pages.
-- **Reduced Noise:** The codebase stays lean because it only handles the *rendering* and *state*, not the specific business rules."
+## 4. Core Technical Features (The "Factory")
 
-### Service Deep-Dives
+This is a headless architectural asset designed for enterprise-grade data ingestion.
 
-- **MVP Acceleration:** Ideal for founders. We use pre-built HVDC primitives to get your core loop into the hands of users in weeks. We focus on the product, not the plumbing."
-- **Architectural Audits:** For established teams. I dive into your Vue/Node stack, identify the bottlenecks causing 'sprint drag,' and implement abstraction layers to clear the path."
+- **Distributed Architecture:** A scalable BullMQ worker system for handling thousands of jobs in parallel without dropping tasks.
+- **AI-Powered Extraction:** Leverages Groq for high-speed inference to transform raw data into user-defined JSON schemas.
+- **Analytical Layer:** Integrated DuckDB for near-instantaneous tracking of scraping metrics and data trends.
+- **Persistence Layer:** PostgreSQL with pgvector for semantic search and flexible, vector-ready metadata storage.
+- **Anti-Detection:** Integrated Playwright engine designed to retrieve clean content from tough, WAF-protected targets.
 
-## 3. The Lab (Route: `/the-lab`)
+---
 
-**Goal:** Storytelling through case studies.
+## 5. What’s Inside the Box?
 
-### Case Study 1: The HVDC Engine
+Upon purchase, you receive the full source code for the engine:
 
-"The challenge was simple: How do we build a system that can handle 100+ different document types without creating 100+ different Vue components?
+- **Complete NestJS Monorepo:** A professionally structured codebase using Turborepo.
+- **Three-Stage Pipeline:** Pre-configured automated stages: Discovery, Scraping, and AI Analysis.
+- **Ready-to-use API Endpoints:** Built-in routes for submitting tasks (`POST /tasks`) and retrieving processed results.
+- **Developer Documentation:** Clear guides on customizing extraction prompts and scaling worker nodes.
 
-- **The Solution:** I built a recursive rendering engine using Vue 3 and TypeScript that translates complex metadata into reactive forms.
-- **The Impact:** We reduced the time to add a new document type from a 3-day development cycle to a 5-minute metadata update."
+---
 
-### Case Study 2: Subscription Manager
+## 6. Dredger Badger vs. Generic Scrapers
 
-"A study in lean performance. I needed a way to track SaaS margins across multiple developer environments without the bloat of traditional ERP tools.
+- **Infrastructure, not just a Library:** Unlike Python libraries that require manual scaling, Dredger Badger provides the full distributed worker architecture.
+- **AI-First vs. Selectors:** Don't waste time writing CSS selectors. Send a URL and a schema; get perfect data.
 
-- **The Tech:** Built on a Turborepo foundation, leveraging Vite for sub-second hot reloads and a highly optimized Node.js backend.
-- **The Result:** A tool that provides instant visibility into operational runway, used to audit and reclaim lost margins."
+---
 
-## 4. Proof Page (Route: `/proof`)
+## 7. Pricing & Licensing
 
-**Goal:** Professional validation (The Resume).
+*LemonSqueezy Compliance*
 
-### Profile Summary
+- **Developer License:** $149 (One-time payment)
+- **Commercial Use:** Included for unlimited personal and commercial projects.
+- **Updates:** Includes lifetime access to the core engine and all future v1.x updates.
+- **Support:** Access to a private Discord/Email support channel for technical guidance.
+- **Refund Policy:** Due to the digital nature of the source code, all sales are final once the code has been accessed.
 
-"Senior Fullstack Engineer with 5+ years of experience specializing in the Vue.js ecosystem. Proven track record of leading architectural migrations and optimizing delivery pipelines for speed and maintainability."
+---
 
-### Professional Experience (Fill with your specific roles)
+## 8. Technical Disclaimer
 
-- **[Role Title] | [Company Name] | [Dates]**
-    - "Architected a [Type of System] using Vue 3 and TypeScript, resulting in [X]% faster load times."
-    - "Led a team of [X] developers to deliver [Project] under a high-pressure timeline."
-    - "Implemented CI/CD pipelines that reduced deployment errors by [X]%."
-
-### The Technical Arsenal (Detailed)
-
-- **Frontend:** Vue 3 (Composition API, Script Setup), Pinia, Tailwind CSS, Vite.
-- **Backend:** Node.js, Express, PostgreSQL, Redis.
-- **Architecture:** Turborepo, Micro-frontends, Metadata-driven design.
-- **Philosophy:** DRY (Don't Repeat Yourself), KISS (Keep It Simple, Stupid), and YAGNI (You Ain't Gonna Need It).
-
-## 5. Contact / Accelerate (Route: `/contact`)
-
-**Goal:** Conversion.
-use the saeme contact form as in the current version
-
-### The CTA
-
-"Ready to eliminate the noise? Whether you're looking for an MVP build, a technical audit, or a senior engineer to join your ranks, let's talk about velocity."
-
-- **Email:** [Your Email]
-- **LinkedIn:** [Your Link]
-- **GitHub:** [Your Link]
+> [!IMPORTANT]
+> Dredger Badger is a headless architectural asset intended for experienced developers. It provides the high-performance ingestion engine and API structure, but does **not** include a graphical user interface (GUI). It is designed to be the "engine" under the hood of your own LLM-driven applications.
