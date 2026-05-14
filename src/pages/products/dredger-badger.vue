@@ -296,13 +296,19 @@
     <!-- Disclaimer -->
     <section class="py-12 px-6 max-w-4xl mx-auto text-center">
       <div
-        class="p-6 rounded-2xl bg-yellow-500/10 border border-yellow-500/20 text-yellow-600 dark:text-yellow-400 text-sm italic"
+        class="p-6 rounded-2xl bg-yellow-500/10 border border-yellow-500/20 text-yellow-600 dark:text-yellow-400 text-sm italic mb-6"
       >
         <strong>Technical Disclaimer:</strong> Dredger Badger is a headless
         architectural asset intended for experienced developers. It provides the
         high-performance ingestion engine and API structure, but does not
         include a graphical user interface (GUI).
       </div>
+      <NuxtLink
+        to="/license/dredger-badger"
+        class="text-xs text-slate-500 hover:text-primary transition-colors underline underline-offset-4"
+      >
+        Licensed under the Dredger Badger Commercial Agreement
+      </NuxtLink>
     </section>
   </div>
 </template>
