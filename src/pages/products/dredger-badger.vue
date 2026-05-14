@@ -18,8 +18,8 @@
         class="text-xl md:text-2xl text-slate-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 font-medium"
       >
         Stop building scrapers from scratch. Deploy a production-ready,
-        distributed infrastructure powered by NestJS, BullMQ, and LLMs in
-        minutes.
+        distributed infrastructure powered by NestJS, Python, BullMQ, and LLMs
+        in minutes.
       </p>
       <div class="flex flex-col md:flex-row justify-center items-center gap-6">
         <a

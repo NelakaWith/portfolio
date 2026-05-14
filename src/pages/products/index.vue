@@ -80,7 +80,7 @@ const products = [
       "The Ultimate AI-First Scraping & Intelligence Boilerplate. Transform raw HTML into structured JSON with a Double-Pass LLM Pipeline.",
     price: 149,
     icon: "ph:badger-duotone",
-    tags: ["NestJS", "BullMQ", "LLM"],
+    tags: ["NestJS", "Python", "BullMQ", "LLM"],
   },
 ];
 
