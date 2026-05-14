@@ -20,11 +20,11 @@
         class="group relative p-8 rounded-3xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-primary/50 transition-all duration-500 overflow-hidden shadow-xl dark:shadow-none"
       >
         <div class="relative z-10">
-          <div
+          <!-- <div
             class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-primary"
           >
             <Icon :icon="product.icon" class="w-8 h-8" />
-          </div>
+          </div> -->
 
           <h2 class="text-2xl font-bold text-slate-700 dark:text-white mb-3">
             {{ product.title }}
