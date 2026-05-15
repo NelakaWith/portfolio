@@ -257,10 +257,18 @@
                   icon="ph:terminal-window-duotone"
                   class="w-16 h-16 text-primary mx-auto mb-4"
                 />
-                <div class="text-primary font-mono text-sm">pnpm run dev</div>
-                <div class="text-slate-500 mt-4 font-mono text-xs">
+                <div class="text-primary font-mono text-sm mb-2">pnpm run dev</div>
+                <div class="text-slate-500 font-mono text-xs mb-6">
                   Waiting for jobs...
                 </div>
+                <a
+                  href="https://github.com/NelakaWith/dredger-badger-skeleton"
+                  target="_blank"
+                  class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 text-primary font-mono text-[10px] hover:bg-primary/20 transition-all border border-primary/20"
+                >
+                  <Icon icon="ph:github-logo-duotone" class="w-4 h-4" />
+                  <span>Public Skeleton</span>
+                </a>
               </div>
             </div>
           </div>
