@@ -47,7 +47,7 @@
             <Icon icon="ph:warning-circle-duotone" class="w-8 h-8" />
           </div>
           <h3 class="text-2xl font-bold mb-4 text-slate-700 dark:text-white">
-            The Problem
+            Scraping is Broken
           </h3>
           <p class="text-slate-600 dark:text-gray-400 leading-relaxed text-lg">
             Traditional scraping is fragile. It requires manual selector
@@ -68,7 +68,7 @@
             <Icon icon="ph:check-circle-duotone" class="w-8 h-8" />
           </div>
           <h3 class="text-2xl font-bold mb-4 text-slate-700 dark:text-white">
-            The Solution
+            Intelligent Pipelines
           </h3>
           <p class="text-slate-600 dark:text-gray-400 leading-relaxed text-lg">
             Dredger Badger provides a
@@ -86,20 +86,20 @@
         <h2
           class="text-3xl md:text-5xl font-heading font-bold mb-4 text-slate-700 dark:text-white"
         >
-          The Proof
+          Precision Extraction
         </h2>
         <p class="text-slate-500">Visualizing the Double-Pass Extraction</p>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-8 items-stretch">
         <!-- Before -->
-        <div class="flex flex-col">
+        <div class="flex flex-col min-w-0">
           <span
             class="text-sm font-bold text-slate-400 mb-2 px-4 uppercase tracking-widest"
             >Before (Raw HTML)</span
           >
           <div
-            class="flex-grow p-6 rounded-3xl bg-slate-900 text-slate-300 font-mono text-sm border border-slate-800 overflow-hidden shadow-2xl"
+            class="flex-grow p-6 rounded-3xl bg-slate-900 text-slate-300 font-mono text-sm border border-slate-800 overflow-x-auto shadow-2xl custom-scrollbar"
           >
             <pre><code>{{ `<div class="ad-wrapper">...</div>
 <script src="tracking.js"></script>
@@ -112,13 +112,13 @@
         </div>
 
         <!-- After -->
-        <div class="flex flex-col">
+        <div class="flex flex-col min-w-0">
           <span
             class="text-sm font-bold text-primary mb-2 px-4 uppercase tracking-widest"
             >After (Structured JSON)</span
           >
           <div
-            class="flex-grow p-6 rounded-3xl bg-slate-900 text-primary border-2 border-primary/30 font-mono text-sm overflow-hidden shadow-2xl relative"
+            class="flex-grow p-6 rounded-3xl bg-slate-900 text-primary border-2 border-primary/30 font-mono text-sm overflow-x-auto shadow-2xl relative custom-scrollbar"
           >
             <div class="absolute top-4 right-4 animate-pulse">
               <Icon icon="ph:magic-wand-duotone" class="w-6 h-6" />
@@ -138,37 +138,75 @@
       </div>
     </section>
 
-    <!-- Technical Features -->
-    <section class="py-24 px-6 bg-slate-50 dark:bg-white/[0.02]">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
+    <!-- The Workflow -->
+    <section class="py-24 px-6 bg-white dark:bg-transparent">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-20">
           <h2
             class="text-3xl md:text-5xl font-heading font-bold mb-4 text-slate-700 dark:text-white"
           >
-            The Factory
+            Lifecycle Architecture
           </h2>
-          <p class="text-slate-500">
-            Enterprise-grade architectural primitives
-          </p>
+          <p class="text-slate-500 text-lg">A three-stage precision pipeline</p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="relative">
+          <!-- Connector Line -->
           <div
-            v-for="(feature, index) in features"
-            :key="index"
-            class="p-8 rounded-3xl bg-white dark:bg-dark border border-slate-200 dark:border-white/10 hover:border-primary/50 transition-all"
-          >
+            class="absolute left-[23px] top-2 bottom-2 w-px bg-gradient-to-b from-primary via-primary/50 to-transparent hidden md:block"
+          ></div>
+
+          <div class="space-y-16">
             <div
-              class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 text-primary"
+              v-for="(step, index) in pipelineSteps"
+              :key="index"
+              class="relative pl-0 md:pl-20 group"
             >
-              <Icon :icon="feature.icon" class="w-8 h-8" />
+              <!-- Step Icon (Desktop) -->
+              <div
+                class="absolute left-0 top-0 w-12 h-12 rounded-2xl bg-white dark:bg-slate-900 border-2 border-primary/30 group-hover:border-primary hidden md:flex items-center justify-center z-10 shadow-xl transition-all duration-500 group-hover:scale-110"
+              >
+                <Icon :icon="step.icon" class="w-6 h-6 text-primary" />
+              </div>
+
+              <!-- Content Card -->
+              <div
+                class="p-8 rounded-[2rem] bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 hover:border-primary/40 transition-all duration-500 group-hover:translate-x-1 shadow-sm hover:shadow-xl hover:shadow-primary/5"
+              >
+                <div class="flex items-center gap-4 mb-4">
+                  <div
+                    class="md:hidden w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary"
+                  >
+                    <Icon :icon="step.icon" class="w-6 h-6" />
+                  </div>
+                  <div>
+                    <span
+                      class="text-primary font-bold text-sm uppercase tracking-widest mb-1 block"
+                      >{{ step.subtitle }}</span
+                    >
+                    <h3
+                      class="text-2xl font-bold text-slate-700 dark:text-white"
+                    >
+                      {{ step.title }}
+                    </h3>
+                  </div>
+                </div>
+                <p
+                  class="text-slate-600 dark:text-gray-400 text-lg leading-relaxed mb-6"
+                >
+                  {{ step.description }}
+                </p>
+                <div class="flex flex-wrap gap-3">
+                  <span
+                    v-for="detail in step.details"
+                    :key="detail"
+                    class="px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-primary text-xs font-bold uppercase tracking-wider"
+                  >
+                    {{ detail }}
+                  </span>
+                </div>
+              </div>
             </div>
-            <h3 class="text-xl font-bold mb-3 text-slate-700 dark:text-white">
-              {{ feature.title }}
-            </h3>
-            <p class="text-slate-600 dark:text-gray-400 leading-relaxed">
-              {{ feature.description }}
-            </p>
           </div>
         </div>
       </div>
@@ -208,7 +246,7 @@
             class="aspect-square rounded-3xl bg-gradient-to-br from-primary to-secondary p-1"
           >
             <div
-              class="w-full h-full bg-dark rounded-[calc(1.5rem-1px)] flex items-center justify-center relative overflow-hidden"
+              class="w-full h-full bg-dark dark:bg-black rounded-[calc(1.5rem-1px)] flex items-center justify-center relative overflow-hidden"
             >
               <Icon
                 icon="ph:package-duotone"
@@ -219,12 +257,56 @@
                   icon="ph:terminal-window-duotone"
                   class="w-16 h-16 text-primary mx-auto mb-4"
                 />
-                <div class="text-primary font-mono text-sm">npm run dev</div>
-                <div class="text-slate-500 mt-4 font-mono text-xs">
+                <div class="text-primary font-mono text-sm mb-2">pnpm run dev</div>
+                <div class="text-slate-500 font-mono text-xs mb-6">
                   Waiting for jobs...
                 </div>
+                <a
+                  href="https://github.com/NelakaWith/dredger-badger-skeleton"
+                  target="_blank"
+                  class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 text-primary font-mono text-[10px] hover:bg-primary/20 transition-all border border-primary/20"
+                >
+                  <Icon icon="ph:github-logo-duotone" class="w-4 h-4" />
+                  <span>Public Skeleton</span>
+                </a>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Features -->
+    <section class="py-24 px-6 bg-slate-50 dark:bg-white/[0.02]">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2
+            class="text-3xl md:text-5xl font-heading font-bold mb-4 text-slate-700 dark:text-white"
+          >
+            Architectural Primitives
+          </h2>
+          <p class="text-slate-500">
+            Enterprise-grade architectural primitives
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            v-for="(feature, index) in features"
+            :key="index"
+            class="p-8 rounded-3xl bg-white dark:bg-dark border border-slate-200 dark:border-white/10 hover:border-primary/50 transition-all"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 text-primary"
+            >
+              <Icon :icon="feature.icon" class="w-8 h-8" />
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-slate-700 dark:text-white">
+              {{ feature.title }}
+            </h3>
+            <p class="text-slate-600 dark:text-gray-400 leading-relaxed">
+              {{ feature.description }}
+            </p>
           </div>
         </div>
       </div>
@@ -240,7 +322,7 @@
         </h2>
 
         <div
-          class="p-12 rounded-[2.5rem] bg-white dark:bg-dark border-4 border-primary shadow-2xl relative"
+          class="p-12 rounded-[2.5rem] bg-white dark:bg-dark border border-primary relative"
         >
           <div
             class="absolute -top-6 left-1/2 -translate-x-1/2 px-6 py-2 bg-primary text-white rounded-full text-sm font-bold uppercase tracking-widest"
@@ -353,6 +435,45 @@ const features = [
   },
 ];
 
+const pipelineSteps = [
+  {
+    title: "Smart Ingestion",
+    subtitle: "Validation & Redis Enqueue",
+    description:
+      "The engine validates incoming URLs against database records to prevent redundant runs. Once verified, tasks are persisted as 'discovered' and pushed to a high-concurrency Redis Scrape Queue via BullMQ.",
+    icon: "ph:tray-arrow-down-duotone",
+    details: [
+      "URL Deduplication",
+      "Task Persistence",
+      "Redis/BullMQ Enqueuing",
+    ],
+  },
+  {
+    title: "High-Signal Scraping",
+    subtitle: "Multi-Tier Extraction & Noise Removal",
+    description:
+      "Workers utilize standard HTTP, Playwright, or crawl4ai to extract content. Raw data is then refined via ultra-fast Groq inference to strip ads and navigation, leaving only the high-signal 'core' content.",
+    icon: "ph:intersect-duotone",
+    details: [
+      "Multi-Tier Crawler Support",
+      "Groq-Powered Noise Removal",
+      "Markdown Refinement",
+    ],
+  },
+  {
+    title: "Intelligence Synthesis",
+    subtitle: "Structured JSON & Vector Embeddings",
+    description:
+      "The cleaned signal is transformed into structured JSON based on your specific schema. Simultaneously, Gemini generates high-dimensional vector embeddings, enabling semantic search and analytical depth.",
+    icon: "ph:brain-duotone",
+    details: [
+      "Schema-Driven Extraction",
+      "Gemini Vector Embeddings",
+      "Semantic Search Readiness",
+    ],
+  },
+];
+
 const insideBox = [
   "Complete NestJS Monorepo (Turborepo)",
   "Three-Stage Automated Pipeline",
@@ -372,6 +493,23 @@ useSeoMeta({
 <style scoped>
 .animate-fade-in {
   animation: fadeIn 0.8s ease-out forwards;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
 }
 
 @keyframes fadeIn {
