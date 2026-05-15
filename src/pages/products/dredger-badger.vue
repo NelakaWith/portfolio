@@ -212,6 +212,62 @@
       </div>
     </section>
 
+    <!-- What's Inside -->
+    <section class="py-24 px-6 max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2
+            class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-700 dark:text-white"
+          >
+            What’s Inside the Box?
+          </h2>
+          <p class="text-lg text-slate-600 dark:text-gray-400 mb-8">
+            Upon purchase, you receive the full source code for the engine,
+            ready for deployment.
+          </p>
+          <ul class="space-y-4">
+            <li
+              v-for="item in insideBox"
+              :key="item"
+              class="flex items-start gap-3"
+            >
+              <Icon
+                icon="ph:check-circle-fill"
+                class="w-6 h-6 text-primary shrink-0"
+              />
+              <span class="text-slate-700 dark:text-gray-300 font-medium">{{
+                item
+              }}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="relative">
+          <div
+            class="aspect-square rounded-3xl bg-gradient-to-br from-primary to-secondary p-1"
+          >
+            <div
+              class="w-full h-full bg-dark dark:bg-black rounded-[calc(1.5rem-1px)] flex items-center justify-center relative overflow-hidden"
+            >
+              <Icon
+                icon="ph:package-duotone"
+                class="w-32 h-32 text-primary/20 absolute -bottom-8 -right-8"
+              />
+              <div class="text-center p-8">
+                <Icon
+                  icon="ph:terminal-window-duotone"
+                  class="w-16 h-16 text-primary mx-auto mb-4"
+                />
+                <div class="text-primary font-mono text-sm">pnpm run dev</div>
+                <div class="text-slate-500 mt-4 font-mono text-xs">
+                  Waiting for jobs...
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Technical Features -->
     <section class="py-24 px-6 bg-slate-50 dark:bg-white/[0.02]">
       <div class="max-w-7xl mx-auto">
@@ -248,62 +304,6 @@
       </div>
     </section>
 
-    <!-- What's Inside -->
-    <section class="py-24 px-6 max-w-5xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div>
-          <h2
-            class="text-3xl md:text-4xl font-heading font-bold mb-6 text-slate-700 dark:text-white"
-          >
-            What’s Inside the Box?
-          </h2>
-          <p class="text-lg text-slate-600 dark:text-gray-400 mb-8">
-            Upon purchase, you receive the full source code for the engine,
-            ready for deployment.
-          </p>
-          <ul class="space-y-4">
-            <li
-              v-for="item in insideBox"
-              :key="item"
-              class="flex items-start gap-3"
-            >
-              <Icon
-                icon="ph:check-circle-fill"
-                class="w-6 h-6 text-primary shrink-0"
-              />
-              <span class="text-slate-700 dark:text-gray-300 font-medium">{{
-                item
-              }}</span>
-            </li>
-          </ul>
-        </div>
-        <div class="relative">
-          <div
-            class="aspect-square rounded-3xl bg-gradient-to-br from-primary to-secondary p-1"
-          >
-            <div
-              class="w-full h-full bg-dark rounded-[calc(1.5rem-1px)] flex items-center justify-center relative overflow-hidden"
-            >
-              <Icon
-                icon="ph:package-duotone"
-                class="w-32 h-32 text-primary/20 absolute -bottom-8 -right-8"
-              />
-              <div class="text-center p-8">
-                <Icon
-                  icon="ph:terminal-window-duotone"
-                  class="w-16 h-16 text-primary mx-auto mb-4"
-                />
-                <div class="text-primary font-mono text-sm">npm run dev</div>
-                <div class="text-slate-500 mt-4 font-mono text-xs">
-                  Waiting for jobs...
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Pricing -->
     <section class="py-24 px-6 bg-primary/5">
       <div class="max-w-3xl mx-auto text-center">
@@ -314,7 +314,7 @@
         </h2>
 
         <div
-          class="p-12 rounded-[2.5rem] bg-white dark:bg-dark border-4 border-primary shadow-2xl relative"
+          class="p-12 rounded-[2.5rem] bg-white dark:bg-dark border border-primary relative"
         >
           <div
             class="absolute -top-6 left-1/2 -translate-x-1/2 px-6 py-2 bg-primary text-white rounded-full text-sm font-bold uppercase tracking-widest"
@@ -434,7 +434,11 @@ const pipelineSteps = [
     description:
       "The engine validates incoming URLs against database records to prevent redundant runs. Once verified, tasks are persisted as 'discovered' and pushed to a high-concurrency Redis Scrape Queue via BullMQ.",
     icon: "ph:tray-arrow-down-duotone",
-    details: ["URL Deduplication", "Task Persistence", "Redis/BullMQ Enqueuing"],
+    details: [
+      "URL Deduplication",
+      "Task Persistence",
+      "Redis/BullMQ Enqueuing",
+    ],
   },
   {
     title: "High-Signal Scraping",
