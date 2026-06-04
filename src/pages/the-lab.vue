@@ -113,7 +113,7 @@ const caseStudies = [
     solutionIconClass: "text-amber-600",
     solutionTitle: "Intelligent orchestration",
     solutionDescription:
-      'Craw-Lore provides a production-ready orchestration engine that extracts, cleans, and structures raw web data into high-signal JSON before it ever hits an LLM. By handling the "messy middle" of data ingestion and queue management, it ensures architectural predictability while drastically reducing token costs and analysis errors.',
+      'Dredger Badger provides a production-ready orchestration engine that extracts, cleans, and structures raw web data into high-signal JSON before it ever hits an LLM. By handling the "messy middle" of data ingestion and queue management, it ensures architectural predictability while drastically reducing token costs and analysis errors.',
     impactIcon: "mdi:clock-fast",
     impactIconClass: "text-secondary",
     impactTitle: "Reduced Time to Insight",

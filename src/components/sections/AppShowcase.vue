@@ -18,7 +18,7 @@
         <div
           v-for="project in projects"
           :key="project.name"
-          class="group flex flex-col bg-white border border-slate-200 shadow-sm dark:bg-white/5 dark:border-white/5 dark:shadow-none rounded-2xl overflow-hidden hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-2 transition-all duration-500 relative"
+          class="group flex flex-col bg-white border border-slate-200 shadow-sm dark:bg-white/5 dark:border-white/5 dark:shadow-none rounded-2xl overflow-hidden hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 relative"
         >
           <!-- Hover Background Shimmer -->
           <div
@@ -57,10 +57,7 @@
                 target="_blank"
                 class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-white hover:text-primary transition-colors group/link"
               >
-                <Icon
-                  icon="ph:github-logo-bold"
-                  class="w-5 h-5 group-hover/link:-translate-y-0.5 transition-transform"
-                />
+                <Icon icon="ph:github-logo-bold" class="w-5 h-5" />
                 Code
               </a>
               <a
@@ -69,10 +66,7 @@
                 target="_blank"
                 class="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-white hover:text-secondary transition-colors group/link"
               >
-                <Icon
-                  icon="ph:globe-bold"
-                  class="w-5 h-5 group-hover/link:-translate-y-0.5 transition-transform"
-                />
+                <Icon icon="ph:globe-bold" class="w-5 h-5" />
                 Demo
               </a>
             </div>
