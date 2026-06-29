@@ -137,7 +137,7 @@ const navItems = [
     type: "route",
     external: false,
   },
-  { id: "products", label: "Products", href: "/products", type: "route" },
+  // { id: "products", label: "Products", href: "/products", type: "route" },
 ];
 
 function handleNavClick(item) {

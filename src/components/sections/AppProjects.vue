@@ -8,7 +8,7 @@
         <h3
           class="text-3xl md:text-4xl font-heading font-bold text-slate-700 dark:text-white"
         >
-          Commercial Projects
+          Commercial Delivery
         </h3>
       </div>
 
