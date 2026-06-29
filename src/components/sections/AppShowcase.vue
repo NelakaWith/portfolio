@@ -8,9 +8,9 @@
     <div class="max-w-7xl mx-auto px-6">
       <div class="mb-16 text-center">
         <h3
-          class="text-3xl md:text-5xl font-heading font-bold text-slate-700 dark:text-white"
+          class="text-3xl md:text-4xl font-heading font-bold text-slate-700 dark:text-white"
         >
-          Passion Projects
+          Passion Projects/ Independent Tools
         </h3>
       </div>
 
