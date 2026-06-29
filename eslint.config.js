@@ -20,6 +20,7 @@ const nuxtGlobals = {
   abortNavigation: "readonly",
   defineNuxtComponent: "readonly",
   defineNuxtConfig: "readonly",
+  defineNuxtPlugin: "readonly",
   definePageMeta: "readonly",
   $fetch: "readonly",
   $unref: "readonly",
@@ -45,6 +46,9 @@ const nuxtGlobals = {
 };
 
 export default defineConfig([
+  {
+    ignores: [".nuxt/**", ".output/**", "dist/**", "node_modules/**"],
+  },
   {
     files: ["**/*.{js,mjs,cjs,vue}"],
     plugins: { js },

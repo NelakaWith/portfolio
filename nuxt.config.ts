@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   // Set the source directory to src since we have existing src/-based structure
   srcDir: "src/",
 
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/seo", "@nuxt/fonts"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/seo", "@nuxt/fonts", "nuxt-lenis"],
 
   fonts: {
     families: [

@@ -33,6 +33,11 @@
         <BackToTop />
       </div>
     </div>
+
+    <!-- MOVE THIS INSIDE THE ROOT WRAPPER DIV -->
+    <ClientOnly>
+      <Lenis :options="{ lerp: 0.2, wheelMultiplier: 1.5 }" />
+    </ClientOnly>
   </div>
 </template>
 
@@ -43,6 +48,7 @@ import Footer from "./components/layout/AppFooter.vue";
 import { useLoader } from "./composables/useLoader";
 import AppLoader from "./components/common/AppLoader.vue";
 import BackToTop from "./components/common/BackToTop.vue";
+import { useLenis } from "#imports";
 
 const { loading, startLoader } = useLoader("IBM Plex Serif", 3000);
 
@@ -75,28 +81,29 @@ useSchemaOrg([
   }),
 ]);
 
-// Initialize isDark from localStorage immediately (client-side only)
-// Default to false (light mode) on server to prevent hydration mismatch
+// 1. Default to false on both server and initial client render
 const isDark = ref(false);
 const isMounted = ref(false);
 
-// Apply theme immediately on client-side to prevent flash/timing issues
-if (typeof window !== "undefined") {
-  // Read from localStorage, default to light if not set
-  const stored = localStorage.getItem("darkMode");
-  isDark.value = stored === "true";
+onMounted(() => {
+  isMounted.value = true;
 
-  // Apply the class immediately to prevent flash
+  // 2. Read from localStorage safely after mounting
+  const stored = localStorage.getItem("darkMode");
+  if (stored !== null) {
+    isDark.value = stored === "true";
+  } else {
+    // Optional fallback: check system preference if no local preference exists
+    isDark.value = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }
+
+  // 3. Apply class to document root
   if (isDark.value) {
     document.documentElement.classList.add("dark");
   } else {
     document.documentElement.classList.remove("dark");
   }
-}
 
-// Persist dark mode in localStorage
-onMounted(() => {
-  isMounted.value = true;
   startLoader();
 });
 
@@ -115,7 +122,11 @@ function toggleDark() {
 function handleMenuClick(target) {
   const el = document.getElementById(target);
   if (el) {
-    el.scrollIntoView({ behavior: "smooth" });
+    // Uses the global Nuxt-Lenis composable to scroll elegantly
+    useLenis().scrollTo(el, {
+      offset: 0,
+      duration: 1.2,
+    });
   }
 }
 </script>
