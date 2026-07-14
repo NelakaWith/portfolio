@@ -4,16 +4,17 @@
       class="bg-white/80 dark:bg-dark/70 backdrop-blur-xl border border-slate-200 dark:border-glass-border rounded-full px-6 py-3 flex justify-between items-center shadow-lg dark:shadow-glass transition-all duration-300"
     >
       <!-- Logo / Name -->
-      <div
+      <NuxtLink
+        to="/#home"
         class="cursor-pointer group"
-        @click="handleNavClick(navItems.find((item) => item.id === 'about'))"
+        @click="handleLogoClick"
       >
         <h1
           class="font-heading font-bold text-xl text-slate-700 dark:text-white tracking-tight group-hover:text-primary transition-colors"
         >
           Nelaka<span class="text-primary">.</span>
         </h1>
-      </div>
+      </NuxtLink>
 
       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center space-x-1">
@@ -29,6 +30,7 @@
                 : 'text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5',
             ]"
             active-class="bg-primary/5"
+            @click="handleItemClick(item, $event)"
           >
             {{ item.label }}
           </NuxtLink>
@@ -88,7 +90,7 @@
                   ? 'text-primary'
                   : 'text-slate-700 dark:text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-primary hover:to-secondary',
               ]"
-              @click="showMobileMenu = false"
+              @click="handleItemClick(item, $event)"
             >
               {{ item.label }}
             </NuxtLink>
@@ -117,36 +119,60 @@
 
 <script setup>
 import { ref } from "vue";
-// import { useRouter } from "vue-router";
-// const router = useRouter();
+import { useRoute } from "vue-router";
+import { useLenis } from "#imports";
 
 defineProps({ isDark: Boolean });
-defineEmits(["menu-click", "toggle-dark"]);
+defineEmits(["toggle-dark"]);
 
+const route = useRoute();
 const showMobileMenu = ref(false);
 
 const navItems = [
-  { id: "home", label: "Home", href: "/", type: "route" },
-  { id: "the-lab", label: "My Work", href: "/the-lab", type: "route" },
-  { id: "proof", label: "Who am I", href: "/proof", type: "route" },
-  { id: "contact", label: "Reach Me", href: "/contact", type: "route" },
-  {
-    id: "blog",
-    label: "Blog",
-    href: "/blog",
-    type: "route",
-    external: false,
-  },
-  // { id: "products", label: "Products", href: "/products", type: "route" },
+  { id: "home", label: "Home", href: "/#home" },
+  { id: "the-lab", label: "My Work", href: "/#the-lab" },
+  { id: "proof", label: "Who am I", href: "/#proof" },
+  { id: "contact", label: "Reach Me", href: "/#contact" },
+  { id: "blog", label: "Blog", href: "/blog" },
 ];
 
-function handleNavClick(item) {
-  if (item.id === "about") {
-    const el = document.getElementById("about");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+function handleItemClick(item, event) {
+  if (item.href.startsWith("/#")) {
+    const hash = item.href.substring(1); // extracts "#home", "#the-lab" etc.
+    if (route.path === "/") {
+      event.preventDefault();
+      const el = document.querySelector(hash);
+      if (el) {
+        const lenis = useLenis();
+        if (lenis) {
+          lenis.scrollTo(el, {
+            offset: 0,
+            duration: 1.2,
+          });
+          history.pushState(null, "", hash);
+        }
+      }
     }
   }
+  showMobileMenu.value = false;
+}
+
+function handleLogoClick(event) {
+  if (route.path === "/") {
+    event.preventDefault();
+    const el = document.querySelector("#home");
+    if (el) {
+      const lenis = useLenis();
+      if (lenis) {
+        lenis.scrollTo(el, {
+          offset: 0,
+          duration: 1.2,
+        });
+        history.pushState(null, "", "#home");
+      }
+    }
+  }
+  showMobileMenu.value = false;
 }
 </script>
 

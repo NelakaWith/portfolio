@@ -17,12 +17,11 @@
       <!-- Main Content -->
       <div class="flex flex-col flex-grow">
         <Header
-          @menu-click="handleMenuClick"
           :is-dark="isDark"
           @toggle-dark="toggleDark"
         />
 
-        <main class="flex-grow overflow-x-hidden paper-container">
+        <main class="flex-grow overflow-x-hidden">
           <NuxtPage />
         </main>
 
@@ -104,7 +103,24 @@ onMounted(() => {
     document.documentElement.classList.remove("dark");
   }
 
-  startLoader();
+  startLoader().then(() => {
+    // Scroll to hash if present after loading hides
+    const hash = window.location.hash;
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        setTimeout(() => {
+          const lenis = useLenis();
+          if (lenis) {
+            lenis.scrollTo(el, {
+              offset: 0,
+              duration: 1.2,
+            });
+          }
+        }, 300); // Small timeout to ensure page layout is stable
+      }
+    }
+  });
 });
 
 function toggleDark() {
@@ -118,17 +134,6 @@ function toggleDark() {
 
   localStorage.setItem("darkMode", String(isDark.value));
 }
-
-function handleMenuClick(target) {
-  const el = document.getElementById(target);
-  if (el) {
-    // Uses the global Nuxt-Lenis composable to scroll elegantly
-    useLenis().scrollTo(el, {
-      offset: 0,
-      duration: 1.2,
-    });
-  }
-}
 </script>
 
 <style lang="scss">
@@ -138,7 +143,7 @@ html {
 }
 
 body {
-  @apply transition-colors duration-300;
+  @apply bg-gray-50 dark:bg-dark transition-colors duration-300;
 }
 
 /* Fade transition for loader */
