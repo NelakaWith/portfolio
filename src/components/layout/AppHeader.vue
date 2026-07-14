@@ -143,9 +143,10 @@ function handleItemClick(item, event) {
       event.preventDefault();
       const el = document.querySelector(hash);
       if (el) {
-        const lenis = useLenis();
-        if (lenis) {
-          lenis.scrollTo(el, {
+        const { getLenis } = useLenis();
+        const lenisInstance = getLenis();
+        if (lenisInstance) {
+          lenisInstance.scrollTo(el, {
             offset: 0,
             duration: 1.2,
           });
@@ -162,9 +163,10 @@ function handleLogoClick(event) {
     event.preventDefault();
     const el = document.querySelector("#home");
     if (el) {
-      const lenis = useLenis();
-      if (lenis) {
-        lenis.scrollTo(el, {
+      const { getLenis } = useLenis();
+      const lenisInstance = getLenis();
+      if (lenisInstance) {
+        lenisInstance.scrollTo(el, {
           offset: 0,
           duration: 1.2,
         });

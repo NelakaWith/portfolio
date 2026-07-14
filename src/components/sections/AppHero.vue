@@ -76,9 +76,10 @@ function handleAnchorClick(event) {
   const el = document.querySelector(hash);
   if (el) {
     event.preventDefault();
-    const lenis = useLenis();
-    if (lenis) {
-      lenis.scrollTo(el, {
+    const { getLenis } = useLenis();
+    const lenisInstance = getLenis();
+    if (lenisInstance) {
+      lenisInstance.scrollTo(el, {
         offset: 0,
         duration: 1.2,
       });
