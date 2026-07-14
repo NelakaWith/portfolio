@@ -120,7 +120,6 @@
 <script setup>
 import { ref } from "vue";
 import { useRoute } from "vue-router";
-import { useLenis } from "#imports";
 
 defineProps({ isDark: Boolean });
 defineEmits(["toggle-dark"]);
@@ -143,10 +142,8 @@ function handleItemClick(item, event) {
       event.preventDefault();
       const el = document.querySelector(hash);
       if (el) {
-        const { getLenis } = useLenis();
-        const lenisInstance = getLenis();
-        if (lenisInstance) {
-          lenisInstance.scrollTo(el, {
+        if (window.lenis) {
+          window.lenis.scrollTo(el, {
             offset: 0,
             duration: 1.2,
           });
@@ -163,10 +160,8 @@ function handleLogoClick(event) {
     event.preventDefault();
     const el = document.querySelector("#home");
     if (el) {
-      const { getLenis } = useLenis();
-      const lenisInstance = getLenis();
-      if (lenisInstance) {
-        lenisInstance.scrollTo(el, {
+      if (window.lenis) {
+        window.lenis.scrollTo(el, {
           offset: 0,
           duration: 1.2,
         });

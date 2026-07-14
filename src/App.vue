@@ -29,11 +29,6 @@
         <BackToTop />
       </div>
     </div>
-
-    <!-- MOVE THIS INSIDE THE ROOT WRAPPER DIV -->
-    <ClientOnly>
-      <Lenis :options="{ lerp: 0.2, wheelMultiplier: 1.5 }" />
-    </ClientOnly>
   </div>
 </template>
 
@@ -44,9 +39,12 @@ import Footer from "./components/layout/AppFooter.vue";
 import { useLoader } from "./composables/useLoader";
 import AppLoader from "./components/common/AppLoader.vue";
 import BackToTop from "./components/common/BackToTop.vue";
-import { useLenis } from "#imports";
+import { useSmoothScroll } from "./composables/useSmoothscroll";
 
 const { loading, startLoader } = useLoader("IBM Plex Serif", 3000);
+
+// Initialize smooth scrolling
+useSmoothScroll();
 
 useSeoMeta({
   titleTemplate: (titleChunk) => {
@@ -107,10 +105,8 @@ onMounted(() => {
       const el = document.querySelector(hash);
       if (el) {
         setTimeout(() => {
-          const { getLenis } = useLenis();
-          const lenisInstance = getLenis();
-          if (lenisInstance) {
-            lenisInstance.scrollTo(el, {
+          if (window.lenis) {
+            window.lenis.scrollTo(el, {
               offset: 0,
               duration: 1.2,
             });

@@ -69,17 +69,13 @@
 </template>
 
 <script setup>
-import { useLenis } from "#imports";
-
 function handleAnchorClick(event) {
   const hash = event.currentTarget.getAttribute("href");
   const el = document.querySelector(hash);
   if (el) {
     event.preventDefault();
-    const { getLenis } = useLenis();
-    const lenisInstance = getLenis();
-    if (lenisInstance) {
-      lenisInstance.scrollTo(el, {
+    if (window.lenis) {
+      window.lenis.scrollTo(el, {
         offset: 0,
         duration: 1.2,
       });
