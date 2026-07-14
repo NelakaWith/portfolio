@@ -2,9 +2,9 @@
   <div
     class="pt-24 flex flex-col items-center justify-center py-20 relative overflow-hidden"
   >
-    <div class="max-w-4xl mx-auto px-6 relative z-20 text-center">
+    <div class="max-w-6xl mx-auto px-6 relative z-20 text-center">
       <h1
-        class="text-5xl lg:text-8xl tracking-tighter font-heading font-light text-slate-700 dark:text-white leading-tight my-6"
+        class="text-5xl lg:text-9xl tracking-tighter font-heading font-light text-slate-700 dark:text-white leading-tight my-6"
       >
         Software at the <br />
         <span class="title-highlight italic">Speed of Thought.</span>
