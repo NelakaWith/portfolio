@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col min-h-screen">
+  <div class="flex flex-col min-h-screen paper-container">
     <!-- Hero Section -->
     <section
       id="home"
@@ -59,10 +59,10 @@
           <p
             class="text-xl text-slate-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto"
           >
-            Senior Software Engineer with 9+ years of commercial and solo experience
-            specializing in the Javascript ecosystem. Proven track record of leading
-            architectural migrations and optimizing delivery pipelines for speed and
-            maintainability.
+            Senior Software Engineer with 9+ years of commercial and solo
+            experience specializing in the Javascript ecosystem. Proven track
+            record of leading architectural migrations and optimizing delivery
+            pipelines for speed and maintainability.
           </p>
         </div>
 
