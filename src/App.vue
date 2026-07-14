@@ -16,12 +16,9 @@
 
       <!-- Main Content -->
       <div class="flex flex-col flex-grow">
-        <Header
-          :is-dark="isDark"
-          @toggle-dark="toggleDark"
-        />
+        <Header :is-dark="isDark" @toggle-dark="toggleDark" />
 
-        <main class="flex-grow overflow-x-hidden">
+        <main class="flex-grow overflow-x-hidden paper-container">
           <NuxtPage />
         </main>
 

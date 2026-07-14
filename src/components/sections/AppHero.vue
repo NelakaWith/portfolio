@@ -22,10 +22,6 @@
         class="hero-button bg-slate-800 dark:bg-slate-700 group flex items-center justify-center gap-2"
       >
         <span class="text-secondary">Get in Touch</span>
-        <Icon
-          icon="ph:arrow-down-bold"
-          class="w-5 h-5 mt-1 group-hover:translate-y-1 transition-transform text-secondary"
-        />
       </a>
       <div class="flex justify-center items-center flex-wrap gap-4">
         <a

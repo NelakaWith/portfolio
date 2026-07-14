@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col min-h-screen paper-container">
+  <div class="flex flex-col min-h-screen">
     <!-- Hero Section -->
     <section
       id="home"
