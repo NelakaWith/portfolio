@@ -22,7 +22,7 @@
           @toggle-dark="toggleDark"
         />
 
-        <main class="flex-grow overflow-x-hidden">
+        <main class="flex-grow overflow-x-hidden paper-container">
           <NuxtPage />
         </main>
 
@@ -138,7 +138,7 @@ html {
 }
 
 body {
-  @apply bg-gray-50 dark:bg-dark transition-colors duration-300;
+  @apply transition-colors duration-300;
 }
 
 /* Fade transition for loader */

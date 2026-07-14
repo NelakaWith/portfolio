@@ -5,13 +5,13 @@ export default {
     extend: {
       fontFamily: {
         sans: ["IBM Plex Serif", "sans-serif"],
-        heading: ["Playfair Display", "serif"],
+        heading: ["Fraunces", "serif"],
       },
       colors: {
         dark: "#0f172a", // Slate 900
         "dark-lighter": "#1e293b", // Slate 800
-        primary: "#3b82f6", // Blue 500
-        secondary: "#8b5cf6", // Violet 500
+        primary: "#991b1b", // Red 800
+        secondary: "#ef4444", // Red 500
         "glass-border": "rgba(255, 255, 255, 0.08)",
         "glass-surface": "rgba(30, 41, 59, 0.7)",
       },

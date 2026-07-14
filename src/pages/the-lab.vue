@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-6">
       <section class="mb-16 text-center">
         <h1
-          class="text-4xl md:text-6xl font-heading font-bold text-slate-700 dark:text-white mb-6"
+          class="text-4xl md:text-8xl tracking-tighter font-heading text-slate-700 dark:text-white mb-6"
         >
           The <span class="title-highlight">Lab</span>
         </h1>
@@ -18,13 +18,6 @@
     </div>
 
     <div class="max-w-7xl mx-auto px-6">
-      <!-- <div class="mb-12 text-center">
-        <h3
-          class="text-3xl md:text-4xl font-heading font-bold text-slate-700 dark:text-white"
-        >
-          Deep Dives/ Core Architecture
-        </h3>
-      </div> -->
       <div class="grid md:grid-cols-1 gap-8">
         <template v-for="project in ownProjects" :key="project.id">
           <article

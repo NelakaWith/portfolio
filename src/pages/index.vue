@@ -4,10 +4,10 @@
   >
     <div class="max-w-4xl mx-auto px-6 relative z-20 text-center">
       <h1
-        class="text-5xl lg:text-7xl font-heading font-bold text-slate-700 dark:text-white leading-tight my-6"
+        class="text-5xl lg:text-8xl tracking-tighter font-heading font-light text-slate-700 dark:text-white leading-tight my-6"
       >
         Software at the <br />
-        <span class="title-highlight">Speed of Thought.</span>
+        <span class="title-highlight italic">Speed of Thought.</span>
       </h1>
       <p
         class="text-xl text-slate-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto font-medium"
@@ -23,10 +23,10 @@
           to="/contact"
           class="hero-button bg-slate-800 dark:bg-slate-700 group flex items-center justify-center gap-2"
         >
-          <span class="hero-primary-gradient">Get in Touch</span>
+          <span class="text-secondary">Get in Touch</span>
           <Icon
             icon="ph:arrow-right-bold"
-            class="w-5 h-5 group-hover:translate-x-1 transition-transform text-primary"
+            class="w-5 h-5 group-hover:translate-x-1 transition-transform text-secondary"
           />
         </NuxtLink>
         <div class="flex justify-center items-center flex-wrap gap-4">
@@ -55,12 +55,8 @@
         <div
           class="p-8 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 shadow-xl dark:shadow-none"
         >
-          <h2 class="text-2xl font-bold text-slate-700 dark:text-white mb-4">
-            The Specialist
-          </h2>
           <p class="text-slate-600 dark:text-gray-300 leading-relaxed text-lg">
-            <strong
-              class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+            <strong class="title-highlight text-transparent"
               >I’m Nelaka.</strong
             >
             My journey started in traditional engineering, but it evolved
@@ -89,20 +85,3 @@ useSeoMeta({
   twitterCard: "summary_large_image",
 });
 </script>
-
-<!--
-  <div
-          class="p-8 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 shadow-xl dark:shadow-none"
-        >
-          <h2 class="text-2xl font-bold text-slate-700 dark:text-white mb-4">
-            The Delivery Tax
-          </h2>
-          <p class="text-slate-600 dark:text-gray-300 leading-relaxed">
-            In modern software development, we’ve traded agility for complexity.
-            Between boilerplate setup, fragmented state management, and
-            hard-coded business logic, most teams are paying a 'Delivery Tax'
-            losing nearly half their momentum before they even ship a feature. I
-            build the primitives that reclaim that time.
-          </p>
-        </div>
--->

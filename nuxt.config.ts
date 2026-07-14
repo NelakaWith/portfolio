@@ -15,7 +15,7 @@ export default defineNuxtConfig({
         weights: [100, 200, 300, 400, 500, 600, 700],
       },
       {
-        name: "Playfair Display",
+        name: "Fraunces",
         provider: "google",
         weights: [100, 200, 300, 400, 500, 600, 700],
       },
