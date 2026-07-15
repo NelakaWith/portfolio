@@ -18,7 +18,7 @@
             <h4 class="text-lg font-semibold text-slate-800 dark:text-white">
               {{ category.name }}
             </h4>
-            <div class="flex-1 h-px bg-slate-200 dark:bg-white/10"></div>
+            <div class="flex-1 h-px bg-secondary/20"></div>
           </div>
 
           <!-- Skills Grid -->

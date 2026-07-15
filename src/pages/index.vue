@@ -16,7 +16,7 @@
       <div class="max-w-7xl mx-auto px-6">
         <div class="mb-16 text-center">
           <h2
-            class="text-4xl md:text-6xl font-heading font-bold text-slate-700 dark:text-white mb-6"
+            class="text-4xl md:text-7xl font-heading font-light text-slate-700 dark:text-white mb-6"
           >
             The <span class="title-highlight">Lab</span>
           </h2>
@@ -52,7 +52,7 @@
       <div class="max-w-7xl mx-auto px-6">
         <div class="mb-16 text-center">
           <h2
-            class="text-4xl md:text-6xl font-heading font-bold text-slate-700 dark:text-white mb-6"
+            class="text-4xl md:text-7xl font-heading font-light text-slate-700 dark:text-white mb-6"
           >
             Professional <span class="title-highlight">Validation</span>
           </h2>

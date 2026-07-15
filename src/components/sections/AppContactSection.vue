@@ -2,15 +2,15 @@
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-16">
       <h2
-        class="text-4xl md:text-6xl font-heading font-bold text-slate-700 dark:text-white mb-6"
+        class="text-4xl md:text-7xl font-heading font-light text-slate-700 dark:text-white mb-6"
       >
         Ready to <span class="title-highlight">eliminate the noise?</span>
       </h2>
       <p
         class="text-xl text-slate-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto mb-8"
       >
-        Whether you're looking for an MVP build, a technical audit, or a
-        senior engineer to join your ranks, let's talk about velocity.
+        Whether you're looking for an MVP build, a technical audit, or a senior
+        engineer to join your ranks, let's talk about velocity.
       </p>
 
       <div class="flex flex-wrap gap-4 justify-center items-center mb-16">

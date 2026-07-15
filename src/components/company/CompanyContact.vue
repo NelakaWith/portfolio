@@ -188,10 +188,8 @@
           }"
           :disabled="isSubmitting || !form.turnstileToken"
         >
-          <span v-if="!isSubmitting" class="hero-primary-gradient"
-            >Reach Out</span
-          >
-          <span v-else class="hero-primary-gradient">Sending...</span>
+          <span v-if="!isSubmitting" class="text-secondary">Reach Out</span>
+          <span v-else class="text-secondary">Sending...</span>
         </button>
       </div>
     </form>
