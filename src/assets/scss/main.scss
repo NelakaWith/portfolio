@@ -81,8 +81,12 @@ section {
 /* Apply the warm base color to your main container */
 .paper-container {
   position: relative;
-  background-color: rgb(242, 239, 232); /* Warm, low-contrast off-white */
+  background-color: #f2efe8; /* Warm, low-contrast off-white */
   overflow: hidden; /* Ensure the pseudo-element doesn't break layout */
+
+  .dark & {
+    background-color: #121212;
+  }
 }
 
 /* Create the noise overlay using a Data URI */
@@ -103,4 +107,9 @@ section {
 
   /* Optional: Blend mode helps it bite into the background color better */
   mix-blend-mode: multiply;
+
+  .dark & {
+    opacity: 0.05;
+    mix-blend-mode: screen;
+  }
 }
