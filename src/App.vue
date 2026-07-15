@@ -1,7 +1,7 @@
 <template>
   <div :class="{ dark: isDark }">
     <div
-      class="font-sans bg-gray-50 dark:bg-dark min-h-screen text-slate-700 dark:text-white selection:bg-primary selection:text-white transition-colors duration-300 flex flex-col"
+      class="font-sans bg-gray-50 dark:bg-dark min-h-screen text-slate-700 dark:text-white selection:bg-primary selection:text-white flex flex-col"
     >
       <!-- Loader -->
       <Transition name="fade">
@@ -118,6 +118,8 @@ onMounted(() => {
 });
 
 function toggleDark() {
+  document.documentElement.classList.add("disable-transitions");
+
   isDark.value = !isDark.value;
 
   if (isDark.value) {
@@ -127,27 +129,12 @@ function toggleDark() {
   }
 
   localStorage.setItem("darkMode", String(isDark.value));
+
+  // Force reflow to apply changes instantly without transition
+  document.documentElement.offsetHeight;
+
+  requestAnimationFrame(() => {
+    document.documentElement.classList.remove("disable-transitions");
+  });
 }
 </script>
-
-<style lang="scss">
-/* Global transitions */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  @apply bg-gray-50 dark:bg-dark transition-colors duration-300;
-}
-
-/* Fade transition for loader */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>

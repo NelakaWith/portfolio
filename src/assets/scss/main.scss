@@ -18,22 +18,6 @@ section {
   scroll-margin-top: 80px;
 }
 
-// company components styles
-.hero-primary-gradient {
-  background: linear-gradient(
-    90deg,
-    #ff7e5f 0%,
-    #feb47b 25%,
-    #86a8e7 50%,
-    #91eae4 75%,
-    #7f7fd5 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  /* text-fill-color: transparent; */
-}
-
 .hero-button {
   padding: 0.75rem 2.5rem;
   font-size: 1.125rem;
@@ -101,3 +85,10 @@ section {
     mix-blend-mode: screen;
   }
 }
+
+/* Disable transitions globally during theme toggling to prevent border/text delay */
+.disable-transitions,
+.disable-transitions * {
+  transition: none !important;
+}
+
