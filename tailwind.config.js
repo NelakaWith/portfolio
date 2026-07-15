@@ -8,7 +8,7 @@ export default {
         heading: ["Fraunces", "serif"],
       },
       colors: {
-        dark: "#0f172a", // Slate 900
+        dark: "oklch(14.1% 0.005 285.823)", // Zinc 900
         "dark-lighter": "#1e293b", // Slate 800
         primary: "#991b1b", // Red 800
         secondary: "#ef4444", // Red 500
@@ -21,7 +21,7 @@ export default {
           "conic-gradient(from 180deg at 50% 50%, #2a8af6 0deg, #a853ba 180deg, #e92a67 360deg)",
       },
       boxShadow: {
-        glass: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+        glass: "0 8px 16px 0 rgba(135, 31, 31, 0.1)",
       },
       animation: {
         blob: "blob 7s infinite",

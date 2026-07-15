@@ -1,7 +1,7 @@
 <template>
   <header class="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50">
     <div
-      class="bg-white/40 dark:bg-dark/70 backdrop-blur-xl border border-slate-200 dark:border-glass-border rounded-xl px-6 py-3 flex justify-between items-center shadow-lg dark:shadow-glass transition-all duration-300"
+      class="bg-white/40 dark:bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 flex justify-between items-center shadow-lg dark:shadow-glass transition-all duration-300"
     >
       <!-- Logo / Name -->
       <NuxtLink
