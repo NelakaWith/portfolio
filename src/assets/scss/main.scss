@@ -3,17 +3,6 @@
 @tailwind utilities;
 
 // Custom SCSS styles
-@layer base {
-  body,
-  nav,
-  header,
-  footer,
-  section,
-  button,
-  a {
-    @apply transition-colors duration-300;
-  }
-}
 
 html {
   scroll-behavior: smooth;
