@@ -1,5 +1,5 @@
 <template>
-  <div class="grid md:grid-cols-1 gap-8 mb-20">
+  <div class="grid md:grid-cols-1 gap-8 mb-20 px-6">
     <template v-for="project in ownProjects" :key="project.id">
       <article
         v-if="project.active"
