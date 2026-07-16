@@ -7,8 +7,7 @@
       <Transition name="fade">
         <div
           v-if="loading"
-          class="fixed inset-0 flex items-center justify-center z-[100] transition-colors duration-300"
-          :class="isMounted && isDark ? 'bg-dark' : 'bg-gray-50'"
+          class="!fixed inset-0 flex items-center justify-center z-[100] transition-colors duration-300 paper-container"
         >
           <AppLoader :dark="isDark" />
         </div>

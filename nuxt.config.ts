@@ -58,6 +58,24 @@ export default defineNuxtConfig({
         lang: "en",
       },
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
+      script: [
+        {
+          innerHTML: `
+            (function() {
+              try {
+                var stored = localStorage.getItem('darkMode');
+                var systemPrefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (stored === 'true' || (stored === null && systemPrefers)) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (e) {}
+            })();
+          `,
+          type: "text/javascript",
+        },
+      ],
     },
   },
 
