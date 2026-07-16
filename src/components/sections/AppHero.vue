@@ -1,12 +1,18 @@
 <template>
   <div class="max-w-8xl mx-auto px-6 relative z-20 text-center">
     <h1
+      v-motion
+      :initial="{ opacity: 0, y: 30 }"
+      :enter="{ opacity: 1, y: 0, transition: { duration: 800 } }"
       class="text-5xl lg:text-9xl font-heading font-light tracking-tighter text-slate-700 dark:text-white leading-tight my-6"
     >
       Software at the <br />
       <span class="title-highlight italic">Speed of Thought.</span>
     </h1>
     <p
+      v-motion
+      :initial="{ opacity: 0, y: 30 }"
+      :enter="{ opacity: 1, y: 0, transition: { duration: 800, delay: 200 } }"
       class="text-xl text-slate-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto font-medium"
     >
       I help teams eliminate architectural noise and restore momentum through
@@ -14,6 +20,9 @@
     </p>
 
     <div
+      v-motion
+      :initial="{ opacity: 0, y: 30 }"
+      :enter="{ opacity: 1, y: 0, transition: { duration: 800, delay: 400 } }"
       class="flex flex-col md:flex-row justify-center items-center flex-wrap gap-4 mb-12"
     >
       <a
@@ -45,7 +54,12 @@
       </div>
     </div>
 
-    <div class="grid md:grid-cols-1 gap-12 text-left mt-16 max-w-4xl">
+    <div
+      v-motion
+      :initial="{ opacity: 0, y: 30 }"
+      :enter="{ opacity: 1, y: 0, transition: { duration: 800, delay: 600 } }"
+      class="grid md:grid-cols-1 gap-12 text-left mt-16 max-w-4xl"
+    >
       <div
         class="p-8 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 shadow-xl dark:shadow-none"
       >

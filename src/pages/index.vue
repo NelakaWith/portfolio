@@ -14,7 +14,12 @@
       class="py-24 border-t border-slate-200 dark:border-white/10"
     >
       <div class="max-w-7xl mx-auto px-6">
-        <div class="mb-16 text-center">
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
+          class="mb-16 text-center"
+        >
           <h2
             class="text-4xl md:text-7xl font-heading font-light text-slate-700 dark:text-white mb-6"
           >
@@ -30,15 +35,28 @@
         </div>
 
         <!-- Saadhaka Project detail -->
-        <AppSaadhaka />
+        <AppSaadhaka
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: 150 } }"
+        />
 
         <!-- Commercial Projects -->
-        <div>
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: 300 } }"
+        >
           <Projects />
         </div>
 
         <!-- Passion Projects -->
-        <div class="mt-20">
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: 450 } }"
+          class="mt-20"
+        >
           <Showcase />
         </div>
       </div>
@@ -50,7 +68,12 @@
       class="py-24 border-t border-slate-200 dark:border-white/10"
     >
       <div class="max-w-7xl mx-auto px-6">
-        <div class="mb-16 text-center">
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
+          class="mb-16 text-center"
+        >
           <h2
             class="text-4xl md:text-7xl font-heading font-light text-slate-700 dark:text-white mb-6"
           >
@@ -67,12 +90,21 @@
         </div>
 
         <!-- Experience Component -->
-        <div>
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: 150 } }"
+        >
           <Experience />
         </div>
 
         <!-- Technical Arsenal Component -->
-        <div class="mt-20">
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: 300 } }"
+          class="mt-20"
+        >
           <Skills />
         </div>
       </div>
@@ -83,7 +115,11 @@
       id="contact"
       class="py-24 border-t border-slate-200 dark:border-white/10"
     >
-      <AppContactSection />
+      <AppContactSection
+        v-motion
+        :initial="{ opacity: 0, y: 40 }"
+        :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
+      />
     </section>
   </div>
 </template>
