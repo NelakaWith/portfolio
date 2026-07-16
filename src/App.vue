@@ -1,7 +1,7 @@
 <template>
   <div :class="{ dark: isDark }">
     <div
-      class="font-sans bg-gray-50 dark:bg-dark min-h-screen text-slate-700 dark:text-white selection:bg-primary selection:text-white transition-colors duration-300 flex flex-col"
+      class="font-sans bg-gray-50 dark:bg-dark min-h-screen text-slate-700 dark:text-white selection:bg-primary selection:text-white flex flex-col"
     >
       <!-- Loader -->
       <Transition name="fade">
@@ -16,13 +16,9 @@
 
       <!-- Main Content -->
       <div class="flex flex-col flex-grow">
-        <Header
-          @menu-click="handleMenuClick"
-          :is-dark="isDark"
-          @toggle-dark="toggleDark"
-        />
+        <Header :is-dark="isDark" @toggle-dark="toggleDark" />
 
-        <main class="flex-grow overflow-x-hidden">
+        <main :key="loading" class="flex-grow overflow-x-hidden paper-container">
           <NuxtPage />
         </main>
 
@@ -33,11 +29,6 @@
         <BackToTop />
       </div>
     </div>
-
-    <!-- MOVE THIS INSIDE THE ROOT WRAPPER DIV -->
-    <ClientOnly>
-      <Lenis :options="{ lerp: 0.2, wheelMultiplier: 1.5 }" />
-    </ClientOnly>
   </div>
 </template>
 
@@ -48,9 +39,12 @@ import Footer from "./components/layout/AppFooter.vue";
 import { useLoader } from "./composables/useLoader";
 import AppLoader from "./components/common/AppLoader.vue";
 import BackToTop from "./components/common/BackToTop.vue";
-import { useLenis } from "#imports";
+import { useSmoothScroll } from "./composables/useSmoothscroll";
 
 const { loading, startLoader } = useLoader("IBM Plex Serif", 3000);
+
+// Initialize smooth scrolling
+useSmoothScroll();
 
 useSeoMeta({
   titleTemplate: (titleChunk) => {
@@ -104,10 +98,28 @@ onMounted(() => {
     document.documentElement.classList.remove("dark");
   }
 
-  startLoader();
+  startLoader().then(() => {
+    // Scroll to hash if present after loading hides
+    const hash = window.location.hash;
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        setTimeout(() => {
+          if (window.lenis) {
+            window.lenis.scrollTo(el, {
+              offset: 0,
+              duration: 1.2,
+            });
+          }
+        }, 300); // Small timeout to ensure page layout is stable
+      }
+    }
+  });
 });
 
 function toggleDark() {
+  document.documentElement.classList.add("disable-transitions");
+
   isDark.value = !isDark.value;
 
   if (isDark.value) {
@@ -117,38 +129,12 @@ function toggleDark() {
   }
 
   localStorage.setItem("darkMode", String(isDark.value));
-}
 
-function handleMenuClick(target) {
-  const el = document.getElementById(target);
-  if (el) {
-    // Uses the global Nuxt-Lenis composable to scroll elegantly
-    useLenis().scrollTo(el, {
-      offset: 0,
-      duration: 1.2,
-    });
-  }
+  // Force reflow to apply changes instantly without transition
+  document.documentElement.offsetHeight;
+
+  requestAnimationFrame(() => {
+    document.documentElement.classList.remove("disable-transitions");
+  });
 }
 </script>
-
-<style lang="scss">
-/* Global transitions */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  @apply bg-gray-50 dark:bg-dark transition-colors duration-300;
-}
-
-/* Fade transition for loader */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>

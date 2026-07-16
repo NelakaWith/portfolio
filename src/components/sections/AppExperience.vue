@@ -1,9 +1,6 @@
 ```
 <template>
-  <section
-    id="experience"
-    class="py-20 bg-slate-50/30 dark:bg-dark-lighter/30 rounded-xl"
-  >
+  <section id="experience" class="py-20">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
         <h2
@@ -17,7 +14,7 @@
       </div>
 
       <div
-        class="space-y-12 relative before:content-[''] before:absolute before:left-4 md:before:left-1/2 before:top-4 before:bottom-4 before:w-0.5 before:bg-slate-200 dark:before:bg-white/10 before:-translate-x-px"
+        class="space-y-12 relative before:content-[''] before:absolute before:left-4 md:before:left-1/2 before:top-4 before:bottom-4 before:w-0.5 before:bg-secondary/40 dark:before:bg-white/10 before:-translate-x-px"
       >
         <div
           v-for="(job, index) in experience"

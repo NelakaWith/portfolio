@@ -1,81 +1,138 @@
 <template>
-  <div
-    class="pt-24 flex flex-col items-center justify-center py-20 relative overflow-hidden"
-  >
-    <div class="max-w-4xl mx-auto px-6 relative z-20 text-center">
-      <h1
-        class="text-5xl lg:text-7xl font-heading font-bold text-slate-700 dark:text-white leading-tight my-6"
-      >
-        Software at the <br />
-        <span class="title-highlight">Speed of Thought.</span>
-      </h1>
-      <p
-        class="text-xl text-slate-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto font-medium"
-      >
-        I help teams eliminate architectural noise and restore momentum through
-        High-Velocity primitives. Senior Software Engineer & Systems Architect.
-      </p>
+  <div class="flex flex-col min-h-screen">
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="pt-32 pb-24 flex flex-col items-center justify-center relative overflow-hidden min-h-[90vh]"
+    >
+      <AppHero />
+    </section>
 
-      <div
-        class="flex flex-col md:flex-row justify-center items-center flex-wrap gap-4 mb-12"
-      >
-        <NuxtLink
-          to="/contact"
-          class="hero-button bg-slate-800 dark:bg-slate-700 group flex items-center justify-center gap-2"
-        >
-          <span class="hero-primary-gradient">Get in Touch</span>
-          <Icon
-            icon="ph:arrow-right-bold"
-            class="w-5 h-5 group-hover:translate-x-1 transition-transform text-primary"
-          />
-        </NuxtLink>
-        <div class="flex justify-center items-center flex-wrap gap-4">
-          <a
-            href="https://github.com/NelakaWith"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="p-3 md:p-3.5 rounded-full bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 transition-all text-slate-600 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white flex items-center"
-            aria-label="GitHub Profile"
-          >
-            <Icon icon="mdi:github" class="w-6 h-6" />
-          </a>
-          <a
-            href="https://linkedin.com/in/nelakawith"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="p-3 md:p-3.5 rounded-full bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 transition-all text-slate-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 flex items-center"
-            aria-label="LinkedIn Profile"
-          >
-            <Icon icon="mdi:linkedin" class="w-6 h-6" />
-          </a>
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-1 gap-12 text-left mt-16">
+    <!-- The Lab Section -->
+    <section
+      id="the-lab"
+      class="py-24 border-t border-slate-200 dark:border-white/10"
+    >
+      <div class="max-w-7xl mx-auto px-6">
         <div
-          class="p-8 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 shadow-xl dark:shadow-none"
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
+          class="mb-16 text-center"
         >
-          <h2 class="text-2xl font-bold text-slate-700 dark:text-white mb-4">
-            The Specialist
+          <h2
+            class="text-4xl md:text-7xl font-heading font-light text-slate-700 dark:text-white mb-6"
+          >
+            The <span class="title-highlight">Lab</span>
           </h2>
-          <p class="text-slate-600 dark:text-gray-300 leading-relaxed text-lg">
-            <strong
-              class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
-              >I’m Nelaka.</strong
-            >
-            My journey started in traditional engineering, but it evolved
-            through the crucible of independent product development. After
-            seeing how 'standard' architectures stall under their own weight, I
-            moved toward a philosophy of abstraction. I don't just write code; I
-            build engines that allow businesses to pivot as fast as they think.
+          <p
+            class="text-xl text-slate-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto"
+          >
+            A streamlined look at commercial client systems and independent
+            full-stack architectures built for scale, performance, and immediate
+            reliability.
           </p>
         </div>
+
+        <!-- Saadhaka Project detail -->
+        <AppSaadhaka
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: 150 } }"
+        />
+
+        <!-- Commercial Projects -->
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: 300 } }"
+        >
+          <Projects />
+        </div>
+
+        <!-- Passion Projects -->
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: 450 } }"
+          class="mt-20"
+        >
+          <Showcase />
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Proof Section -->
+    <section
+      id="proof"
+      class="py-24 border-t border-slate-200 dark:border-white/10"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
+          class="mb-16 text-center"
+        >
+          <h2
+            class="text-4xl md:text-7xl font-heading font-light text-slate-700 dark:text-white mb-6"
+          >
+            Professional <span class="title-highlight">Validation</span>
+          </h2>
+          <p
+            class="text-xl text-slate-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto"
+          >
+            Senior Software Engineer with 9+ years of commercial and solo
+            experience specializing in the Javascript ecosystem. Proven track
+            record of leading architectural migrations and optimizing delivery
+            pipelines for speed and maintainability.
+          </p>
+        </div>
+
+        <!-- Experience Component -->
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: 150 } }"
+        >
+          <Experience />
+        </div>
+
+        <!-- Technical Arsenal Component -->
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 40 }"
+          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: 300 } }"
+          class="mt-20"
+        >
+          <Skills />
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="py-24 border-t border-slate-200 dark:border-white/10"
+    >
+      <AppContactSection
+        v-motion
+        :initial="{ opacity: 0, y: 40 }"
+        :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
+      />
+    </section>
   </div>
 </template>
 
 <script setup>
+import AppHero from "../components/sections/AppHero.vue";
+import AppSaadhaka from "../components/sections/AppSaadhaka.vue";
+import Projects from "../components/sections/AppProjects.vue";
+import Showcase from "../components/sections/AppShowcase.vue";
+import Experience from "../components/sections/AppExperience.vue";
+import Skills from "../components/sections/AppSkills.vue";
+import AppContactSection from "../components/sections/AppContactSection.vue";
+
 const title = "Software at the Speed of Thought";
 const description =
   "I help teams eliminate architectural noise and restore momentum through High-Velocity primitives. Senior Fullstack Engineer & Systems Architect.";
@@ -89,20 +146,3 @@ useSeoMeta({
   twitterCard: "summary_large_image",
 });
 </script>
-
-<!--
-  <div
-          class="p-8 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 shadow-xl dark:shadow-none"
-        >
-          <h2 class="text-2xl font-bold text-slate-700 dark:text-white mb-4">
-            The Delivery Tax
-          </h2>
-          <p class="text-slate-600 dark:text-gray-300 leading-relaxed">
-            In modern software development, we’ve traded agility for complexity.
-            Between boilerplate setup, fragmented state management, and
-            hard-coded business logic, most teams are paying a 'Delivery Tax'
-            losing nearly half their momentum before they even ship a feature. I
-            build the primitives that reclaim that time.
-          </p>
-        </div>
--->

@@ -1,8 +1,5 @@
 <template>
-  <section
-    id="projects"
-    class="py-20 bg-slate-50/50 dark:bg-dark-lighter/50 rounded-xl"
-  >
+  <section id="projects" class="py-20 rounded-xl">
     <div class="max-w-7xl mx-auto px-6">
       <div class="mb-12 text-center">
         <h3

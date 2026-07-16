@@ -27,3 +27,5 @@ dist-ssr
 # Nuxt generated files
 .nuxt
 .output
+
+GEMINI.md

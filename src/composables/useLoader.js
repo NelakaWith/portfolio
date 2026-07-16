@@ -34,6 +34,7 @@ export function useLoader(fontFamily = "IBM Plex Serif", fontTimeout = 4000) {
     await Promise.all([
       waitForFonts().catch((e) => console.error("Font loading failed:", e)),
       waitForAllImages(),
+      new Promise((resolve) => setTimeout(resolve, 2000)), // minimum 2s loader
     ]);
     loading.value = false;
   }
