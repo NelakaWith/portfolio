@@ -86,7 +86,7 @@
 <script setup>
 const experience = [
   {
-    position: "Lead Software Engineer / Architect",
+    position: "Senior Product Engineer",
     company: "Freelancer",
     location: "Remote",
     duration: "10/2024 - Present",
