@@ -4,7 +4,7 @@
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
         <h2
-          class="text-3xl md:text-5xl font-heading font-bold text-slate-700 dark:text-white mb-4"
+          class="text-3xl md:text-5xl font-heading font-light text-slate-700 dark:text-white mb-4"
         >
           Professional Journey
         </h2>

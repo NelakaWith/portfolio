@@ -4,9 +4,9 @@
       <!-- Content -->
       <div class="relative z-10 text-center mb-16">
         <h1
-          class="text-4xl md:text-6xl font-heading font-bold text-slate-700 dark:text-white mb-6"
+          class="text-4xl md:text-7xl font-heading font-light text-slate-700 dark:text-white mb-6"
         >
-          The Quiet <span class="text-primary">Console</span>
+          The Quiet <span class="title-highlight">Console</span>
         </h1>
         <p
           class="text-slate-600 dark:text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed"

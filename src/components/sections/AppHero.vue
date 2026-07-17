@@ -63,9 +63,6 @@
       <div
         class="p-8 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 shadow-xl dark:shadow-none"
       >
-        <h2 class="text-2xl font-bold text-slate-700 dark:text-white mb-4">
-          The Specialist
-        </h2>
         <p class="text-slate-600 dark:text-gray-300 leading-relaxed text-lg">
           <strong
             class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"

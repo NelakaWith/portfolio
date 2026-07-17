@@ -3,10 +3,13 @@
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
         <h3
-          class="text-3xl md:text-4xl font-heading font-bold text-slate-700 dark:text-white"
+          class="text-3xl md:text-5xl font-heading font-light text-slate-700 dark:text-white mb-4"
         >
           Technologies & Tools
         </h3>
+        <div
+          class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"
+        ></div>
       </div>
 
       <!-- Category Sections -->

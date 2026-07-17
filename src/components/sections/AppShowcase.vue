@@ -1,17 +1,15 @@
 <template>
   <section class="relative overflow-hidden">
-    <!-- Background decoration -->
-    <div
-      class="absolute right-0 bottom-0 w-[500px] h-[500px] bg-primary/10 blur-[100px] rounded-full -z-10 pointer-events-none"
-    ></div>
-
     <div class="max-w-7xl mx-auto px-6">
       <div class="mb-16 text-center">
         <h3
-          class="text-3xl md:text-4xl font-heading font-bold text-slate-700 dark:text-white"
+          class="text-3xl md:text-5xl font-heading font-light text-slate-700 dark:text-white mb-4"
         >
           Passion Projects/ Independent Tools
         </h3>
+        <div
+          class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"
+        ></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
