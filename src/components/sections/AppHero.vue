@@ -43,7 +43,7 @@
           <Icon icon="mdi:github" class="w-6 h-6" />
         </a>
         <a
-          href="https://linkedin.com/in/nelakawith"
+          href="https://www.linkedin.com/in/nelaka-withanage/"
           target="_blank"
           rel="noopener noreferrer"
           class="p-3 md:p-3.5 rounded-full bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 transition-all text-slate-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 flex items-center"
