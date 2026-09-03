@@ -21,7 +21,7 @@ export default defineNuxtConfig({
         weights: [300, 400, 500, 600, 700],
       },
       {
-        name: "Inter",
+        name: "Figtree",
         provider: "google",
         weights: [400, 500, 600, 700],
       },
