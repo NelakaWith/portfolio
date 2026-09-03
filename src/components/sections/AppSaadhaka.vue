@@ -1,92 +1,93 @@
 <template>
-  <div class="grid md:grid-cols-1 gap-8 mb-20 px-6">
-    <template v-for="project in ownProjects" :key="project.id">
-      <article
-        v-if="project.active"
-        class="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-8 md:p-12 shadow-sm"
-      >
-        <div
-          class="inline-block px-3 py-1 mb-6 rounded-full text-sm font-semibold tracking-wide"
-          :class="project.badgeClass"
-        >
-          In The Oven
-        </div>
-        <div class="flex gap-2 items-center mb-6">
-          <img
-            v-if="project.logo"
-            :src="project.logo"
-            :alt="project.title"
-            class="w-16 h-auto"
-          />
-          <h3 class="text-3xl font-bold text-slate-700 dark:text-white">
+  <article
+    class="border border-rule dark:border-rule-dark bg-paper dark:bg-dark rounded-md p-8 md:p-10 mb-16 relative overflow-hidden"
+  >
+    <!-- Architectural Header Row -->
+    <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-rule dark:border-rule-dark">
+      <div class="flex items-center gap-3">
+        <img
+          v-if="project.logo"
+          :src="project.logo"
+          :alt="project.title"
+          class="w-10 h-10 object-contain"
+        />
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block">
+            Flagship Engineering Specimen
+          </span>
+          <h3 class="text-2xl sm:text-3xl font-heading font-medium text-ink dark:text-white">
             {{ project.title }}
           </h3>
         </div>
+      </div>
 
-        <div class="prose prose-slate dark:prose-invert max-w-none">
-          <p
-            class="text-lg text-slate-600 dark:text-gray-300 mb-6 leading-relaxed"
-          >
-            "{{ project.description }}"
-          </p>
+      <div class="flex items-center gap-2">
+        <span class="px-2.5 py-1 text-xs font-mono uppercase tracking-wider rounded border border-rule dark:border-rule-dark bg-paper-2 dark:bg-dark-lighter text-ink-2 dark:text-ink-dark-2">
+          Active Engineering
+        </span>
+        <span class="px-2.5 py-1 text-xs font-mono uppercase tracking-wider rounded bg-primary/10 text-primary border border-primary/20">
+          Deterministic Engine
+        </span>
+      </div>
+    </div>
 
-          <div class="grid md:grid-cols-1 gap-8 mt-8">
-            <div>
-              <h4
-                class="flex items-center gap-2 text-xl font-bold text-slate-700 dark:text-white mb-3"
-              >
-                <Icon
-                  :icon="project.solutionIcon"
-                  :class="project.solutionIconClass"
-                />
-                {{ project.solutionTitle }}
-              </h4>
-              <p class="text-slate-600 dark:text-gray-400">
-                {{ project.solutionDescription }}
-              </p>
-            </div>
+    <!-- Main Overview -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8">
+      <div class="lg:col-span-5 space-y-4">
+        <p class="text-base sm:text-lg text-ink dark:text-ink-dark leading-relaxed font-sans">
+          {{ project.description }}
+        </p>
 
-            <div>
-              <h4
-                class="flex items-center gap-2 text-xl font-bold text-slate-700 dark:text-white mb-3"
-              >
-                <Icon
-                  :icon="project.impactIcon"
-                  :class="project.impactIconClass"
-                />
-                {{ project.impactTitle }}
-              </h4>
-              <p class="text-slate-600 dark:text-gray-400">
-                {{ project.impactDescription }}
-              </p>
-            </div>
+        <div class="pt-2">
+          <span class="text-xs font-mono uppercase tracking-wider text-ink-muted block mb-2">Stack Architecture</span>
+          <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+            <span class="px-2 py-1 bg-paper-2 dark:bg-dark-lighter border border-rule dark:border-rule-dark rounded text-ink-2 dark:text-ink-dark-2">NestJS API</span>
+            <span class="px-2 py-1 bg-paper-2 dark:bg-dark-lighter border border-rule dark:border-rule-dark rounded text-ink-2 dark:text-ink-dark-2">React Client</span>
+            <span class="px-2 py-1 bg-paper-2 dark:bg-dark-lighter border border-rule dark:border-rule-dark rounded text-ink-2 dark:text-ink-dark-2">Nuxt Web</span>
+            <span class="px-2 py-1 bg-paper-2 dark:bg-dark-lighter border border-rule dark:border-rule-dark rounded text-ink-2 dark:text-ink-dark-2">State Graph</span>
           </div>
         </div>
-      </article>
-    </template>
-  </div>
+      </div>
+
+      <!-- Detail Specs -->
+      <div class="lg:col-span-7 space-y-6">
+        <div class="p-5 rounded border border-rule dark:border-rule-dark bg-paper-2 dark:bg-dark-lighter space-y-2">
+          <div class="flex items-center gap-2 text-primary font-mono text-xs uppercase tracking-wider font-semibold">
+            <Icon icon="ph:graph-bold" class="w-4 h-4" />
+            <span>01 / Deterministic Rule-Based Graph Engine</span>
+          </div>
+          <p class="text-sm text-ink-2 dark:text-ink-dark-2 leading-relaxed font-sans">
+            {{ project.solutionDescription }}
+          </p>
+        </div>
+
+        <div class="p-5 rounded border border-rule dark:border-rule-dark bg-paper-2 dark:bg-dark-lighter space-y-2">
+          <div class="flex items-center gap-2 text-ink dark:text-white font-mono text-xs uppercase tracking-wider font-semibold">
+            <Icon icon="ph:flask-bold" class="w-4 h-4" />
+            <span>02 / Interactive Sandbox Lab & Traversal Solver</span>
+          </div>
+          <p class="text-sm text-ink-2 dark:text-ink-dark-2 leading-relaxed font-sans">
+            {{ project.impactDescription }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
 </template>
 
 <script setup>
-const ownProjects = [
-  {
-    id: "saadhaka-ils",
-    active: true,
-    logo: "/products/saadhaka.svg",
-    badgeClass: "bg-secondary/10 text-secondary",
-    title: "Saadhaka ILS",
-    description:
-      "Bridging the gap between static chemistry textbooks and dynamic synthesis practice. Saadhaka maps the local G.C.E. Advanced Level Organic Chemistry syllabus into an interactive, graph-based learning ecosystem designed for local exam precision.",
-    solutionIcon: "mdi:map-marker-path",
-    solutionIconClass: "text-primary",
-    solutionTitle: "Deterministic Rule-Based Graph Engine",
-    solutionDescription:
-      "Built on a strict, rule-based state machine that treats chemical compounds as functional nodes and syllabus-approved reagents as directed edges. By hardcoding exact exam-valid conditions (rather than relying on unpredictable AI generations for reactions), it completely eliminates 'hallucinated' chemical paths and ensures 100% alignment with the official local Resource Book marking schemes.",
-    impactIcon: "tabler:sandbox",
-    impactIconClass: "text-pink-800/60",
-    impactTitle: "The Sandbox Lab & Solver",
-    impactDescription:
-      "Features an interactive visual workspace where students can drag, drop, and chain reagents to discover organic synthesis pathways through guided experimentation. It includes a built-in 'Solver Mode' that uses graph traversal to calculate and display the most efficient, exam-safe conversion routes between any two compounds.",
-  },
-];
+import { Icon } from "@iconify/vue";
+
+const project = {
+  id: "saadhaka-ils",
+  active: true,
+  logo: "/products/saadhaka.svg",
+  title: "Saadhaka ILS",
+  description:
+    "Bridging static textbooks and interactive dynamic synthesis. Saadhaka models organic chemistry as a graph-based state ecosystem for high-precision examination workflows.",
+  solutionDescription:
+    "Built on a strict, rule-based state machine treating chemical compounds as functional nodes and syllabus-approved reagents as directed edges. By strictly encoding exam-valid conditions, it completely eliminates non-deterministic AI hallucinations.",
+  impactDescription:
+    "Features a visual workspace where students drag and chain reagents to explore reaction pathways, backed by a graph traversal solver calculating the most efficient, syllabus-safe conversion routes between arbitrary compound pairs.",
+};
 </script>

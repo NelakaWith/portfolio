@@ -16,19 +16,24 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       {
-        name: "IBM Plex Serif",
-        provider: "google",
-        weights: [100, 200, 300, 400, 500, 600, 700],
-      },
-      {
         name: "Fraunces",
         provider: "google",
-        weights: [100, 200, 300, 400, 500, 600, 700],
+        weights: [300, 400, 500, 600, 700],
+      },
+      {
+        name: "Figtree",
+        provider: "google",
+        weights: [400, 500, 600, 700],
+      },
+      {
+        name: "JetBrains Mono",
+        provider: "google",
+        weights: [400, 500],
       },
     ],
   },
 
-  css: ["~/assets/scss/main.scss"],
+  css: ["~/assets/scss/tokens.css", "~/assets/scss/main.scss"],
 
   // Runtime config for environment variables
   runtimeConfig: {

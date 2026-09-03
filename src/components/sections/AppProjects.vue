@@ -1,52 +1,52 @@
 <template>
-  <section id="projects" class="py-20 rounded-xl">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="mb-12 text-center">
-        <h3
-          class="text-3xl md:text-5xl font-heading font-light text-slate-700 dark:text-white mb-4"
-        >
+  <div id="projects" class="space-y-8">
+    <div class="flex flex-wrap items-baseline justify-between gap-4 border-b border-rule dark:border-rule-dark pb-4">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block mb-1">
+          Production Deployments
+        </span>
+        <h3 class="text-2xl sm:text-3xl font-heading font-normal text-ink dark:text-white">
           Commercial Delivery
         </h3>
-        <div
-          class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"
-        ></div>
       </div>
+      <span class="text-xs font-mono text-ink-muted">
+        06 Verified Systems
+      </span>
+    </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div
-          v-for="(project, index) in projects"
-          :key="index"
-          class="group bg-white border border-slate-200 dark:bg-dark dark:border-white/5 rounded-2xl p-8 hover:border-secondary/50 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden shadow-sm dark:shadow-none"
-        >
-          <!-- Decoration -->
-          <div
-            class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 blur-[50px] rounded-full -mr-16 -mt-16 transition-all group-hover:bg-secondary/20"
-          ></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div
+        v-for="(project, index) in projects"
+        :key="index"
+        class="border border-rule dark:border-rule-dark bg-paper dark:bg-dark rounded-md p-6 flex flex-col justify-between hover:border-ink/40 dark:hover:border-white/30 transition-colors"
+      >
+        <div class="space-y-3">
+          <div class="flex items-center justify-between text-xs font-mono text-ink-muted">
+            <span>SYS_{{ String(index + 1).padStart(2, '0') }}</span>
+            <span class="text-ink-2 dark:text-ink-dark-2">{{ project.technologies[0] }}</span>
+          </div>
 
-          <h3
-            class="text-xl font-heading font-bold text-slate-700 dark:text-white mb-3 group-hover:text-secondary transition-colors"
-          >
+          <h4 class="text-lg font-heading font-medium text-ink dark:text-white">
             {{ project.name }}
-          </h3>
-          <p
-            class="text-slate-600 dark:text-gray-400 mb-6 leading-relaxed text-sm h-20"
-          >
+          </h4>
+
+          <p class="text-sm text-ink-2 dark:text-ink-dark-2 leading-relaxed font-sans">
             {{ project.description }}
           </p>
+        </div>
 
-          <div class="flex flex-wrap gap-2 mt-auto">
-            <span
-              v-for="(tech, i) in project.technologies"
-              :key="i"
-              class="px-3 py-1 bg-slate-100 border border-slate-200 text-slate-600 dark:bg-white/5 dark:border-white/5 dark:text-gray-300 text-xs rounded-full group-hover:bg-secondary/10 group-hover:text-secondary transition-colors"
-            >
-              {{ tech }}
-            </span>
-          </div>
+        <div class="flex flex-wrap gap-1.5 pt-6 mt-4 border-t border-rule/50 dark:border-rule-dark/50">
+          <span
+            v-for="(tech, i) in project.technologies"
+            :key="i"
+            class="px-2 py-0.5 text-xs font-mono rounded bg-paper-2 dark:bg-dark-lighter border border-rule dark:border-rule-dark text-ink-2 dark:text-ink-dark-2"
+          >
+            {{ tech }}
+          </span>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup>
@@ -54,44 +54,38 @@ const projects = [
   {
     name: "Deal Flow - Calendar and Events",
     description:
-      "Developed the Calendar and Events module for Startup Steroid's Deal Flow product.",
-    technologies: ["VueJS", "JavaScript ES6", "CSS", "Azure DevOps"],
+      "Engineered the Calendar and Events synchronization module for Startup Steroid's flagship Deal Flow investor platform.",
+    technologies: ["Vue.js", "JavaScript ES6", "CSS", "Azure DevOps"],
   },
   {
-    name: "Jiva.ai Portal",
+    name: "Jiva.ai Studio Portal",
     description:
-      "Front-end development for AI platform enabling zero-code environment.",
-    technologies: ["VueJS", "JavaScript ES6", "CSS", "Vue Query", "Prime Vue"],
+      "Frontend systems development for multimodal zero-code AI workflow orchestrator and dataset modeling engine.",
+    technologies: ["Vue 3", "TypeScript", "PrimeVue", "Vue Query"],
   },
   {
-    name: "Digital Banking Solutions",
+    name: "Digital Banking & Mobile Wallet",
     description:
-      "UI components for FinTech products including mobile banking app and digital wallet.",
-    technologies: ["ReactJS", "JavaScript ES6", "SCSS", "Material UI"],
+      "Financial technology UI architecture for mobile banking client interfaces and telco-grade payment platforms.",
+    technologies: ["React", "JavaScript", "SCSS", "Material UI"],
   },
   {
-    name: "Tiks Compliance Management",
+    name: "Tiks Enterprise Compliance",
     description:
-      "UI component collection for compliance management system web platform and hybrid mobile app.",
-    technologies: [
-      "VueJS",
-      "TypeScript",
-      "SCSS",
-      "Vuex",
-      "Ionic UI",
-      "Ionic Capacitor",
-    ],
+      "Delivered cross-platform UI component library for safety & compliance platform across desktop and hybrid mobile apps.",
+    technologies: ["Vue.js", "TypeScript", "Ionic Capacitor", "Vuex"],
   },
   {
-    name: "Expedia Promotions",
+    name: "Expedia Promotions Engine",
     description:
-      "Front-ends for Expedia's seasonal promotions and booking platforms.",
-    technologies: ["HTML", "JavaScript", "LESS"],
+      "High-traffic frontend promotional templates and booking platforms serving global travel consumer traffic.",
+    technologies: ["JavaScript", "HTML5", "LESS", "Templating"],
   },
   {
-    name: "OzoneDesk ERP",
-    description: "UI development for monolithic ERP system.",
-    technologies: ["PHP", "HTML", "jQuery", "CSS", "Bootstrap"],
+    name: "OzoneDesk Enterprise ERP",
+    description:
+      "Core UI interfaces and workflow management modules for monolithic enterprise resource management systems.",
+    technologies: ["PHP", "JavaScript", "Bootstrap", "MySQL"],
   },
 ];
 </script>

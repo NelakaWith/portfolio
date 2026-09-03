@@ -1,85 +1,105 @@
 <template>
-  <div class="max-w-8xl mx-auto px-6 relative z-20 text-center">
-    <h1
-      v-motion
-      :initial="{ opacity: 0, y: 30 }"
-      :enter="{ opacity: 1, y: 0, transition: { duration: 800 } }"
-      class="text-5xl lg:text-9xl font-heading font-light tracking-tighter text-slate-700 dark:text-white leading-tight my-6"
-    >
-      Software at the <br />
-      <span class="title-highlight italic">Speed of Thought.</span>
-    </h1>
-    <p
-      v-motion
-      :initial="{ opacity: 0, y: 30 }"
-      :enter="{ opacity: 1, y: 0, transition: { duration: 800, delay: 200 } }"
-      class="text-xl text-slate-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto font-medium"
-    >
-      I help teams eliminate architectural noise and restore momentum through
-      High-Velocity primitives. Senior Software Engineer & Systems Architect.
-    </p>
+  <div class="max-w-6xl mx-auto px-6 pt-8 pb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <!-- Left Column: Editorial Statement -->
+      <div class="lg:col-span-8 space-y-6">
+        <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded border border-rule dark:border-rule-dark bg-paper-2 dark:bg-dark-lighter text-xs font-mono uppercase tracking-widest text-ink-2 dark:text-ink-dark-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-600 dark:bg-emerald-500 animate-pulse"></span>
+          <span>Open for Architecture & Product Engineering</span>
+        </div>
 
-    <div
-      v-motion
-      :initial="{ opacity: 0, y: 30 }"
-      :enter="{ opacity: 1, y: 0, transition: { duration: 800, delay: 400 } }"
-      class="flex flex-col md:flex-row justify-center items-center flex-wrap gap-4 mb-12"
-    >
-      <a
-        href="#contact"
-        @click="handleAnchorClick"
-        class="hero-button bg-slate-800 dark:bg-slate-700 group flex items-center justify-center gap-2"
-      >
-        <span class="text-secondary">Get in Touch</span>
-      </a>
-      <div class="flex justify-center items-center flex-wrap gap-4">
-        <a
-          href="https://github.com/NelakaWith"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="p-3 md:p-3.5 rounded-full bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 transition-all text-slate-600 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white flex items-center"
-          aria-label="GitHub Profile"
-        >
-          <Icon icon="mdi:github" class="w-6 h-6" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/nelaka-withanage/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="p-3 md:p-3.5 rounded-full bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 transition-all text-slate-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 flex items-center"
-          aria-label="LinkedIn Profile"
-        >
-          <Icon icon="mdi:linkedin" class="w-6 h-6" />
-        </a>
-      </div>
-    </div>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-heading font-normal text-ink dark:text-white leading-[1.08] tracking-tight">
+          Software at the <br />
+          <span class="text-primary">Speed of Thought.</span>
+        </h1>
 
-    <div
-      v-motion
-      :initial="{ opacity: 0, y: 30 }"
-      :enter="{ opacity: 1, y: 0, transition: { duration: 800, delay: 600 } }"
-      class="grid md:grid-cols-1 gap-12 text-left mt-16 max-w-4xl"
-    >
-      <div
-        class="p-8 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 shadow-xl dark:shadow-none"
-      >
-        <p class="text-slate-600 dark:text-gray-300 leading-relaxed text-lg">
-          <strong
-            class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
-            >I’m Nelaka.</strong
-          >
-          My journey started in traditional engineering, but it evolved through
-          the crucible of independent product development. After seeing how
-          'standard' architectures stall under their own weight, I moved toward
-          a philosophy of abstraction. I don't just write code; I build engines
-          that allow businesses to pivot as fast as they think.
+        <p class="text-lg sm:text-xl text-ink-2 dark:text-ink-dark-2 font-normal leading-relaxed max-w-2xl">
+          I eliminate architectural drag and replace bloated abstractions with deterministic engines. Senior Systems Architect & Full-Stack Engineer with 9+ years shipping high-velocity web platforms.
         </p>
+
+        <!-- Actions -->
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a
+            href="#the-lab"
+            @click="handleAnchorClick"
+            class="hero-button"
+          >
+            <span>Explore Engineering Lab</span>
+            <Icon icon="ph:arrow-down-bold" class="w-4 h-4 ml-2" />
+          </a>
+
+          <a
+            href="#contact"
+            @click="handleAnchorClick"
+            class="inline-flex items-center justify-center px-5 py-3 text-sm font-mono uppercase tracking-wider rounded border border-rule dark:border-rule-dark hover:border-ink dark:hover:border-white text-ink dark:text-white transition-colors"
+          >
+            Direct Dispatch
+          </a>
+
+          <div class="flex items-center gap-2 ml-auto sm:ml-0">
+            <a
+              href="https://github.com/NelakaWith"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-3 rounded border border-rule dark:border-rule-dark bg-paper dark:bg-dark-lighter hover:border-ink dark:hover:border-white text-ink-2 dark:text-ink-dark-2 hover:text-ink dark:hover:text-white transition-colors"
+              aria-label="GitHub Profile"
+            >
+              <Icon icon="ph:github-logo-bold" class="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/nelaka-withanage/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-3 rounded border border-rule dark:border-rule-dark bg-paper dark:bg-dark-lighter hover:border-ink dark:hover:border-white text-ink-2 dark:text-ink-dark-2 hover:text-ink dark:hover:text-white transition-colors"
+              aria-label="LinkedIn Profile"
+            >
+              <Icon icon="ph:linkedin-logo-bold" class="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Workbench Specimen Card -->
+      <div class="lg:col-span-4 border border-rule dark:border-rule-dark rounded-md bg-paper-2 dark:bg-dark-lighter p-6 space-y-6">
+        <div class="flex items-center justify-between border-b border-rule dark:border-rule-dark pb-3">
+          <span class="text-xs font-mono uppercase tracking-widest text-ink dark:text-white font-semibold">
+            System Manifest
+          </span>
+          <span class="text-xs font-mono text-primary font-semibold">
+            01 / SPEC
+          </span>
+        </div>
+
+        <div class="space-y-4 text-xs font-mono">
+          <div>
+            <span class="text-ink-muted block mb-1 uppercase tracking-wider">Discipline</span>
+            <p class="text-ink dark:text-white font-sans text-sm">
+              Deterministic state machines, graph engines, compiler tooling, full-stack web.
+            </p>
+          </div>
+
+          <div class="border-t border-rule dark:border-rule-dark pt-3">
+            <span class="text-ink-muted block mb-1 uppercase tracking-wider">Primary Stack</span>
+            <p class="text-ink dark:text-white font-mono text-xs leading-relaxed">
+              TypeScript · Vue/Nuxt · React/Next · Node/Nest · PostgreSQL · Tailwind
+            </p>
+          </div>
+
+          <div class="border-t border-rule dark:border-rule-dark pt-3">
+            <span class="text-ink-muted block mb-1 uppercase tracking-wider">Flagship Focus</span>
+            <p class="text-ink dark:text-white font-sans text-sm">
+              <strong class="text-primary font-medium">Saadhaka ILS:</strong> Rule-based graph state engine for organic chemistry synthesis paths.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { Icon } from "@iconify/vue";
+
 function handleAnchorClick(event) {
   const hash = event.currentTarget.getAttribute("href");
   const el = document.querySelector(hash);
@@ -88,7 +108,7 @@ function handleAnchorClick(event) {
     if (window.lenis) {
       window.lenis.scrollTo(el, {
         offset: 0,
-        duration: 1.2,
+        duration: 1.0,
       });
       history.pushState(null, "", hash);
     }

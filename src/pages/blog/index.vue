@@ -1,18 +1,16 @@
 <template>
-  <div class="pt-32 pb-20 min-h-screen bg-slate-50 dark:bg-dark">
-    <div class="max-w-7xl mx-auto px-6">
-      <!-- Content -->
-      <div class="relative z-10 text-center mb-16">
-        <h1
-          class="text-4xl md:text-7xl font-heading font-light text-slate-700 dark:text-white mb-6"
-        >
-          The Quiet <span class="title-highlight">Console</span>
+  <div class="pt-32 pb-24 min-h-screen bg-paper dark:bg-dark">
+    <div class="max-w-6xl mx-auto px-6 space-y-12">
+      <!-- Editorial Header -->
+      <div class="space-y-4 max-w-2xl border-b border-rule dark:border-rule-dark pb-8">
+        <span class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block">
+          Field Notes & Essays
+        </span>
+        <h1 class="text-4xl sm:text-6xl font-heading font-normal text-ink dark:text-white">
+          The Quiet Console
         </h1>
-        <p
-          class="text-slate-600 dark:text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed"
-        >
-          Sharing my thoughts on technology, development, and digital
-          experiences.
+        <p class="text-base sm:text-lg text-ink-2 dark:text-ink-dark-2 leading-relaxed font-sans">
+          Technical dispatches on systems architecture, deterministic state machines, and modern full-stack workflows.
         </p>
       </div>
 
@@ -20,45 +18,45 @@
       <div v-if="pending" class="flex justify-center py-20">
         <Icon
           icon="ph:spinner-gap-bold"
-          class="w-12 h-12 text-primary animate-spin"
+          class="w-8 h-8 text-primary animate-spin"
         />
       </div>
 
       <!-- Error State -->
       <div
         v-else-if="error"
-        class="text-center py-20 bg-white dark:bg-dark-lighter rounded-3xl border border-slate-200 dark:border-white/5"
+        class="text-center py-16 px-6 border border-rule dark:border-rule-dark rounded-md bg-paper-2 dark:bg-dark-lighter max-w-lg mx-auto"
       >
         <Icon
           icon="ph:warning-circle-bold"
-          class="w-16 h-16 text-red-500 mx-auto mb-4"
+          class="w-10 h-10 text-primary mx-auto mb-3"
         />
-        <p class="text-slate-700 dark:text-white text-xl font-bold mb-2">
-          Oops! Something went wrong.
-        </p>
-        <p class="text-slate-600 dark:text-gray-400">
-          Failed to load blog posts. Please try again later.
+        <h3 class="text-lg font-heading font-medium text-ink dark:text-white mb-2">
+          Unable to synchronize journal
+        </h3>
+        <p class="text-sm text-ink-2 dark:text-ink-dark-2 font-sans mb-5">
+          Failed to fetch remote articles from publication endpoint.
         </p>
         <button
           @click="refresh"
-          class="mt-6 px-6 py-2 bg-primary text-white rounded-full font-bold hover:bg-primary/90 transition-colors"
+          class="hero-button"
         >
-          Retry
+          Retry Fetch
         </button>
       </div>
 
       <!-- Posts Grid -->
-      <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <BlogCard v-for="post in posts" :key="post.id" :post="post" />
 
         <!-- Empty State -->
-        <div v-if="posts.length === 0" class="col-span-full text-center py-20">
+        <div v-if="posts.length === 0" class="col-span-full text-center py-20 border border-rule dark:border-rule-dark rounded-md bg-paper-2/50 dark:bg-dark-lighter/50">
           <Icon
             icon="ph:newspaper-clipping-bold"
-            class="w-16 h-16 text-slate-300 dark:text-gray-600 mx-auto mb-4"
+            class="w-10 h-10 text-ink-muted mx-auto mb-3"
           />
-          <p class="text-slate-600 dark:text-gray-400 text-lg">
-            No blog posts found yet. Check back soon!
+          <p class="text-sm font-mono text-ink-2 dark:text-ink-dark-2">
+            No journal entries published currently. Check back soon.
           </p>
         </div>
       </div>
@@ -67,12 +65,13 @@
 </template>
 
 <script setup>
+import { computed } from "vue";
+import { Icon } from "@iconify/vue";
 import BlogCard from "~/components/common/BlogCard.vue";
 
 const config = useRuntimeConfig();
 const { ghostApiKey, ghostApiUrl } = config.public;
 
-// Improved data fetching for SSG stability
 const {
   data: postsData,
   pending,
@@ -82,10 +81,6 @@ const {
   "ghost-posts",
   () => {
     if (!ghostApiUrl || !ghostApiKey) {
-      console.warn("Ghost API configuration missing:", {
-        ghostApiUrl,
-        ghostApiKey: ghostApiKey ? "***" : "missing",
-      });
       return Promise.resolve({ posts: [] });
     }
 
@@ -101,11 +96,11 @@ const {
 const posts = computed(() => postsData.value?.posts || []);
 
 useSeoMeta({
-  title: "Blog | Nelaka Withanage",
+  title: "Journal — Nelaka Withanage",
   description:
-    "Sharing my thoughts on technology, development, and digital experiences.",
-  ogTitle: "Blog | Nelaka Withanage",
+    "Technical essays and architecture notes by Senior Systems Architect Nelaka Withanage.",
+  ogTitle: "Journal — Nelaka Withanage",
   ogDescription:
-    "Sharing my thoughts on technology, development, and digital experiences.",
+    "Technical essays and architecture notes by Senior Systems Architect Nelaka Withanage.",
 });
 </script>

@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { Icon } from "@iconify/vue";
 
 export default defineNuxtPlugin((nuxtApp) => {

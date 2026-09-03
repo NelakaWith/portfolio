@@ -1,38 +1,34 @@
+/** @type {import('tailwindcss').Config} */
 export default {
   darkMode: "class",
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
-        sans: ["IBM Plex Serif", "sans-serif"],
-        heading: ["Fraunces", "serif"],
+        sans: ["Figtree", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        heading: ["Fraunces", "Georgia", "serif"],
+        mono: ["JetBrains Mono", "ui-monospace", "monospace"],
       },
       colors: {
-        dark: "oklch(14.1% 0.005 285.823)", // Zinc 900
-        "dark-lighter": "#1e293b", // Slate 800
-        primary: "#991b1b", // Red 800
-        secondary: "#ef4444", // Red 500
-        "glass-border": "rgba(255, 255, 255, 0.08)",
-        "glass-surface": "rgba(30, 41, 59, 0.7)",
+        paper: "var(--color-paper)",
+        "paper-2": "var(--color-paper-2)",
+        "paper-muted": "var(--color-paper-muted)",
+        ink: "var(--color-ink)",
+        "ink-2": "var(--color-ink-2)",
+        "ink-muted": "var(--color-ink-muted)",
+        rule: "var(--color-rule)",
+        primary: "var(--color-accent)",
+        "primary-hover": "var(--color-accent-hover)",
+        secondary: "var(--color-accent)",
+        dark: "var(--color-paper-dark, oklch(18% 0.01 260))",
+        "dark-lighter": "var(--color-paper-dark-2, oklch(22% 0.012 260))",
+        "header-bg": "var(--color-header-bg)",
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "hero-glow":
-          "conic-gradient(from 180deg at 50% 50%, #2a8af6 0deg, #a853ba 180deg, #e92a67 360deg)",
+      borderColor: {
+        DEFAULT: "var(--color-rule)",
       },
-      boxShadow: {
-        glass: "0 8px 16px 0 rgba(135, 31, 31, 0.1)",
-      },
-      animation: {
-        blob: "blob 7s infinite",
-      },
-      keyframes: {
-        blob: {
-          "0%": { transform: "translate(0px, 0px) scale(1)" },
-          "33%": { transform: "translate(30px, -50px) scale(1.1)" },
-          "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
-          "100%": { transform: "translate(0px, 0px) scale(1)" },
-        },
+      transitionTimingFunction: {
+        out: "cubic-bezier(0.16, 1, 0.3, 1)",
       },
     },
   },

@@ -1,59 +1,55 @@
 <template>
-  <header class="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50">
+  <header class="fixed top-5 left-1/2 -translate-x-1/2 w-[94%] max-w-6xl z-50">
     <div
-      class="bg-white/40 dark:bg-white/10 backdrop-blur-xl rounded-xl px-6 py-3 flex justify-between items-center shadow-lg dark:shadow-glass transition-all duration-300"
+      class="bg-header-bg border border-rule dark:border-rule-dark rounded-md px-6 py-3.5 flex justify-between items-center shadow-md backdrop-blur-md"
     >
-      <!-- Logo / Name -->
+      <!-- Logo / Wordmark -->
       <NuxtLink
         to="/#home"
-        class="cursor-pointer group"
+        class="cursor-pointer group select-none"
         @click="handleLogoClick"
       >
-        <h1
-          class="font-heading font-bold text-xl text-slate-700 dark:text-white tracking-tight group-hover:text-primary transition-colors"
+        <span
+          class="font-heading font-medium text-xl text-ink dark:text-white tracking-tight group-hover:text-primary transition-colors"
         >
           Nelaka<span class="text-primary">.</span>
-        </h1>
+        </span>
       </NuxtLink>
 
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center space-x-1">
+      <nav class="hidden md:flex items-center space-x-6">
         <template v-for="item in navItems" :key="item.id">
           <NuxtLink
             :to="item.href"
             :target="item.external ? '_blank' : undefined"
             :rel="item.external ? 'noopener noreferrer' : undefined"
-            class="px-4 py-2 text-sm font-semibold rounded-xl transition-all duration-200 hover:text-secondary"
+            class="text-xs font-mono uppercase tracking-widest text-ink dark:text-white hover:text-primary dark:hover:text-primary font-semibold transition-colors duration-150 py-1"
             @click="handleItemClick(item, $event)"
           >
             {{ item.label }}
           </NuxtLink>
         </template>
 
-        <div class="w-px h-4 bg-gray-300 dark:bg-gray-700 mx-2"></div>
+        <div class="w-px h-3.5 bg-rule dark:bg-rule-dark"></div>
 
-        <!-- Theme Toggle (Simplified) -->
+        <!-- Theme Toggle -->
         <button
-          class="p-2 rounded-full text-slate-500 dark:text-gray-400 hover:text-primary dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 transition-colors"
+          class="p-1.5 rounded text-ink dark:text-white hover:text-primary dark:hover:text-primary hover:bg-paper-2 dark:hover:bg-dark-lighter transition-colors"
           @click="$emit('toggle-dark')"
           aria-label="Toggle dark mode"
         >
-          <Icon
-            v-if="isDark"
-            icon="line-md:sunny-filled-loop"
-            class="w-5 h-5"
-          />
-          <Icon v-else icon="line-md:moon-filled-loop" class="w-5 h-5" />
+          <Icon v-if="isDark" icon="ph:sun-dim-bold" class="w-4 h-4" />
+          <Icon v-else icon="ph:moon-stars-bold" class="w-4 h-4" />
         </button>
       </nav>
 
       <!-- Mobile Nav Toggle -->
       <button
-        class="md:hidden text-slate-700 dark:text-white p-2"
+        class="md:hidden text-ink dark:text-white p-1.5 rounded hover:bg-paper-2 dark:hover:bg-dark-lighter transition-colors"
         @click="showMobileMenu = true"
-        aria-label="Open menu"
+        aria-label="Open navigation menu"
       >
-        <Icon icon="ph:list-bold" class="w-6 h-6" />
+        <Icon icon="ph:list-bold" class="w-5 h-5" />
       </button>
     </div>
   </header>
@@ -63,47 +59,39 @@
     <transition name="fade">
       <div
         v-if="showMobileMenu"
-        class="fixed inset-0 bg-white dark:bg-dark z-[100] flex flex-col justify-center items-center"
+        class="fixed inset-0 bg-paper dark:bg-dark z-[100] flex flex-col justify-center items-center px-6"
       >
         <button
-          class="absolute top-8 right-8 text-slate-500 dark:text-gray-400 hover:text-primary dark:hover:text-white p-2"
+          class="absolute top-7 right-7 text-ink-2 dark:text-ink-dark-2 hover:text-ink dark:hover:text-white p-2"
           @click="showMobileMenu = false"
+          aria-label="Close navigation menu"
         >
-          <Icon icon="ph:x-bold" class="w-8 h-8" />
+          <Icon icon="ph:x-bold" class="w-6 h-6" />
         </button>
 
-        <nav class="flex flex-col items-center space-y-6">
+        <nav class="flex flex-col items-center space-y-7 text-center">
           <template v-for="item in navItems" :key="item.id">
             <NuxtLink
               :to="item.href"
               :target="item.external ? '_blank' : undefined"
               :rel="item.external ? 'noopener noreferrer' : undefined"
-              class="text-3xl font-heading font-bold transition-all"
-              :class="[
-                item.id === 'products'
-                  ? 'text-primary'
-                  : 'text-slate-700 dark:text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-primary hover:to-secondary',
-              ]"
+              class="text-2xl font-heading font-normal text-ink dark:text-white hover:text-primary transition-colors"
               @click="handleItemClick(item, $event)"
             >
               {{ item.label }}
             </NuxtLink>
           </template>
 
-          <div class="w-12 h-px bg-slate-200 dark:bg-white/10 my-4"></div>
+          <div class="w-16 h-px bg-rule dark:bg-rule-dark my-4"></div>
 
           <!-- Mobile Theme Toggle -->
           <button
-            class="flex items-center gap-3 px-6 py-3 rounded-full bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-white font-medium hover:bg-slate-200 dark:hover:bg-white/10 transition-colors"
+            class="flex items-center gap-2.5 px-5 py-2.5 rounded border border-rule dark:border-rule-dark bg-paper-2 dark:bg-dark-lighter text-ink dark:text-white text-xs font-mono uppercase tracking-wider hover:border-primary transition-colors"
             @click="$emit('toggle-dark')"
           >
-            <Icon
-              v-if="isDark"
-              icon="line-md:sunny-filled-loop"
-              class="w-6 h-6"
-            />
-            <Icon v-else icon="line-md:moon-filled-loop" class="w-6 h-6" />
-            <span>{{ isDark ? "Switch to Light" : "Switch to Dark" }}</span>
+            <Icon v-if="isDark" icon="ph:sun-dim-bold" class="w-4 h-4" />
+            <Icon v-else icon="ph:moon-stars-bold" class="w-4 h-4" />
+            <span>{{ isDark ? "Light Mode" : "Dark Mode" }}</span>
           </button>
         </nav>
       </div>
@@ -114,6 +102,7 @@
 <script setup>
 import { ref } from "vue";
 import { useRoute } from "vue-router";
+import { Icon } from "@iconify/vue";
 
 defineProps({ isDark: Boolean });
 defineEmits(["toggle-dark"]);
@@ -122,27 +111,25 @@ const route = useRoute();
 const showMobileMenu = ref(false);
 
 const navItems = [
-  { id: "home", label: "Home", href: "/#home" },
-  { id: "the-lab", label: "My Work", href: "/#the-lab" },
-  { id: "proof", label: "Who am I", href: "/#proof" },
-  { id: "contact", label: "Reach Me", href: "/#contact" },
+  { id: "home", label: "Overview", href: "/#home" },
+  { id: "the-lab", label: "Engineering", href: "/#the-lab" },
+  { id: "proof", label: "Ledger", href: "/#proof" },
+  { id: "contact", label: "Dispatch", href: "/#contact" },
   { id: "blog", label: "Blog", href: "/blog" },
 ];
 
 function handleItemClick(item, event) {
   if (item.href.startsWith("/#")) {
-    const hash = item.href.substring(1); // extracts "#home", "#the-lab" etc.
+    const hash = item.href.substring(1);
     if (route.path === "/") {
       event.preventDefault();
       const el = document.querySelector(hash);
-      if (el) {
-        if (window.lenis) {
-          window.lenis.scrollTo(el, {
-            offset: 0,
-            duration: 1.2,
-          });
-          history.pushState(null, "", hash);
-        }
+      if (el && window.lenis) {
+        window.lenis.scrollTo(el, {
+          offset: 0,
+          duration: 1.0,
+        });
+        history.pushState(null, "", hash);
       }
     }
   }
@@ -153,14 +140,12 @@ function handleLogoClick(event) {
   if (route.path === "/") {
     event.preventDefault();
     const el = document.querySelector("#home");
-    if (el) {
-      if (window.lenis) {
-        window.lenis.scrollTo(el, {
-          offset: 0,
-          duration: 1.2,
-        });
-        history.pushState(null, "", "#home");
-      }
+    if (el && window.lenis) {
+      window.lenis.scrollTo(el, {
+        offset: 0,
+        duration: 1.0,
+      });
+      history.pushState(null, "", "#home");
     }
   }
   showMobileMenu.value = false;
@@ -170,7 +155,7 @@ function handleLogoClick(event) {
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease;
 }
 .fade-enter-from,
 .fade-leave-to {

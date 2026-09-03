@@ -29,3 +29,4 @@ dist-ssr
 .output
 
 GEMINI.md
+.hallmark/log.json
