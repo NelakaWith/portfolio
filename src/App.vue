@@ -1,32 +1,17 @@
 <template>
-  <div :class="{ dark: isDark }">
+  <div :class="{ dark: isDark }" class="w-full min-h-screen">
     <div
-      class="font-sans bg-gray-50 dark:bg-dark min-h-screen text-slate-700 dark:text-white selection:bg-primary selection:text-white flex flex-col"
+      class="font-sans bg-paper dark:bg-dark min-h-screen text-ink dark:text-white selection:bg-primary selection:text-white flex flex-col w-full"
     >
-      <!-- Loader -->
-      <Transition name="fade">
-        <div
-          v-if="loading"
-          class="!fixed inset-0 flex items-center justify-center z-[100] transition-colors duration-300 paper-container"
-        >
-          <AppLoader :dark="isDark" />
-        </div>
-      </Transition>
+      <Header :is-dark="isDark" @toggle-dark="toggleDark" />
 
-      <!-- Main Content -->
-      <div class="flex flex-col flex-grow">
-        <Header :is-dark="isDark" @toggle-dark="toggleDark" />
+      <main class="w-full flex-grow paper-container">
+        <NuxtPage />
+      </main>
 
-        <main :key="loading" class="flex-grow overflow-x-hidden paper-container">
-          <NuxtPage />
-        </main>
+      <Footer class="w-full mt-auto" />
 
-        <!-- Footer -->
-        <Footer />
-
-        <!-- Back to Top Button -->
-        <BackToTop />
-      </div>
+      <BackToTop />
     </div>
   </div>
 </template>
@@ -35,12 +20,8 @@
 import { ref, onMounted } from "vue";
 import Header from "./components/layout/AppHeader.vue";
 import Footer from "./components/layout/AppFooter.vue";
-import { useLoader } from "./composables/useLoader";
-import AppLoader from "./components/common/AppLoader.vue";
 import BackToTop from "./components/common/BackToTop.vue";
 import { useSmoothScroll } from "./composables/useSmoothscroll";
-
-const { loading, startLoader } = useLoader("IBM Plex Serif", 3000);
 
 // Initialize smooth scrolling
 useSmoothScroll();
@@ -49,7 +30,7 @@ useSeoMeta({
   titleTemplate: (titleChunk) => {
     return titleChunk
       ? `${titleChunk} | Nelaka Withanage`
-      : "Nelaka Withanage - Software Engineer";
+      : "Nelaka Withanage - Senior Software Engineer & Systems Architect";
   },
   ogType: "website",
   ogSiteName: "Nelaka Withanage",
@@ -62,7 +43,7 @@ useSchemaOrg([
     name: "Nelaka Withanage",
     url: "https://nelaka.xyz",
     image: "https://nelaka.xyz/og_banner_02.png",
-    jobTitle: "Software Engineer & Full-Stack Developer",
+    jobTitle: "Senior Software Engineer & Systems Architect",
     sameAs: [
       "https://github.com/NelakaWith/",
       "https://www.linkedin.com/in/nelaka-withanage/",
@@ -74,46 +55,39 @@ useSchemaOrg([
   }),
 ]);
 
-// 1. Default to false on both server and initial client render
 const isDark = ref(false);
 const isMounted = ref(false);
 
 onMounted(() => {
   isMounted.value = true;
 
-  // 2. Read from localStorage safely after mounting
   const stored = localStorage.getItem("darkMode");
   if (stored !== null) {
     isDark.value = stored === "true";
   } else {
-    // Optional fallback: check system preference if no local preference exists
     isDark.value = window.matchMedia("(prefers-color-scheme: dark)").matches;
   }
 
-  // 3. Apply class to document root
   if (isDark.value) {
     document.documentElement.classList.add("dark");
   } else {
     document.documentElement.classList.remove("dark");
   }
 
-  startLoader().then(() => {
-    // Scroll to hash if present after loading hides
-    const hash = window.location.hash;
-    if (hash) {
-      const el = document.querySelector(hash);
-      if (el) {
-        setTimeout(() => {
-          if (window.lenis) {
-            window.lenis.scrollTo(el, {
-              offset: 0,
-              duration: 1.2,
-            });
-          }
-        }, 300); // Small timeout to ensure page layout is stable
-      }
+  const hash = window.location.hash;
+  if (hash) {
+    const el = document.querySelector(hash);
+    if (el) {
+      setTimeout(() => {
+        if (window.lenis) {
+          window.lenis.scrollTo(el, {
+            offset: 0,
+            duration: 1.0,
+          });
+        }
+      }, 100);
     }
-  });
+  }
 });
 
 function toggleDark() {

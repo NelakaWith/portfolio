@@ -1,67 +1,54 @@
 <template>
-  <div class="max-w-4xl mx-auto px-6">
-    <div class="text-center mb-16">
-      <h2
-        class="text-4xl md:text-7xl font-heading font-light text-slate-700 dark:text-white mb-6"
-      >
-        Ready to <span class="title-highlight">eliminate the noise?</span>
+  <div class="max-w-4xl mx-auto px-6 py-12">
+    <div class="text-center mb-12 space-y-4">
+      <span class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block">
+        Direct Engagement
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-heading font-normal text-ink dark:text-white">
+        Initiate Technical Dispatch
       </h2>
-      <p
-        class="text-xl text-slate-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto mb-8"
-      >
-        Whether you're looking for an MVP build, a technical audit, or a senior
-        engineer to join your ranks, let's talk about velocity.
+      <p class="text-base sm:text-lg text-ink-2 dark:text-ink-dark-2 leading-relaxed max-w-xl mx-auto font-sans">
+        Available for systems architecture, technical prototype builds, or senior full-stack leadership. Let's discuss requirements.
       </p>
 
-      <div class="flex flex-wrap gap-4 justify-center items-center mb-16">
+      <!-- Channels -->
+      <div class="flex flex-wrap gap-3 justify-center items-center pt-2">
         <a
           href="mailto:nelakasnj@gmail.com"
-          class="flex items-center gap-2 px-6 py-3 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl hover:bg-slate-50 dark:hover:bg-white/10 transition-colors"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded border border-rule dark:border-rule-dark bg-paper dark:bg-dark-lighter hover:border-primary text-xs font-mono uppercase tracking-wider text-ink dark:text-white transition-colors"
         >
-          <Icon icon="ph:envelope-simple-bold" class="w-5 h-5 text-primary" />
-          <span class="text-sm font-medium text-slate-700 dark:text-white"
-            >Email Me</span
-          >
+          <Icon icon="ph:envelope-simple-bold" class="w-4 h-4 text-primary" />
+          <span>Email</span>
         </a>
         <a
           href="https://linkedin.com/in/nelaka-withanage"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-2 px-6 py-3 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl hover:bg-slate-50 dark:hover:bg-white/10 transition-colors"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded border border-rule dark:border-rule-dark bg-paper dark:bg-dark-lighter hover:border-primary text-xs font-mono uppercase tracking-wider text-ink dark:text-white transition-colors"
         >
-          <Icon icon="ph:linkedin-logo-bold" class="w-5 h-5 text-[#0A66C2]" />
-          <span class="text-sm font-medium text-slate-700 dark:text-white"
-            >LinkedIn</span
-          >
+          <Icon icon="ph:linkedin-logo-bold" class="w-4 h-4 text-primary" />
+          <span>LinkedIn</span>
         </a>
         <a
           href="https://github.com/NelakaWith"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-2 px-6 py-3 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl hover:bg-slate-50 dark:hover:bg-white/10 transition-colors"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded border border-rule dark:border-rule-dark bg-paper dark:bg-dark-lighter hover:border-primary text-xs font-mono uppercase tracking-wider text-ink dark:text-white transition-colors"
         >
-          <Icon
-            icon="ph:github-logo-bold"
-            class="w-5 h-5 text-slate-700 dark:text-gray-300"
-          />
-          <span class="text-sm font-medium text-slate-700 dark:text-white"
-            >GitHub</span
-          >
+          <Icon icon="ph:github-logo-bold" class="w-4 h-4 text-primary" />
+          <span>GitHub</span>
         </a>
       </div>
     </div>
 
-    <!-- Contact Form -->
-    <div class="max-w-2xl mx-auto">
-      <div
-        class="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-8 shadow-lg"
-      >
-        <CompanyContact />
-      </div>
+    <!-- Contact Form Card -->
+    <div class="max-w-2xl mx-auto border border-rule dark:border-rule-dark rounded-md bg-paper dark:bg-dark p-6 sm:p-10">
+      <CompanyContact />
     </div>
   </div>
 </template>
 
 <script setup>
+import { Icon } from "@iconify/vue";
 import CompanyContact from "../company/CompanyContact.vue";
 </script>

@@ -1,125 +1,74 @@
 <template>
   <div class="flex flex-col min-h-screen">
-    <!-- Hero Section -->
+    <!-- Hero Section: Workbench Entry -->
     <section
       id="home"
-      class="pt-32 pb-24 flex flex-col items-center justify-center relative overflow-hidden min-h-[90vh]"
+      class="pt-28 sm:pt-36 pb-16 sm:pb-24 flex flex-col justify-center relative"
     >
       <AppHero />
     </section>
 
-    <!-- The Lab Section -->
+    <!-- The Lab Section: Specimen + Commercial + Bento Tools -->
     <section
       id="the-lab"
-      class="py-24 border-t border-slate-200 dark:border-white/10"
+      class="py-20 sm:py-28 border-t border-rule dark:border-rule-dark"
     >
-      <div class="max-w-7xl mx-auto px-6">
-        <div
-          v-motion
-          :initial="{ opacity: 0, y: 40 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
-          class="mb-16 text-center"
-        >
-          <h2
-            class="text-4xl md:text-7xl font-heading font-light text-slate-700 dark:text-white mb-6"
-          >
-            The <span class="title-highlight">Lab</span>
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-14 space-y-3">
+          <span class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block">
+            01 / Technical Architecture
+          </span>
+          <h2 class="text-3xl sm:text-5xl font-heading font-normal text-ink dark:text-white">
+            The Engineering Lab
           </h2>
-          <p
-            class="text-xl text-slate-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto"
-          >
-            A streamlined look at commercial client systems and independent
-            full-stack architectures built for scale, performance, and immediate
-            reliability.
+          <p class="text-base sm:text-lg text-ink-2 dark:text-ink-dark-2 leading-relaxed max-w-2xl font-sans">
+            Commercial production engines and independent full-stack architectures engineered for scale, determinism, and high runtime efficiency.
           </p>
         </div>
 
-        <!-- Saadhaka Project detail -->
-        <AppSaadhaka
-          v-motion
-          :initial="{ opacity: 0, y: 40 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: 150 } }"
-        />
+        <!-- Saadhaka ILS Specimen Card -->
+        <AppSaadhaka />
 
-        <!-- Commercial Projects -->
-        <div
-          v-motion
-          :initial="{ opacity: 0, y: 40 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: 300 } }"
-        >
-          <Projects />
-        </div>
+        <!-- Commercial Delivery Ledger -->
+        <Projects />
 
-        <!-- Passion Projects -->
-        <div
-          v-motion
-          :initial="{ opacity: 0, y: 40 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: 450 } }"
-          class="mt-20"
-        >
-          <Showcase />
-        </div>
+        <!-- Independent Tools Bento Grid -->
+        <Showcase />
       </div>
     </section>
 
-    <!-- Proof Section -->
+    <!-- Proof Section: Experience Ledger + Technical Capabilities -->
     <section
       id="proof"
-      class="py-24 border-t border-slate-200 dark:border-white/10"
+      class="py-20 sm:py-28 border-t border-rule dark:border-rule-dark bg-paper-2/40 dark:bg-dark-lighter/20"
     >
-      <div class="max-w-7xl mx-auto px-6">
-        <div
-          v-motion
-          :initial="{ opacity: 0, y: 40 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
-          class="mb-16 text-center"
-        >
-          <h2
-            class="text-4xl md:text-7xl font-heading font-light text-slate-700 dark:text-white mb-6"
-          >
-            Professional <span class="title-highlight">Validation</span>
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-14 space-y-3">
+          <span class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block">
+            02 / Track Record & Capabilities
+          </span>
+          <h2 class="text-3xl sm:text-5xl font-heading font-normal text-ink dark:text-white">
+            Career Ledger & Competencies
           </h2>
-          <p
-            class="text-xl text-slate-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto"
-          >
-            Senior Software Engineer with 9+ years of commercial and solo
-            experience specializing in the Javascript ecosystem. Proven track
-            record of leading architectural migrations and optimizing delivery
-            pipelines for speed and maintainability.
+          <p class="text-base sm:text-lg text-ink-2 dark:text-ink-dark-2 leading-relaxed max-w-2xl font-sans">
+            Senior software engineer with 9+ years architecting frontends, deterministic APIs, and data-intensive client platforms.
           </p>
         </div>
 
-        <!-- Experience Component -->
-        <div
-          v-motion
-          :initial="{ opacity: 0, y: 40 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: 150 } }"
-        >
-          <Experience />
-        </div>
+        <!-- Experience Ledger Component -->
+        <Experience />
 
-        <!-- Technical Arsenal Component -->
-        <div
-          v-motion
-          :initial="{ opacity: 0, y: 40 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600, delay: 300 } }"
-          class="mt-20"
-        >
-          <Skills />
-        </div>
+        <!-- Technical Capabilities Matrix -->
+        <Skills />
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section: Direct Dispatch -->
     <section
       id="contact"
-      class="py-24 border-t border-slate-200 dark:border-white/10"
+      class="py-20 sm:py-28 border-t border-rule dark:border-rule-dark"
     >
-      <AppContactSection
-        v-motion
-        :initial="{ opacity: 0, y: 40 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
-      />
+      <AppContactSection />
     </section>
   </div>
 </template>
@@ -133,9 +82,9 @@ import Experience from "../components/sections/AppExperience.vue";
 import Skills from "../components/sections/AppSkills.vue";
 import AppContactSection from "../components/sections/AppContactSection.vue";
 
-const title = "Software at the Speed of Thought";
+const title = "Nelaka Withanage — Senior Software Engineer & Systems Architect";
 const description =
-  "I help teams eliminate architectural noise and restore momentum through High-Velocity primitives. Senior Fullstack Engineer & Systems Architect.";
+  "Senior Full-Stack Engineer and Systems Architect with 9+ years engineering deterministic engines, graph state machines, and high-velocity web platforms.";
 
 useSeoMeta({
   title: title,

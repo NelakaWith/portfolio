@@ -1,50 +1,55 @@
 <template>
-  <section id="skills" class="py-20 relative">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h3
-          class="text-3xl md:text-5xl font-heading font-light text-slate-700 dark:text-white mb-4"
+  <div id="skills" class="space-y-8 mt-20">
+    <div
+      class="flex flex-wrap items-baseline justify-between gap-4 border-b border-rule dark:border-rule-dark pb-4"
+    >
+      <div>
+        <span
+          class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block mb-1"
         >
-          Technologies & Tools
+          Technical Inventory
+        </span>
+        <h3
+          class="text-2xl sm:text-3xl font-heading font-normal text-ink dark:text-white"
+        >
+          Disciplines & Capabilities
         </h3>
-        <div
-          class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"
-        ></div>
       </div>
+      <span class="text-xs font-mono text-ink-muted">
+        Full-Stack Surface Area
+      </span>
+    </div>
 
-      <!-- Category Sections -->
-      <div class="space-y-12">
-        <div v-for="category in categories" :key="category.name">
-          <!-- Category Header -->
-          <div class="flex items-center gap-3 mb-5">
-            <Icon :icon="category.icon" class="w-5 h-5 text-primary" />
-            <h4 class="text-lg font-semibold text-slate-800 dark:text-white">
-              {{ category.name }}
-            </h4>
-            <div class="flex-1 h-px bg-secondary/20"></div>
-          </div>
+    <!-- Structured Capability Matrix -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div
+        v-for="category in categories"
+        :key="category.name"
+        class="border border-rule dark:border-rule-dark bg-paper dark:bg-dark rounded-md p-6 space-y-4"
+      >
+        <div
+          class="flex items-center gap-2 border-b border-rule/60 dark:border-rule-dark/60 pb-3"
+        >
+          <Icon :icon="category.icon" class="w-4 h-4 text-primary" />
+          <h4
+            class="text-sm font-mono uppercase tracking-wider font-semibold text-ink dark:text-white"
+          >
+            {{ category.name }}
+          </h4>
+        </div>
 
-          <!-- Skills Grid -->
-          <div class="flex flex-wrap gap-2 cursor-pointer">
-            <div
-              v-for="skill in category.skills"
-              :key="skill.name"
-              class="group flex items-center gap-2 px-3 py-2 bg-white border border-slate-200 dark:bg-white/5 dark:border-white/10 rounded-lg hover:border-primary/40 hover:bg-slate-50 dark:hover:bg-white/10 transition-all duration-200"
-            >
-              <Icon
-                :icon="skill.icon"
-                class="w-4 h-4 text-slate-500 dark:text-gray-400 group-hover:text-primary transition-colors"
-              />
-              <span
-                class="text-sm font-medium text-slate-600 dark:text-gray-300 group-hover:text-slate-700 dark:group-hover:text-white transition-colors"
-                >{{ skill.name }}</span
-              >
-            </div>
-          </div>
+        <div class="flex flex-wrap gap-2">
+          <span
+            v-for="skill in category.skills"
+            :key="skill"
+            class="px-2.5 py-1 text-xs font-mono rounded bg-paper-2 dark:bg-dark-lighter border border-rule dark:border-rule-dark text-ink dark:text-ink-dark"
+          >
+            {{ skill }}
+          </span>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup>
@@ -52,90 +57,77 @@ import { Icon } from "@iconify/vue";
 
 const categories = [
   {
-    name: "Programming Languages",
+    name: "Languages & Runtimes",
     icon: "ph:code-bold",
     skills: [
-      { name: "JavaScript", icon: "logos:javascript" },
-      { name: "TypeScript", icon: "logos:typescript-icon" },
-      { name: "Python", icon: "logos:python" },
+      "TypeScript",
+      "JavaScript (ESNext)",
+      "Python",
+      "SQL",
+      "HTML5 / CSS3",
     ],
   },
   {
-    name: "Frontend",
-    icon: "ph:browser-bold",
+    name: "Frontend Systems",
+    icon: "ph:browsers-bold",
     skills: [
-      { name: "HTML5", icon: "vscode-icons:file-type-html" },
-      { name: "CSS3", icon: "devicon:css3" },
-      { name: "React.js", icon: "logos:react" },
-      { name: "Next.js", icon: "logos:nextjs-icon" },
-      { name: "Vue.js", icon: "logos:vue" },
-      { name: "Nuxt.js", icon: "logos:nuxt-icon" },
-      { name: "Astro", icon: "logos:astro-icon" },
+      "Vue 3",
+      "Nuxt 4",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Astro",
+      "Pinia",
+      "State Machines",
     ],
   },
   {
-    name: "UI Tools & Libraries",
-    icon: "ph:paint-brush-bold",
+    name: "Backend Architecture",
+    icon: "ph:cpu-bold",
     skills: [
-      { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
-      { name: "Bootstrap", icon: "logos:bootstrap" },
-      { name: "Material UI", icon: "logos:material-ui" },
-      { name: "Shadcn UI", icon: "simple-icons:shadcnui" },
-      { name: "Quasar UI", icon: "vscode-icons:file-type-quasar" },
-      { name: "Prime Vue", icon: "simple-icons:primevue" },
-      { name: "SCSS", icon: "vscode-icons:file-type-scss" },
-      { name: "LESS", icon: "vscode-icons:file-type-less" },
-      { name: "jQuery", icon: "simple-icons:jquery" },
+      "Node.js",
+      "NestJS",
+      "Express",
+      "PostgreSQL",
+      "pgvector",
+      "MySQL",
+      "REST APIs",
+      "GraphQL",
     ],
   },
   {
-    name: "State Management",
-    icon: "ph:database-bold",
+    name: "AI & Vector Pipelines",
+    icon: "healthicons:artificial-intelligence",
     skills: [
-      { name: "Pinia", icon: "logos:pinia" },
-      { name: "Vuex", icon: "material-icon-theme:vuex-store" },
-      { name: "Redux", icon: "logos:redux" },
-      { name: "Zustand", icon: "devicon:zustand" },
+      "RAG Pipelines",
+      "Embeddings Search",
+      "Gemini API",
+      "Groq SDK",
+      "Llama Tooling",
     ],
   },
   {
-    name: "Backend",
-    icon: "ph:hard-drives-bold",
+    name: "Engineering Infrastructure",
+    icon: "ph:terminal-window-bold",
     skills: [
-      { name: "Node.js", icon: "logos:nodejs-icon" },
-      { name: "Express", icon: "simple-icons:express" },
-      { name: "Nest.js", icon: "material-icon-theme:nest" },
-      { name: "REST API", icon: "carbon:api" },
-      { name: "GraphQL", icon: "logos:graphql" },
-      { name: "MySQL", icon: "devicon:mysql" },
-      { name: "PostgreSQL", icon: "devicon:postgresql" },
+      "Docker",
+      "GitHub Actions",
+      "Gitlab CI",
+      "Linux / Nginx",
+      "Vite",
+      "Playwright",
+      "Vitest",
     ],
   },
   {
-    name: "DevOps & Tooling",
-    icon: "ph:gear-bold",
+    name: "Methodology & Design",
+    icon: "ph:compass-tool-bold",
     skills: [
-      { name: "Git", icon: "logos:git-icon" },
-      { name: "GitHub Actions", icon: "devicon-plain:githubactions" },
-      { name: "Gitlab CI/CD", icon: "material-icon-theme:gitlab" },
-      { name: "Turborepo", icon: "vscode-icons:file-type-turbo" },
-      { name: "Drone CI", icon: "logos:drone-icon" },
-      { name: "Docker", icon: "logos:docker-icon" },
-      { name: "Nginx", icon: "logos:nginx" },
-      { name: "PM2", icon: "devicon:pm2" },
-      { name: "Vite", icon: "devicon:vitejs" },
-      { name: "Jest", icon: "vscode-icons:file-type-jest" },
-      { name: "Playwright", icon: "logos:playwright" },
-    ],
-  },
-  {
-    name: "Design & Project Management",
-    icon: "ph:palette-bold",
-    skills: [
-      { name: "Figma", icon: "logos:figma" },
-      { name: "Photoshop", icon: "logos:adobe-photoshop" },
-      { name: "Azure DevOps", icon: "devicon:azuredevops" },
-      { name: "Jira", icon: "devicon:jiraalign" },
+      "Systems Architecture",
+      "TDD Practices",
+      "Figma",
+      "Azure DevOps",
+      "Performance Tuning",
     ],
   },
 ];
