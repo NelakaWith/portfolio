@@ -2,24 +2,39 @@
   <div class="pt-32 pb-24 min-h-screen bg-paper dark:bg-dark">
     <div class="max-w-6xl mx-auto px-6 space-y-12">
       <!-- Editorial Header -->
-      <div class="space-y-4 max-w-2xl border-b border-rule dark:border-rule-dark pb-8">
-        <span class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block">
+      <div
+        class="space-y-4 max-w-2xl border-b border-rule dark:border-rule-dark pb-8"
+      >
+        <span
+          class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block"
+        >
           Field Notes & Essays
         </span>
-        <h1 class="text-4xl sm:text-6xl font-heading font-normal text-ink dark:text-white">
+        <h1
+          class="text-4xl sm:text-6xl font-heading font-normal text-ink dark:text-white"
+        >
           The Quiet Console
         </h1>
-        <p class="text-base sm:text-lg text-ink-2 dark:text-ink-dark-2 leading-relaxed font-sans">
-          Technical dispatches on systems architecture, deterministic state machines, and modern full-stack workflows.
+        <p
+          class="text-base sm:text-lg text-ink-2 dark:text-ink-dark-2 leading-relaxed font-sans"
+        >
+          Technical dispatches on systems architecture, deterministic state
+          machines, and modern full-stack workflows.
         </p>
       </div>
 
       <!-- Loading State -->
-      <div v-if="pending" class="flex justify-center py-20">
+      <div
+        v-if="pending"
+        class="flex flex-col items-center justify-center py-24 space-y-4"
+      >
         <Icon
           icon="ph:spinner-gap-bold"
           class="w-8 h-8 text-primary animate-spin"
         />
+        <p class="text-xs font-mono uppercase tracking-widest text-ink-muted">
+          Loading journal entries...
+        </p>
       </div>
 
       <!-- Error State -->
@@ -31,18 +46,15 @@
           icon="ph:warning-circle-bold"
           class="w-10 h-10 text-primary mx-auto mb-3"
         />
-        <h3 class="text-lg font-heading font-medium text-ink dark:text-white mb-2">
+        <h3
+          class="text-lg font-heading font-medium text-ink dark:text-white mb-2"
+        >
           Unable to synchronize journal
         </h3>
         <p class="text-sm text-ink-2 dark:text-ink-dark-2 font-sans mb-5">
           Failed to fetch remote articles from publication endpoint.
         </p>
-        <button
-          @click="refresh"
-          class="hero-button"
-        >
-          Retry Fetch
-        </button>
+        <button @click="refresh" class="hero-button">Retry Fetch</button>
       </div>
 
       <!-- Posts Grid -->
@@ -50,11 +62,19 @@
         <BlogCard v-for="post in posts" :key="post.id" :post="post" />
 
         <!-- Empty State -->
-        <div v-if="posts.length === 0" class="col-span-full text-center py-20 border border-rule dark:border-rule-dark rounded-md bg-paper-2/50 dark:bg-dark-lighter/50">
+        <div
+          v-if="posts.length === 0"
+          class="col-span-full text-center py-20 border border-rule dark:border-rule-dark rounded-md bg-paper-2/50 dark:bg-dark-lighter/50 space-y-3"
+        >
           <Icon
             icon="ph:newspaper-clipping-bold"
-            class="w-10 h-10 text-ink-muted mx-auto mb-3"
+            class="w-10 h-10 text-ink-muted mx-auto"
           />
+          <h4
+            class="text-base font-heading font-medium text-ink dark:text-white"
+          >
+            No entries found
+          </h4>
           <p class="text-sm font-mono text-ink-2 dark:text-ink-dark-2">
             No journal entries published currently. Check back soon.
           </p>
@@ -77,7 +97,7 @@ const {
   pending,
   error,
   refresh,
-} = await useAsyncData(
+} = useLazyAsyncData(
   "ghost-posts",
   () => {
     if (!ghostApiUrl || !ghostApiKey) {
@@ -88,7 +108,6 @@ const {
     return $fetch(url);
   },
   {
-    watch: false,
     server: true,
   },
 );
@@ -96,10 +115,10 @@ const {
 const posts = computed(() => postsData.value?.posts || []);
 
 useSeoMeta({
-  title: "Journal — Nelaka Withanage",
+  title: "Blog — Nelaka Withanage",
   description:
     "Technical essays and architecture notes by Senior Systems Architect Nelaka Withanage.",
-  ogTitle: "Journal — Nelaka Withanage",
+  ogTitle: "Blog — Nelaka Withanage",
   ogDescription:
     "Technical essays and architecture notes by Senior Systems Architect Nelaka Withanage.",
 });
