@@ -7,7 +7,9 @@ import { defineConfig } from "eslint/config";
 const nuxtGlobals = {
   // Nuxt composables
   useAsyncData: "readonly",
+  useLazyAsyncData: "readonly",
   useFetch: "readonly",
+  useLazyFetch: "readonly",
   useHead: "readonly",
   useSeoMeta: "readonly",
   useRoute: "readonly",

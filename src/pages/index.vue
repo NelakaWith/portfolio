@@ -84,7 +84,7 @@ import AppContactSection from "../components/sections/AppContactSection.vue";
 
 const title = "Nelaka Withanage — Senior Software Engineer & Systems Architect";
 const description =
-  "Senior Full-Stack Engineer and Systems Architect with 9+ years engineering deterministic engines, graph state machines, and high-velocity web platforms.";
+  "Senior Full-Stack Engineer helping founders and teams turn ambitious ideas into fast, dependable software that scales smoothly.";
 
 useSeoMeta({
   title: title,
