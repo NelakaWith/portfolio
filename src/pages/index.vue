@@ -15,14 +15,22 @@
     >
       <div class="max-w-6xl mx-auto px-6">
         <div class="mb-14 space-y-3">
-          <span class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block">
+          <span
+            class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block"
+          >
             01 / Technical Architecture
           </span>
-          <h2 class="text-3xl sm:text-5xl font-heading font-normal text-ink dark:text-white">
+          <h2
+            class="text-3xl sm:text-5xl font-heading font-normal text-ink dark:text-white"
+          >
             The Engineering Lab
           </h2>
-          <p class="text-base sm:text-lg text-ink-2 dark:text-ink-dark-2 leading-relaxed max-w-2xl font-sans">
-            Commercial production engines and independent full-stack architectures engineered for scale, determinism, and high runtime efficiency.
+          <p
+            class="text-base sm:text-lg text-ink-2 dark:text-ink-dark-2 leading-relaxed max-w-2xl font-sans"
+          >
+            Commercial production engines and independent full-stack
+            architectures engineered for scale, determinism, and high runtime
+            efficiency.
           </p>
         </div>
 
@@ -44,14 +52,21 @@
     >
       <div class="max-w-6xl mx-auto px-6">
         <div class="mb-14 space-y-3">
-          <span class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block">
+          <span
+            class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block"
+          >
             02 / Track Record & Capabilities
           </span>
-          <h2 class="text-3xl sm:text-5xl font-heading font-normal text-ink dark:text-white">
+          <h2
+            class="text-3xl sm:text-5xl font-heading font-normal text-ink dark:text-white"
+          >
             Career Ledger & Competencies
           </h2>
-          <p class="text-base sm:text-lg text-ink-2 dark:text-ink-dark-2 leading-relaxed max-w-2xl font-sans">
-            Senior software engineer with 9+ years architecting frontends, deterministic APIs, and data-intensive client platforms.
+          <p
+            class="text-base sm:text-lg text-ink-2 dark:text-ink-dark-2 leading-relaxed max-w-2xl font-sans"
+          >
+            Senior software engineer with 9+ years architecting frontends,
+            deterministic APIs, and data-intensive client platforms.
           </p>
         </div>
 
@@ -82,9 +97,9 @@ import Experience from "../components/sections/AppExperience.vue";
 import Skills from "../components/sections/AppSkills.vue";
 import AppContactSection from "../components/sections/AppContactSection.vue";
 
-const title = "Nelaka Withanage — Senior Software Engineer & Systems Architect";
+const title = "Nelaka Withanage — Senior Product Engineer";
 const description =
-  "Senior Full-Stack Engineer helping founders and teams turn ambitious ideas into fast, dependable software that scales smoothly.";
+  "Senior Product Engineer helping founders and teams turn ambitious ideas into fast, dependable software that scales smoothly.";
 
 useSeoMeta({
   title: title,
