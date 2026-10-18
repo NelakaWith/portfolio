@@ -3,14 +3,22 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
       <!-- Left Column: Editorial Statement -->
       <div class="lg:col-span-8 space-y-6">
-        <div
-          class="inline-flex items-center gap-2.5 px-3 py-1 rounded border border-rule dark:border-rule-dark bg-paper-2 dark:bg-dark-lighter text-xs font-mono uppercase tracking-widest text-ink-2 dark:text-ink-dark-2"
-        >
+        <!-- <div class="flex flex-wrap items-center gap-3">
           <span
-            class="w-2 h-2 rounded-full bg-emerald-600 dark:bg-emerald-500 animate-pulse"
-          ></span>
-          <span>Open for Architecture & Product Engineering</span>
-        </div>
+            class="text-xs font-mono uppercase tracking-widest text-primary font-semibold"
+          >
+            Nelaka Withanage
+          </span>
+          <span class="text-ink-muted text-xs font-mono">/</span>
+          <div
+            class="inline-flex items-center gap-2 px-2.5 py-1 rounded border border-rule dark:border-rule-dark bg-paper-2 dark:bg-dark-lighter text-xs font-mono uppercase tracking-widest text-ink-2 dark:text-ink-dark-2"
+          >
+            <span
+              class="w-2 h-2 rounded-full bg-emerald-600 dark:bg-emerald-500 animate-pulse"
+            ></span>
+            <span>Open for Architecture & Product Engineering</span>
+          </div>
+        </div> -->
 
         <h1
           class="text-4xl sm:text-6xl lg:text-7xl font-heading font-normal text-ink dark:text-white leading-[1.08] tracking-tight"
@@ -19,8 +27,17 @@
           <span class="text-primary">Speed of Thought.</span>
         </h1>
 
-        <p class="text-lg sm:text-xl text-ink-2 dark:text-ink-dark-2 font-normal leading-relaxed max-w-2xl">
-          I help founders and teams turn ambitious ideas into fast, dependable software. 9+ years building clean web products that launch quickly, work reliably, and scale smoothly as your business grows.
+        <p
+          class="text-lg sm:text-xl text-ink-2 dark:text-ink-dark-2 font-normal leading-relaxed max-w-2xl"
+        >
+          I’m
+          <strong class="text-ink dark:text-white font-medium"
+            >Nelaka Withanage</strong
+          >
+          - a Senior Software Engineer helping founders and teams turn ambitious
+          ideas into fast, dependable software. 9+ years building clean web
+          products that launch quickly, work reliably, and scale smoothly as
+          your business grows.
         </p>
 
         <!-- Actions -->
@@ -72,9 +89,6 @@
             class="text-xs font-mono uppercase tracking-widest text-ink dark:text-white font-semibold"
           >
             System Manifest
-          </span>
-          <span class="text-xs font-mono text-primary font-semibold">
-            01 / SPEC
           </span>
         </div>
 

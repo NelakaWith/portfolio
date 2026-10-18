@@ -1,17 +1,20 @@
 <template>
   <div class="space-y-8 mt-20">
-    <div class="flex flex-wrap items-baseline justify-between gap-4 border-b border-rule dark:border-rule-dark pb-4">
+    <div
+      class="flex flex-wrap items-baseline justify-between gap-4 border-b border-rule dark:border-rule-dark pb-4"
+    >
       <div>
-        <span class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block mb-1">
+        <span
+          class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block mb-1"
+        >
           Self-Directed R&D
         </span>
-        <h3 class="text-2xl sm:text-3xl font-heading font-normal text-ink dark:text-white">
+        <h3
+          class="text-2xl sm:text-3xl font-heading font-normal text-ink dark:text-white"
+        >
           Independent Systems & Tools
         </h3>
       </div>
-      <span class="text-xs font-mono text-ink-muted">
-        Bento Workpieces
-      </span>
     </div>
 
     <!-- Asymmetric Bento Grid -->
@@ -24,8 +27,10 @@
       >
         <div class="space-y-4">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-mono text-primary font-semibold uppercase tracking-wider">
-              TOOL_{{ String(index + 1).padStart(2, '0') }}
+            <span
+              class="text-xs font-mono text-primary font-semibold uppercase tracking-wider"
+            >
+              TOOL_{{ String(index + 1).padStart(2, "0") }}
             </span>
             <div class="flex items-center gap-3">
               <a
@@ -48,21 +53,27 @@
                 aria-label="Live Demo"
               >
                 <Icon icon="ph:arrow-square-out-bold" class="w-4 h-4" />
-                <span>Deploy</span>
+                <span>Live</span>
               </a>
             </div>
           </div>
 
-          <h4 class="text-xl sm:text-2xl font-heading font-medium text-ink dark:text-white">
+          <h4
+            class="text-xl sm:text-2xl font-heading font-medium text-ink dark:text-white"
+          >
             {{ project.name }}
           </h4>
 
-          <p class="text-sm text-ink-2 dark:text-ink-dark-2 leading-relaxed font-sans">
+          <p
+            class="text-sm text-ink-2 dark:text-ink-dark-2 leading-relaxed font-sans"
+          >
             {{ project.description }}
           </p>
         </div>
 
-        <div class="flex flex-wrap gap-1.5 pt-6 mt-6 border-t border-rule/50 dark:border-rule-dark/50">
+        <div
+          class="flex flex-wrap gap-1.5 pt-6 mt-6 border-t border-rule/50 dark:border-rule-dark/50"
+        >
           <span
             v-for="tech in project.technologies"
             :key="tech"

@@ -18,7 +18,7 @@
           <span
             class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block"
           >
-            01 / Technical Architecture
+            Technical Architecture
           </span>
           <h2
             class="text-3xl sm:text-5xl font-heading font-normal text-ink dark:text-white"
@@ -55,7 +55,7 @@
           <span
             class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block"
           >
-            02 / Track Record & Capabilities
+            Track Record & Capabilities
           </span>
           <h2
             class="text-3xl sm:text-5xl font-heading font-normal text-ink dark:text-white"

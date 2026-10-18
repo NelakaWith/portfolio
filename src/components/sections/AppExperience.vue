@@ -1,21 +1,26 @@
 <template>
   <div id="experience" class="space-y-8">
-    <div class="flex flex-wrap items-baseline justify-between gap-4 border-b border-rule dark:border-rule-dark pb-4">
+    <div
+      class="flex flex-wrap items-baseline justify-between gap-4 border-b border-rule dark:border-rule-dark pb-4"
+    >
       <div>
-        <span class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block mb-1">
+        <span
+          class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block mb-1"
+        >
           Chronological Ledger
         </span>
-        <h3 class="text-2xl sm:text-3xl font-heading font-normal text-ink dark:text-white">
+        <h3
+          class="text-2xl sm:text-3xl font-heading font-normal text-ink dark:text-white"
+        >
           Professional Journey
         </h3>
       </div>
-      <span class="text-xs font-mono text-ink-muted">
-        9+ Years Enterprise Track Record
-      </span>
     </div>
 
     <!-- Editorial Ledger Timeline -->
-    <div class="border-l border-rule dark:border-rule-dark ml-3 sm:ml-4 pl-6 sm:pl-8 space-y-12 relative">
+    <div
+      class="border-l border-rule dark:border-rule-dark ml-3 sm:ml-4 pl-6 sm:pl-8 space-y-12 relative"
+    >
       <article
         v-for="(job, index) in experience"
         :key="index"
@@ -27,18 +32,26 @@
         ></div>
 
         <!-- Meta Header -->
-        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-mono">
+        <div
+          class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-mono"
+        >
           <span class="text-primary font-semibold uppercase tracking-wider">
             {{ job.duration }}
           </span>
           <span class="text-ink-muted">/</span>
-          <span class="text-ink dark:text-white font-medium">{{ job.company }}</span>
+          <span class="text-ink dark:text-white font-medium">{{
+            job.company
+          }}</span>
           <span class="text-ink-muted">·</span>
-          <span class="text-ink-2 dark:text-ink-dark-2">{{ job.location }}</span>
+          <span class="text-ink-2 dark:text-ink-dark-2">{{
+            job.location
+          }}</span>
         </div>
 
         <!-- Role Title -->
-        <h4 class="text-xl sm:text-2xl font-heading font-medium text-ink dark:text-white">
+        <h4
+          class="text-xl sm:text-2xl font-heading font-medium text-ink dark:text-white"
+        >
           {{ job.position }}
         </h4>
 
@@ -49,7 +62,9 @@
             :key="i"
             class="text-sm text-ink-2 dark:text-ink-dark-2 leading-relaxed font-sans flex items-start"
           >
-            <span class="inline-block w-1.5 h-1.5 rounded-full bg-rule dark:bg-rule-dark mt-2 mr-3 flex-shrink-0"></span>
+            <span
+              class="inline-block w-1.5 h-1.5 rounded-full bg-rule dark:bg-rule-dark mt-2 mr-3 flex-shrink-0"
+            ></span>
             <span>{{ responsibility }}</span>
           </li>
         </ul>
@@ -72,10 +87,10 @@
 <script setup>
 const experience = [
   {
-    position: "Senior Product & Systems Engineer",
+    position: "Senior Product Engineer",
     company: "Independent Practice",
     location: "Remote",
-    duration: "10/2024 — Present",
+    duration: "06/2025 — Present",
     responsibilities: [
       "Architected Saadhaka Interactive Logic Sandbox (ILS), an engine-driven educational platform for organic chemistry dynamic synthesis with rule-based state graphs.",
       "Engineered Ground-0, an automated news analysis pipeline integrating NestJS backend microservices, Python scrapers, and Nuxt analytical dashboards.",
@@ -93,6 +108,17 @@ const experience = [
       "TypeScript",
       "Tailwind CSS",
     ],
+  },
+  {
+    position: "Full-Stack Engineer (Contract)",
+    company: "Gloire Academy",
+    location: "Remote",
+    duration: "10/2024 — 05/2025",
+    responsibilities: [
+      "Engineered Gloire Roadmap , a performance-tracking management platform featuring interactive data analytics.",
+      "Built a highly responsive Vue.js frontend alongside a robust Node.js API to process high-frequency metrics.",
+    ],
+    technologies: ["Vue 3", "Nuxt 4", "Node.js", "MySQL", "Tailwind CSS"],
   },
   {
     position: "Frontend Engineer (Contractor)",
@@ -116,7 +142,14 @@ const experience = [
       "Delivered model-fusion playground enabling non-technical operators to construct multi-modal pipeline topologies.",
       "Re-engineered NOC partner and incident management system with Quasar UI, slashing ticket response turnaround.",
     ],
-    technologies: ["Vue 3", "TypeScript", "SCSS", "Pinia", "Quasar UI", "Vue Query"],
+    technologies: [
+      "Vue 3",
+      "TypeScript",
+      "SCSS",
+      "Pinia",
+      "Quasar UI",
+      "Vue Query",
+    ],
   },
   {
     position: "Senior Frontend Engineer",
@@ -127,7 +160,14 @@ const experience = [
       "Contributed to digital banking applications (mobile wallet, merchant POS, banking portal) on the Symphony white-label fintech platform.",
       "Delivered cross-platform UI component library for Australian enterprise compliance platform (Tiks) with Vue and Ionic Capacitor.",
     ],
-    technologies: ["React", "Vue.js", "TypeScript", "SCSS", "Material UI", "Ionic"],
+    technologies: [
+      "React",
+      "Vue.js",
+      "TypeScript",
+      "SCSS",
+      "Material UI",
+      "Ionic",
+    ],
   },
   {
     position: "Junior Software Engineer",
