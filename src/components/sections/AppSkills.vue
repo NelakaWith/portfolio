@@ -15,9 +15,6 @@
           Disciplines & Capabilities
         </h3>
       </div>
-      <span class="text-xs font-mono text-ink-muted">
-        Full-Stack Surface Area
-      </span>
     </div>
 
     <!-- Structured Capability Matrix -->

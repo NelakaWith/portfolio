@@ -1,14 +1,21 @@
 <template>
   <div class="max-w-4xl mx-auto px-6 py-12">
     <div class="text-center mb-12 space-y-4">
-      <span class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block">
+      <span
+        class="text-xs font-mono uppercase tracking-widest text-primary font-semibold block"
+      >
         Direct Engagement
       </span>
-      <h2 class="text-3xl sm:text-5xl font-heading font-normal text-ink dark:text-white">
+      <h2
+        class="text-3xl sm:text-5xl font-heading font-normal text-ink dark:text-white"
+      >
         Initiate Technical Dispatch
       </h2>
-      <p class="text-base sm:text-lg text-ink-2 dark:text-ink-dark-2 leading-relaxed max-w-xl mx-auto font-sans">
-        Available for systems architecture, technical prototype builds, or senior full-stack leadership. Let's discuss requirements.
+      <p
+        class="text-base sm:text-lg text-ink-2 dark:text-ink-dark-2 leading-relaxed max-w-xl mx-auto font-sans"
+      >
+        Connect directly for systems architecture, technical prototype builds,
+        or senior product engineering leadership.
       </p>
 
       <!-- Channels -->
@@ -42,7 +49,9 @@
     </div>
 
     <!-- Contact Form Card -->
-    <div class="max-w-2xl mx-auto border border-rule dark:border-rule-dark rounded-md bg-paper dark:bg-dark p-6 sm:p-10">
+    <div
+      class="max-w-2xl mx-auto border border-rule dark:border-rule-dark rounded-md bg-paper dark:bg-dark p-6 sm:p-10"
+    >
       <CompanyContact />
     </div>
   </div>
